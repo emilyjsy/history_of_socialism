@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialism History | Exam Prep Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f1115;
+            --surface: #1a1d23;
+            --border: #2c313a;
+            --accent: #c8a96e;
+            --text: #e8eaf0;
+            --text-muted: #949ba4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .card .btn {
+            align-self: flex-start;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 2px;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>사회주의의 역사</h1>
+        <p class="subtitle">시험 대비 핵심 정리 포털</p>
+    </header>
+
+    <main class="grid">
+        <a href="history_01.html" class="card">
+            <div>
+                <h2>01. 도입</h2>
+                <p>산업화와 자본주의의 결합, 노동과 토지의 상품화 등 등장 배경</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_02.html" class="card">
+            <div>
+                <h2>02. 자본주의 형성</h2>
+                <p>도덕 경제와 시장 경제의 충돌, 임금 노동자의 탄생</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_03.html" class="card">
+            <div>
+                <h2>03. 이념의 지형도</h2>
+                <p>보수, 자유, 사회주의의 비교 및 정확한 정의</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_04.html" class="card">
+            <div>
+                <h2>04. 초기 사회주의 I</h2>
+                <p>생시몽의 인더스트리엘과 푸리에의 팔랑스테르 구상</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_05.html" class="card">
+            <div>
+                <h2>05. 초기 사회주의 II</h2>
+                <p>로버트 오언의 실험과 공동체주의/국가주의의 분화</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_06.html" class="card">
+            <div>
+                <h2>06. 공산주의 등장</h2>
+                <p>까베의 이카리아 여행기와 초기 공산주의의 기독교적 성격</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_07.html" class="card">
+            <div>
+                <h2>07. 혁명과 아나키즘</h2>
+                <p>블랑키의 혁명 방법론과 프루동의 사유재산 비판</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+
+        <a href="history_08.html" class="card">
+            <div>
+                <h2>08. 마르크스주의</h2>
+                <p>역사유물론, 잉여가치론 및 과학적 사회주의의 성립</p>
+            </div>
+            <div class="btn">Learn More →</div>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Socialism History Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
