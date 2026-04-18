@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 4차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0c0e10;
+    --surface: #141820;
+    --surface2: #1b2028;
+    --border: #252d38;
+    --accent: #5ba8d4;
+    --accent2: #8ecff0;
+    --accent3: #e8c86a;
+    --green: #7ec8a0;
+    --red: #e07878;
+    --purple: #b09de8;
+    --text: #dce4ea;
+    --text-muted: #607080;
+    --text-soft: #a8b8c4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.75; }
+
+  header {
+    background: linear-gradient(135deg, #0a1018 0%, #0c0e10 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(91,168,212,0.08) 0%, transparent 70%);
+  }
+  .header-label { font-size: 11px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+  header h1 { font-family: 'Noto Serif KR', serif; font-size: 2.1rem; font-weight: 900; color: var(--accent2); margin-bottom: 8px; }
+  header .subtitle { color: var(--text-muted); font-size: 13px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; letter-spacing: .08em; font-weight: 500; }
+  .badge.blue   { background: rgba(91,168,212,.12); border: 1px solid rgba(91,168,212,.3); color: var(--accent); }
+  .badge.gold   { background: rgba(232,200,106,.10); border: 1px solid rgba(232,200,106,.28); color: var(--accent3); }
+  .badge.green  { background: rgba(126,200,160,.10); border: 1px solid rgba(126,200,160,.28); color: var(--green); }
+
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; padding: 14px 18px; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; font-weight: 500; }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.35rem; font-weight: 900; color: var(--accent2); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .card-title { font-weight: 700; color: var(--accent2); font-size: 1rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+
+  .def-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 18px 22px; margin: 14px 0; }
+  .def-box .def-label { font-size: 10px; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .def-box.gold  { border-left-color: var(--accent3); } .def-box.gold .def-label  { color: var(--accent3); }
+  .def-box.green { border-left-color: var(--green); }   .def-box.green .def-label { color: var(--green); }
+  .def-box.red   { border-left-color: var(--red); }     .def-box.red .def-label   { color: var(--red); }
+  .def-box.purple{ border-left-color: var(--purple); }  .def-box.purple .def-label{ color: var(--purple); }
+
+  .key-concept { border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+  .key-concept.blue   { background: linear-gradient(135deg,rgba(91,168,212,.08),rgba(91,168,212,.02)); border: 1px solid rgba(91,168,212,.2); }
+  .key-concept.blue   .kc-label { color: var(--accent); }
+  .key-concept.gold   { background: linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02)); border: 1px solid rgba(232,200,106,.2); }
+  .key-concept.gold   .kc-label { color: var(--accent3); }
+  .key-concept.green  { background: linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02)); border: 1px solid rgba(126,200,160,.2); }
+  .key-concept.green  .kc-label { color: var(--green); }
+  .key-concept.purple { background: linear-gradient(135deg,rgba(176,157,232,.08),rgba(176,157,232,.02)); border: 1px solid rgba(176,157,232,.2); }
+  .key-concept.purple .kc-label { color: var(--purple); }
+  .kc-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  .hl-b { color: var(--accent2); font-weight: 700; }
+  .hl-g { color: var(--green);   font-weight: 700; }
+  .hl-go{ color: var(--accent3); font-weight: 700; }
+  .hl-r { color: var(--red);     font-weight: 700; }
+  .hl-p { color: var(--purple);  font-weight: 700; }
+
+  .example { background: rgba(91,168,212,.05); border: 1px solid rgba(91,168,212,.18); border-radius: 6px; padding: 15px 20px; margin: 12px 0; }
+  .example-label { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example.gold   { background: rgba(232,200,106,.05); border-color: rgba(232,200,106,.18); } .example.gold   .example-label { color: var(--accent3); }
+  .example.green  { background: rgba(126,200,160,.05); border-color: rgba(126,200,160,.18); } .example.green  .example-label { color: var(--green); }
+  .example.purple { background: rgba(176,157,232,.05); border-color: rgba(176,157,232,.18); } .example.purple .example-label { color: var(--purple); }
+  .example p, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; } .example li { margin-bottom: 5px; }
+
+  .caution { background: rgba(224,120,120,.07); border: 1px solid rgba(224,120,120,.22); border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 13.5px; color: var(--text-soft); }
+  .caution strong { color: var(--red); }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-weight: 700; text-align: left; padding: 10px 16px; border: 1px solid var(--border); font-size: 12px; letter-spacing: .05em; }
+  td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text-soft); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* 인물 카드 3열 */
+  .person-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 14px 0; }
+  .person-card { border-radius: 8px; padding: 18px 16px; }
+  .person-card h4 { font-family: 'Noto Serif KR', serif; font-size: 1rem; font-weight: 900; margin-bottom: 10px; }
+  .person-card p, .person-card li { font-size: 13px; color: var(--text-soft); margin-bottom: 5px; }
+  .person-card ul { padding-left: 16px; }
+  .person-card.saint { background: rgba(91,168,212,.07); border: 1px solid rgba(91,168,212,.25); }
+  .person-card.saint h4 { color: var(--accent2); }
+  .person-card.fourier { background: rgba(126,200,160,.07); border: 1px solid rgba(126,200,160,.25); }
+  .person-card.fourier h4 { color: var(--green); }
+  .person-card.owen { background: rgba(232,200,106,.07); border: 1px solid rgba(232,200,106,.25); }
+  .person-card.owen h4 { color: var(--accent3); }
+
+  /* 팔랑스테르 그림 */
+  .phalanx-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin: 14px 0; }
+  .phalanx-box h4 { color: var(--green); font-size: .9rem; font-weight: 700; margin-bottom: 12px; letter-spacing: .08em; text-transform: uppercase; }
+
+  /* 푸리에 성격 분류표 */
+  .type-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 14px 0; }
+  .type-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 14px; }
+  .type-box h5 { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+  .type-box.sense h5 { color: var(--accent); }
+  .type-box.soul  h5 { color: var(--green); }
+  .type-box.dist  h5 { color: var(--accent3); }
+  .type-box p, .type-box li { font-size: 13px; color: var(--text-soft); }
+  .type-box ul { padding-left: 16px; } .type-box li { margin-bottom: 3px; }
+
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+  .flow-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--text); text-align: center; min-width: 88px; }
+  .flow-box.b  { border-color: var(--accent);  color: var(--accent2); }
+  .flow-box.g  { border-color: var(--green);   color: var(--green); }
+  .flow-box.go { border-color: var(--accent3); color: var(--accent3); }
+  .flow-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+  .tf-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .tf-section h3 { font-family: 'Noto Serif KR', serif; font-size: 1rem; color: var(--accent2); margin-bottom: 16px; font-weight: 700; }
+  .tf-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 14px; }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge { flex-shrink: 0; width: 32px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+  .tf-badge.true  { background: rgba(126,200,160,.2); color: var(--green); }
+  .tf-badge.false { background: rgba(224,120,120,.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box { background: linear-gradient(135deg,rgba(91,168,212,.08),rgba(91,168,212,.02)); border: 1px solid rgba(91,168,212,.22); border-radius: 10px; padding: 22px 26px; margin: 18px 0; }
+  .summary-box h3 { color: var(--accent2); font-family: 'Noto Serif KR', serif; font-size: 1rem; margin-bottom: 12px; font-weight: 900; }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li { padding: 5px 0; font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+  .summary-box li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    header { padding: 32px 20px 24px; } header h1 { font-size: 1.5rem; }
+    .container { padding: 24px 16px 60px; } nav { padding: 0 16px; }
+    .person-grid, .type-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 4차시 핵심 정리</div>
+  <h1>계몽주의 · 초기 사회주의 3인방<br>생시몽 · 푸리에 · (오언 예고)</h1>
+  <div class="subtitle">
+    <span>2026. 03. 23 &nbsp;|&nbsp; 4차시</span>
+    <span class="badge blue">중간고사 대비</span>
+    <span class="badge gold">초기 사회주의자 3인</span>
+    <span class="badge green">계몽주의 키워드</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#review">복습·맥락</a>
+  <a href="#enlightenment">계몽주의</a>
+  <a href="#three-persons">초기 사회주의 3인</a>
+  <a href="#saint-simon">생시몽</a>
+  <a href="#fourier">푸리에</a>
+  <a href="#compare">두 인물 비교</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 00 복습 ━━━ -->
+  <div class="section" id="review">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">4차시 맥락 & 복습</span>
+    </div>
+    <div class="card">
+      <div class="card-title">이번 차시 위치</div>
+      <div class="flow">
+        <div class="flow-box b">산업자본주의<br>등장 (1~2차시)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">전통 경제 충돌<br>사회 혼란 (3차시)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box b">3대 이념 등장<br>(3차시)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box go">초기 사회주의자<br>3인 (4차시)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box" style="border-color:var(--purple);color:var(--purple);">마르크스<br>(이후)</div>
+      </div>
+      <div class="def-box">
+        <div class="def-label">초기 사회주의의 성격</div>
+        <p>• 시기: <span class="hl-b">1830년까지</span> 활약한 인물들 = 진정한 초기 사회주의자<br>
+        • 성격: 지식인들의 <span class="hl-b">아이디어 프로젝트</span> / 상상 — 아직 대중 운동 아님<br>
+        • 사회주의는 <span class="hl-b">중도적 이념</span> (보수↔자유 스펙트럼 중간)</p>
+      </div>
+      <div class="caution">
+        <strong>산업화 시기 재확인:</strong> 18세기 = 산업화 거의 없음. 19세기 초부터 본격화. 영국 가장 빠름. 프랑스는 전국 단위 산업화가 1840~1850년대. 우리 상식보다 훨씬 늦음.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 01 계몽주의 ━━━ -->
+  <div class="section" id="enlightenment">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">계몽주의 (Enlightenment) — 키워드 3개</span>
+    </div>
+    <div class="card">
+      <div class="card-title">계몽주의 핵심 3 키워드</div>
+      <div class="def-box gold">
+        <div class="def-label">반드시 외워야 할 3개</div>
+        <p><span class="hl-go">① 이성 (Reason / Rationality)</span> &nbsp;+&nbsp; <span class="hl-go">② 교육 (Education)</span> &nbsp;+&nbsp; <span class="hl-go">③ 진보 (Progress)</span></p>
+      </div>
+      <table>
+        <tr><th>키워드</th><th>의미</th><th>포인트</th></tr>
+        <tr>
+          <td><span class="hl-go">이성 (Reason)</span></td>
+          <td>수학적·연역적 사고로 자연 현상과 <strong>사회 현상</strong>을 과학적으로 설명</td>
+          <td>일상어 "감성의 반대" ≠ 학문적 이성. 학문적 이성 = <strong>수학적·계산적 사고</strong></td>
+        </tr>
+        <tr>
+          <td><span class="hl-go">교육 (Education)</span></td>
+          <td>이성으로 추출된 지식을 <strong>모든 사람</strong>이 접할 자격과 기회가 있음</td>
+          <td>공교육·백과전서·출판의 철학적 기반. 보통 교육 일반화의 근거</td>
+        </tr>
+        <tr>
+          <td><span class="hl-go">진보 (Progress)</span></td>
+          <td>이성적 지식이 교육을 통해 전파되면 <strong>세상이 발전(진보)한다</strong>는 믿음</td>
+          <td>인류 역사상 거의 없었던 사상. 전근대에는 없던 개념</td>
+        </tr>
+      </table>
+
+      <div class="key-concept gold">
+        <div class="kc-label">왜 계몽주의가 특이한가 — 시험 포인트</div>
+        <p>① 사회 현상을 수학적·과학적으로 설명한다는 발상 = <span class="hl-go">인류 역사상 거의 전례 없음</span><br>
+        ② 그 지식을 <span class="hl-go">보편적으로 전파해야 한다</span>는 발상도 전례 없음<br>
+        ③ 지식을 읽은 독자가 이해하고, 그것이 세상을 낫게 한다는 믿음 = <span class="hl-go">진보 개념</span><br>
+        → 우리가 받은 공교육 전체가 이 계몽주의 아이디어 위에 서 있음</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시 — 백과전서파</div>
+        <p>계몽주의자 중 중요 유파 = 백과전서파 (볼테르·루소 시대, 18세기 중후반이 전성기)<br>
+        백과전서를 출판한 이유: 이성으로 추출된 지식을 <strong>모든 사람이 알게 해야 한다</strong>는 믿음에서</p>
+      </div>
+      <div class="caution">
+        <strong>교수 관점:</strong> 요즘은 계몽주의가 꺾이고 있는 시대. 정확한 지식과 논증으로 전달해도 안 믿는 사람들 증가, 각자 자기 마음대로 믿는 현상 → 진실 개념 흔들림.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">초기 사회주의자들과 계몽주의의 관계</div>
+      <div class="def-box">
+        <div class="def-label">연결 고리</div>
+        <p>생시몽·푸리에 모두 계몽주의 <span class="hl-b">끝물(18세기 말~19세기 초)</span>의 영향을 받음<br>
+        → 미래를 낙관적으로 봄 (진보 믿음)<br>
+        → <span class="hl-b">단계론적 사고</span> 자주 함 (역사가 단계적으로 발전한다는 믿음)<br>
+        → 마르크스의 단계론도 이 흐름의 연장</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 02 초기 사회주의 3인 개요 ━━━ -->
+  <div class="section" id="three-persons">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">초기 사회주의 3인방 — 개요</span>
+    </div>
+    <div class="card">
+      <div class="card-title">3인 한눈에 비교</div>
+      <div class="person-grid">
+        <div class="person-card saint">
+          <h4>생시몽<br><small style="font-size:11px;font-weight:400;">Saint-Simon (프랑스)</small></h4>
+          <ul>
+            <li>귀족 집안 출신</li>
+            <li>~1825년 활동 (1830 이전)</li>
+            <li>인더스트리엘 주도 사회</li>
+            <li>사회주의 카테고리 논란 있음</li>
+            <li>생산 수단 소유권 직접 건드리지 않음</li>
+            <li>상속만 반대</li>
+          </ul>
+        </div>
+        <div class="person-card fourier">
+          <h4>푸리에<br><small style="font-size:11px;font-weight:400;">Fourier (프랑스)</small></h4>
+          <ul>
+            <li>상인 집안 출신 (독학)</li>
+            <li>1820년대 주로 활동</li>
+            <li>팔랑스테르 공동체 구상</li>
+            <li>노동의 즐거움 강조</li>
+            <li>유통 형식 자본주의 근본 비판</li>
+            <li>소유권은 직접 건드리지 않음</li>
+          </ul>
+        </div>
+        <div class="person-card owen">
+          <h4>오언<br><small style="font-size:11px;font-weight:400;">Owen (영국)</small></h4>
+          <ul>
+            <li>영국 출신</li>
+            <li>"진정한 초기 사회주의자 대표"</li>
+            <li>socialism 용어 처음 사용한 제자들</li>
+            <li>다음 차시 상세 학습</li>
+          </ul>
+        </div>
+      </div>
+      <div class="caution">
+        <strong>생시몽 주의:</strong> 교수 본인도 사회주의자 범주에 완전히 넣기 어렵다고 언급. 모든 개설서에 등장하고 후대 영향이 있어 포함. <strong>"완벽하게 사회주의자로 자리 잡은 사람은 아니다"</strong>는 교수 언급 기억.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 03 생시몽 ━━━ -->
+  <div class="section" id="saint-simon">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">생시몽 (Saint-Simon)</span>
+    </div>
+    <div class="card">
+      <div class="card-title">생애와 사상 배경</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>프랑스 유명 중앙 귀족 집안 — 수 대 위 조상이 왕 밑 고위 관직</td></tr>
+        <tr><td>직업 경로</td><td>귀족 집안 → ①관료 ②성직자 ③장교 → ④고리대금업 (가장 낮은 선택)<br>+ 장교로 미국 독립 전쟁 참전 경험</td></tr>
+        <tr><td>프랑스 혁명</td><td>공포 정치 때 고리대금업자·귀족 → 혁명재판소가 단두대행 결정<br>로베스피에르의 목이 먼저 잘리면서 기적적으로 생존</td></tr>
+        <tr><td>전환점</td><td>죽음 문턱에서 환골탈태 → <span class="hl-b">계몽주의 영향 아래 공부하는 지식인으로 변신</span></td></tr>
+        <tr><td>말년</td><td>책이 안 팔려 몰락 귀족으로 파리에서 빈곤하게 지냄. 권총 자살 시도(5발을 쏘고도 생존). 콩트(사회학 시조)가 한때 비서.</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">생시몽의 핵심 사상 — 인더스트리엘</div>
+      <div class="def-box">
+        <div class="def-label">인더스트리엘 (Industriel) — 핵심 개념</div>
+        <p>= <span class="hl-b">생산성에 도움이 되는 사람들</span> = 일하는 사람들<br>
+        시장 경제(유통 형식 자본주의)를 <span class="hl-b">계획·조율하는 주체</span>가 되어야 함<br>
+        → 이 부분이 생시몽을 사회주의 카테고리에 넣을 수 있는 근거</p>
+      </div>
+      <table>
+        <tr><th>인더스트리엘 포함</th><th>인더스트리엘 제외</th></tr>
+        <tr>
+          <td>
+            <strong>핵심:</strong> 기술을 가진 산업가(기업가) — 자수성가형<br>
+            과학자, 엔지니어<br>
+            농민, 수공업자, 노동자 (포함)
+          </td>
+          <td>
+            왕, 귀족<br>
+            <strong>특히 기사</strong> (말 타고 사냥하며 노는 비생산적 귀족)<br>
+            생산 활동과 무관한 모든 계층
+          </td>
+        </tr>
+      </table>
+      <div class="example">
+        <div class="example-label">교수 예시 — 테크노크라시·전문가 지배</div>
+        <p>생시몽의 인더스트리엘 = 20세기의 <strong>테크노크라트(기술 관료)</strong> 원조<br>
+        현대: 정치인이 아닌 경제학자·통계학자·공학자 등 <strong>expert들이 실질적으로 세상을 움직인다</strong>는 논의 (Rules of Experts)<br>
+        → 생시몽이 이 논의의 원조 격</p>
+      </div>
+
+      <div class="card-title" style="margin-top:20px;">조율의 원칙 변화</div>
+      <div class="flow">
+        <div class="flow-box b">초기: 과학<br><span style="font-size:11px;">이성적·수학적 분배</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box" style="border-color:var(--purple);color:var(--purple);">후기: 기독교적<br>양심·도덕성<br><span style="font-size:11px;">(신기독교)</span></div>
+      </div>
+      <div class="caution">
+        <strong>말년 경향:</strong> 과학만으로는 분배 정의 확보 어렵다는 걸 느끼고 점점 기독교적 도덕·종교성 강조. 저작 <em>신기독교</em>가 말년 작. 죽고 나서 <strong>생시몽 교단</strong>이 발족해 사상 계승·확산.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">생시몽과 사회주의 카테고리 — 한계</div>
+      <div class="def-box red">
+        <div class="def-label">사회주의 카테고리 진입 못하는 이유</div>
+        <p><span class="hl-r">생산 수단에 대한 소유권을 직접 건드리지 않음</span><br>
+        유일한 예외: <span class="hl-b">상속 반대</span> — 산업가가 죽어도 능력 있는 자가 가져가야 함, 자식에게 상속 금지 주장<br>
+        But: 소유권 자체를 폐지한 게 아니라 <strong>"능력 있는 자에게 소유권을"</strong>이므로 소유권 자체는 유지<br>
+        → 생산 양식으로서의 자본주의(임금 노동제) 적극 비판 없음</p>
+      </div>
+      <div class="key-concept blue">
+        <div class="kc-label">생시몽 정리 요약</div>
+        <p>유통 형식 자본주의 → 인더스트리엘이 계획으로 조율 ✅ (사회주의적)<br>
+        생산 양식 자본주의 → 소유권 직접 건드리지 않음 ❌ (완전한 사회주의 아님)<br>
+        상속만 반대 → 소유권은 능력자에게 유지</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 04 푸리에 ━━━ -->
+  <div class="section" id="fourier">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">푸리에 (Charles Fourier)</span>
+    </div>
+    <div class="card">
+      <div class="card-title">생애와 사상 배경</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>직물 유통 상인 집안 (생시몽과 대조적) — 귀족 아님, 커넥션 없음</td></tr>
+        <tr><td>교육</td><td>정식 교육 거의 없음. 어렸을 때부터 직물 업계 현장에서 잔뼈가 굵음</td></tr>
+        <tr><td>계기</td><td>직물업 현장에서 <strong>산업자본주의의 폐해 직접 목격</strong><br>기계가 생산을 늘리는데 노동자가 기계 리듬에 맞춰 더 불행해지는 현실</td></tr>
+        <tr><td>전환점</td><td>가업 포기 → 계몽주의 독학 → 스스로 사상가가 됨</td></tr>
+        <tr><td>말년</td><td>파리 지하 지식인으로 무명. 책 거의 안 팔림. 사후 <strong>푸리에주의자</strong>들에 의해 확산</td></tr>
+      </table>
+      <div class="example">
+        <div class="example-label">교수 예시 — 잉글리시적 폐해</div>
+        <p>푸리에의 진단: 기계 자체는 훌륭 → 그런데 <strong>효율성 논리</strong>로 사람을 기계 리듬에 종속시킴<br>
+        푸리에는 이를 "잉글리시적인 것"이라 표현 (우리가 뭔가 싫을 때 "일본적"·"중국적"이라 하듯이)</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">푸리에의 문명 발전 4단계론</div>
+      <div class="flow">
+        <div class="flow-box">① 야만</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">② 가부장제<br><span style="font-size:11px;">첫 인위 지배</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">③ 야만적<br>문명</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">④ 문명<br><span style="font-size:11px;">(현재)</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box g">⑤ 조화<br><span style="font-size:11px;">(이상 미래)</span></div>
+      </div>
+      <div class="example green">
+        <div class="example-label">각 단계 설명</div>
+        <ul>
+          <li><strong>① 야만:</strong> 평등하고 자연스러운 상태</li>
+          <li><strong>② 가부장제:</strong> 인위적 힘(제도)이 처음 드러남. 남녀 지배가 시작되고 그 지배가 확장됨 (푸리에 = 강력한 페미니스트)</li>
+          <li><strong>③ 야만적 문명:</strong> (논리적 연결 다소 불명확)</li>
+          <li><strong>④ 문명:</strong> 현재 상태. 자본주의가 산업화의 혜택을 효율성으로 망쳐놓는 단계</li>
+          <li><strong>⑤ 조화:</strong> 이상적 미래. <span class="hl-go">"인류의 바다가 에메랄드빛으로 변한다"</span>고 묘사 (상징이 아닌 진짜로 쓴 표현)</li>
+        </ul>
+      </div>
+      <div class="caution">
+        <strong>시험 포인트:</strong> 푸리에는 독학·계몽주의 끝물 영향으로 <strong>단계론적 사고</strong>를 함. 그러나 단계 구성이 논리적으로 완벽하지 않음 — "가방끈이 짧다는 한계이자 독창성"이라고 교수 언급.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">팔랑스테르 (Phalanstery) — 핵심 공동체 구상</div>
+      <div class="phalanx-box">
+        <h4>팔랑스테르 구조</h4>
+        <table>
+          <tr><th>항목</th><th>내용</th></tr>
+          <tr><td>이름 어원</td><td>고대 그리스어에서 유래</td></tr>
+          <tr><td>인원</td><td><span class="hl-g">1,620명</span></td></tr>
+          <tr><td>심리 유형</td><td><span class="hl-g">810개의 심리 타입</span> (각 타입 2명씩 짝 지어 거주)</td></tr>
+          <tr><td>형태</td><td>디귿(ㄷ)자 모양 다층 건물</td></tr>
+          <tr><td>기능</td><td><span class="hl-g">생산 + 분배 + 거주</span>를 함께 하는 공동체</td></tr>
+          <tr><td>내부 시설</td><td>농토 + 공장 (생산 수단 포함)</td></tr>
+          <tr><td>팔랑스테르 간 관계</td><td>각 공동체끼리 네트워크로 연결 → 부족한 것 교역</td></tr>
+        </table>
+      </div>
+      <div class="key-concept green">
+        <div class="kc-label">팔랑스테르의 핵심 원칙</div>
+        <p>심리 타입이 맞는 사람들끼리 공동 생활 → <span class="hl-g">노동이 즐거워야 한다</span><br>
+        자본주의의 효율성 원리에 종속된 고통스러운 노동 ❌<br>
+        성격 맞는 사람들이 함께 생산·분배·거주 → 노동 자체가 즐거움 ✅</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">810개 심리 타입의 근거 — 인간 분류 3범주</div>
+      <div class="type-grid">
+        <div class="type-box sense">
+          <h5>① 5개의 센스 (오감)</h5>
+          <ul>
+            <li>미각·후각·시각·청각·촉각</li>
+            <li>각 감각의 발달 강도가 다름</li>
+          </ul>
+        </div>
+        <div class="type-box soul">
+          <h5>② 4개의 소울 (감정)</h5>
+          <ul>
+            <li>우정</li>
+            <li>사랑</li>
+            <li>야망</li>
+            <li>자식을 사랑하는 마음</li>
+          </ul>
+        </div>
+        <div class="type-box dist">
+          <h5>③ 3개의 정념 (Distribute)</h5>
+          <ul>
+            <li><strong>변덕 정념</strong> — 지루함을 싫어하는 인간의 특성, 변화 욕구</li>
+            <li><strong>밀모 정념</strong> — 팀플레이, 비밀 작전, 집단 놀이 욕구</li>
+            <li><strong>복합 정념</strong> — 성적 유희 욕구 (강도에 따라 분류)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="example">
+        <div class="example-label">계산 구조</div>
+        <p>5감 × 4소울 × 3정념의 각 강도 조합 → 810가지 타입 도출<br>
+        810가지 타입 × 2명 = <strong>1,620명</strong>이 팔랑스테르 거주</p>
+      </div>
+      <div class="key-concept purple">
+        <div class="kc-label">푸리에의 문명사적 의의 — 노동관의 혁명</div>
+        <p>서양 전통: 노동 = <span class="hl-r">고통이지만 신성화</span> (수도원 농사, 소련 시베리아 노동 교화도 같은 맥락)<br>
+        푸리에: 노동 = <span class="hl-g">즐거움이어야 한다</span><br>
+        → 진보·보수·좌·우 모두 공유하던 "노동 = 고통" 관념을 <span class="hl-g">총체적으로 변화</span>시키려 함<br>
+        → 사회주의 범주를 넘어 <span class="hl-g">문명사적으로 파격적</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">푸리에주의의 확산</div>
+      <div class="def-box green">
+        <div class="def-label">푸리에 사후 영향</div>
+        <p>생전에 무명 → 사후 푸리에주의자들이 사상 발굴·확산<br>
+        서유럽보다 <span class="hl-g">동유럽</span>에서 팔로워 더 많음<br>
+        주로 끌린 사람들: 기존 사회와 <span class="hl-g">가장 급격하게 단절</span>하고 싶은 사람들</p>
+      </div>
+      <div class="example purple">
+        <div class="example-label">교수 예시 — 도스토옙스키와 푸리에주의</div>
+        <p>대문호 <strong>도스토옙스키</strong>가 청년 시절 푸리에주의 서클 활동 → 체포 → 사형 선고<br>
+        사형 집행 이틀~3일 전, 극적으로 사면<br>
+        → 죽음의 공포가 훗날 도스토옙스키 사상에 결정적 영향<br>
+        → 이후 완전한 <strong>보수주의자</strong>로 전향</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 05 두 인물 비교 ━━━ -->
+  <div class="section" id="compare">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">생시몽 vs 푸리에 — 핵심 비교</span>
+    </div>
+    <div class="card">
+      <div class="card-title">비교표</div>
+      <table>
+        <tr><th>항목</th><th>생시몽</th><th>푸리에</th></tr>
+        <tr><td>출신</td><td>프랑스 중앙 귀족</td><td>프랑스 직물 상인 집안</td></tr>
+        <tr><td>교육</td><td>귀족 교육 받음</td><td>독학</td></tr>
+        <tr><td>산업화</td><td>✅ 긍정 (절대 부 증가)</td><td>✅ 긍정 (기계 자체는 좋음)</td></tr>
+        <tr><td>자본주의 비판</td><td>유통 형식 비판 (계획 조율)</td><td>유통 형식 근본 비판 (팔랑스테르로 대체)</td></tr>
+        <tr><td>생산 수단 소유권</td><td>건드리지 않음 (상속만 반대)</td><td>건드리지 않음 (공동체 누구 거냐 미언급)</td></tr>
+        <tr><td>조율 원칙</td><td>과학 → 후기에 기독교 양심</td><td>즐거운 노동 / 심리 타입 맞춤</td></tr>
+        <tr><td>주도 집단</td><td>인더스트리엘 (산업가·기술자)</td><td>노동하는 사람 전반</td></tr>
+        <tr><td>대표 개념</td><td>인더스트리엘, 테크노크라시 원조</td><td>팔랑스테르, 810 심리 타입</td></tr>
+        <tr><td>사회주의 완성도</td><td>불완전 (교수도 범주 논란 인정)</td><td>유통 형식 비판은 더 근본적</td></tr>
+        <tr><td>사후 영향</td><td>생시몽 교단 형성</td><td>동유럽 중심 푸리에주의자 확산</td></tr>
+        <tr><td>유명 연관 인물</td><td>콩트(사회학 시조)가 비서 역임</td><td>도스토옙스키가 푸리에주의 서클 활동</td></tr>
+      </table>
+      <div class="key-concept blue">
+        <div class="kc-label">공통 한계</div>
+        <p>둘 다 <span class="hl-b">생산 수단 소유권을 직접 건드리지 않음</span><br>
+        → 자본주의 비판의 핵심(임금 노동제·배타적 사적 소유권)에 완전히 도달하지 못함<br>
+        → 마르크스가 이 부분을 논리적으로 공략 (다음 차시)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">T/F 예상 포인트 — 4차시 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 계몽주의 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">계몽주의의 3대 키워드는 이성·교육·진보다.</div>
+          <div class="tf-reason"><strong>→ 반드시 외워야 할 핵심.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">계몽주의에서 '이성'은 감성의 반대말로 쓰인다.</div>
+          <div class="tf-reason"><strong>→ 학문적 이성 = 수학적·계산적·연역적 사고.</strong> 감성의 반대는 일상적 의미의 이성.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">이성으로 사회 현상을 과학적으로 설명하는 발상은 인류 역사에 흔히 있었다.</div>
+          <div class="tf-reason"><strong>→ 거의 전례 없음.</strong> 계몽주의가 처음으로 이를 일반화·보편화시킴.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">초기 사회주의자 생시몽·푸리에는 계몽주의의 영향을 받아 미래를 낙관적으로 보고 단계론적 사고를 했다.</div>
+          <div class="tf-reason"><strong>→ 둘 다 계몽주의 끝물 영향 아래 있음.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 생시몽 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">생시몽은 완전한 사회주의자로 모든 학자가 동의한다.</div>
+          <div class="tf-reason"><strong>→ 사회주의 범주에 넣지 않는 학자도 있음.</strong> 교수 본인도 그 입장에 동의. 포함시키는 이유는 후대 영향 때문.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">인더스트리엘은 생산성에 도움이 되는 사람들로, 산업가·과학자·엔지니어·농민·수공업자·노동자를 포함한다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 기사(비생산적 귀족)와 왕·귀족이 제외됨.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">생시몽은 생산 수단에 대한 소유권 자체를 폐지하자고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 소유권 자체는 건드리지 않음.</strong> 상속만 반대. "능력 있는 자에게 소유권"이지 소유권 폐지 아님.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">생시몽은 생시몽 교단에 의해 생전보다 사후에 더 알려졌다.</div>
+          <div class="tf-reason"><strong>→ 생전에는 책이 안 팔리고 빈곤하게 지냄. 사후 교단이 사상 계승.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">생시몽이 말한 인더스트리엘은 재벌 2·3세처럼 재산을 물려받아 운영하는 사람도 포함한다.</div>
+          <div class="tf-reason"><strong>→ 기술을 가진 자수성가형 산업가 이미지.</strong> 상속 자체를 반대했으므로 상속으로 얻은 자는 핵심 인더스트리엘 아님.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 푸리에 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">팔랑스테르는 생산·분배·거주를 함께 하는 1,620명의 공동체다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 810개 심리 타입 × 2명 = 1,620명.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">푸리에는 생산 수단에 대한 소유권을 공동체 소유로 명시했다.</div>
+          <div class="tf-reason"><strong>→ 소유권 문제를 직접 언급하지 않음.</strong> 팔랑스테르가 만들어졌다고 전제만 하고 누구 것인지 명시 안 함.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">푸리에의 3가지 정념은 변덕 정념·밀모 정념·복합 정념이다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 각 정념의 의미도 함께 기억 (변덕=지루함 거부, 밀모=팀플레이·비밀 작전, 복합=성적 유희).</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">푸리에가 말한 문명 발전의 이상적 단계는 "문명"이다.</div>
+          <div class="tf-reason"><strong>→ 이상적 미래 단계는 "조화".</strong> "문명"은 현재 단계 (자본주의가 망쳐놓은 상태).</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">푸리에는 노동이 즐거워야 한다고 주장해 서양의 전통적인 '노동=고통' 관념과 단절했다.</div>
+          <div class="tf-reason"><strong>→ 문명사적 의의.</strong> 진보·보수·좌·우 모두 공유하던 노동 신성화(=고통)에 맞섰음.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">도스토옙스키는 생시몽주의 서클에 연루돼 사형 선고를 받았다.</div>
+          <div class="tf-reason"><strong>→ 푸리에주의 서클.</strong> 생시몽이 아니라 푸리에주의.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">푸리에주의는 서유럽보다 서유럽에서 팔로워가 더 많았다.</div>
+          <div class="tf-reason"><strong>→ 동유럽에서 팔로워가 더 많았음.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (4차시)</h3>
+      <ul>
+        <li>계몽주의의 3대 키워드(이성·교육·진보)를 설명하고, 왜 이것이 인류 역사에서 특이한 사상인지 서술하라.</li>
+        <li>생시몽의 인더스트리엘 개념을 설명하고, 그가 완전한 사회주의자로 분류되기 어려운 이유를 서술하라.</li>
+        <li>푸리에의 팔랑스테르 구상을 설명하고, 그것이 자본주의 비판으로 어떻게 이어지는지 서술하라.</li>
+        <li>생시몽과 푸리에의 공통 한계(생산 수단 소유권 미언급)가 왜 중요한지, 마르크스와의 연결 고리에서 설명하라.</li>
+        <li>푸리에가 노동에 대해 기존 서양 관념과 어떻게 달랐으며, 왜 문명사적으로 파격적인가?</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY + 80 >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + cur) { a.style.color = 'var(--accent)'; a.style.borderBottomColor = 'var(--accent)'; }
+    });
+  });
+</script>
+</body>
+</html>

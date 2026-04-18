@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 7차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0c;
+    --surface: #181816;
+    --surface2: #201f1c;
+    --border: #2e2c28;
+    --accent: #d4a86a;
+    --accent2: #f0c888;
+    --accent3: #7ec8a0;
+    --blue: #7ab0d4;
+    --red: #e07878;
+    --purple: #b09de8;
+    --pink: #d47ab0;
+    --text: #e8e4d8;
+    --text-muted: #706858;
+    --text-soft: #b8b0a0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.75; }
+
+  header {
+    background: linear-gradient(135deg, #141210 0%, #0e0e0c 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,168,106,.08) 0%, transparent 70%);
+  }
+  .header-label { font-size: 11px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+  header h1 { font-family: 'Noto Serif KR', serif; font-size: 1.9rem; font-weight: 900; color: var(--accent2); margin-bottom: 8px; }
+  header .subtitle { color: var(--text-muted); font-size: 13px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; letter-spacing: .08em; font-weight: 500; }
+  .badge.gold   { background: rgba(212,168,106,.12); border: 1px solid rgba(212,168,106,.3); color: var(--accent); }
+  .badge.green  { background: rgba(126,200,160,.10); border: 1px solid rgba(126,200,160,.28); color: var(--accent3); }
+  .badge.purple { background: rgba(176,157,232,.10); border: 1px solid rgba(176,157,232,.28); color: var(--purple); }
+
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; padding: 14px 18px; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; font-weight: 500; }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.35rem; font-weight: 900; color: var(--accent2); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .card-title { font-weight: 700; color: var(--accent2); font-size: 1rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+
+  .def-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 18px 22px; margin: 14px 0; }
+  .def-box .def-label { font-size: 10px; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .def-box.green  { border-left-color: var(--accent3); } .def-box.green  .def-label { color: var(--accent3); }
+  .def-box.red    { border-left-color: var(--red); }    .def-box.red    .def-label { color: var(--red); }
+  .def-box.blue   { border-left-color: var(--blue); }   .def-box.blue   .def-label { color: var(--blue); }
+  .def-box.purple { border-left-color: var(--purple); } .def-box.purple .def-label { color: var(--purple); }
+  .def-box.pink   { border-left-color: var(--pink); }   .def-box.pink   .def-label { color: var(--pink); }
+
+  .key-concept { border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+  .key-concept.gold   { background: linear-gradient(135deg,rgba(212,168,106,.09),rgba(212,168,106,.02)); border: 1px solid rgba(212,168,106,.22); }
+  .key-concept.gold   .kc-label { color: var(--accent); }
+  .key-concept.green  { background: linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02)); border: 1px solid rgba(126,200,160,.2); }
+  .key-concept.green  .kc-label { color: var(--accent3); }
+  .key-concept.purple { background: linear-gradient(135deg,rgba(176,157,232,.08),rgba(176,157,232,.02)); border: 1px solid rgba(176,157,232,.2); }
+  .key-concept.purple .kc-label { color: var(--purple); }
+  .key-concept.blue   { background: linear-gradient(135deg,rgba(122,176,212,.08),rgba(122,176,212,.02)); border: 1px solid rgba(122,176,212,.2); }
+  .key-concept.blue   .kc-label { color: var(--blue); }
+  .key-concept.pink   { background: linear-gradient(135deg,rgba(212,122,176,.08),rgba(212,122,176,.02)); border: 1px solid rgba(212,122,176,.2); }
+  .key-concept.pink   .kc-label { color: var(--pink); }
+  .kc-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  .hl-go { color: var(--accent2); font-weight: 700; }
+  .hl-g  { color: var(--accent3); font-weight: 700; }
+  .hl-b  { color: var(--blue);    font-weight: 700; }
+  .hl-r  { color: var(--red);     font-weight: 700; }
+  .hl-p  { color: var(--purple);  font-weight: 700; }
+  .hl-pk { color: var(--pink);    font-weight: 700; }
+
+  .example { background: rgba(212,168,106,.05); border: 1px solid rgba(212,168,106,.18); border-radius: 6px; padding: 15px 20px; margin: 12px 0; }
+  .example-label { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example.green  { background: rgba(126,200,160,.05); border-color: rgba(126,200,160,.18); } .example.green  .example-label { color: var(--accent3); }
+  .example.purple { background: rgba(176,157,232,.05); border-color: rgba(176,157,232,.18); } .example.purple .example-label { color: var(--purple); }
+  .example.red    { background: rgba(224,120,120,.05); border-color: rgba(224,120,120,.18); } .example.red    .example-label { color: var(--red); }
+  .example p, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; } .example li { margin-bottom: 5px; }
+
+  .caution { background: rgba(224,120,120,.07); border: 1px solid rgba(224,120,120,.22); border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 13.5px; color: var(--text-soft); }
+  .caution strong { color: var(--red); }
+
+  /* 인물 카드 */
+  .person-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .person-mini { border-radius: 8px; padding: 16px; }
+  .person-mini h4 { font-family: 'Noto Serif KR', serif; font-size: .9rem; font-weight: 900; margin-bottom: 8px; }
+  .person-mini p, .person-mini li { font-size: 13px; color: var(--text-soft); margin-bottom: 4px; }
+  .person-mini ul { padding-left: 16px; }
+  .person-mini.blanqui { background: rgba(176,157,232,.07); border: 1px solid rgba(176,157,232,.25); } .person-mini.blanqui h4 { color: var(--purple); }
+  .person-mini.weitling { background: rgba(212,122,176,.07); border: 1px solid rgba(212,122,176,.25); } .person-mini.weitling h4 { color: var(--pink); }
+  .person-mini.blanc { background: rgba(122,176,212,.07); border: 1px solid rgba(122,176,212,.25); } .person-mini.blanc h4 { color: var(--blue); }
+  .person-mini.proudhon { background: rgba(126,200,160,.07); border: 1px solid rgba(126,200,160,.25); } .person-mini.proudhon h4 { color: var(--accent3); }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-weight: 700; text-align: left; padding: 10px 16px; border: 1px solid var(--border); font-size: 12px; letter-spacing: .05em; }
+  td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text-soft); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* 강조 정의 */
+  .hero-box { background: linear-gradient(135deg,rgba(212,168,106,.12),rgba(212,168,106,.04)); border: 2px solid rgba(212,168,106,.4); border-radius: 10px; padding: 22px 26px; margin: 16px 0; }
+  .hero-box .hero-label { font-size: 10px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .hero-box p { font-size: 15.5px; color: var(--text); font-weight: 500; line-height: 1.9; }
+
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+  .flow-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--text); text-align: center; min-width: 88px; }
+  .flow-box.go { border-color: var(--accent);  color: var(--accent2); }
+  .flow-box.g  { border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.p  { border-color: var(--purple);  color: var(--purple); }
+  .flow-box.b  { border-color: var(--blue);    color: var(--blue); }
+  .flow-box.r  { border-color: var(--red);     color: var(--red); }
+  .flow-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+  .tf-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .tf-section h3 { font-family: 'Noto Serif KR', serif; font-size: 1rem; color: var(--accent2); margin-bottom: 16px; font-weight: 700; }
+  .tf-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 14px; }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge { flex-shrink: 0; width: 32px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+  .tf-badge.true  { background: rgba(126,200,160,.2); color: var(--accent3); }
+  .tf-badge.false { background: rgba(224,120,120,.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box { background: linear-gradient(135deg,rgba(212,168,106,.08),rgba(212,168,106,.02)); border: 1px solid rgba(212,168,106,.22); border-radius: 10px; padding: 22px 26px; margin: 18px 0; }
+  .summary-box h3 { color: var(--accent2); font-family: 'Noto Serif KR', serif; font-size: 1rem; margin-bottom: 12px; font-weight: 900; }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li { padding: 5px 0; font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+  .summary-box li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    header { padding: 32px 20px 24px; } header h1 { font-size: 1.5rem; }
+    .container { padding: 24px 16px 60px; } nav { padding: 0 16px; }
+    .person-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 7차시 핵심 정리</div>
+  <h1>블랑키 · 바이틀링 · 루이 블랑 · 프루동 (소유란 도둑질이다)</h1>
+  <div class="subtitle">
+    <span>2026. 04. 01 &nbsp;|&nbsp; 7차시</span>
+    <span class="badge gold">중간고사 대비</span>
+    <span class="badge green">국가주의 완성 + 무정부주의 등장</span>
+    <span class="badge purple">프롤레타리아 개념 확정</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#overview">인물 전체 구도</a>
+  <a href="#blanqui">블랑키</a>
+  <a href="#weitling">바이틀링</a>
+  <a href="#blanc">루이 블랑</a>
+  <a href="#proudhon">프루동</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 00 전체 구도 ━━━ -->
+  <div class="section" id="overview">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">7차시 인물 전체 구도</span>
+    </div>
+    <div class="card">
+      <div class="card-title">국가주의 vs 무정부주의</div>
+      <div class="flow">
+        <div class="flow-box go">까베 (6차시)</div>
+        <div class="flow-box p">블랑키 (7차시)</div>
+        <div class="flow-box p" style="font-size:12px;">바이틀링 (7차시)</div>
+        <div class="flow-box b">루이 블랑 (7차시)</div>
+        <div class="flow-arrow">← 국가주의</div>
+        <div class="flow-arrow">|</div>
+        <div class="flow-box g">프루동 (7차시)</div>
+        <div class="flow-arrow">무정부주의 →</div>
+      </div>
+      <div class="person-row" style="margin-top:14px;">
+        <div class="person-mini blanqui">
+          <h4>블랑키</h4>
+          <ul>
+            <li>소수 엘리트 음모적 봉기 → 국가 권력 탈취</li>
+            <li>탈취 후 혁명적 독재로 개혁</li>
+            <li>프롤레타리아 용어 확정</li>
+          </ul>
+        </div>
+        <div class="person-mini weitling">
+          <h4>바이틀링</h4>
+          <ul>
+            <li>수공업자 출신 공산주의자</li>
+            <li>블랑키 방식 + 강한 기독교</li>
+            <li>"예수는 최초의 공산주의자"</li>
+          </ul>
+        </div>
+        <div class="person-mini blanc">
+          <h4>루이 블랑</h4>
+          <ul>
+            <li>국가주의 BUT 공산주의 아님</li>
+            <li>의회 입법으로 사회작업장 설립</li>
+            <li>임금 균일화 주장</li>
+          </ul>
+        </div>
+        <div class="person-mini proudhon">
+          <h4>프루동</h4>
+          <ul>
+            <li>무정부주의자 (국가주의 반대)</li>
+            <li>"소유란 도둑질이다"</li>
+            <li>사유재산권 논리적 비판</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 01 블랑키 ━━━ -->
+  <div class="section" id="blanqui">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">루이 오귀스트 블랑키 (Louis Auguste Blanqui)</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">프롤레타리아(Proletariat) 개념 확정 — 15인 재판</div>
+      <div class="hero-box">
+        <div class="hero-label">✦ 역사적 장면 — 외워!</div>
+        <p>재판장: "당신의 직업은 무엇이요?"<br>
+        블랑키: "<span class="hl-go">프롤레타리아입니다.</span>"<br>
+        재판장: "그게 무슨 직업입니까?"<br>
+        블랑키: "직업이 아니라, <span class="hl-go">일을 해서 먹고 살지만 권리를 빼앗긴 사람들</span>을 의미하는 것이다."</p>
+      </div>
+      <div class="def-box purple">
+        <div class="def-label">프롤레타리아(Proletariat) 정의 — 블랑키가 확정</div>
+        <p>원래 의미: 빈민계급<br>
+        블랑키 이후: <span class="hl-p">임금 노동자 = 생산수단에 대한 권리가 없는 사람들</span><br>
+        = 무산계급 (유산계급 ↔ 부르주아의 반대)<br>
+        이후 노동자·프롤레타리아는 교차 사용. 특히 '프롤레타리아'는 부르주아와 대비해 자부심의 계급 의미로 사용</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">블랑키의 혁명 방법론 — 핵심</div>
+      <div class="def-box purple">
+        <div class="def-label">블랑키즘의 핵심 공식</div>
+        <p><span class="hl-p">소수의 의식화된 엘리트</span> → <span class="hl-p">음모적(비밀) 봉기 = 쿠데타</span> → <span class="hl-p">국가 권력(경찰·행정) 탈취</span> → <span class="hl-p">혁명적 독재</span>로 사회주의 개혁 추진</p>
+      </div>
+      <table>
+        <tr><th>단계</th><th>내용</th><th>포인트</th></tr>
+        <tr>
+          <td>① 주체</td>
+          <td>소수의 자각한(의식화된) 엘리트</td>
+          <td>대중봉기 ❌ — 소수 엘리트가 시점·방법을 스스로 판단</td>
+        </tr>
+        <tr>
+          <td>② 방법</td>
+          <td><strong>음모적 봉기 = 사실상 쿠데타</strong></td>
+          <td>비밀결사 조직 (사계절회 등)</td>
+        </tr>
+        <tr>
+          <td>③ 탈취 후</td>
+          <td>국가기구(경찰·행정) <strong>활용</strong>해 개혁 추진</td>
+          <td>파괴가 아니라 장악·활용</td>
+        </tr>
+        <tr>
+          <td>④ 정치체제</td>
+          <td><strong>혁명적 독재</strong> (다당제 ❌)</td>
+          <td>국가기구 단독 추진 → 다당제·입법 논의 불필요</td>
+        </tr>
+        <tr>
+          <td>⑤ 경제 개혁</td>
+          <td>생산수단 사적 소유권 폐지·제한 + 시장 개입</td>
+          <td>단, <strong>점진적·유연하게</strong> (소생산자 배려)</td>
+        </tr>
+      </table>
+      <div class="key-concept purple">
+        <div class="kc-label">블랑키 vs 마르크스 — 시험 포인트</div>
+        <p><span class="hl-p">블랑키:</span> 물적 토대 성숙 여부와 무관하게 <span class="hl-p">엘리트의 의지</span>로 봉기 시점·방법 결정<br>
+        <span class="hl-go">마르크스:</span> 충분한 <span class="hl-go">물적 토대 성숙</span> + 사회 구조 변화가 전제되어야 혁명 가능<br>
+        → 블랑키 = 주체(의지) 강조 / 마르크스 = 구조(조건) 강조</p>
+      </div>
+      <div class="caution">
+        <strong>독재의 의미:</strong> 이 맥락에서 독재 = 다당제를 허용하지 않는 것. 군부독재와 다름. 국가기구가 혁명 주체만으로 단독 추진 → 후에 '프롤레타리아 독재' 개념의 원형.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">공산주의 용어 의미 확정 — 블랑키파의 공산주의 연회</div>
+      <div class="def-box purple">
+        <div class="def-label">공산주의 연회 (1840년대)</div>
+        <p>블랑키파의 <span class="hl-p">데자미·필로</span>가 주최 → 까베에게 함께하자고 요청<br>
+        까베: "너희는 너무 폭력적·국가 주도적" → <span class="hl-r">참여 거부</span><br>
+        결과: 까베 없이 블랑키파만의 공산주의 연회 → <span class="hl-p">공산주의 의미 = 블랑키즘으로 확정</span></p>
+      </div>
+      <div class="key-concept purple">
+        <div class="kc-label">확정된 공산주의 의미</div>
+        <p>이후 스스로 공산주의자라 부르는 사람들 = 사실상 블랑키주의자<br>
+        핵심: <span class="hl-p">소수 엘리트 음모적 봉기 → 국가 권력 탈취 → 혁명적 독재 → 사회주의 개혁</span><br>
+        (생산수단 소유권 철폐는 기본 전제로 깔되, 방법론이 공산주의의 정체성이 됨)</p>
+      </div>
+      <div class="example">
+        <div class="example-label">별명 & 경력</div>
+        <p>별명: <strong>"갇힌 자"</strong> — 평생 33년 감옥에서 보냄<br>
+        비밀결사: <strong>사계절회</strong>가 가장 유명<br>
+        48년 혁명, 71년 파리코뮌(이때는 미리 잡혀 참여 못함) 등 수차례 봉기 시도·실패 반복</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 02 바이틀링 ━━━ -->
+  <div class="section" id="weitling">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">빌헬름 바이틀링 (Wilhelm Weitling)</span>
+    </div>
+    <div class="card">
+      <div class="card-title">바이틀링 프로필 & 사상</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>독일 지역 수공업자 출신. 프랑스 장교의 사생아, 어머니 손에서 가난하게 성장</td></tr>
+        <tr><td>직업</td><td>재봉사(테일러) — 유랑 직인으로 여러 도시 돌며 산업자본주의 폐해 목격</td></tr>
+        <tr><td>특이점</td><td>지금까지 사회주의자 중 <strong>실제 노동계급 출신</strong>. 지식인이 아님</td></tr>
+        <tr><td>활동</td><td>파리로 이동 → 의인동맹 가담. 의인동맹 내 마르크스와 논쟁 → 결별</td></tr>
+        <tr><td>대표 저작</td><td><em>가난한 죄인의 복음서</em></td></tr>
+        <tr><td>말년</td><td>미국 아이오와 공동체 실험(처참한 실패) → 뉴욕에서 <strong>재봉틀 기술 발명가</strong>로 변신</td></tr>
+      </table>
+      <div class="def-box pink">
+        <div class="def-label">바이틀링의 핵심 사상</div>
+        <p>블랑키 방식(소수 엘리트 봉기·국가 탈취)에 <span class="hl-pk">강한 기독교적 색채</span> 결합<br>
+        명언: <span class="hl-pk">"예수는 최초의 공산주의자다"</span><br>
+        사유재산 철폐 + 공동생산 → 기독교 정신으로 정당화<br>
+        중앙관리 주체: 지적 엘리트 아닌 <span class="hl-pk">일하는 사람들(노동자) 중에서 능력자</span></p>
+      </div>
+      <div class="key-concept pink">
+        <div class="kc-label">바이틀링 vs 까베 — 시험 포인트</div>
+        <p>공통: 기독교적 성격, 국가 주도 개혁, 사유재산 철폐<br>
+        차이: 까베 = <span class="hl-go">지식인·엘리트</span> 주도 / 바이틀링 = <span class="hl-pk">일하는 사람 중 능력자</span> 주도<br>
+        → 마르크스와 논쟁: 바이틀링이 마르크스를 "<span class="hl-r">먹물(지식인)</span>"이라 공격</p>
+      </div>
+      <div class="example purple">
+        <div class="example-label">마르크스와의 논쟁 (의인동맹)</div>
+        <p>바이틀링 → 마르크스: "나는 직접 일하는 사람을 대표한다. 쟤는 책 읽는 먹물이다."<br>
+        마르크스 → 바이틀링: "이 인간은 허황되고 종교적이고 낭만적이다."<br>
+        → 둘 다 공산주의자를 자처하지만 노선이 다름</p>
+      </div>
+      <div class="example">
+        <div class="example-label">발명가로의 변신 — 교수 언급 포인트</div>
+        <p>재봉사 출신 → 재봉틀(미싱) 기술 발전에 핵심 역할. 뉴욕에서 특허 보유.<br>
+        발명가 = 분업 체계에 저항하는 존재 → 사회주의적 관점에서 연결됨<br>
+        (19세기 후반 미술공예운동가들이 사회주의자 많은 것과 같은 논리)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 03 루이 블랑 ━━━ -->
+  <div class="section" id="blanc">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">루이 블랑 (Louis Blanc) — 국가주의 BUT 비(非)공산주의</span>
+    </div>
+    <div class="card">
+      <div class="card-title">루이 블랑 프로필 & 사상</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>나폴레옹 시대 고급 외교관의 아들. 나폴레옹 몰락 후 집안도 몰락</td></tr>
+        <tr><td>경력</td><td>법대 포기 → 변호사 사무실 서기 → 법률 지식 습득 → 언론계(잡지 발간) → 저작 <em>노동의 조직</em>으로 명성</td></tr>
+        <tr><td>대표 저작</td><td><em>노동의 조직(L'Organisation du Travail)</em></td></tr>
+        <tr><td>48년 혁명</td><td>장관 입각 → 국가작업장 실험 → 보수파 다수 당선으로 실패 → 영국 망명 (20년)</td></tr>
+        <tr><td>귀환</td><td>파리코뮌 때 귀환 → 코뮌 방식과 맞지 않아 반대 → 쓸쓸한 말년</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">루이 블랑의 핵심 사상 3가지</div>
+      <div class="def-box blue">
+        <div class="def-label">핵심 ① 생산수단 사유재산 = 모든 악의 근원</div>
+        <p>생산수단 사유재산화 → <span class="hl-b">전면 부정</span><br>
+        (소비재 소유권은 건드리지 않음 — 사회주의 기본 원칙)</p>
+      </div>
+      <div class="def-box blue">
+        <div class="def-label">핵심 ② 임금 균일화 — 루이 블랑의 특이점!</div>
+        <p><span class="hl-b">모든 노동은 귀천이 없다 → 임금을 균일하게</span><br>
+        당시 생시몽주의자들(능력별 차등 임금)·프루동(숙련도별 차등)과 정면 대립<br>
+        ※ 임금 균일화는 사회주의 핵심 요소 아님 — 블랑 개인의 특이 주장</p>
+      </div>
+      <div class="def-box blue">
+        <div class="def-label">핵심 ③ 사회작업장 (Ateliers Sociaux) — 방법론</div>
+        <p>기존 공장 정부 인수 + 새 공장은 정부 펀드로 건설<br>
+        운영은 <span class="hl-b">아래로부터 노동자가 자율 관리</span><br>
+        실현 방법: <span class="hl-b">의회 입법</span>으로 → 폭력혁명·봉기 없음</p>
+      </div>
+      <div class="key-concept blue">
+        <div class="kc-label">루이 블랑 vs 공산주의(블랑키) 핵심 차이</div>
+        <p>공산주의: 소수 엘리트 봉기 → 국가 탈취 → 혁명적 독재<br>
+        루이 블랑: <span class="hl-b">의회 입법</span> → 사회작업장 설립 → 법적·점진적 개혁<br>
+        → 같은 국가주의지만 방법론이 정반대 (폭력 ❌ vs 폭력 ✅)</p>
+      </div>
+      <div class="key-concept blue">
+        <div class="kc-label">루이 블랑의 현대적 의의</div>
+        <p>당시엔 비판 받음 (국가 계급성 무시, 도덕 의존 등)<br>
+        But 현대 관점: <span class="hl-b">의회 입법을 통한 사회주의 = 가장 현실적인 방법론</span><br>
+        → 후에 <span class="hl-b">개량주의·사민주의</span> 사회주의에 큰 영향</p>
+      </div>
+      <div class="example red">
+        <div class="example-label">국가작업장 실패 원인</div>
+        <p>부랑자·거지까지 몰려들어 취업 요구 → 규율 붕괴<br>
+        도덕적 동기 부족 → "시간을 주면 도덕이 함양될 텐데" 기회 없이 48혁명 종료<br>
+        나폴레옹 사촌이 대통령 당선 → 사회주의적 성격 탈각</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 04 프루동 ━━━ -->
+  <div class="section" id="proudhon">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">피에르 프루동 (Pierre Proudhon) — 무정부주의자</span>
+    </div>
+    <div class="card">
+      <div class="card-title">프루동 프로필</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>전형적인 농촌 전통경제 → 산업자본주의에 의해 해체. 10살에 인생을 알았으나 12살에 노동자가 됨</td></tr>
+        <tr><td>직업</td><td>인쇄소 노동자 → 글 읽을 수 있게 됨 + 불온 서적 접촉 → 의식화</td></tr>
+        <tr><td>출판사 시도</td><td>10대 후반 동료와 출판사 창업 → 바로 망함</td></tr>
+        <tr><td>전환점</td><td>고향 장학생으로 선발(28세) → 파리대학 입학 → "대학은 사치다" 자퇴</td></tr>
+        <tr><td>독학</td><td>3개월(39.11~40.2) 25권 독서 → 대표작 <em>소유란 무엇인가</em> 집필</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">"소유란 도둑질이다" — 사유재산권 논리적 비판</div>
+      <div class="hero-box">
+        <div class="hero-label">✦ 프루동의 핵심 명제 — 반드시 외워!</div>
+        <p>"<span class="hl-g">소유란 도둑질이다 (Property is theft!)</span>"<br>
+        <span style="font-size:13px;color:var(--text-soft);">= 생산수단을 개인이 배타적으로 소유하는 것 = 도둑질</span></p>
+      </div>
+      <div class="key-concept green">
+        <div class="kc-label">프루동이 왜 중요한가</div>
+        <p>이전 사회주의자들: 사유재산 비판 = <span class="hl-r">도덕적 비판</span> 위주 ("꼭 그렇게 많이 가져야겠느냐")<br>
+        프루동: <span class="hl-g">논리적·체계적 비판</span> — 사유재산을 정당화하는 근거들을 하나씩 논파<br>
+        마르크스 이전 가장 큰 사회주의자로 불리는 이유</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사유재산권 정당화 근거 3가지 논파</div>
+
+      <div class="def-box green">
+        <div class="def-label">근거 ① 자연권론 — "소유는 천부적 자연권이다"</div>
+        <p>주장: 소유권 = 생존권·행복추구권과 같은 천부적 자연권 (프랑스 혁명 인권선언 기초)<br><br>
+        <strong>프루동의 반박:</strong> 천부적 자연권이라면 <span class="hl-g">보편적</span>이어야 함<br>
+        그러나 역사를 보면 사적 소유권을 주장한 것은 항상 <span class="hl-g">소수</span>뿐이었음<br>
+        → 보편성 없음 → 자연권이라 할 수 없음</p>
+      </div>
+
+      <div class="def-box green">
+        <div class="def-label">근거 ② 선점의 원칙 — "먼저 갈았으니 내 것이다"</div>
+        <p>주장: 인간의 생존권을 실현하려면 땅을 갈아야 하고, 먼저 점유해서 오래 갈았으면 소유권 인정<br><br>
+        <strong>프루동의 반박:</strong> 선점 논리의 근거는 '생존권' → <span class="hl-g">뒤에 태어난 세대도 생존권이 있음!</span><br>
+        선점한 사람만 소유하면 나중에 태어난 사람의 생존권은?<br>
+        → 토지는 소유(영구 독점)가 아닌 <span class="hl-g">용익(살아있는 동안 활용)</span>만 가능<br>
+        → 다음 세대가 활용할 기회를 남겨야 함 → 소유는 도둑질</p>
+      </div>
+
+      <div class="example green">
+        <div class="example-label">교수 보충 설명</div>
+        <p>법적 근거는 대부분 타임라인을 무시하는 경향. 동시에 출발했으면 선점도 이해할 수 있지만, 현실은 시대마다 다른 조건으로 태어남 → 선점 논리의 한계.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">프루동 요약 정리</div>
+      <div class="key-concept green">
+        <div class="kc-label">프루동의 위치</div>
+        <p>국가주의 사회주의자들과 달리 <span class="hl-g">무정부주의</span> — 국가기구 자체에 반대<br>
+        사유재산권을 <span class="hl-g">논리적으로</span> 비판한 최초의 체계적 작업<br>
+        이후 마르크스가 이 논리를 더욱 발전시킴<br>
+        3번째 비판 근거(노동가치론 관련)는 7차시에서 시간 관계상 미완 → 이후 학습 예정</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">T/F 예상 포인트 — 7차시 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 블랑키 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">블랑키는 15인 재판에서 "직업이 프롤레타리아"라 답해 임금노동자 = 생산수단 권리 없는 사람이라는 의미를 확정시켰다.</div>
+          <div class="tf-reason"><strong>→ 프롤레타리아 용어 확정의 결정적 장면.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">블랑키는 대중봉기를 통해 사회주의를 실현해야 한다고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 소수 엘리트의 음모적(비밀) 봉기 = 사실상 쿠데타.</strong> 대중봉기와 구분.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">블랑키의 혁명 방법론에서 '독재'는 다당제를 허용하지 않는 것을 의미한다.</div>
+          <div class="tf-reason"><strong>→ 군부독재와 다른 개념.</strong> 국가기구 단독 추진 = 다당제 논의 불필요.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">블랑키는 경제 개혁도 신속하고 단호하게 추진해야 한다고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 정치(권력 탈취)는 단호하게, 경제 개혁은 점진적·유연하게.</strong> 소생산자 배려 때문.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">공산주의 연회에서 까베가 참여를 거부하면서 공산주의의 의미가 블랑키즘으로 확정됐다.</div>
+          <div class="tf-reason"><strong>→ 까베 빠진 블랑키파 단독 연회 → 공산주의 = 봉기·독재 방법론으로 확정.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">블랑키는 물적 토대가 성숙해야 혁명이 가능하다고 보았다.</div>
+          <div class="tf-reason"><strong>→ 마르크스의 입장.</strong> 블랑키는 물적 토대와 무관하게 엘리트 의지로 시점 결정.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 바이틀링 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">바이틀링은 지금까지 학습한 사회주의자 중 실제 수공업자(노동계급) 출신이었다.</div>
+          <div class="tf-reason"><strong>→ 재봉사 출신 유랑 직인.</strong> 나머지는 모두 지식인·변호사·귀족 계열.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">바이틀링은 "예수는 최초의 공산주의자다"라고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 대표 명언. 기독교적 공산주의의 상징.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">바이틀링은 까베와 달리 지식인 엘리트가 중앙관리를 해야 한다고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 정반대.</strong> 바이틀링 = 일하는 사람 중 능력자. 까베 = 지식인·엘리트 중심.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 루이 블랑 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">루이 블랑은 의회 입법을 통한 사회작업장 설립을 주장했다 — 폭력혁명 없이.</div>
+          <div class="tf-reason"><strong>→ 블랑키와의 핵심 차이. 같은 국가주의지만 방법론이 다름.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">임금 균일화(모든 노동은 귀천이 없다)는 루이 블랑의 특이한 주장으로 사회주의의 핵심 요소가 아니다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 생시몽주의자·프루동 등은 숙련도에 따른 임금 차등을 지지.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">루이 블랑의 사회작업장은 국가(공무원)가 직접 운영·관리한다.</div>
+          <div class="tf-reason"><strong>→ 아래로부터 노동자가 자율 관리.</strong> 국가는 공장을 소유·설립하되 운영은 노동자.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">루이 블랑의 아이디어는 후에 개량주의·사민주의 사회주의에 큰 영향을 주었다.</div>
+          <div class="tf-reason"><strong>→ 교수 직접 언급.</strong> 의회·입법을 통한 사회주의 = 가장 현실적 방법론.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 프루동 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동은 사유재산권을 도덕적 비판이 아닌 논리적·체계적으로 비판한 최초의 인물이다.</div>
+          <div class="tf-reason"><strong>→ 마르크스 이전 가장 큰 사회주의자로 불리는 이유.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동은 선점의 원칙을 비판하면서, 토지는 소유가 아닌 용익(살아있는 동안 활용)만 가능하다고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 뒤에 태어난 세대의 생존권 논리.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">프루동은 국가주의 사회주의자로 분류된다.</div>
+          <div class="tf-reason"><strong>→ 무정부주의자.</strong> 국가기구 자체에 반대 — 국가주의자들과 정반대.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (7차시)</h3>
+      <ul>
+        <li>블랑키의 혁명 방법론(소수 엘리트 음모적 봉기 → 혁명적 독재)을 설명하고, 마르크스주의와 어떻게 다른지 비교하라.</li>
+        <li>블랑키가 '프롤레타리아' 용어를 확정시킨 과정과 그 의미를 서술하라.</li>
+        <li>바이틀링이 다른 공산주의자들과 다른 점(기독교적 성격, 노동자 출신, 능력자 주도)을 설명하라.</li>
+        <li>루이 블랑의 사회작업장 구상이 블랑키의 공산주의 방법론과 어떻게 다른가? 현대적 의의는?</li>
+        <li>프루동이 사유재산권 정당화 근거(자연권론·선점의 원칙)를 어떻게 논리적으로 비판했는지 서술하라.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY + 80 >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + cur) { a.style.color = 'var(--accent)'; a.style.borderBottomColor = 'var(--accent)'; }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 8차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --surface: #121620;
+    --surface2: #181e2a;
+    --border: #222a38;
+    --accent: #6a9fd4;
+    --accent2: #90c0f0;
+    --accent3: #e8c86a;
+    --green: #7ec8a0;
+    --red: #e07878;
+    --purple: #b09de8;
+    --pink: #d47ab0;
+    --teal: #5ec8c0;
+    --text: #d8e4f0;
+    --text-muted: #506070;
+    --text-soft: #a0b8cc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.75; }
+
+  header {
+    background: linear-gradient(135deg, #080c14 0%, #0a0c10 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(106,159,212,.08) 0%, transparent 70%);
+  }
+  .header-label { font-size: 11px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+  header h1 { font-family: 'Noto Serif KR', serif; font-size: 1.85rem; font-weight: 900; color: var(--accent2); margin-bottom: 8px; }
+  header .subtitle { color: var(--text-muted); font-size: 13px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; letter-spacing: .08em; font-weight: 500; }
+  .badge.blue   { background: rgba(106,159,212,.12); border: 1px solid rgba(106,159,212,.3); color: var(--accent); }
+  .badge.gold   { background: rgba(232,200,106,.10); border: 1px solid rgba(232,200,106,.28); color: var(--accent3); }
+  .badge.teal   { background: rgba(94,200,192,.10);  border: 1px solid rgba(94,200,192,.28);  color: var(--teal); }
+  .badge.purple { background: rgba(176,157,232,.10); border: 1px solid rgba(176,157,232,.28); color: var(--purple); }
+
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; padding: 14px 18px; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; font-weight: 500; }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 40px 32px 80px; }
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.35rem; font-weight: 900; color: var(--accent2); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .card-title { font-weight: 700; color: var(--accent2); font-size: 1rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+
+  .def-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 18px 22px; margin: 14px 0; }
+  .def-box .def-label { font-size: 10px; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .def-box.gold   { border-left-color: var(--accent3); } .def-box.gold   .def-label { color: var(--accent3); }
+  .def-box.green  { border-left-color: var(--green); }  .def-box.green  .def-label { color: var(--green); }
+  .def-box.red    { border-left-color: var(--red); }    .def-box.red    .def-label { color: var(--red); }
+  .def-box.purple { border-left-color: var(--purple); } .def-box.purple .def-label { color: var(--purple); }
+  .def-box.teal   { border-left-color: var(--teal); }   .def-box.teal   .def-label { color: var(--teal); }
+
+  .key-concept { border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+  .key-concept.blue   { background: linear-gradient(135deg,rgba(106,159,212,.09),rgba(106,159,212,.02)); border: 1px solid rgba(106,159,212,.22); }
+  .key-concept.blue   .kc-label { color: var(--accent); }
+  .key-concept.gold   { background: linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02)); border: 1px solid rgba(232,200,106,.2); }
+  .key-concept.gold   .kc-label { color: var(--accent3); }
+  .key-concept.green  { background: linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02)); border: 1px solid rgba(126,200,160,.2); }
+  .key-concept.green  .kc-label { color: var(--green); }
+  .key-concept.teal   { background: linear-gradient(135deg,rgba(94,200,192,.08),rgba(94,200,192,.02));  border: 1px solid rgba(94,200,192,.2); }
+  .key-concept.teal   .kc-label { color: var(--teal); }
+  .key-concept.purple { background: linear-gradient(135deg,rgba(176,157,232,.08),rgba(176,157,232,.02)); border: 1px solid rgba(176,157,232,.2); }
+  .key-concept.purple .kc-label { color: var(--purple); }
+  .kc-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  .hl-b  { color: var(--accent2); font-weight: 700; }
+  .hl-go { color: var(--accent3); font-weight: 700; }
+  .hl-g  { color: var(--green);   font-weight: 700; }
+  .hl-t  { color: var(--teal);    font-weight: 700; }
+  .hl-r  { color: var(--red);     font-weight: 700; }
+  .hl-p  { color: var(--purple);  font-weight: 700; }
+  .hl-pk { color: var(--pink);    font-weight: 700; }
+
+  .example { background: rgba(106,159,212,.05); border: 1px solid rgba(106,159,212,.18); border-radius: 6px; padding: 15px 20px; margin: 12px 0; }
+  .example-label { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example.gold   { background: rgba(232,200,106,.05); border-color: rgba(232,200,106,.18); } .example.gold   .example-label { color: var(--accent3); }
+  .example.green  { background: rgba(126,200,160,.05); border-color: rgba(126,200,160,.18); } .example.green  .example-label { color: var(--green); }
+  .example.teal   { background: rgba(94,200,192,.05);  border-color: rgba(94,200,192,.18);  } .example.teal   .example-label { color: var(--teal); }
+  .example.purple { background: rgba(176,157,232,.05); border-color: rgba(176,157,232,.18); } .example.purple .example-label { color: var(--purple); }
+  .example p, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; } .example li { margin-bottom: 5px; }
+
+  .caution { background: rgba(224,120,120,.07); border: 1px solid rgba(224,120,120,.22); border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 13.5px; color: var(--text-soft); }
+  .caution strong { color: var(--red); }
+
+  /* 강조 정의 박스 */
+  .hero-box { border-radius: 10px; padding: 22px 26px; margin: 16px 0; }
+  .hero-box.blue   { background: linear-gradient(135deg,rgba(106,159,212,.13),rgba(106,159,212,.04)); border: 2px solid rgba(106,159,212,.4); }
+  .hero-box.gold   { background: linear-gradient(135deg,rgba(232,200,106,.13),rgba(232,200,106,.04)); border: 2px solid rgba(232,200,106,.4); }
+  .hero-box.teal   { background: linear-gradient(135deg,rgba(94,200,192,.13),rgba(94,200,192,.04));  border: 2px solid rgba(94,200,192,.4); }
+  .hero-box .hero-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .hero-box.blue   .hero-label { color: var(--accent); }
+  .hero-box.gold   .hero-label { color: var(--accent3); }
+  .hero-box.teal   .hero-label { color: var(--teal); }
+  .hero-box p { font-size: 15px; color: var(--text); font-weight: 500; line-height: 1.9; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-weight: 700; text-align: left; padding: 10px 16px; border: 1px solid var(--border); font-size: 12px; letter-spacing: .05em; }
+  td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text-soft); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* 인물 카드 2열 */
+  .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .bio-card { border-radius: 8px; padding: 18px 16px; }
+  .bio-card h4 { font-family: 'Noto Serif KR', serif; font-size: .95rem; font-weight: 900; margin-bottom: 10px; }
+  .bio-card p, .bio-card li { font-size: 13.5px; color: var(--text-soft); margin-bottom: 5px; }
+  .bio-card ul { padding-left: 16px; }
+  .bio-card.marx    { background: rgba(106,159,212,.07);  border: 1px solid rgba(106,159,212,.25); } .bio-card.marx    h4 { color: var(--accent2); }
+  .bio-card.engels  { background: rgba(94,200,192,.07);   border: 1px solid rgba(94,200,192,.25);  } .bio-card.engels  h4 { color: var(--teal); }
+
+  /* 마르크스주의 4범주 그리드 */
+  .four-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .four-box { border-radius: 8px; padding: 18px 16px; }
+  .four-box h4 { font-family: 'Noto Serif KR', serif; font-size: .9rem; font-weight: 900; margin-bottom: 10px; }
+  .four-box p, .four-box li { font-size: 13.5px; color: var(--text-soft); margin-bottom: 5px; }
+  .four-box ul { padding-left: 16px; }
+  .four-box.human  { background: rgba(106,159,212,.07);  border: 1px solid rgba(106,159,212,.25);  } .four-box.human  h4 { color: var(--accent2); }
+  .four-box.hist   { background: rgba(232,200,106,.07);  border: 1px solid rgba(232,200,106,.25);  } .four-box.hist   h4 { color: var(--accent3); }
+  .four-box.econ   { background: rgba(126,200,160,.07);  border: 1px solid rgba(126,200,160,.25);  } .four-box.econ   h4 { color: var(--green); }
+  .four-box.crisis { background: rgba(176,157,232,.07);  border: 1px solid rgba(176,157,232,.25);  } .four-box.crisis h4 { color: var(--purple); }
+
+  /* 역사단계 흐름 */
+  .flow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 14px 0; }
+  .flow-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 600; color: var(--text); text-align: center; }
+  .flow-box.b  { border-color: var(--accent);  color: var(--accent2); }
+  .flow-box.go { border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.g  { border-color: var(--green);   color: var(--green); }
+  .flow-box.t  { border-color: var(--teal);    color: var(--teal); }
+  .flow-arrow { color: var(--text-muted); font-size: 16px; flex-shrink: 0; }
+
+  /* 연대기 타임라인 */
+  .tl { position: relative; padding-left: 24px; margin: 14px 0; }
+  .tl::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-dot { position: absolute; left: -20px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+  .tl-year { font-size: 11px; color: var(--accent); font-weight: 700; letter-spacing: .1em; margin-bottom: 3px; }
+  .tl-text { font-size: 14px; color: var(--text-soft); }
+  .tl-text strong { color: var(--text); }
+
+  .tf-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .tf-section h3 { font-family: 'Noto Serif KR', serif; font-size: 1rem; color: var(--accent2); margin-bottom: 16px; font-weight: 700; }
+  .tf-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 14px; }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge { flex-shrink: 0; width: 32px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+  .tf-badge.true  { background: rgba(126,200,160,.2); color: var(--green); }
+  .tf-badge.false { background: rgba(224,120,120,.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box { background: linear-gradient(135deg,rgba(106,159,212,.08),rgba(106,159,212,.02)); border: 1px solid rgba(106,159,212,.22); border-radius: 10px; padding: 22px 26px; margin: 18px 0; }
+  .summary-box h3 { color: var(--accent2); font-family: 'Noto Serif KR', serif; font-size: 1rem; margin-bottom: 12px; font-weight: 900; }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li { padding: 5px 0; font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+  .summary-box li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    header { padding: 32px 20px 24px; } header h1 { font-size: 1.45rem; }
+    .container { padding: 24px 16px 60px; } nav { padding: 0 16px; }
+    .bio-grid, .four-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 8차시 핵심 정리</div>
+  <h1>프루동 완성 · 자본의 시대 · 마르크스·엥겔스 · 마르크스주의 4범주</h1>
+  <div class="subtitle">
+    <span>2026. 04. 06 &nbsp;|&nbsp; 8차시</span>
+    <span class="badge blue">중간고사 대비</span>
+    <span class="badge gold">프루동 부조주의 완성</span>
+    <span class="badge teal">마르크스주의 4범주</span>
+    <span class="badge purple">중간고사 핵심 파트</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#proudhon">프루동 완성</a>
+  <a href="#mutualism">부조주의</a>
+  <a href="#capital-age">자본의 시대</a>
+  <a href="#marx-engels">마르크스·엥겔스</a>
+  <a href="#marxism">마르크스주의 4범주</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 01 프루동 — 심리적·경제적 근거 논박 ━━━ -->
+  <div class="section" id="proudhon">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">프루동 — 사유재산권 3가지 근거 논박 완성</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">슬라이드 정리 — 3가지 근거 전체 구조</div>
+      <table>
+        <tr><th>근거</th><th>정당화 주장</th><th>프루동 논박 핵심</th></tr>
+        <tr>
+          <td><span class="hl-b">① 법적 근거</span><br><small>자연권</small></td>
+          <td>소유권 = 생존권·행복추구권과 같은 천부적 자연권</td>
+          <td>역사상 항상 소수만이 주장했음 → 보편성 없음 → 자연권 아님</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">① 법적 근거</span><br><small>선점의 원칙</small></td>
+          <td>먼저 땅을 갈아 점유했으니 소유권 인정</td>
+          <td>생존권이 근거라면 뒤에 태어난 세대도 생존권이 있음 → 소유 아닌 용익만 가능</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">② 심리적 근거</span><br><small>(인간 본성·보편 동의)</small></td>
+          <td>소유 욕구 = 인간 본성 → 모든 이가 보편적으로 동의 (로크)</td>
+          <td><span class="hl-r">평등에서 출발해 불평등으로 귀결 = 논리적 모순</span><br>계약 전제 = 평등한 주체 → 결론은 불평등 옹호</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">③ 경제적 근거</span><br><small>(사회적)</small></td>
+          <td>내가 노동을 투입했으니 내 것 (개간 등)</td>
+          <td>노동에는 사회적 기여(지식·도구)가 이미 결부됨 → 혼자 한 것 아님</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">③ 경제적 근거</span><br><small>(물적)</small></td>
+          <td>내 노동으로 새것을 만들었으니 소유 가능</td>
+          <td>새로 창출한 것이 아니라 주어진 자연을 변형한 것에 불과 → 소유 근거 없음</td>
+        </tr>
+      </table>
+
+      <div class="hero-box gold" style="margin-top:16px;">
+        <div class="hero-label">✦ 심리적 근거 논박 — 핵심 포인트 (8차시 신규)</div>
+        <p>로크의 논리: <span class="hl-go">평등한 주체들의 보편적 동의</span> → 소유권 정당화<br>
+        프루동의 반박: <span class="hl-r">평등에서 출발해서 불평등으로 귀결</span> = 논리적 모순<br>
+        → 소유권이 공격받을 때 "능력 있는 사람이 더 갖는 건 당연" 식의 불평등 논리로 전환<br>
+        → 시작(평등)과 결론(불평등)이 정반대 = 모순</p>
+      </div>
+
+      <div class="hero-box teal" style="margin-top:14px;">
+        <div class="hero-label">✦ 경제적 근거 논박 — 8차시 핵심 (가장 강력한 논박)</div>
+        <p><strong>사회적 논박:</strong> 노동에는 기존 사회의 지식·도구가 결부됨 → <span class="hl-t">혼자 한 것이 아님</span><br>
+        <strong>물적 논박:</strong> 자연을 변형했을 뿐, 새로운 것을 창출한 것이 아님 → <span class="hl-t">소유 근거 불성립</span><br>
+        → 이 경제적 근거 논박이 사회주의자들도 공감했던 가장 강력한 반박</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 02 부조주의 ━━━ -->
+  <div class="section" id="mutualism">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">프루동 — 부조주의 (Mutualism) 완전 정리</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">부조주의 핵심 구조</div>
+      <div class="def-box teal">
+        <div class="def-label">공산주의 비판 — 핵심 명제</div>
+        <p><span class="hl-t">"중앙이 모든 것을 공동체로 귀속시키는 공산주의는 노예제!"</span><br>
+        → 이카리아·블랑키 방식의 중앙 권력·엘리트 통치 = 직접 생산자를 노예로 만드는 것</p>
+      </div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr>
+          <td><span class="hl-t">지향점</span></td>
+          <td>직접생산자의 <strong>자유</strong> — 소규모 자영농·자영업자가 용익권으로 활용하며 자유롭게 사는 사회</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">소유권</span></td>
+          <td>생산수단 <strong>사적 소유권 불허</strong> / 대신 <strong>용익권·점유권</strong> 인정<br>(살아있는 동안 활용하는 권리 — 공화주의와 차이!)</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">대규모 생산수단</span></td>
+          <td>광산·철도·대공장: <strong>조합</strong>이 소유 (국유화 ❌)</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">핵심 슬로건</span></td>
+          <td><strong>"관리받는 공동체원보다는 자유로운 조합원"</strong> (오언 전통 계승·발전)</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">경제 도구</span></td>
+          <td>Labor Notes + People's Bank (인민은행) — 쌈짓돈 모아 공동체 건설</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">정치 구조</span></td>
+          <td>Free Commune → 지역 Commune → Confederation (탈중앙집중화)</td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">반대 대상</span></td>
+          <td>지성인/엘리트 통치·중앙 관료제 반대 → <strong>무정부주의적 사회주의의 시초</strong></td>
+        </tr>
+        <tr>
+          <td><span class="hl-t">성격</span></td>
+          <td>자족적·목가적 → 훗날 테러주의로 변모 (중간고사 이후 학습)</td>
+        </tr>
+      </table>
+
+      <div class="key-concept teal">
+        <div class="kc-label">프루동 vs 공화주의 — 헷갈리는 포인트</div>
+        <p>공화주의: 소규모 소유권 <span class="hl-r">인정</span> (자영농·장인의 소유권 있음)<br>
+        프루동: 소유권 <span class="hl-t">불허</span>, <span class="hl-t">용익권만</span> 인정 (살아있는 동안 활용만)<br>
+        → 대규모 생산수단 반대는 공통, <span class="hl-t">소규모 소유권 여부가 핵심 차이</span></p>
+      </div>
+
+      <div class="key-concept blue">
+        <div class="kc-label">프루동 vs 오언 — 계승과 발전</div>
+        <p>오언 전통 계승: 아래로부터 생산자 중심, Labor Note 유사 도구<br>
+        오언과의 차이: 오언 = 투자자(큰손)가 공동체 건설, 관리받는 구성원<br>
+        프루동 = 인민은행(쌈짓돈) + <span class="hl-b">자유로운 조합원</span> — 국가·큰손 없음</p>
+      </div>
+
+      <div class="example teal">
+        <div class="example-label">무정부주의와 히피 — 교수 언급</div>
+        <p>무정부주의 원래 의미 = 가장 평화적·목가적 (농촌에서 자족·공동생활)<br>
+        1960년대 히피들에게 큰 영향 → 꽃 꽂고 자족 공동체 생활, 국가·엘리트·문화 권력으로부터 자유<br>
+        히피의 자유 = 프루동적 의미 (직접 일하는 사람의 자유, 국가 권력으로부터의 자유)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 03 자본의 시대 ━━━ -->
+  <div class="section" id="capital-age">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">자본의 시대 (1848~1870년) — 시대 개관</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">1848년 2월 혁명</div>
+      <div class="def-box">
+        <div class="def-label">혁명 개요</div>
+        <p>프랑스에서 시작 → 전 유럽으로 확산 (1789년 이후 최대 혁명)<br>
+        주도 세력: <span class="hl-b">급진적 (몰락) 수공업자</span><br>
+        결과: <span class="hl-r">궁극적 실패</span> — 총선 급진파 패배, 나폴레옹 3세 대통령 당선 → 황제 선언<br>
+        전유럽: 이른바 <span class="hl-r">'반혁명'</span>의 물결</p>
+      </div>
+      <div class="key-concept blue">
+        <div class="kc-label">역설적 결과 — '분배' 개념의 성장</div>
+        <p>혁명에 놀란 자본가 → 노동자 달래기의 필요성 깨달음<br>
+        → <span class="hl-b">'분배' 개념</span> 성장 (오언식 온정주의 확산의 계기)</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">1850년대 대호황 & 사회주의 인기 하락</div>
+      <table>
+        <tr><th>현상</th><th>내용</th><th>영향</th></tr>
+        <tr>
+          <td>철도 건설 붐</td>
+          <td>초기 인프라 투자 → 취업·소비 증가 → 대호황<br><em>(투자 초기는 항상 호황 — 경제 법칙)</em></td>
+          <td>자본주의 대세론 확산</td>
+        </tr>
+        <tr>
+          <td>보수주의 변신</td>
+          <td>지주들이 토지 빨리 처분·재투자가 유리함을 깨달음<br>→ 자본주의 친화적 보수주의로 변신</td>
+          <td>현대 보수정당의 원형 형성</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">노동 귀족 등장</span></td>
+          <td>온정주의 혜택 흡수한 노동자 → 중간계급 가치 수용<br>(근면·프라이버시·커리어·시간 엄수)</td>
+          <td>사회주의 투쟁성 약화</td>
+        </tr>
+      </table>
+      <div class="caution">
+        <strong>결과:</strong> 사회주의 인기 치명적 하락. 이 시기에 마르크스·엥겔스가 등장해 새로운 사회주의 이론을 체계화함.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 04 마르크스·엥겔스 생애 ━━━ -->
+  <div class="section" id="marx-engels">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">마르크스 & 엥겔스 — 생애와 협업</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">두 사람 프로필 비교</div>
+      <div class="bio-grid">
+        <div class="bio-card marx">
+          <h4>카를 마르크스 (Karl Marx)<br><small style="font-size:11px;font-weight:400;">1818-1883</small></h4>
+          <ul>
+            <li>서부 독일 트리어(Trier) 출신</li>
+            <li>유대계 변호사 부친 (계몽주의 영향)</li>
+            <li>본·베를린·예나 대학</li>
+            <li>베를린 대학 → 헤겔 좌파</li>
+            <li>1842 박사학위</li>
+            <li>쾰른 라인신문 언론 운동</li>
+            <li>1843: 결혼, 정간, 파리 이주<br>→ 사회주의 수용, <em>경제철학 수고</em></li>
+          </ul>
+        </div>
+        <div class="bio-card engels">
+          <h4>프리드리히 엥겔스 (Friedrich Engels)<br><small style="font-size:11px;font-weight:400;">1820-1895</small></h4>
+          <ul>
+            <li>서부 독일 부퍼탈(Wuppertal) 출신</li>
+            <li>사업가 부친</li>
+            <li>학창시절 '불온한' 독서</li>
+            <li>브레멘 공장 직원 → 군대</li>
+            <li>베를린 대학 청강 → 헤겔 좌파 교류</li>
+            <li>라인신문 활동 → 1842 마르크스 첫 만남</li>
+            <li>맨체스터로 보내짐 → <em>영국 노동계급의 상태</em> 집필</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">공동 작업 연대기</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1844. 8. 28 — Café de la Régence</div>
+          <div class="tl-text"><strong>파리에서 재회·본격 협업 시작.</strong> 마르크스, 엥겔스를 통해 산업화 '현실' 접함 → 사유 구체화. 엥겔스 파리 거주 결정, <em>독불 연보</em> 발행.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">이후 ~ 1847</div>
+          <div class="tl-text"><strong>의인동맹</strong>과 만남 → 브뤼셀 추방 → <em>독일 이데올로기</em> 저술<br>의인동맹 → <strong>공산주의 연맹</strong>으로 개칭(1847) → 개칭 선언문 작성 = <em>공산주의 선언</em></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1848 2월 혁명 발생</div>
+          <div class="tl-text">독일 3월 혁명 → 귀향, <strong>신라인신문</strong> 발간. 1849 반혁명 → 마르크스 파리, 엥겔스 봉기 참여 → 실패 후 둘 다 영국 망명.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">영국 시절 (런던·맨체스터)</div>
+          <div class="tl-text">마르크스: 런던 British Museum에서 연구. New York Tribune 특파원. 엥겔스: Ermen & Engels 회사 운영하며 마르크스 생활비 지원.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1857~1867 — 주요 저작</div>
+          <div class="tl-text">1857 <em>Grundrisse(정치경제학 비판 요강)</em> 마르크스 전환점<br>1859 <em>정치경제학 비판</em> 역사유물론 개창<br>1862 <em>잉여가치론</em><br><strong>1867 <em>자본Ⅰ</em></strong> 경제관 완성</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1864 — 제1차 인터내셔널</div>
+          <div class="tl-text">개혁주의·프루동주의·바쿠닌파 등 다양한 세력 참여.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">1870 이후 — 엥겔스 저술</div>
+          <div class="tl-text">런던으로 돌아온 엥겔스: <em>반뒤링론</em>(1878), <em>가족·사유재산·국가의 기원</em>(1884). 1883 마르크스 사후 수고 정리 → <em>자본Ⅱ·Ⅲ</em> 완성.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 05 마르크스주의 4범주 ━━━ -->
+  <div class="section" id="marxism">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">마르크스주의 사회주의 사상 — 4범주</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">4범주 전체 개요</div>
+      <div class="four-grid">
+        <div class="four-box human">
+          <h4>① 인간관</h4>
+          <p>1848 이전 저작 중심<br><em>경제철학 수고, 독일이데올로기</em></p>
+          <ul>
+            <li>헤겔 영향: Ausbildung·자기실현</li>
+            <li>노동 = 자기규정 실현 도구</li>
+            <li>산업자본주의에서 노동의 소외</li>
+          </ul>
+        </div>
+        <div class="four-box hist">
+          <h4>② 역사관</h4>
+          <p>역사유물론 = 마르크스주의 가장 중요한 정체성</p>
+          <ul>
+            <li>토대(생산양식) → 상부구조 결정</li>
+            <li>역사 5단계 발전 법칙</li>
+            <li>계급투쟁 → 사회혁명</li>
+          </ul>
+        </div>
+        <div class="four-box econ">
+          <h4>③ 경제관</h4>
+          <p><em>자본Ⅰ</em> 중심</p>
+          <ul>
+            <li>자본주의 = 착취를 "은폐"</li>
+            <li>잉여가치론</li>
+            <li>노동자 = 저평가된 역사 발전 주체</li>
+          </ul>
+        </div>
+        <div class="four-box crisis">
+          <h4>④ 위기론</h4>
+          <p><em>자본Ⅱ·Ⅲ, 반뒤링론, 유토피아와 과학</em></p>
+          <ul>
+            <li>수요론: 과잉생산·과소소비</li>
+            <li>생산론: 이윤율 저하 경향</li>
+            <li>위기의 주기성 설명</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 인간관 -->
+    <div class="card">
+      <div class="card-title">① 인간관 — 노동의 소외</div>
+      <div class="def-box">
+        <div class="def-label">헤겔의 영향 — Ausbildung (자기계발·자기실현)</div>
+        <p>인간 = 노동을 통해 <span class="hl-b">자기규정(Ausbildung)을 실현</span>하는 존재<br>
+        "역사란 인간이 자연 상태로부터 노동을 통해 자기규정의 실현을 하면서 발전해 온 것"</p>
+      </div>
+      <div class="def-box red">
+        <div class="def-label">산업자본주의의 문제 — 노동의 소외 (Alienation)</div>
+        <p>프롤레타리아의 노동은 자아실현의 수단이 되지 못하고 <span class="hl-r">外化(alienation)</span>한다<br>
+        → 적대적인 세계를 창출 = <span class="hl-r">노동의 소외</span><br>
+        "노동자는 노동하지 않을 때 비로소 편안" = <span class="hl-r">노동과 여가의 이분법</span></p>
+      </div>
+      <div class="example">
+        <div class="example-label">초기 저작의 의미</div>
+        <p>1930년대 소련의 마르크스-엥겔스 연구소에서 발굴<br>
+        1960년대 사회운동·신좌파에 큰 영향 → <strong>자본주의 비판 + 소련식 현실사회주의 비판</strong>에 동시에 활용됨</p>
+      </div>
+    </div>
+
+    <!-- 역사관 -->
+    <div class="card">
+      <div class="card-title">② 역사관 — 역사유물론 (Historical Materialism)</div>
+      <div class="hero-box gold">
+        <div class="hero-label">✦ 역사유물론 핵심 명제 — 슬라이드 원문 (외워!)</div>
+        <p>"The material mode of production <span class="hl-go">conditions(bedingt)</span> the social, political, and intellectual/spiritual dimensions of life."<br>
+        <span style="font-size:13px;color:var(--text-soft);">= 물질적 생산 방식이 사회적·정치적·사상적·정신적 삶을 조건 짓는다</span></p>
+      </div>
+      <div class="def-box gold">
+        <div class="def-label">물적 조건의 두 종류</div>
+        <p>① 지리·인구 구조·음식 등<br>
+        ② <span class="hl-go">인간 간 관계를 전제하는 경제 체제 = 생산양식</span> (가장 중요)<br>
+        → 생산양식 = <span class="hl-go">토대(Foundation)</span> / 나머지 비물적 현상 = <span class="hl-go">상부구조(Super-structure)</span></p>
+      </div>
+
+      <div class="card-title" style="margin-top:18px;">역사 5단계 발전 — 생산양식의 변화</div>
+      <div class="flow">
+        <div class="flow-box">원시공산제</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">노예제</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">봉건제</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box go">자본주의</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box b">사회주의<br>(필연)</div>
+      </div>
+
+      <div class="def-box gold">
+        <div class="def-label">생산양식 변화 메커니즘</div>
+        <p>생산력 발달 → 기존 생산관계가 <span class="hl-go">질곡</span>으로 느껴짐<br>
+        → 유지 vs. 변화 → <span class="hl-go">계급 갈등(계급투쟁)</span> 촉발·심화 → <span class="hl-go">사회혁명</span> → 다음 생산양식</p>
+      </div>
+
+      <div class="key-concept gold">
+        <div class="kc-label">마르크스·엥겔스의 기여 — "역사와 사랑에 빠짐"</div>
+        <p>기존 사회주의자들도 미래를 얘기했지만 상당수 복고적·도덕적<br>
+        마르크스·엥겔스: 계몽주의의 '진보'를 사회주의와 결합 → <span class="hl-go">진보의 법칙화·체계화</span><br>
+        → 사회주의로의 이행이 역사 법칙상 <span class="hl-go">필연</span>이라는 주장 = 마르크스주의의 결정적 특징</p>
+      </div>
+    </div>
+
+    <!-- 경제관 -->
+    <div class="card">
+      <div class="card-title">③ 경제관 — 잉여가치론</div>
+      <div class="def-box green">
+        <div class="def-label">자본주의와 착취 은폐</div>
+        <p>과거 생산양식(노예제·봉건제): 착취가 눈에 보임 (강제 노동 등)<br>
+        <span class="hl-g">자본주의: 착취를 "은폐"</span> — 자유로운 계약처럼 보이지만 사실은 착취</p>
+      </div>
+      <table>
+        <tr><th>단계</th><th>내용</th></tr>
+        <tr>
+          <td>① 상품화</td>
+          <td>자본주의 하 만물의 상품화 (노동력도 상품)</td>
+        </tr>
+        <tr>
+          <td>② 교환가치</td>
+          <td>재화 간 거래: 동일한 교환가치를 가진 것끼리 교환</td>
+        </tr>
+        <tr>
+          <td>③ 노동가치설</td>
+          <td>'사회적으로 필요한 노동시간' = <strong>추상 노동</strong>이 가치 결정 (리카도에서 수용)</td>
+        </tr>
+        <tr>
+          <td>④ 자본가 입장</td>
+          <td>설비+노동력을 교환가치대로 구입 → 생산 → 판매<br><strong>유통 영역에서 가치 증식 없음 → 이윤은 어디서?</strong></td>
+        </tr>
+        <tr>
+          <td>⑤ 잉여가치 — 핵심</td>
+          <td>생산 영역: <strong>노동력의 특수성</strong><br>'노동의 가치'와 '노동력의 가치' 사이의 모순<br>→ <strong>잉여가치와 착취</strong></td>
+        </tr>
+      </table>
+      <div class="key-concept green">
+        <div class="kc-label">의의</div>
+        <p>자본주의 경제 성장을 설명 (새로운 가치 창출의 원천 = 노동력)<br>
+        노동자의 위치 전환: <span class="hl-g">저평가된 역사 발전의 주체</span></p>
+      </div>
+    </div>
+
+    <!-- 위기론 -->
+    <div class="card">
+      <div class="card-title">④ 위기론 — 자본주의는 왜 주기적으로 위기를 맞나</div>
+      <div class="def-box purple">
+        <div class="def-label">위기론 배경</div>
+        <p>1870년대 이른바 <span class="hl-p">대불황</span>에 대한 설명과 예측<br>
+        주요 저작: <em>자본Ⅱ·Ⅲ</em>, <em>반뒤링론</em>, <em>유토피아와 과학</em></p>
+      </div>
+      <table>
+        <tr><th>구분</th><th>핵심 논리</th><th>세부 메커니즘</th></tr>
+        <tr>
+          <td><span class="hl-p">1) 수요론</span><br><small>(룩셈부르크가 완성)</small></td>
+          <td>Socialized Production vs Private Ownership of Products의 모순</td>
+          <td>높아진 생산성 → 불공정 분배 → 유휴 자본 → 설비 투자·개량 → 노동력 수요 감소 → 소비 하락 → <strong>과잉생산·과소소비</strong></td>
+        </tr>
+        <tr>
+          <td><span class="hl-p">2) 생산론</span></td>
+          <td>이윤율 저하의 경향</td>
+          <td>잉여가치 실현 경쟁 → 노동집약적 기술 진보 → 유기적 구성 고도화(불변자본↑/가변자본↓) → 이윤율 하락 → 침체 → 재편·신투자 → 호황 → 반복</td>
+        </tr>
+      </table>
+      <div class="key-concept purple">
+        <div class="kc-label">왜 '항구적' 아닌 '주기적' 위기인가?</div>
+        <p>초기 인프라 투자 시기의 효과 (호황)<br>
+        제국주의 발작적 팽창 (단계적 가속)<br>
+        식민지의 경제 위기 완화 기능<br>
+        → 하지만 엥겔스: <span class="hl-p">지리적 한계 → 결국 Crash</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">T/F 예상 포인트 — 8차시 중간고사 핵심 함정</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 프루동 — 심리적·경제적 근거 논박</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동은 소유권의 심리적 근거(보편적 동의)가 평등에서 출발해 불평등으로 귀결한다는 점에서 논리적 모순이라고 비판했다.</div>
+          <div class="tf-reason"><strong>→ 8차시 핵심 포인트.</strong> 로크 논리 = 평등한 주체 전제 → 결론 = 불평등 옹호 = 모순.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동의 경제적 근거 논박 중 '사회적 논박'은 노동에는 기존 사회의 지식·도구가 이미 결부되어 있다는 것이다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 혼자 한 것 아님 = 사회적 기여 → 소유권 주장 불가.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">프루동의 경제적 근거 논박 중 '물적 논박'은 노동의 결과물이 너무 많다는 것이다.</div>
+          <div class="tf-reason"><strong>→ 새로 창출한 것이 아니라 주어진 자연을 변형했을 뿐</strong>이므로 소유 근거가 없다는 것.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 부조주의(Mutualism) 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">프루동은 대규모 생산수단을 국가가 소유해야 한다고 주장했다.</div>
+          <div class="tf-reason"><strong>→ 조합이 소유.</strong> 국유화는 중앙 관료제 = 노예제라고 반대. 국가 없는 조합 소유 지향.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">프루동과 공화주의자는 소규모 생산수단에 대해 동일한 입장을 취한다.</div>
+          <div class="tf-reason"><strong>→ 핵심 차이.</strong> 공화주의 = 소유권 인정 / 프루동 = 소유권 불허, 용익권만 인정.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동의 부조주의에서 사회 구조는 Free Commune → 지역 Commune → Confederation 순으로 아래에서 위로 구성된다.</div>
+          <div class="tf-reason"><strong>→ 탈중앙집중화의 핵심 구조.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">프루동은 무정부주의적 사회주의의 시초격으로, 초기 무정부주의는 가장 평화적·목가적인 이념이었다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 이후 테러주의로 변모하는 것은 나중 일. 원래 성격은 자족적·목가적.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 자본의 시대·마르크스·엥겔스 생애</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">1848년 2월 혁명은 급진적 몰락 수공업자들이 주도했으며 궁극적으로 실패했다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 총선 급진파 패배, 나폴레옹 3세 당선 → 황제 선언.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">1850년대 대호황으로 사회주의의 인기가 크게 올랐다.</div>
+          <div class="tf-reason"><strong>→ 반대.</strong> 호황 → 자본주의 대세론 + 노동 귀족 등장 → 사회주의 인기 치명적 하락.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">마르크스와 엥겔스가 본격 협업을 시작한 계기는 1844년 8월 파리 Café de la Régence에서의 재회다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 이 자리가 두 사람 협업의 공식적 시작점.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">공산주의 선언은 의인동맹이 결성될 때 작성된 선언문이다.</div>
+          <div class="tf-reason"><strong>→ 의인동맹이 공산주의 연맹으로 개칭(1847)할 때</strong> 작성된 개칭 선언문.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 마르크스주의 4범주</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">역사유물론은 마르크스주의의 가장 중요한 정체성이며, 생산양식(토대)이 상부구조를 조건 짓는다는 이론이다.</div>
+          <div class="tf-reason"><strong>→ 슬라이드 원문 그대로.</strong> 반드시 외워야 함.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">마르크스의 역사 발전 단계는 원시공산제 → 노예제 → 봉건제 → 자본주의 → 사회주의 순이다.</div>
+          <div class="tf-reason"><strong>→ 반드시 외워야 할 5단계.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">마르크스의 노동의 소외론에 따르면, 자본주의에서 노동자는 노동할 때 가장 자유롭다고 느낀다.</div>
+          <div class="tf-reason"><strong>→ 정반대.</strong> "노동자는 노동하지 않을 때 비로소 편안" = 노동과 여가의 이분법.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">마르크스의 잉여가치는 유통 영역에서 발생한다.</div>
+          <div class="tf-reason"><strong>→ 생산 영역에서 발생.</strong> "유통영역의 가치 증식 없음" = 슬라이드 핵심 포인트.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">마르크스의 위기론에서 수요론은 룩셈부르크가 훗날 완성했고, 사회화된 생산과 생산물의 사적 소유 사이의 모순이 핵심이다.</div>
+          <div class="tf-reason"><strong>→ 슬라이드 원문 내용.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">마르크스·엥겔스는 기존 사회주의자들처럼 도덕적 근거에서 사회주의의 필요성을 주장했다.</div>
+          <div class="tf-reason"><strong>→ 결정적 차이.</strong> 마르크스·엥겔스 = 역사의 법칙으로서 사회주의 이행의 '필연성' 주장. 도덕 아닌 과학적·역사적 근거.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (8차시)</h3>
+      <ul>
+        <li>프루동의 사유재산권 3가지 근거 논박을 모두 서술하고, 이 중 경제적 근거 논박이 가장 강력한 이유를 설명하라.</li>
+        <li>프루동의 부조주의가 공산주의와 어떻게 다른지, "관리받는 공동체원보다 자유로운 조합원"이라는 표현을 중심으로 서술하라.</li>
+        <li>프루동과 공화주의가 소규모 생산수단 소유권에서 어떻게 다른지 서술하라.</li>
+        <li>1848년 혁명 실패 이후 자본의 시대(1848~1870)에 사회주의 인기가 하락한 이유를 노동 귀족 등장과 연결해 서술하라.</li>
+        <li>역사유물론의 핵심 명제를 영문 원문과 함께 설명하고, 역사 5단계 발전 메커니즘을 서술하라.</li>
+        <li>마르크스의 잉여가치론이 왜 자본주의의 착취를 "은폐"라고 보는지 설명하라.</li>
+        <li>마르크스·엥겔스가 기존 사회주의자들과 결정적으로 다른 점이 무엇인지 (도덕 vs 역사 법칙) 서술하라.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY + 80 >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + cur) { a.style.color = 'var(--accent)'; a.style.borderBottomColor = 'var(--accent)'; }
+    });
+  });
+</script>
+</body>
+</html>

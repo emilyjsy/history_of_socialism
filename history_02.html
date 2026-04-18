@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 2차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f0e;
+    --surface: #161a18;
+    --surface2: #1d2320;
+    --border: #28302c;
+    --accent: #6ec8a0;
+    --accent2: #9de8c4;
+    --accent3: #c8a96e;
+    --red: #e08070;
+    --blue: #7ab8cc;
+    --purple: #b09de8;
+    --text: #dce8e2;
+    --text-muted: #708078;
+    --text-soft: #a8b8b0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(135deg, #0d1510 0%, #0d0f0e 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(110,200,160,0.07) 0%, transparent 70%);
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(110,200,160,0.12);
+    border: 1px solid rgba(110,200,160,0.3);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .badge.gold {
+    background: rgba(200,169,110,0.12);
+    border-color: rgba(200,169,110,0.3);
+    color: var(--accent3);
+  }
+
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 14px 18px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .section { margin-bottom: 52px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--accent2);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 1rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .def-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .def-box .def-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .def-box.gold { border-left-color: var(--accent3); }
+  .def-box.gold .def-label { color: var(--accent3); }
+  .def-box.red { border-left-color: var(--red); }
+  .def-box.red .def-label { color: var(--red); }
+  .def-box.purple { border-left-color: var(--purple); }
+  .def-box.purple .def-label { color: var(--purple); }
+
+  .key-concept {
+    background: linear-gradient(135deg, rgba(110,200,160,0.08), rgba(110,200,160,0.02));
+    border: 1px solid rgba(110,200,160,0.22);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .key-concept.gold {
+    background: linear-gradient(135deg, rgba(200,169,110,0.08), rgba(200,169,110,0.02));
+    border-color: rgba(200,169,110,0.22);
+  }
+  .key-concept.gold .kc-label { color: var(--accent3); }
+
+  .hl-green { color: var(--accent2); font-weight: 700; }
+  .hl-gold { color: var(--accent3); font-weight: 700; }
+  .hl-red { color: var(--red); font-weight: 700; }
+  .hl-blue { color: var(--blue); font-weight: 700; }
+  .hl-purple { color: var(--purple); font-weight: 700; }
+
+  .example {
+    background: rgba(110,200,160,0.05);
+    border: 1px solid rgba(110,200,160,0.18);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .example-label {
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example p, .example ul, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; }
+  .example li { margin-bottom: 5px; }
+
+  .example.gold {
+    background: rgba(200,169,110,0.05);
+    border-color: rgba(200,169,110,0.18);
+  }
+  .example.gold .example-label { color: var(--accent3); }
+
+  .caution {
+    background: rgba(224,128,112,0.07);
+    border: 1px solid rgba(224,128,112,0.22);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13.5px;
+    color: var(--text-soft);
+  }
+  .caution strong { color: var(--red); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  th {
+    background: var(--surface2);
+    color: var(--accent);
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  td {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0;
+  }
+  .flow-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    min-width: 90px;
+  }
+  .flow-box.green { border-color: var(--accent); color: var(--accent2); }
+  .flow-box.gold { border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.red { border-color: var(--red); color: var(--red); }
+  .flow-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .compare-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .compare-item h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .compare-item.before h4 { color: var(--blue); }
+  .compare-item.after h4 { color: var(--accent2); }
+  .compare-item.trad h4 { color: var(--accent3); }
+  .compare-item p, .compare-item li { font-size: 13.5px; color: var(--text-soft); }
+  .compare-item ul { padding-left: 16px; }
+  .compare-item li { margin-bottom: 4px; }
+
+  .tf-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .tf-section h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    color: var(--accent2);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .tf-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+  }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge {
+    flex-shrink: 0;
+    width: 32px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  .tf-badge.true { background: rgba(110,200,160,0.2); color: var(--accent2); }
+  .tf-badge.false { background: rgba(224,112,112,0.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box {
+    background: linear-gradient(135deg, rgba(110,200,160,0.08), rgba(110,200,160,0.02));
+    border: 1px solid rgba(110,200,160,0.25);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 18px 0;
+  }
+  .summary-box h3 {
+    color: var(--accent2);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-weight: 900;
+  }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .summary-box li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 600px) {
+    header { padding: 32px 20px 24px; }
+    header h1 { font-size: 1.6rem; }
+    .container { padding: 24px 16px 60px; }
+    nav { padding: 0 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 2차시 핵심 정리</div>
+  <h1>자본주의 완성 · 전통 경제 · 산업자본주의와 충돌</h1>
+  <div class="subtitle">
+    <span>2026. 03. 11 &nbsp;|&nbsp; 2차시</span>
+    <span class="badge">중간고사 대비</span>
+    <span class="badge gold">1차시 연계</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#review">1차시 복습</a>
+  <a href="#cap1">자본주의① 유통 형식 완성</a>
+  <a href="#cap2">자본주의② 생산 양식</a>
+  <a href="#traditional">전통 경제와 삶</a>
+  <a href="#collision">자본주의와 충돌</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 0. 1차시 복습 ━━━ -->
+  <div class="section" id="review">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">1차시 핵심 복습 — 2차시 연결고리</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의 = 역사적 개념</div>
+      <div class="def-box">
+        <div class="def-label">정의</div>
+        <p><span class="hl-green">역사적 개념</span> = 보편적으로 통용되는 개념이 아닌, <strong>특정 시대에 국한돼 의미를 갖는 개념</strong><br>
+        사회주의는 <span class="hl-gold">산업 자본주의</span>라는 전제 조건이 깔린 뒤에야 의미 획득 가능</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시 — 냉전</div>
+        <p>"남자친구·여자친구가 말 안 하는 것" = 보편적 의미의 냉전<br>
+        "1945년 이후 미국·소련 관계" = <strong>학문적·역사적 개념의 냉전</strong><br>
+        → 사회주의도 마찬가지. 느낌상 보편 개념 같지만 <strong>19세기 산업 자본주의 이후에야 등장한 역사적 개념.</strong></p>
+      </div>
+      <div class="caution">
+        <strong>오해 주의:</strong> 사회주의 ≠ 평등주의. 평등주의는 인간이면 가질 수 있는 정서지만, 사회주의는 특정 역사 조건(산업 자본주의) 아래의 개념.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">2차시 흐름 미리보기</div>
+      <div class="flow">
+        <div class="flow-box gold">자본주의 정의<br>①유통형식 완성<br>②생산양식 추가</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">1800년경<br>전통 경제의<br>삶 방식</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">산업자본주의<br>vs<br>전통 경제 충돌</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box" style="border-color:var(--purple);color:var(--purple);">다음 차시:<br>사회주의<br>정의</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 1. 자본주의 ① 유통 형식 완성 ━━━ -->
+  <div class="section" id="cap1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">자본주의 ① 유통 형식 — 완성</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">유통 형식으로서의 자본주의 — 세목 2가지</div>
+
+      <div class="def-box">
+        <div class="def-label">세목 1 (1차시 복습)</div>
+        <p><span class="hl-gold">만물의 상품화</span> — 모든 재화가 시장 거래를 위해 생산되고, 구하려면 반드시 시장에서 구매해야 하는 상태<br>
+        특히 이전에는 상품 아니었던 <strong>노동 + 토지(생산 수단)</strong>까지 상품화됨</p>
+      </div>
+
+      <div class="def-box gold">
+        <div class="def-label">세목 2 (2차시 신규)</div>
+        <p><strong>주요 경제 활동 3가지</strong>가 모두 <span class="hl-gold">시장 메커니즘</span>(수요·공급·가격 획정)을 통해 이루어지는 시스템</p>
+      </div>
+
+      <table>
+        <tr>
+          <th>주요 경제 활동</th>
+          <th>의미</th>
+          <th>자본주의에서</th>
+        </tr>
+        <tr>
+          <td><span class="hl-green">생산 (Production)</span></td>
+          <td>재화를 만드는 활동</td>
+          <td>수요가 있고 이윤이 날 때 생산</td>
+        </tr>
+        <tr>
+          <td><span class="hl-green">분배·거래 (Distribution)</span></td>
+          <td>재화가 돌아다니는 활동 (유통·소비 포함)</td>
+          <td>시장 메커니즘으로 거래</td>
+        </tr>
+        <tr>
+          <td><span class="hl-green">투자 (Investment)</span></td>
+          <td>이윤을 위한 자금 운용</td>
+          <td>특정 가격 위에서 이익 기대해 투자</td>
+        </tr>
+      </table>
+
+      <div class="key-concept gold">
+        <div class="kc-label">핵심 전제 — 무한 이윤 동기</div>
+        <p>자본주의는 인간의 <span class="hl-gold">이윤 동기가 무한하다고 인정</span>하고, 그 위에서 시장 메커니즘으로 생산·분배·투자가 이루어지는 시스템</p>
+      </div>
+
+      <div class="caution">
+        <strong>시험 포인트:</strong> "분배"는 한국어 어감상 공평하게 나눠주는 것처럼 들리지만, 원어(distribute)는 그냥 재화가 돌아다니는 것. 유통과 거의 같은 의미.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">자본주의의 반대 경제 시스템</div>
+
+      <table>
+        <tr>
+          <th>경제 시스템</th>
+          <th>특징</th>
+          <th>이윤 동기</th>
+        </tr>
+        <tr>
+          <td><span class="hl-green">자본주의 (시장 경제)</span></td>
+          <td>시장 메커니즘, 가격·수요공급으로 결정</td>
+          <td><strong>무한</strong> 이윤 동기 인정</td>
+        </tr>
+        <tr>
+          <td><span class="hl-blue">계획 경제</span></td>
+          <td>중앙에서 생산량·유통 계획 및 명령</td>
+          <td>중앙의 계획이 기준</td>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">도덕 경제 / 전통 경제</span></td>
+          <td>공동체 유지를 위해 이윤 동기 제한됨</td>
+          <td><strong>어느 정도</strong>의 이윤은 허용, 무한 이윤은 억제</td>
+        </tr>
+        <tr>
+          <td><span class="hl-purple">자연 경제</span> (세목 1의 반대)</td>
+          <td>자급자족 비중 높음, 공동체 내 비상품 교환</td>
+          <td>만물 상품화 아님</td>
+        </tr>
+      </table>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 계획 경제 (아이폰)</div>
+        <p>자본주의: 아이폰 수요가 있을 것 같으면 알아서 생산<br>
+        계획 경제: 중앙에서 작년 16 소비량·교체 주기 등 계산 → "올해 100만 대 생산" 명령 → 공장이 생산 후 유통</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 도덕 경제 (밀라노 구두쟁이 조합)</div>
+        <p>구두쟁이가 100켤레 → 150켤레로 늘리는 건 조합이 인정<br>
+        그러나 100 → <strong>1,000켤레</strong>로 늘리면 밀라노의 다른 구두쟁이가 다 망함 → 공동체 붕괴 → <strong>못하게 막거나, 그런 생각 자체를 안 함</strong><br>
+        → 공동체 유지 = 도덕 경제의 핵심 원리. 무한 이윤 추구 = 공동체 위협.</p>
+      </div>
+
+      <div class="caution">
+        <strong>핵심 명제:</strong> 자본주의의 무한 이윤 동기는 인간 본성이 아님. 19세기 초 이전까지는 보편적으로 받아들여지지 않았음. 자본주의 이후의 현상.
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 근대 경제학자들의 등장</div>
+        <p>스미스, 리카도, 밀, 세이 등 → <strong>19세기 초쯤</strong> 등장해서 이 시장 경제 시스템을 보편 언어로 <strong>정당화</strong>함<br>
+        → 오늘날 경제학 교과서의 기초가 여기에 있음<br>
+        → "인간 욕망 무한, 재화 한정" 전제도 이 시기의 산물이지 인류 보편이 아님</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 2. 자본주의 ② 생산 양식 ━━━ -->
+  <div class="section" id="cap2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">자본주의 ② 생산 양식 (Mode of Production)</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">생산 양식의 2가지 구성요소</div>
+
+      <div class="def-box">
+        <div class="def-label">정의</div>
+        <p>생산 양식 = <strong>재화가 어떻게 만들어지는가</strong>의 방식 전반<br>
+        생산 양식은 크게 <span class="hl-green">생산력</span> + <span class="hl-gold">생산 관계</span>로 나뉨</p>
+      </div>
+
+      <table>
+        <tr>
+          <th>구성요소</th>
+          <th>의미</th>
+          <th>자본주의에서</th>
+        </tr>
+        <tr>
+          <td><span class="hl-green">생산력</span><br><small>(피지컬 영역)</small></td>
+          <td>물리적인 생산 방식 — 기계, 에너지, 설비 등</td>
+          <td>자동화 공장에서 기계가 대량 생산<br>→ 생산성 압도적으로 높음</td>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">생산 관계</span><br><small>(인간관계 영역)</small></td>
+          <td>생산 영역에서의 인간관계<br>— 누가 생산 수단을 소유하고, 누가 일하는가</td>
+          <td>자본가 vs 직접 생산자의 관계</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">생산 관계 — 자본주의의 핵심</div>
+
+      <div class="def-box gold">
+        <div class="def-label">자본주의 생산 관계의 2대 주체</div>
+        <p>① <span class="hl-gold">자본가</span> — 생산 수단에 대한 <strong>배타적 사적 소유권</strong> 보유<br>
+        ② <span class="hl-green">직접 생산자</span> (= 공장 노동자, 농민, 광부 등) — 생산 수단에 대한 권리 없음, 노동력만 행사, <strong>임금</strong>으로 생존</p>
+      </div>
+
+      <div class="def-box red">
+        <div class="def-label">배타적 사적 소유권이란?</div>
+        <p>생산 수단을 <strong>처분·거래하는 것이 완전히 자본가 마음</strong><br>
+        = 직접 생산자와 상의 없이 팔거나 처분 가능<br>
+        = 직접 생산자는 아무리 오래 일해도 그 생산 수단에 대한 권리 없음</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 공장 기계 · 김 기사님</div>
+        <p>사장님은 기계를 들어올 때·나갈 때 한 번씩 봄. 반면 직접 생산자는 매일 만짐.<br>
+        소설에 나오듯 "저 기계는 김 기사님만 돌릴 수 있다" → 직접 생산자와 기계 사이 라포(rapport) 있음.<br>
+        그러나 <strong>소유권은 돈 낸 사장님</strong>에게만. 처분도 사장님 마음대로.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 농지와 토지</div>
+        <p>토지의 경우 더욱 극단적. 대대로 경작한 땅 → 감정적 애착, 할머니와의 추억까지.<br>
+        그러나 소유권자(지주)가 팔고 싶으면 <strong>농민과 상의 없이 팔 수 있음</strong> → 이게 자본주의적 소유권 개념.</p>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">⚠️ 핵심 — 임금 노동제</div>
+        <p>자본주의 = <span class="hl-green">임금 노동제</span><br>
+        직접 생산자가 생산 수단에 대한 권리 없이 → 노동력을 팔아서 → 임금으로 생존하는 시스템<br>
+        <span class="hl-gold">→ 자본주의의 간단 정리: 시장 경제(유통 형식) + 임금 노동제(생산 양식)</span></p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-item trad">
+          <h4>전통 경제 (자본주의 이전)</h4>
+          <ul>
+            <li>농민이 대대로 경작 → 경작 권리 있음</li>
+            <li>생산물이 나오면 일단 자기 것 (지대만 지주에게)</li>
+            <li>생산 수단에 권리가 중첩됨 (소유권 ≠ 독점)</li>
+          </ul>
+        </div>
+        <div class="compare-item after">
+          <h4>자본주의</h4>
+          <ul>
+            <li>공장·토지는 모두 자본가 소유 (배타적)</li>
+            <li>직접 생산자는 노동력만 제공 → 임금 수령</li>
+            <li>생산 수단에 대한 권리 없음 → 임금 노동자</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 취업 (하이닉스)</div>
+        <p>대학 졸업 후 목표: "좋은 직장에서 좋은 월급" → 하이닉스 용인 공장 일부를 내 것으로 만들겠다고 생각하지 않음.<br>
+        이게 지금 우리에겐 당연. 그러나 이것이 바로 <strong>임금 노동제 = 자본주의적 삶</strong>.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 외계인이 가장 이상하게 볼 것</div>
+        <p>농담처럼 말했지만 핵심 포인트: 매일 기계를 만지는 사람이 그 기계에 권리가 없고, 거의 본 적도 없는 사람(자본가)이 소유권자.<br>
+        → 인류는 <strong>19세기 초 이전까지 오랫동안 이걸 이상하게 여겼음.</strong> 지금 우리가 당연하다고 느끼는 것이 오히려 특이한 것.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">소유권 중첩 개념 (전통 경제)</div>
+
+      <div class="def-box">
+        <div class="def-label">학자 표현 (E.P. Thompson 계열)</div>
+        <p><span class="hl-green">소유권이 중첩돼 있었다</span><br>
+        최참판이 땅 소유자 + 돌쇠·사모님(경작자)도 권리 보유 → <strong>한 생산 수단에 여러 명의 권리가 공존</strong><br>
+        → 자본주의는 이 중첩을 없애고 자본가에게 소유권 <strong>올인</strong></p>
+      </div>
+
+      <div class="example gold">
+        <div class="example-label">교수 예시 — 박경리 《토지》 최참판댁</div>
+        <p>최참판 = 만석지기 대지주. 그러나 땅을 마음대로 팔거나 거래하지 않음.<br>
+        땅을 처분할 경우 반드시 <strong>비슷한 수준의 지주에게</strong> 팔아서 농민들이 그대로 경작 계속 가능하게.<br>
+        왜냐면 그 땅은 몇 대에 걸쳐 경작해온 농민들의 <strong>삶의 터전</strong>이자 감성적 공간이었기 때문.<br>
+        → 이게 <strong>소유권 중첩의 실제 모습</strong>. 자본주의 이전 시대.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 3. 전통 경제의 삶 ━━━ -->
+  <div class="section" id="traditional">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">1800년경 유럽 — 전통 경제의 삶</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">1800년경 유럽 농민 비율</div>
+
+      <table>
+        <tr>
+          <th>지역</th>
+          <th>농민 비율</th>
+          <th>비고</th>
+        </tr>
+        <tr>
+          <td>영국·네덜란드</td>
+          <td>~45%</td>
+          <td>비교적 빠른 자본주의화</td>
+        </tr>
+        <tr>
+          <td>프랑스 등 서유럽</td>
+          <td>70~80%</td>
+          <td>르네상스도 예외적 도시 현상</td>
+        </tr>
+        <tr>
+          <td>헝가리·러시아</td>
+          <td>90% 이상</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">조선 (영정조 시대)</span></td>
+          <td><span class="hl-gold">약 95%</span></td>
+          <td>유라시아 대륙 최고 수준. 동학농민혁명 시기도 90%</td>
+        </tr>
+      </table>
+
+      <div class="caution">
+        <strong>오해 주의:</strong> 르네상스(15세기)가 유럽 근대화한 것처럼 배웠지만, 그건 특정 도시의 예외적 현상. 1800년에도 유럽 대부분은 압도적 농민 사회. 조선의 높은 농민 비율 = 후진 증거가 아니라 <strong>사회 안정의 증거</strong>일 수 있음.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">전통 경제 사람들의 삶 — 4가지 특징</div>
+
+      <div class="def-box">
+        <div class="def-label">특징 ①</div>
+        <p><span class="hl-green">자연 친화적 삶</span> — 밝으면 일어나고, 어두우면 잠. 계절에 따라 일하고 쉼.<br>
+        겨울에는 할 일이 없어 거의 계속 잠 (클로드 쥐르디비 학자: "프랑스 농민은 겨울잠을 잤다")</p>
+      </div>
+
+      <div class="def-box">
+        <div class="def-label">특징 ②</div>
+        <p><span class="hl-green">무한 반복의 삶</span> — 봄에 씨 뿌리고, 가을에 걷고, 겨울에 먹고. 매년 똑같음.<br>
+        → <strong>10살이면 인생을 알았다</strong>: 미래가 이미 보임 → 문맹이 많은 이유 = 무식해서가 아니라 배울 필요 없어서</p>
+      </div>
+
+      <div class="def-box">
+        <div class="def-label">특징 ③</div>
+        <p><span class="hl-green">공동체 중심의 삶</span></p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-item before">
+          <h4>농촌 — 촌락 공동체</h4>
+          <ul>
+            <li>규모: 50~300명 수준</li>
+            <li>결혼·상속·토지 재분배 등 대사를 공동체가 결정</li>
+            <li>elder(연장자)가 리더 — 변수(전쟁·자연재해)를 가장 많이 경험했기 때문</li>
+            <li>공유지: 가축 풀먹이기 등 공유</li>
+          </ul>
+        </div>
+        <div class="compare-item trad">
+          <h4>도시 — 길드 (동종업자 조합)</h4>
+          <ul>
+            <li>밀라노 구두쟁이 조합처럼 동종업자끼리 조합</li>
+            <li>생산량·가격 등 조합이 규제</li>
+            <li>소속감 + (나쁘게 보면) 억압</li>
+            <li>근대 경제학자들이 이걸 "구습"으로 비판해 타파</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — elder의 권위</div>
+        <p>농촌 삶은 무한 반복 → 변수가 <strong>외적 침입</strong>, <strong>자연재해</strong> 두 가지뿐.<br>
+        elder는 이 두 가지 변수를 가장 많이 경험 → 자연스러운 권위 획득.<br>
+        오늘날에는 반대: 빠른 변화 속에서 젊은 세대가 더 많은 경험 → 나이 = 경험 많음이 아님.</p>
+      </div>
+
+      <div class="def-box">
+        <div class="def-label">특징 ④</div>
+        <p><span class="hl-green">신비주의적(종교적) 삶</span> — 주변 일들을 합리성보다 신의 뜻·도덕성·종교성으로 해석하는 경향 강함<br>
+        + <span class="hl-gold">Time Discipline(시간 규율) 없음</span> — 오늘날처럼 몇 시에 일어나고 자는 규율 없이, 자연 리듬에 따라 생활</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 1800년 유럽 도시</div>
+        <p>도시인데도 축사·닭 있음. 하수 시스템 없어 오물 가득 (로마 시대 하수 시스템은 다 잊어버림, 복구는 19세기 중반).<br>
+        포장 도로 거의 없어 비 오면 이동 불가. 이탈리아 북부 일부 도시만 예외 (돌 포장, 상업 발달).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">촌락 공동체의 2가지 유형</div>
+
+      <div class="compare-grid">
+        <div class="compare-item before">
+          <h4>유형 ① 차지농 (임차)</h4>
+          <p>지주가 전체 땅 소유 + 농민들이 빌려서 경작<br>
+          지주는 땅을 마음대로 팔 수 없음 (농민들의 경작권이 실질적 권리로 인정됨)</p>
+        </div>
+        <div class="compare-item trad">
+          <h4>유형 ② 자영농</h4>
+          <p>농민 명의로 땅이 있음<br>
+          그러나 공동체 허락 없이 마음대로 떠나거나 팔 수 없음<br>
+          = 개인 소유이지만 공동체 규율 아래에 있음</p>
+        </div>
+      </div>
+
+      <div class="caution">
+        <strong>공통점:</strong> 두 유형 모두 <strong>생산 수단(토지)을 마음대로 거래하지 못하는</strong> 시스템. = 소유권 중첩 적용됨.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 4. 자본주의와 전통 경제의 충돌 ━━━ -->
+  <div class="section" id="collision">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">산업 자본주의 vs 전통 경제 — 충돌과 변화</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">충돌의 메커니즘</div>
+
+      <div class="def-box">
+        <div class="def-label">핵심 변화</div>
+        <p>산업 자본주의가 19세기 초에 유럽에 보편적 힘으로 작용하기 시작하면서,<br>
+        자본주의 관념·관행이 전통 경제 공동체를 <span class="hl-red">해체</span>시키기 시작함</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-box">자본주의 관념<br>외부 유입 또는<br>내부 각성</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box red">토지 거래<br>시작<br>(메리가 팜)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">공유지 소멸<br>품앗이 붕괴</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box red">촌락 공동체<br>해체</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">도시 공장으로<br>이동 → 임금 노동자</div>
+      </div>
+
+      <div class="example gold">
+        <div class="example-label">교수 예시 — 메리, 톰, 조지 이야기 (핵심 스토리)</div>
+        <p><strong>배경:</strong> 메리와 톰은 자영농으로 촌락 공동체 안에서 경작 중. 조지는 외부에서 온 자본가로 양목장을 넓히려는 사람.<br><br>
+        <strong>전개:</strong><br>
+        1) 메리가 이탈리아 북부(자본주의 선진 지역) 여행 후 "내 땅을 내 마음대로 팔 수 있다"는 걸 깨달음<br>
+        2) 원래 농사 짓기 싫었는데 → 조지에게 땅 판매<br>
+        3) 지주 케이스: 조지에게 땅 통째로 팔아버림 → 톰·메리 등 경작 농민은 졸지에 쫓겨남<br><br>
+        <strong>결과:</strong><br>
+        - 공유지 사라짐 → 공동체 품앗이 불가능<br>
+        - 나머지 자영농도 연쇄적으로 팔고 떠남<br>
+        - <strong>종잣돈을 챙겨 도시로 이동 → 마침 산업화 진행 중인 공장에 취직</strong></p>
+      </div>
+
+      <div class="caution">
+        <strong>주의:</strong> 마르크스 시대엔 이 과정이 무조건 억압·강제에 의한 것으로 해석. 그러나 이후 연구에 의하면 <strong>자발적으로 판 경우도 많았음.</strong> 결론(공동체 해체, 임금 노동자화)은 같음.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">직접 생산자(농민 → 노동자)의 삶 변화</div>
+
+      <table>
+        <tr>
+          <th>구분</th>
+          <th>전통 경제 (톰, 전통 농민)</th>
+          <th>자본주의 이후 (임금 노동자)</th>
+        </tr>
+        <tr>
+          <td>생산 수단 관계</td>
+          <td>대대로 경작 권리 + 감정적 애착 있음</td>
+          <td>생산 수단에 아무 권리 없음</td>
+        </tr>
+        <tr>
+          <td>생산물</td>
+          <td>일단 자기 것. 지대(소작료)만 납부</td>
+          <td>모두 자본가 것. 임금만 받음</td>
+        </tr>
+        <tr>
+          <td>생존 방식</td>
+          <td>땅에서 생산해 자급 + 일부 교환</td>
+          <td>노동력 판매 → 임금으로 시장에서 구입</td>
+        </tr>
+        <tr>
+          <td>공동체</td>
+          <td>촌락 공동체 또는 길드 소속</td>
+          <td>개인으로 해체, 공동체 없음</td>
+        </tr>
+        <tr>
+          <td>시간</td>
+          <td>자연 리듬 (Time discipline 없음)</td>
+          <td>Time discipline (출근·퇴근 시간 규율)</td>
+        </tr>
+      </table>
+
+      <div class="key-concept">
+        <div class="kc-label">교수 강조</div>
+        <p>인류가 결국 자본주의에 적응했지만, 그 적응이 쉽지 않았음.<br>
+        유라시아 대륙 전체가 오랜 시간 동안 전통 경제식으로 살아오다가 갑자기 뒤집힌 것.<br>
+        <span class="hl-gold">→ 이 충돌이 사회주의 등장의 배경이 됨 (다음 차시에서 정의)</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F 예상 포인트 ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">T/F 예상 포인트 — 2차시 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 자본주의 유통 형식 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의에서 주요 경제 활동은 생산과 분배, 두 가지다.</div>
+          <div class="tf-reason"><strong>→ 세 가지: 생산·분배(거래)·투자.</strong> 투자도 별도의 주요 경제 활동.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">"분배(distribution)"는 공평하게 나눠주는 행위를 의미한다.</div>
+          <div class="tf-reason"><strong>→ 원어 distribute는 그냥 재화가 돌아다니는 것.</strong> 유통·거래와 거의 같은 의미. 공평 분배 의미 아님.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자본주의는 인간의 이윤 동기가 무한하다고 인정하는 경제 시스템이다.</div>
+          <div class="tf-reason"><strong>→ 핵심 전제.</strong> 무한 이윤 동기 + 시장 메커니즘.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">도덕 경제는 이윤 동기를 완전히 부정한다.</div>
+          <div class="tf-reason"><strong>→ 어느 정도의 이윤은 허용.</strong> 단, 공동체를 붕괴시키는 무한 이윤 추구는 억제.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자연 경제는 자급자족 비중이 높고, 만물의 상품화가 이루어지지 않은 경제다.</div>
+          <div class="tf-reason"><strong>→ 유통 형식 세목 1(만물의 상품화)의 반대 개념.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">인간의 이윤 동기가 무한하다는 것은 인류 보편적 진실이다.</div>
+          <div class="tf-reason"><strong>→ 19세기 초 이후 자본주의 이후의 현상.</strong> 근대 경제학자들이 정당화한 특정 시대의 전제.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 자본주의 생산 양식 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자본주의 생산 양식은 생산력과 생산 관계로 구성된다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 생산력(피지컬) + 생산 관계(인간관계).</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의에서 직접 생산자는 생산 수단에 대한 배타적 소유권을 갖는다.</div>
+          <div class="tf-reason"><strong>→ 배타적 사적 소유권은 자본가에게.</strong> 직접 생산자는 생산 수단 권리 없음.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자본주의는 임금 노동제라고 요약할 수 있다.</div>
+          <div class="tf-reason"><strong>→ 생산 양식 관점의 자본주의 핵심 요약.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의 이전에도 생산 수단에 대한 소유권은 항상 단일 소유자에게만 있었다.</div>
+          <div class="tf-reason"><strong>→ 소유권이 중첩됐음.</strong> 지주(소유자) + 농민(경작권)이 함께 권리를 가졌음.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의 이전 지주는 자기 땅을 언제든 자유롭게 처분할 수 있었다.</div>
+          <div class="tf-reason"><strong>→ 소유권 중첩.</strong> 경작 농민의 권리가 인정됐기 때문에 마음대로 처분하지 못했음. 처분 시 비슷한 지주에게 팔아 농민 경작 유지.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 전통 경제 · 충돌 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">1800년경 유럽에서 농민 비율은 영국조차 10% 이하였다.</div>
+          <div class="tf-reason"><strong>→ 가장 빠른 영국·네덜란드도 약 45%.</strong> 헝가리·러시아는 90% 이상.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">조선의 높은 농민 비율은 사회 후진성의 증거다.</div>
+          <div class="tf-reason"><strong>→ 농민 유족 잘 유지 = 사회 안정의 증거일 수 있음.</strong> 교수가 명시적으로 부정.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">전통 경제 농민들이 문맹인 이유는 배울 필요가 없어서다 (무한 반복의 삶).</div>
+          <div class="tf-reason"><strong>→ 10살에 인생을 알 수 있었기 때문.</strong> 무식이나 신분 억압 때문만이 아님.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">촌락 공동체에서 elder가 리더인 것은 단순한 연공서열 문화 때문이다.</div>
+          <div class="tf-reason"><strong>→ 삶의 변수(전쟁·자연재해)를 가장 많이 경험했기 때문에 자연스럽게 권위 획득.</strong> 단순 연공서열 아님.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의에 의한 공동체 해체는 모두 강제·억압에 의해 이루어졌다.</div>
+          <div class="tf-reason"><strong>→ 자발적으로 땅을 팔고 떠난 경우도 많음.</strong> 마르크스 시대의 무조건 억압론은 이후 연구로 수정.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">사회주의는 역사적 개념으로, 산업 자본주의라는 전제 없이는 의미를 획득할 수 없다.</div>
+          <div class="tf-reason"><strong>→ 2차시에서도 반복 강조된 핵심 명제.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">사회주의는 평등주의와 동일한 개념이다.</div>
+          <div class="tf-reason"><strong>→ 평등주의는 보편적 인간 정서. 사회주의는 산업 자본주의 이후 특정 역사 시대의 개념.</strong> 둘은 다름.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (2차시)</h3>
+      <ul>
+        <li>자본주의를 유통 형식과 생산 양식 두 가지 관점에서 설명하라.</li>
+        <li>도덕 경제·전통 경제와 자본주의 시장 경제의 차이는 무엇인가? 이윤 동기를 중심으로.</li>
+        <li>자본주의 이전 "소유권 중첩" 개념을 구체적 사례와 함께 설명하라.</li>
+        <li>1800년경 유럽 농민의 삶의 특징과 그것이 산업 자본주의와 충돌했을 때 나타난 변화를 서술하라.</li>
+        <li>직접 생산자(농민)가 임금 노동자가 되는 과정이 왜 인류사적으로 혁명적 변화인가?</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY + 80 >= sec.offsetTop) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--accent)';
+        a.style.borderBottomColor = 'var(--accent)';
+      }
+    });
+  });
+</script>
+</body>
+</html>

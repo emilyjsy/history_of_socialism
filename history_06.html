@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 6차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #100c0e;
+    --surface: #1a1418;
+    --surface2: #221c20;
+    --border: #302430;
+    --accent: #d47ab0;
+    --accent2: #f0a8d4;
+    --accent3: #e8c86a;
+    --green: #7ec8a0;
+    --blue: #7ab0d4;
+    --red: #e07878;
+    --purple: #b09de8;
+    --text: #e8dce4;
+    --text-muted: #786070;
+    --text-soft: #c0a8b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.75; }
+
+  header {
+    background: linear-gradient(135deg, #140c12 0%, #100c0e 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative; overflow: hidden;
+  }
+  header::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,122,176,.08) 0%, transparent 70%);
+  }
+  .header-label { font-size: 11px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+  header h1 { font-family: 'Noto Serif KR', serif; font-size: 2rem; font-weight: 900; color: var(--accent2); margin-bottom: 8px; }
+  header .subtitle { color: var(--text-muted); font-size: 13px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .badge { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; letter-spacing: .08em; font-weight: 500; }
+  .badge.pink   { background: rgba(212,122,176,.12); border: 1px solid rgba(212,122,176,.3); color: var(--accent); }
+  .badge.gold   { background: rgba(232,200,106,.10); border: 1px solid rgba(232,200,106,.28); color: var(--accent3); }
+  .badge.purple { background: rgba(176,157,232,.10); border: 1px solid rgba(176,157,232,.28); color: var(--purple); }
+
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 40px; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { color: var(--text-muted); text-decoration: none; font-size: 13px; padding: 14px 18px; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; font-weight: 500; }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.35rem; font-weight: 900; color: var(--accent2); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .card-title { font-weight: 700; color: var(--accent2); font-size: 1rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card-title::before { content: ''; width: 4px; height: 18px; background: var(--accent); border-radius: 2px; flex-shrink: 0; }
+
+  .def-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 18px 22px; margin: 14px 0; }
+  .def-box .def-label { font-size: 10px; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .def-box.gold   { border-left-color: var(--accent3); } .def-box.gold   .def-label { color: var(--accent3); }
+  .def-box.green  { border-left-color: var(--green); }  .def-box.green  .def-label { color: var(--green); }
+  .def-box.blue   { border-left-color: var(--blue); }   .def-box.blue   .def-label { color: var(--blue); }
+  .def-box.red    { border-left-color: var(--red); }    .def-box.red    .def-label { color: var(--red); }
+  .def-box.purple { border-left-color: var(--purple); } .def-box.purple .def-label { color: var(--purple); }
+
+  .key-concept { border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+  .key-concept.pink   { background: linear-gradient(135deg,rgba(212,122,176,.09),rgba(212,122,176,.02)); border: 1px solid rgba(212,122,176,.22); }
+  .key-concept.pink   .kc-label { color: var(--accent); }
+  .key-concept.gold   { background: linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02)); border: 1px solid rgba(232,200,106,.2); }
+  .key-concept.gold   .kc-label { color: var(--accent3); }
+  .key-concept.green  { background: linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02)); border: 1px solid rgba(126,200,160,.2); }
+  .key-concept.green  .kc-label { color: var(--green); }
+  .key-concept.purple { background: linear-gradient(135deg,rgba(176,157,232,.08),rgba(176,157,232,.02)); border: 1px solid rgba(176,157,232,.2); }
+  .key-concept.purple .kc-label { color: var(--purple); }
+  .key-concept.blue   { background: linear-gradient(135deg,rgba(122,176,212,.08),rgba(122,176,212,.02)); border: 1px solid rgba(122,176,212,.2); }
+  .key-concept.blue   .kc-label { color: var(--blue); }
+  .kc-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  .hl-pk { color: var(--accent2); font-weight: 700; }
+  .hl-go { color: var(--accent3); font-weight: 700; }
+  .hl-g  { color: var(--green);   font-weight: 700; }
+  .hl-b  { color: var(--blue);    font-weight: 700; }
+  .hl-r  { color: var(--red);     font-weight: 700; }
+  .hl-p  { color: var(--purple);  font-weight: 700; }
+
+  .example { background: rgba(212,122,176,.05); border: 1px solid rgba(212,122,176,.18); border-radius: 6px; padding: 15px 20px; margin: 12px 0; }
+  .example-label { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example.gold   { background: rgba(232,200,106,.05); border-color: rgba(232,200,106,.18); } .example.gold   .example-label { color: var(--accent3); }
+  .example.green  { background: rgba(126,200,160,.05); border-color: rgba(126,200,160,.18); } .example.green  .example-label { color: var(--green); }
+  .example.red    { background: rgba(224,120,120,.05); border-color: rgba(224,120,120,.18); } .example.red    .example-label { color: var(--red); }
+  .example.purple { background: rgba(176,157,232,.05); border-color: rgba(176,157,232,.18); } .example.purple .example-label { color: var(--purple); }
+  .example p, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; } .example li { margin-bottom: 5px; }
+
+  .caution { background: rgba(224,120,120,.07); border: 1px solid rgba(224,120,120,.22); border-radius: 6px; padding: 14px 18px; margin: 12px 0; font-size: 13.5px; color: var(--text-soft); }
+  .caution strong { color: var(--red); }
+
+  /* 강조 박스 */
+  .hero-box {
+    background: linear-gradient(135deg, rgba(212,122,176,.12), rgba(212,122,176,.04));
+    border: 2px solid rgba(212,122,176,.4);
+    border-radius: 10px; padding: 22px 26px; margin: 16px 0;
+  }
+  .hero-box .hero-label { font-size: 10px; letter-spacing: .2em; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .hero-box p { font-size: 15.5px; color: var(--text); font-weight: 500; line-height: 1.9; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th { background: var(--surface2); color: var(--accent); font-weight: 700; text-align: left; padding: 10px 16px; border: 1px solid var(--border); font-size: 12px; letter-spacing: .05em; }
+  td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text-soft); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* 이카리아 4분야 그리드 */
+  .icaria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .icaria-box { border-radius: 8px; padding: 18px 16px; }
+  .icaria-box h4 { font-family: 'Noto Serif KR', serif; font-size: .9rem; font-weight: 900; margin-bottom: 10px; }
+  .icaria-box p, .icaria-box li { font-size: 13.5px; color: var(--text-soft); margin-bottom: 5px; }
+  .icaria-box ul { padding-left: 16px; }
+  .icaria-box.econ   { background: rgba(126,200,160,.07);  border: 1px solid rgba(126,200,160,.25);  } .icaria-box.econ   h4 { color: var(--green); }
+  .icaria-box.poli   { background: rgba(122,176,212,.07);  border: 1px solid rgba(122,176,212,.25);  } .icaria-box.poli   h4 { color: var(--blue); }
+  .icaria-box.cult   { background: rgba(232,200,106,.07);  border: 1px solid rgba(232,200,106,.25);  } .icaria-box.cult   h4 { color: var(--accent3); }
+  .icaria-box.daily  { background: rgba(176,157,232,.07);  border: 1px solid rgba(176,157,232,.25);  } .icaria-box.daily  h4 { color: var(--purple); }
+
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+  .flow-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--text); text-align: center; min-width: 88px; }
+  .flow-box.pk { border-color: var(--accent);  color: var(--accent2); }
+  .flow-box.g  { border-color: var(--green);   color: var(--green); }
+  .flow-box.go { border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.p  { border-color: var(--purple);  color: var(--purple); }
+  .flow-box.r  { border-color: var(--red);     color: var(--red); }
+  .flow-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+  .tf-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 16px; }
+  .tf-section h3 { font-family: 'Noto Serif KR', serif; font-size: 1rem; color: var(--accent2); margin-bottom: 16px; font-weight: 700; }
+  .tf-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05); font-size: 14px; }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge { flex-shrink: 0; width: 32px; height: 22px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; margin-top: 1px; }
+  .tf-badge.true  { background: rgba(126,200,160,.2); color: var(--green); }
+  .tf-badge.false { background: rgba(224,120,120,.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box { background: linear-gradient(135deg,rgba(212,122,176,.08),rgba(212,122,176,.02)); border: 1px solid rgba(212,122,176,.22); border-radius: 10px; padding: 22px 26px; margin: 18px 0; }
+  .summary-box h3 { color: var(--accent2); font-family: 'Noto Serif KR', serif; font-size: 1rem; margin-bottom: 12px; font-weight: 900; }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li { padding: 5px 0; font-size: 14px; color: var(--text); display: flex; gap: 10px; align-items: flex-start; }
+  .summary-box li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    header { padding: 32px 20px 24px; } header h1 { font-size: 1.5rem; }
+    .container { padding: 24px 16px 60px; } nav { padding: 0 16px; }
+    .icaria-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 6차시 핵심 정리</div>
+  <h1>로치데일 조합 · 까베와 이카리아 · 공산주의 용어 등장 · 블랑키</h1>
+  <div class="subtitle">
+    <span>2026. 03. 30 &nbsp;|&nbsp; 6차시</span>
+    <span class="badge pink">중간고사 대비</span>
+    <span class="badge gold">국가주의 사회주의자들</span>
+    <span class="badge purple">공산주의 용어 탄생</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#context">시기·맥락</a>
+  <a href="#rochdale">로치데일 조합</a>
+  <a href="#cabet">까베 & 이카리아</a>
+  <a href="#communist">공산주의 용어 탄생</a>
+  <a href="#blanqui">블랑키 등장</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 00 시기·맥락 ━━━ -->
+  <div class="section" id="context">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">시기와 맥락 — 반드시 기억!</span>
+    </div>
+    <div class="card">
+      <div class="card-title">6차시 위치 — 1830년 이후</div>
+      <div class="def-box red">
+        <div class="def-label">⚠️ 교수 직접 강조 — 시험 출제 포인트</div>
+        <p>"말이 다 똑같아도 <span class="hl-r">1830년 이전이냐 이후냐</span>가 다르면 틀린 거야."<br>
+        6차시 내용 = <span class="hl-r">1830년 이후</span>의 이야기<br>
+        오언의 귀국·재기 이후 → 사회주의의 분화 → 국가주의 사회주의자 등장</p>
+      </div>
+      <div class="flow">
+        <div class="flow-box go">초기 사회주의<br>생시몽·푸리에·오언<br><span style="font-size:11px;">~1830 이전</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">사회주의 분화<br>공동체주의·국가주의<br><span style="font-size:11px;">1830 이후</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box pk">로치데일·까베·블랑키<br><span style="font-size:11px;">1830~1840년대</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box p">마르크스<br><span style="font-size:11px;">이후</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 01 로치데일 ━━━ -->
+  <div class="section" id="rochdale">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">로치데일 조합 — 최초의 현대적 노동조합</span>
+    </div>
+    <div class="card">
+      <div class="card-title">로치데일(Rochdale) 조합이란</div>
+      <div class="def-box green">
+        <div class="def-label">정의</div>
+        <p>맨체스터 인근 <span class="hl-g">로치데일</span>에서 탄생한 조합<br>
+        = <span class="hl-g">현대적 노동조합의 시초</span>로 불림<br>
+        오언 조합보다 훨씬 <span class="hl-g">온건(moderate)하고 현실적</span></p>
+      </div>
+      <table>
+        <tr><th>구분</th><th>오언 GNCTU</th><th>로치데일 조합</th></tr>
+        <tr>
+          <td>생산수단 소유</td>
+          <td>조합이 소유 지향 (사회주의적)</td>
+          <td><span class="hl-r">건드리지 않음</span> — 사장 재산은 사장 것</td>
+        </tr>
+        <tr>
+          <td>주요 활동</td>
+          <td>생산수단 조합 소유 추구</td>
+          <td>공동구매(공구)·임금 협상 중심</td>
+        </tr>
+        <tr>
+          <td>사회주의 여부</td>
+          <td>사회주의적</td>
+          <td><span class="hl-r">사회주의 운동으로 볼 수 없음</span> (소유권 건드리지 않음)</td>
+        </tr>
+        <tr>
+          <td>현대 연결</td>
+          <td>현대 노조와 다름</td>
+          <td>현대 노동조합(민노총 등)의 직접 조상</td>
+        </tr>
+      </table>
+      <div class="key-concept green">
+        <div class="kc-label">핵심 포인트</div>
+        <p>로치데일 = 현대 노동조합 시초 BUT <span class="hl-g">생산수단 소유권 문제 건드리지 않음</span><br>
+        → 사회주의 정의(생산수단의 사회적 소유)에 해당하지 않음<br>
+        → 중간고사 이후 배울 <span class="hl-g">개혁주의·개량주의 사회주의</span>와 유사한 성격</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시 — 현대 노동조합과 비교</div>
+        <p>현대 민노총: "울산공장 일부가 우리 겁니다"가 아님 → <strong>임금·노동조건 협상</strong>이 핵심<br>
+        로치데일도 마찬가지 → 소유권 ❌, 공동구매·임금 ✅<br>
+        (교수: 민노총이 국제 기준에서는 사실 굉장히 온건한 편)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 02 까베·이카리아 ━━━ -->
+  <div class="section" id="cabet">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">에띠엔 까베 (Étienne Cabet) & 이카리아 여행기</span>
+    </div>
+    <div class="card">
+      <div class="card-title">까베 생애 & 등장 배경</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>수공업자 집안. 집안은 몰락했지만 본인은 능력자 → 변호사로 성공</td></tr>
+        <tr><td>사상 계기</td><td>산업자본주의의 불공정함을 느끼며 민중 잡지 <em>르 포퓰레르(Le Populaire)</em> 발행</td></tr>
+        <tr><td>망명</td><td>왕정 탄압으로 1834년 <strong>영국 망명</strong> (1834~1839년)</td></tr>
+        <tr><td>영국 체험</td><td>산업화된 공장·도시 직접 목격 → 더욱 확신 → 나머지 인생을 사회 변혁에 헌신 결심</td></tr>
+        <tr><td>대표 저작</td><td>망명 중 집필한 <em>이카리아 여행기</em> (사회주의 역사의 고전)</td></tr>
+        <tr><td>귀국 후</td><td>1839년 파리 귀환. <em>르 포퓰레르</em> 재발행 → 구독자 <strong>40만 명</strong> → 프랑스 지식인계 최고 아이콘</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">이카리아 여행기 — 핵심 내용</div>
+      <div class="def-box">
+        <div class="def-label">이카리아 여행기 개요</div>
+        <p>가상의 섬나라 <span class="hl-pk">이카리아</span>를 통치하는 <span class="hl-pk">이카르</span> (예수 이미지의 인물) 가 다스리는 이상향을 여행기 형식으로 묘사<br>
+        → 철학적 논문이 아닌 <span class="hl-pk">여행기 형식</span> → 대중이 접근하기 쉬움 → 큰 반향<br>
+        → 까베의 추종자들 = 오언주의자 아닌 <span class="hl-pk">"이카리아인"</span>으로 자처</p>
+      </div>
+
+      <div class="icaria-grid">
+        <div class="icaria-box econ">
+          <h4>① 경제</h4>
+          <ul>
+            <li><strong>사유재산 전면 폐지</strong> (생산수단만이 아닌 모든 재산)</li>
+            <li>완전 국유화</li>
+            <li>시장 메커니즘 없음 → <strong>중앙계획</strong>으로 분배</li>
+            <li>국가산업위원회가 생산량 목표·분배 결정</li>
+            <li>화폐 소멸 (내부 거래 시) — 외화만 존재</li>
+            <li>각 공장에 <strong>민주적 회의체</strong> (관료주의 방지)</li>
+            <li>동기 부여: <strong>유용한 경쟁</strong> = 표창장·영웅 칭호 (시장 없어도 명예 경쟁 있음)</li>
+          </ul>
+        </div>
+        <div class="icaria-box poli">
+          <h4>② 정치</h4>
+          <ul>
+            <li><strong>2,000명 의회</strong> (입법 + 행정 통합)</li>
+            <li>의회 내 위원회가 행정 역할 (별도 정부 없음)</li>
+            <li>명칭: <strong>인민대표회의</strong></li>
+            <li>사법: <strong>인민재판</strong> = 법률 엘리트가 아닌 인민이 참여해 결정 (배심원제 확대 형태)</li>
+            <li>인민재판의 핵심: 법정 절차 간소화 + 민주성</li>
+          </ul>
+        </div>
+        <div class="icaria-box cult">
+          <h4>③ 문화</h4>
+          <ul>
+            <li><strong>출판사 하나</strong> (국가 소유)</li>
+            <li><strong>신문 하나</strong> (국가 승인, 인민 선출 대표가 편집)</li>
+            <li>"이론(異論) 없음" — 이유: 생산수단 소유권 갈등이 없으면 근본적 견해 차이 없음 (까베 논리)</li>
+            <li>개인 취향 차이는 인정. 사회·경제적 계급 갈등에서 오는 근본 이론만 없음</li>
+          </ul>
+        </div>
+        <div class="icaria-box daily">
+          <h4>④ 일상</h4>
+          <ul>
+            <li>6시 기상 → 간단한 아침 → 9시 제대로 아침</li>
+            <li><strong>2시 점심: 거대 공동 식당에서 모든 이카리아인 함께</strong> (집단의식 함양)</li>
+            <li>4시: 국가가 집 앞에 식재료·음식 배급</li>
+            <li>5~6시: 자유롭게 저녁 식사</li>
+            <li>슬로건: <span class="hl-p">"각자에게는 그 필요에 따라, 각자로부터는 그 능력에 따라"</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hero-box" style="margin-top:18px;">
+        <div class="hero-label">✦ 이카리아 핵심 슬로건 — 외워!</div>
+        <p>"<span class="hl-pk">각자에게는 그 필요에 따라</span>, <span class="hl-pk">각자로부터는 그 능력에 따라</span>"<br>
+        <span style="font-size:13px; color:var(--text-soft);">= 능력껏 기여하고, 필요한 만큼 가져가라. 기여 많다고 더 가져가지 않고, 기여 적다고 쫄지 않는다.</span></p>
+      </div>
+
+      <div class="key-concept pink">
+        <div class="kc-label">까베 vs 오언 비교 — 시험 포인트</div>
+        <p>오언 협동촌락: 소규모 공동체, 생산수단 소유권 미언급, 자본가 투자 기반<br>
+        까베 이카리아: <span class="hl-pk">국가 규모</span>, <span class="hl-pk">모든 사유재산 폐지</span>, <span class="hl-pk">중앙계획 경제</span>, 화폐 소멸<br>
+        → 까베가 훨씬 더 <span class="hl-pk">국가주의적이고 급진적</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 03 공산주의 용어 ━━━ -->
+  <div class="section" id="communist">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">공산주의(Communism) 용어 탄생 — 1840년대</span>
+    </div>
+    <div class="card">
+      <div class="card-title">왜 '공산주의'라는 새 용어가 나왔나</div>
+      <div class="def-box purple">
+        <div class="def-label">공산주의 용어 등장 배경 (1840년~)</div>
+        <p>당시 주류 사회주의 = 오언주의자<br>
+        까베 계열: 오언식 사회주의와 같은 대의 공유하지만<br>
+        <span class="hl-p">방법·궁극적 목표에서 차별화 → "우리는 더 진짜다"</span><br>
+        → <span class="hl-p">communist</span> 용어 채택. 영국의 <span class="hl-p">바름비(Barmby)</span>가 영어권에 유행시킴</p>
+      </div>
+      <table>
+        <tr><th>구분</th><th>사회주의 (오언 계열)</th><th>공산주의 (까베 계열)</th></tr>
+        <tr><td>공통점</td><td colspan="2">생산수단 사적 소유 반대 / 시장 경제에 제3자 개입 필요</td></tr>
+        <tr><td>재산</td><td>생산수단 소유권 문제 중심</td><td><strong>모든 사유재산 폐지</strong> (더 급진)</td></tr>
+        <tr><td>규모</td><td>공동체 단위</td><td><strong>국가 단위</strong> (이카리아 = 섬나라 국가)</td></tr>
+        <tr><td>경제 운영</td><td>다양 (협동촌락·협동기업 등)</td><td><strong>중앙계획 + 화폐 소멸</strong></td></tr>
+        <tr><td>성격</td><td>다양한 방식</td><td><strong>기독교적 + 국가·재산공유공동체</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">공산주의 용어의 역사적 뿌리</div>
+      <div class="def-box gold">
+        <div class="def-label">재세례파 (Anabaptists) — 공산주의 이미지의 원형</div>
+        <p>16세기 종교개혁 시기 <span class="hl-go">독일 뮌스터</span>에서 활동한 급진 신교 공동체<br>
+        자기 <span class="hl-go">재산을 다 공동체에 헌납</span>하고 완전한 평등 공동체 생활<br>
+        → 이들을 "공산주의자"라고 불렀던 역사적 이미지가 남아 있었음<br>
+        → 까베 이카리아 구상과 유사 → 용어 자연스럽게 부활</p>
+      </div>
+      <div class="key-concept gold">
+        <div class="kc-label">기독교와 공산주의의 연결 — 시험 포인트</div>
+        <p>예수의 가르침 = 자발적 가난 + 평등 공동체 (기독교 본래 성격)<br>
+        중세 수도원 농사·프란치스코 탁발승 = 자발적 가난의 연장<br>
+        재세례파 → 까베 이카리아 → 초기 공산주의<br>
+        → 초기 공산주의 = <span class="hl-go">다분히 기독교적 성격</span><br>
+        → 이후 마르크스가 이걸 세속화·과학화 (큰 변화)</p>
+      </div>
+      <div class="caution">
+        <strong>아이러니:</strong> 공산주의 용어는 기독교적 배경에서 까베가 퍼뜨렸지만, 얼마 안 가 블랑키와 마르크스 등에 의해 전혀 다른 의미를 갖게 됨. 까베가 용어의 주인공 자리를 금방 빼앗김.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 04 블랑키 ━━━ -->
+  <div class="section" id="blanqui">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">루이 오귀스트 블랑키 (Louis Auguste Blanqui) — 등장</span>
+    </div>
+    <div class="card">
+      <div class="card-title">블랑키 생애 & 배경</div>
+      <table>
+        <tr><th>항목</th><th>내용</th></tr>
+        <tr><td>출신</td><td>프랑스 남부 유지의 아들. 아버지 = 관료. 형 = 당시 프랑스 손꼽히는 경제학자</td></tr>
+        <tr><td>학력</td><td>파리대학 법학부 입학(서울 법대 수준) + 의학부 복수 전공. 초엘리트 가도</td></tr>
+        <tr><td>전환점</td><td>1820년대 초반(20대 초반) 급진 공화주의자들의 글을 읽기 시작 → 삐딱선</td></tr>
+        <tr><td>사상 영향</td><td>프랑스 혁명 급진파 <strong>바베프(Babeuf)</strong>의 생애와 사상 → 쿠데타형 혁명 발상 형성</td></tr>
+        <tr><td>7월 혁명 (1830)</td><td>샤를 10세 쫓아냄 → 열광 → 그러나 경제 시스템 그대로 → "혁명이 왜 이것밖에 안 해?" 분노</td></tr>
+        <tr><td>선택</td><td>기존 사회주의 방향 아닌 새로운 옵션: <strong>정치적 쿠데타·봉기</strong> 방식 → 다음 차시 상세 학습</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">공화주의 — 사회주의와 차이</div>
+      <div class="def-box blue">
+        <div class="def-label">공화주의 (블랑키가 초기에 접한 사상)</div>
+        <p><strong>반군주정 + 소생산자들의 세상</strong><br>
+        소생산자 = 소규모 수공업자·자영농<br>
+        → 이들이 각자의 작은 생산수단 <span class="hl-b">소유권을 확보</span>하며 사는 세상 지향</p>
+      </div>
+      <table>
+        <tr><th>구분</th><th>공화주의</th><th>사회주의</th></tr>
+        <tr><td>생산수단 소유</td><td>소규모 소유는 <strong>긍정</strong> (자영농·소장인의 소유권 확보)</td><td>소유권 자체를 <strong>문제화</strong></td></tr>
+        <tr><td>길드</td><td>길드 개입 싫어함 (개인 자유 우선)</td><td>길드의 공동체 역할 일부 긍정</td></tr>
+        <tr><td>비판 대상</td><td>대형 공장주·대지주만 문제</td><td>생산수단 사적 소유 전반 문제</td></tr>
+        <tr><td>이상 사회</td><td>뛰어난 장인이 자기 가게 갖고 존경받으며 사는 사회</td><td>생산수단 사회적 소유·운영</td></tr>
+      </table>
+      <div class="key-concept blue">
+        <div class="kc-label">블랑키의 선택</div>
+        <p>7월 혁명 실망 → 공화주의 수준으로는 부족 → 사회주의자 선언<br>
+        그러나 생시몽·오언·푸리에·까베 방식도 아닌 <span class="hl-b">새로운 옵션:</span><br>
+        바베프의 쿠데타 시도에서 영감 → <span class="hl-b">정치적 봉기·혁명</span> 방식<br>
+        → 상세한 내용은 다음 차시</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">바베프 (Babeuf) — 블랑키에 영향을 준 인물</div>
+      <div class="def-box">
+        <div class="def-label">프랑수아 바베프 (François Babeuf)</div>
+        <p>프랑스 혁명 당시 가장 급진적인 <span class="hl-pk">쿠데타(봉기) 시도</span>를 했던 인물<br>
+        봉기 직후 체포·처형됨<br>
+        → 블랑키가 바베프의 친구를 스승으로 삼으며 혁명적 방법론에 영향받음</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">T/F 예상 포인트 — 6차시 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 시기·맥락 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">로치데일·까베·블랑키 등의 활동은 1830년 이전의 일이다.</div>
+          <div class="tf-reason"><strong>→ 모두 1830년 이후.</strong> 교수가 직접 강조한 시험 포인트. 시기 혼동 = 틀림.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 로치데일 조합 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">로치데일 조합은 생산수단의 조합적 소유를 목표로 했다.</div>
+          <div class="tf-reason"><strong>→ 생산수단 소유권 건드리지 않음.</strong> 그것은 오언 GNCTU. 로치데일은 공동구매(공구)·임금 협상 중심.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">로치데일 조합은 현대적 노동조합의 시초로 불리지만, 사회주의 정의에 해당하지 않는다.</div>
+          <div class="tf-reason"><strong>→ 생산수단 소유권 불건드림 = 사회주의 정의 미충족.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 까베 & 이카리아 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">까베는 이카리아 여행기를 영국 망명 중에 집필했다.</div>
+          <div class="tf-reason"><strong>→ 1834~1839년 영국 망명 중 집필.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">이카리아는 생산수단만 사회화하고 개인 사유재산은 허용한다.</div>
+          <div class="tf-reason"><strong>→ 모든 사유재산 전면 폐지.</strong> 오언식(생산수단만 문제화)과 다른 까베의 특징.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">이카리아에는 시장 메커니즘이 없고 국가산업위원회의 중앙계획으로 분배한다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 화폐도 내부적으로 소멸 (외화만 존재).</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">이카리아에는 경쟁이 전혀 없다.</div>
+          <div class="tf-reason"><strong>→ 시장 경쟁은 없지만 "유용한 경쟁"(표창장·영웅 칭호)은 존재.</strong> 까베가 직접 제시한 동기 부여 방안.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">이카리아에는 출판의 자유가 있고 다양한 출판사가 존재한다.</div>
+          <div class="tf-reason"><strong>→ 출판사 하나(국가 소유), 신문 하나(국가 승인).</strong> 이론(異論) 없음 = 계급 갈등이 없으면 근본 견해 차이 없다는 논리.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">이카리아의 핵심 슬로건은 "각자에게는 그 필요에 따라, 각자로부터는 그 능력에 따라"이다.</div>
+          <div class="tf-reason"><strong>→ 반드시 외워야 할 슬로건.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">이카리아의 인민재판은 법률 엘리트 대신 인민이 참여하는 배심원제 확대 형태다.</div>
+          <div class="tf-reason"><strong>→ 까베의 인민재판 정의.</strong> 절차 간소화 + 민주성 강조.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">까베의 르 포퓰레르는 귀국 후 약 4만 명의 구독자를 모았다.</div>
+          <div class="tf-reason"><strong>→ 40만 명.</strong> 당시 기준 어마어마한 숫자.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 공산주의 용어·블랑키 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">공산주의(communist)라는 용어는 1840년부터 본격적으로 쓰이기 시작했다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 까베 계열이 사용, 영국의 바름비가 영어권에 유행시킴.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">공산주의는 처음부터 마르크스의 무신론적·세속적 사상이었다.</div>
+          <div class="tf-reason"><strong>→ 초기 공산주의는 다분히 기독교적 성격.</strong> 재세례파 이미지에서 유래. 마르크스가 이후 세속화·과학화함.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">공화주의는 모든 생산수단의 사회적 소유를 지향하는 사회주의와 같은 이념이다.</div>
+          <div class="tf-reason"><strong>→ 다름.</strong> 공화주의 = 소규모 생산수단 소유 긍정 + 반군주정. 사회주의 = 생산수단 소유권 자체를 문제화.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">블랑키는 7월 혁명(1830)에서 경제 시스템이 그대로 유지되는 것을 보고 기존 사회주의 방식 대신 정치적 봉기 방식을 선택했다.</div>
+          <div class="tf-reason"><strong>→ 블랑키의 전환점.</strong> 상세 내용은 다음 차시.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">블랑키는 영국 출신으로 산업화의 폐해를 직접 경험한 인물이다.</div>
+          <div class="tf-reason"><strong>→ 프랑스 출신.</strong> 프랑스 남부 유지의 아들, 파리대학 법학·의학 복수 전공 엘리트.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (6차시)</h3>
+      <ul>
+        <li>로치데일 조합이 현대 노동조합의 시초임에도 사회주의 운동으로 볼 수 없는 이유를 서술하라.</li>
+        <li>까베의 이카리아 여행기가 오언의 협동촌락 구상과 어떻게 다른지, 국가주의적 성격을 중심으로 비교하라.</li>
+        <li>이카리아의 경제 운영 원리(중앙계획·화폐 소멸·유용한 경쟁)를 설명하고, 까베가 어떻게 동기 부여 문제를 해결하려 했는지 서술하라.</li>
+        <li>'공산주의'라는 용어가 1840년에 등장한 맥락과, 초기 공산주의의 기독교적 성격을 재세례파와 연결해 설명하라.</li>
+        <li>공화주의와 사회주의가 생산수단 소유권에 대해 어떻게 다른 입장을 갖는지 비교하라.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY + 80 >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + cur) { a.style.color = 'var(--accent)'; a.style.borderBottomColor = 'var(--accent)'; }
+    });
+  });
+</script>
+</body>
+</html>

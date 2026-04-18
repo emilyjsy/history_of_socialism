@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 1차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0e0c;
+    --surface: #1a1815;
+    --surface2: #221f1b;
+    --border: #2e2a24;
+    --accent: #c8a96e;
+    --accent2: #e8c98a;
+    --accent3: #7ec8a4;
+    --red: #e07070;
+    --blue: #7aadcc;
+    --text: #e8e0d4;
+    --text-muted: #8a8070;
+    --text-soft: #b8b0a0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #1a1510 0%, #0f0e0c 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent2);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  header .subtitle span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(200,169,110,0.15);
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--accent);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 14px 20px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--accent2);
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* DEFINITION BOX */
+  .def-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .def-box .def-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .def-box p {
+    color: var(--text);
+    font-size: 14.5px;
+  }
+
+  /* KEY CONCEPT */
+  .key-concept {
+    background: linear-gradient(135deg, rgba(200,169,110,0.08), rgba(200,169,110,0.03));
+    border: 1px solid rgba(200,169,110,0.25);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .key-concept .kc-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .key-concept p {
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* HIGHLIGHT */
+  .hl-gold { color: var(--accent2); font-weight: 700; }
+  .hl-green { color: var(--accent3); font-weight: 700; }
+  .hl-red { color: var(--red); font-weight: 700; }
+  .hl-blue { color: var(--blue); font-weight: 700; }
+
+  /* EXAMPLE BOX */
+  .example {
+    background: rgba(126,200,164,0.06);
+    border: 1px solid rgba(126,200,164,0.2);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .example-label {
+    font-size: 10px;
+    color: var(--accent3);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example p, .example ul { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 16px; }
+  .example li { margin-bottom: 5px; }
+
+  /* WARNING / CAUTION */
+  .caution {
+    background: rgba(224,112,112,0.07);
+    border: 1px solid rgba(224,112,112,0.25);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 13.5px;
+    color: var(--text-soft);
+  }
+  .caution strong { color: var(--red); }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  th {
+    background: var(--surface2);
+    color: var(--accent);
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  td {
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+  /* FLOW DIAGRAM */
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0;
+  }
+  .flow-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    min-width: 100px;
+  }
+  .flow-box.accent { border-color: var(--accent); color: var(--accent2); }
+  .flow-box.green { border-color: var(--accent3); color: var(--accent3); }
+  .flow-arrow {
+    color: var(--text-muted);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* COMPARE TABLE */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .compare-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .compare-item h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .compare-item.before h4 { color: var(--blue); }
+  .compare-item.after h4 { color: var(--accent2); }
+  .compare-item p { font-size: 13.5px; color: var(--text-soft); }
+
+  /* TF SECTION */
+  .tf-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .tf-section h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.05rem;
+    color: var(--accent2);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .tf-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 14px;
+  }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge {
+    flex-shrink: 0;
+    width: 32px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-top: 1px;
+  }
+  .tf-badge.true { background: rgba(126,200,164,0.2); color: var(--accent3); }
+  .tf-badge.false { background: rgba(224,112,112,0.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 32px 0;
+  }
+
+  /* SUMMARY BOX */
+  .summary-box {
+    background: linear-gradient(135deg, rgba(200,169,110,0.1), rgba(200,169,110,0.04));
+    border: 1px solid rgba(200,169,110,0.3);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+  .summary-box h3 {
+    color: var(--accent2);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem;
+    margin-bottom: 14px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .summary-box ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  .summary-box li {
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--text);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .summary-box li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* SCROLL TO TOP */
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 600px) {
+    header { padding: 32px 20px 24px; }
+    header h1 { font-size: 1.6rem; }
+    .container { padding: 24px 16px 60px; }
+    nav { padding: 0 16px; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 1차시 핵심 정리</div>
+  <h1>역사 · 산업화 · 자본주의</h1>
+  <div class="subtitle">
+    <span>2026. 03. 09 &nbsp;|&nbsp; 80분 수업</span>
+    <span class="badge">중간고사 대비</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#keyword">키워드 개요</a>
+  <a href="#history">역사란 무엇인가</a>
+  <a href="#industrialization">산업화</a>
+  <a href="#capitalism">자본주의</a>
+  <a href="#socialism-intro">사회주의 등장 배경</a>
+  <a href="#tf">TF 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 0. 키워드 개요 ━━━ -->
+  <div class="section" id="keyword">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">수업 핵심 키워드 구조</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">강의 제목 = 키워드 2개</div>
+      <div class="flow">
+        <div class="flow-box accent">사회주의</div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-box accent">역사</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">역사부터 먼저 정의</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">사회주의 등장 배경</div>
+      </div>
+      <p style="color:var(--text-muted); font-size:13px; margin-top:10px;">
+        ※ 사회주의가 "주인공"이므로 뒤에 나옴. 역사 먼저 정의하는 구조.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의 등장 전제 조건</div>
+      <div class="flow">
+        <div class="flow-box">산업화<br><span style="font-size:11px; color:var(--text-muted)">Industrialization</span></div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-box">자본주의화<br><span style="font-size:11px; color:var(--text-muted)">Capitalism</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box accent">산업 자본주의<br><span style="font-size:11px;">Industrial Capitalism</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">사회주의 등장</div>
+      </div>
+      <div class="caution">
+        <strong>핵심 명제:</strong> 산업 자본주의 없으면 사회주의 없다. 산업화 ≠ 자본주의. <strong>둘은 다른 개념</strong>이 하나로 묶인 것.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 1. 역사란 무엇인가 ━━━ -->
+  <div class="section" id="history">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">역사란 무엇인가</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">역사의 정의 — 3단계</div>
+
+      <div class="def-box">
+        <div class="def-label">핵심 정의</div>
+        <p>역사 = <span class="hl-gold">특정 과거(the past)</span>를 <span class="hl-gold">주관적으로</span> 재현한 <span class="hl-gold">하나의 이야기(an account)</span><br>
+        단, ① <span class="hl-green">합리적(rational)</span>이어야 하고 ② <span class="hl-green">맥락 중심적(contextual)</span>이어야 함</p>
+      </div>
+
+      <table>
+        <tr>
+          <th>구분</th>
+          <th>의미</th>
+          <th>포인트</th>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">the past</span></td>
+          <td>그냥 "과거 일반"이 아닌 <strong>특정 과거</strong></td>
+          <td>관사 'the' — 특정성</td>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">an account</span></td>
+          <td>여럿 중 하나의 이야기 (account = 이야기, 설명)</td>
+          <td>관사 'an' — 복수 가능성, 주관성</td>
+        </tr>
+        <tr>
+          <td><span class="hl-gold">represent</span></td>
+          <td>전체를 다 드러낼 수 없어 부분만 재현 (선택과 집중)</td>
+          <td>present ≠ represent</td>
+        </tr>
+      </table>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 서울대학교 사진</div>
+        <p>서울대를 사진 하나에 담으라 → 샤 찍는 사람 / 총장 잔디 찍는 사람 / 도서관 찍는 사람 각각 다름. 선택과 집중이 곧 representation. 나머지는 다 포기한 것.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 한국사 교과서</div>
+        <p>"한민족이 반만 년 동안 하나" → <strong>민족 통합 관점</strong>에서 쓴 하나의 account. 호남·영남이 달랐다는 관점으로 전혀 다르게 쓸 수도 있음. 국가 유지를 위한 특정 관점의 account에 불과.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 6.25 전쟁</div>
+        <p>6.25도 특정한 the past. 그런데 구현 방식은 군사 서술 / 민간인 고통 / 지역별 경험 등 다양. 교과서의 "새벽 남침" 서술은 그 중 하나의 방식.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">역사의 2가지 조건</div>
+
+      <div class="def-box">
+        <div class="def-label">조건 ①</div>
+        <p><span class="hl-gold">합리성 (Rationality)</span> — 논쟁 가능한 수준의 합리성 경계 안에 있어야 함</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시</div>
+        <ul>
+          <li>❌ "6.25는 천지신명의 뜻이었다" → 합리적 설명 불가</li>
+          <li>❌ "일제 강점기는 일본 천왕 폐하의 은덕" → 합리적 설명 불가</li>
+          <li>✅ "일제 강점기가 경제적으로 어느 정도 도움이 됐다" → 경제 지표로 설명 가능, 논쟁 가능</li>
+        </ul>
+      </div>
+
+      <div class="def-box" style="border-left-color: var(--accent3);">
+        <div class="def-label" style="color:var(--accent3);">조건 ② (핵심!)</div>
+        <p><span class="hl-green">맥락 중심성 (Contextuality)</span> — 사건·말·개념만이 아니라 <strong>그것이 발생한 상황·배경</strong>을 함께 고려</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 전해 들은 말</div>
+        <p>친구한테 전해 들은 말이 기분 나쁜 이유? → <strong>맥락(context)이 없기 때문.</strong> 실제로는 농담 분위기, 술자리 등 상황(context)이 있었다면 전혀 다른 의미. 맥락 = 텍스트를 <strong>둘러싸고 있는 상황·배경</strong>.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 물이 끓는 온도</div>
+        <p>물은 "100도에 끓는다"가 법칙. 그러나 일본 후지산 중턱은 94.2도, 중국 강가는 다름. 맥락이 들어올수록 <strong>그때그때 다 다르다</strong>가 됨 → 법칙 추출 불가 → 과학성 낮아짐. 역사는 과학성보다 맥락(당대 진실)에 충실.</p>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">⚠️ 시험 포인트</div>
+        <p>역사학은 "<span class="hl-red">과거를 통해 교훈을 얻는 학문</span>"이 <strong>아니다</strong>.<br>
+        역사학 = <span class="hl-gold">"그땐 그랬지"</span>를 맥락과 함께 드러내는 것.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">역사의 효용 — "현재를 낯설게 하기"</div>
+
+      <div class="def-box">
+        <div class="def-label">역사의 진짜 효용</div>
+        <p>과거를 맥락 중심으로 파고들면 → <strong>현재의 제도·관행이 당연한 것이 아님을</strong>을 깨달음<br>
+        → 현재의 권위·정당성에 <span class="hl-green">도전하거나 비판할 근거</span>가 됨</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-box">과거 집중 탐구<br><span style="font-size:11px;">맥락 중심</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">"그땐 달랐잖아"<br><span style="font-size:11px;">현재 제도 ≠ 자연적</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box accent">현재 제도의<br>권위 무너짐</div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 외국 생활 비유</div>
+        <p>외국에 오래 살다 오면 한국의 불합리한 관행이 갑자기 눈에 보임 → <strong>낯선 곳(=과거)을 경험하면 현재가 낯설어짐.</strong><br>
+        영국 작가 표현: <span class="hl-gold">"역사는 또 하나의 외국이다"</span></p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 대기업 불합리한 제도</div>
+        <p>취직 후 불합리한 제도를 보면 어른들은 "원래 그런 거다"(과거의 무게)로 정당화. 그러나 역사 공부한 사람은 그 제도가 <strong>특정 맥락 속에서 우연히 만들어진 것</strong>임을 알 수 있음 → 강력한 비판 무기.</p>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">수업 목표</div>
+        <p>자본주의·시장경제를 "당연한 것·인간 본성"으로 보지 않고 → <span class="hl-gold">200년 전 특정 맥락에서 형성된 하나의 제도</span>로 낯설게 보는 것. 사회주의 역사를 통해 그 도전들을 살펴봄.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 2. 산업화 ━━━ -->
+  <div class="section" id="industrialization">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">산업화 (Industrialization)</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">산업화의 정의</div>
+
+      <div class="def-box">
+        <div class="def-label">정의</div>
+        <p>생산의 <span class="hl-gold">동력(에너지원)</span>이 <span class="hl-red">생체 근력(인간+동물)</span> → <span class="hl-green">비(非) 생체 동력</span>으로 변화한 현상<br>
+        = <span class="hl-gold">공장제 기계 공업</span></p>
+      </div>
+
+      <table>
+        <tr>
+          <th>구분</th>
+          <th>에너지원</th>
+          <th>특징</th>
+        </tr>
+        <tr>
+          <td>산업화 이전</td>
+          <td>생체 근력 (인간 + 동물)</td>
+          <td>쉬어야 함, 한계 있음</td>
+        </tr>
+        <tr>
+          <td>초기 산업화</td>
+          <td><span class="hl-gold">증기기관</span> (물 고열로 끓임 → 에너지)</td>
+          <td>안 쉬어도 됨, 압도적 출력</td>
+        </tr>
+        <tr>
+          <td>이후</td>
+          <td>전력, 내연기관(석유), 원자력, 신재생에너지</td>
+          <td>다양화</td>
+        </tr>
+      </table>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 방적기</div>
+        <p>초창기 방적기는 사람이 네 발로 돌림 → 힘듦. 증기기관 접목 → 기계는 안 쉬어도 됨. 특정 공간(공장)에서 다수의 인간 + 기계로 대량 생산 가능.</p>
+      </div>
+
+      <div class="key-concept">
+        <div class="kc-label">초기 산업화의 대표 모습 2가지</div>
+        <p>① <span class="hl-gold">면방직(면공업) 공장</span> &nbsp;&nbsp; ② <span class="hl-gold">철도(증기 기관차)</span></p>
+      </div>
+
+      <div class="caution">
+        <strong>시험 포인트:</strong> 산업화 = 공장제 기계 공업. 동력 변화가 핵심. 산업혁명의 기원은 18세기 중엽 영국이지만, 유럽 전체에 유의미한 영향력을 발휘한 건 <strong>19세기 넘어서</strong> (벨기에 19세기 초, 프랑스 1850년경).
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 3. 자본주의 ━━━ -->
+  <div class="section" id="capitalism">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">자본주의 (Capitalism)</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">자본주의의 정의 — 아카데믹 2가지</div>
+
+      <div class="def-box">
+        <div class="def-label">정의 ① — 유통 형식으로서의 자본주의</div>
+        <p>재화가 <span class="hl-gold">시장에서 화폐를 통해</span> 유통되는 시스템<br>
+        = <span class="hl-gold">시장 경제</span><br>
+        = <span class="hl-gold">만물의 상품화</span> (마르크스 표현, 다른 학자들도 사용)</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">만물의 상품화 의미</div>
+        <p>지금 갖고 있는 물건 중 내가 직접 만든 것? → 거의 없음. 모든 재화를 시장에서 구매. 시장 판매를 위해 생산. 이것이 자본주의 이전에는 당연하지 않았음.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">핵심: 자본주의 이전에는 상품이 아니었던 것들</div>
+
+      <div class="def-box" style="border-left-color: var(--red);">
+        <div class="def-label" style="color:var(--red);">자본주의 이전 → 상품화되지 않았던 2가지 + 생산수단</div>
+        <p>
+          <span class="hl-gold">① 노동 (Labor)</span><br>
+          <span class="hl-gold">② 토지 (Land) — 생산 수단 대표</span>
+        </p>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-item before">
+          <h4>자본주의 이전</h4>
+          <p>노동·토지는 시장 거래 대상 아님. 생계 = 내 땅에서 직접 생산하거나 비시장적 방식.</p>
+        </div>
+        <div class="compare-item after">
+          <h4>자본주의 이후</h4>
+          <p>노동·토지 모두 상품화. 취업 = 노동력 판매. 부동산 = 토지 상품화.</p>
+        </div>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 노동의 상품화 (취업)</div>
+        <p>취업 = 내 노동력을 고용주에게 파는 것. 고용주 = 노동력을 산 것.<br>
+        일시불 아닌 월급 형태인 이유 → 계속해서 노동 제공을 증명해야 하기 때문.<br>
+        <strong>태블릿 구매 비유:</strong> 고용주가 나를 인간적으로 좋아서가 아니라, 태블릿 사듯 역량을 구입하는 것.</p>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 토지의 상품화</div>
+        <p>오늘날 토지 = 가장 먼저 "땅값" 떠올림 → 이미 상품. 자본주의 이전에는 시장 거래 대상이 아니었음. 자본주의 이전: 복수의 사람들 생계가 걸린 것 → 일반 상품 취급 안 함.</p>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <div class="card-title">생산 수단 (Means of Production) 4가지</div>
+        <table>
+          <tr>
+            <th>생산 수단</th>
+            <th>생산물</th>
+            <th>특징</th>
+          </tr>
+          <tr>
+            <td><span class="hl-gold">토지</span></td>
+            <td>농산물 등</td>
+            <td>복수의 생계 연결</td>
+          </tr>
+          <tr>
+            <td><span class="hl-gold">임야</span></td>
+            <td>목재, 과일 등</td>
+            <td>복수의 생계 연결</td>
+          </tr>
+          <tr>
+            <td><span class="hl-gold">광산</span></td>
+            <td>금, 석탄 등 지하자원</td>
+            <td>복수의 생계 연결</td>
+          </tr>
+          <tr>
+            <td><span class="hl-gold">공장</span></td>
+            <td>제조품</td>
+            <td>복수의 생계 연결</td>
+          </tr>
+        </table>
+        <div class="caution">
+          <strong>공통 특징:</strong> 복수의 사람들의 생계가 걸려 있음 → 자본주의 이전에는 일반 상품으로 취급하지 않음.<br>
+          ※ 바다는 예외 (소유·상품 개념 없음)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 4. 사회주의 등장 배경 ━━━ -->
+  <div class="section" id="socialism-intro">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">사회주의 등장 배경</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의(Socialism) 용어 기원</div>
+
+      <div class="def-box">
+        <div class="def-label">등장 시기</div>
+        <p>오늘날 우리가 쓰는 의미의 "사회주의" 용례 → <span class="hl-gold">약 200년 전 (19세기 초~중반)</span><br>
+        오언(Owen)의 제자들이 처음 사용. <br>
+        한국 기준: 세도정치, 안동 김씨, 영정조 이후 시기에 해당.</p>
+      </div>
+
+      <div class="caution">
+        <strong>오해 주의:</strong> 고대 중국 균전제, 정약용의 여전제, 망이망소이의 난 같은 토지 분배 운동은 <strong>사회주의와 관련 없음.</strong> 사회주의는 산업 자본주의 이후의 개념.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의 등장의 전제: 산업 자본주의</div>
+
+      <div class="def-box">
+        <div class="def-label">명제</div>
+        <p><span class="hl-gold">산업 자본주의가 없으면 사회주의도 없다.</span><br>
+        사회주의 = 산업 자본주의라는 배경 아래에서 탄생한 이념.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-box">산업화<br><span style="font-size:11px;">19세기</span></div>
+        <div class="flow-arrow">×</div>
+        <div class="flow-box">자본주의화<br><span style="font-size:11px;">시장경제 확산</span></div>
+        <div class="flow-arrow">=</div>
+        <div class="flow-box accent">산업 자본주의<br><span style="font-size:11px;">결합</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box green">사회주의 등장<br><span style="font-size:11px;">대응 이념</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">이번 학기 수업 목적 정리</div>
+
+      <div class="summary-box">
+        <h3>✦ 수업의 목표</h3>
+        <ul>
+          <li>자본주의·시장경제를 <strong>당연한 인간 본성</strong>이 아닌, <strong>특정 맥락에서 만들어진 제도</strong>로 낯설게 보기</li>
+          <li>사회주의 역사를 통해 자본주의에 대한 <strong>도전의 역사</strong> 이해</li>
+          <li>"사회주의가 더 좋다"는 결론을 내리는 것이 목적이 아님 (교수 명시)</li>
+          <li>인간의 욕망이 "무한"하다는 경제학 전제도 역사적으로 검토</li>
+        </ul>
+      </div>
+
+      <div class="example">
+        <div class="example-label">교수 예시 — 근대 경제학의 전제</div>
+        <p>"인간의 욕망은 무한하지만 재화는 유한하다" → 경제학 원론 첫 페이지.<br>
+        그러나 역사를 보면: <strong>인간의 욕망이 항상 무한했나? 언제부터 무한했나?</strong><br>
+        → 역사를 가보면 꼭 그렇지 않음. 이 전제 자체도 특정 시대의 산물.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ TF 예상 포인트 ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">T/F 예상 포인트 — 까다로운 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 역사 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">역사는 과거 그 자체다.</div>
+          <div class="tf-reason"><strong>→ 과거에 대한 하나의 account(이야기).</strong> 과거 자체와 역사는 다름.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">역사는 the account이다. (즉 유일한 하나의 설명이다)</div>
+          <div class="tf-reason"><strong>→ an account.</strong> 관사 'an' → 여럿 중 하나. 'the'가 붙으면 유일한 설명 → 틀림.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">역사는 과거를 통해 교훈을 얻는 학문이다.</div>
+          <div class="tf-reason"><strong>→ 교수가 명시적으로 부정.</strong> 맥락이 달라 적용 불가. 역사는 "그땐 그랬지"를 드러내는 것.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">역사학은 과학성이 높은 학문이다.</div>
+          <div class="tf-reason"><strong>→ 맥락 중심 → 법칙 추출 불가 → 과학성 낮음.</strong> 교수 언급: 인문사회 학문 중 거의 유일하게 맥락 중심.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">역사는 특정 과거(the past)를 주관적으로 재현한 하나의(an) account이다.</div>
+          <div class="tf-reason"><strong>→ 정확한 정의.</strong> 관사 포함 외워야 함.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">역사는 현재 제도의 정당성·권위에 도전하는 무기가 된다.</div>
+          <div class="tf-reason"><strong>→ 역사의 효용 = 현재를 낯설게 해서 권위를 무너뜨림.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">한국사 교과서는 유일하게 올바른 한국 역사 서술이다.</div>
+          <div class="tf-reason"><strong>→ 민족 통합 관점에서 쓴 하나의 account일 뿐.</strong> 호남·영남이 달랐다는 관점 등 다른 서술도 가능.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">나당 전쟁과 오늘날 한중 관계는 역사적으로 비교 가능하다.</div>
+          <div class="tf-reason"><strong>→ 맥락이 완전히 다름.</strong> 역사학에서는 맥락이 다른 시대 간 단순 비교 불가.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 산업화 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">산업화와 자본주의는 같은 말이다.</div>
+          <div class="tf-reason"><strong>→ 다른 개념.</strong> 산업화 = 동력 변화, 자본주의 = 유통 형식. 둘이 결합한 것이 산업 자본주의.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">산업화 이전 생산의 주 동력은 생체 근력(인간+동물)이었다.</div>
+          <div class="tf-reason"><strong>→ 정확한 표현.</strong> '생체 근력' = 인간 + 동물.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">산업화는 18세기 중엽부터 이미 유럽 전체에 본격적으로 퍼졌다.</div>
+          <div class="tf-reason"><strong>→ 영국에서 시작됐으나 유럽 전체 확산은 19세기.</strong> 프랑스는 1850년경.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">초기 산업화를 대표하는 것은 면공업(면방직)과 철도이다.</div>
+          <div class="tf-reason"><strong>→ 정확.</strong> 두 가지 기억.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 자본주의 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자본주의를 "만물의 상품화"로 표현할 수 있다.</div>
+          <div class="tf-reason"><strong>→ 마르크스 등이 사용한 표현.</strong> 유통 형식으로서의 자본주의 정의.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">토지는 자본주의 이전에도 시장에서 거래되는 상품이었다.</div>
+          <div class="tf-reason"><strong>→ 자본주의 이전에는 상품 아님.</strong> 복수의 생계가 걸려 일반 상품 취급 안 함.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">자본주의에서 노동은 상품화되어 있다. 취업은 노동력을 파는 행위다.</div>
+          <div class="tf-reason"><strong>→ 노동시장, 월급 = 노동력 판매의 구조.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자본주의 이전에도 생산 수단은 일반 상품처럼 거래됐다.</div>
+          <div class="tf-reason"><strong>→ 아님.</strong> 복수 생계 연결 → 시장 거래 대상 아니었음.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 사회주의 관련</h3>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">정약용의 여전제나 중국 균전제는 사회주의의 초기 형태이다.</div>
+          <div class="tf-reason"><strong>→ 전혀 관련 없음.</strong> 사회주의는 산업 자본주의 이후 개념. 약 200년 전에야 등장.</div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">사회주의는 산업 자본주의가 없으면 등장할 수 없었다.</div>
+          <div class="tf-reason"><strong>→ 핵심 명제.</strong></div>
+        </div>
+      </div>
+
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">"사회주의(socialist)"라는 용어는 마르크스가 처음 사용했다.</div>
+          <div class="tf-reason"><strong>→ 오언(Owen)의 제자들이 먼저 사용.</strong> 마르크스가 아님.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지</h3>
+      <ul>
+        <li>역사는 왜 "그땐 그랬지"이며, 그것이 어떻게 현재에 유용한가?</li>
+        <li>산업화와 자본주의의 차이를 구분하고, 왜 둘의 결합이 사회주의 등장의 전제가 되는가?</li>
+        <li>노동과 토지의 상품화가 갖는 역사적 의의는 무엇인가?</li>
+        <li>역사학에서 맥락(context)이 중요한 이유와 그것이 갖는 한계는?</li>
+        <li>자본주의를 "당연한 것"이 아닌 "역사적 산물"로 볼 때 무엇이 달라지는가?</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<script>
+  // smooth scroll for nav
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // highlight nav on scroll
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY + 80 >= sec.offsetTop) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--accent)';
+        a.style.borderBottomColor = 'var(--accent)';
+      }
+    });
+  });
+</script>
+</body>
+</html>

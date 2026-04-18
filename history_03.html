@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 3차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0c14;
+    --surface: #171520;
+    --surface2: #1e1b28;
+    --border: #2c2840;
+    --accent: #a07ee8;
+    --accent2: #c4a8ff;
+    --accent3: #7ec8a4;
+    --red: #e07878;
+    --gold: #d4b06a;
+    --blue: #7ab0d4;
+    --text: #e0dcea;
+    --text-muted: #706888;
+    --text-soft: #b0a8c8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  header {
+    background: linear-gradient(135deg, #100c1a 0%, #0e0c14 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(160,126,232,0.08) 0%, transparent 70%);
+  }
+  .header-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  header .subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .badge.purple { background: rgba(160,126,232,0.12); border: 1px solid rgba(160,126,232,0.3); color: var(--accent); }
+  .badge.green  { background: rgba(126,200,164,0.10); border: 1px solid rgba(126,200,164,0.28); color: var(--accent3); }
+  .badge.gold   { background: rgba(212,176,106,0.10); border: 1px solid rgba(212,176,106,0.28); color: var(--gold); }
+
+  nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 14px 18px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all .2s;
+    font-weight: 500;
+  }
+  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 32px 80px; }
+
+  .section { margin-bottom: 52px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: .15em; font-weight: 700; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.35rem; font-weight: 900; color: var(--accent2); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 1rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::before {
+    content: '';
+    width: 4px; height: 18px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .def-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .def-box .def-label {
+    font-size: 10px; letter-spacing: .15em;
+    color: var(--accent); text-transform: uppercase;
+    font-weight: 700; margin-bottom: 6px;
+  }
+  .def-box.green { border-left-color: var(--accent3); }
+  .def-box.green .def-label { color: var(--accent3); }
+  .def-box.gold  { border-left-color: var(--gold); }
+  .def-box.gold  .def-label { color: var(--gold); }
+  .def-box.red   { border-left-color: var(--red); }
+  .def-box.red   .def-label { color: var(--red); }
+
+  .key-concept {
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 14px 0;
+  }
+  .key-concept.purple {
+    background: linear-gradient(135deg,rgba(160,126,232,.09),rgba(160,126,232,.02));
+    border: 1px solid rgba(160,126,232,.22);
+  }
+  .key-concept.purple .kc-label { color: var(--accent); }
+  .key-concept.green {
+    background: linear-gradient(135deg,rgba(126,200,164,.08),rgba(126,200,164,.02));
+    border: 1px solid rgba(126,200,164,.2);
+  }
+  .key-concept.green .kc-label { color: var(--accent3); }
+  .key-concept.gold {
+    background: linear-gradient(135deg,rgba(212,176,106,.08),rgba(212,176,106,.02));
+    border: 1px solid rgba(212,176,106,.22);
+  }
+  .key-concept.gold .kc-label { color: var(--gold); }
+  .kc-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
+  .hl-p  { color: var(--accent2); font-weight: 700; }
+  .hl-g  { color: var(--accent3); font-weight: 700; }
+  .hl-go { color: var(--gold);    font-weight: 700; }
+  .hl-r  { color: var(--red);     font-weight: 700; }
+  .hl-b  { color: var(--blue);    font-weight: 700; }
+
+  .example {
+    background: rgba(160,126,232,.05);
+    border: 1px solid rgba(160,126,232,.18);
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin: 12px 0;
+  }
+  .example-label {
+    font-size: 10px; color: var(--accent);
+    font-weight: 700; letter-spacing: .15em;
+    text-transform: uppercase; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .example-label::before { content: '📌'; font-size: 12px; }
+  .example.green { background: rgba(126,200,164,.05); border-color: rgba(126,200,164,.18); }
+  .example.green .example-label { color: var(--accent3); }
+  .example.gold  { background: rgba(212,176,106,.05); border-color: rgba(212,176,106,.18); }
+  .example.gold  .example-label { color: var(--gold); }
+  .example p, .example li { font-size: 14px; color: var(--text-soft); }
+  .example ul { padding-left: 18px; }
+  .example li { margin-bottom: 5px; }
+
+  .caution {
+    background: rgba(224,120,120,.07);
+    border: 1px solid rgba(224,120,120,.22);
+    border-radius: 6px;
+    padding: 14px 18px; margin: 12px 0;
+    font-size: 13.5px; color: var(--text-soft);
+  }
+  .caution strong { color: var(--red); }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  th {
+    background: var(--surface2); color: var(--accent);
+    font-weight: 700; text-align: left;
+    padding: 10px 16px; border: 1px solid var(--border);
+    font-size: 12px; letter-spacing: .05em;
+  }
+  td { padding: 10px 16px; border: 1px solid var(--border); color: var(--text-soft); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+
+  /* 3-column ideology table */
+  .ideo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .ideo-card {
+    border-radius: 8px;
+    padding: 18px 16px;
+  }
+  .ideo-card h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: .95rem; font-weight: 900;
+    margin-bottom: 10px;
+  }
+  .ideo-card p, .ideo-card li { font-size: 13px; color: var(--text-soft); margin-bottom: 5px; }
+  .ideo-card ul { padding-left: 16px; }
+  .ideo-card.cons {
+    background: rgba(212,176,106,.07);
+    border: 1px solid rgba(212,176,106,.25);
+  }
+  .ideo-card.cons h4 { color: var(--gold); }
+  .ideo-card.lib {
+    background: rgba(122,176,212,.07);
+    border: 1px solid rgba(122,176,212,.25);
+  }
+  .ideo-card.lib h4 { color: var(--blue); }
+  .ideo-card.soc {
+    background: rgba(126,200,164,.07);
+    border: 1px solid rgba(126,200,164,.25);
+  }
+  .ideo-card.soc h4 { color: var(--accent3); }
+
+  .flow {
+    display: flex; align-items: center;
+    gap: 8px; flex-wrap: wrap; margin: 14px 0;
+  }
+  .flow-box {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 14px;
+    font-size: 13px; font-weight: 600;
+    color: var(--text); text-align: center; min-width: 88px;
+  }
+  .flow-box.p  { border-color: var(--accent);  color: var(--accent2); }
+  .flow-box.g  { border-color: var(--accent3); color: var(--accent3); }
+  .flow-box.go { border-color: var(--gold);    color: var(--gold); }
+  .flow-box.r  { border-color: var(--red);     color: var(--red); }
+  .flow-arrow  { color: var(--text-muted); font-size: 18px; flex-shrink: 0; }
+
+  .tf-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px 28px; margin-bottom: 16px;
+  }
+  .tf-section h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1rem; color: var(--accent2);
+    margin-bottom: 16px; font-weight: 700;
+  }
+  .tf-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.05);
+    font-size: 14px;
+  }
+  .tf-item:last-child { border-bottom: none; }
+  .tf-badge {
+    flex-shrink: 0; width: 32px; height: 22px;
+    border-radius: 4px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; margin-top: 1px;
+  }
+  .tf-badge.true  { background: rgba(126,200,164,.2); color: var(--accent3); }
+  .tf-badge.false { background: rgba(224,120,120,.2); color: var(--red); }
+  .tf-text { color: var(--text-soft); }
+  .tf-reason { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .tf-reason strong { color: var(--accent2); }
+
+  .summary-box {
+    background: linear-gradient(135deg,rgba(126,200,164,.09),rgba(126,200,164,.02));
+    border: 1px solid rgba(126,200,164,.25);
+    border-radius: 10px; padding: 22px 26px; margin: 18px 0;
+  }
+  .summary-box h3 {
+    color: var(--accent2); font-family: 'Noto Serif KR', serif;
+    font-size: 1rem; margin-bottom: 12px; font-weight: 900;
+  }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li {
+    padding: 5px 0; font-size: 14px; color: var(--text);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .summary-box li::before { content: '→'; color: var(--accent3); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* MYTH BUSTING BOX */
+  .myth-box {
+    background: var(--surface2);
+    border-radius: 8px; padding: 20px 24px; margin: 12px 0;
+    border: 1px solid var(--border);
+  }
+  .myth-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.04);
+    font-size: 14px;
+  }
+  .myth-row:last-child { border-bottom: none; }
+  .myth-x { color: var(--red); font-weight: 800; font-size: 16px; flex-shrink: 0; width: 18px; }
+  .myth-o { color: var(--accent3); font-weight: 800; font-size: 14px; flex-shrink: 0; margin-top: 1px; width: 18px; }
+  .myth-text { color: var(--text-soft); }
+  .myth-answer { margin-top: 4px; font-size: 13px; color: var(--text-muted); }
+  .myth-answer strong { color: var(--accent2); }
+
+  .divider { height: 1px; background: var(--border); margin: 32px 0; }
+  p { margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    header { padding: 32px 20px 24px; }
+    header h1 { font-size: 1.5rem; }
+    .container { padding: 24px 16px 60px; }
+    nav { padding: 0 16px; }
+    .ideo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 3차시 핵심 정리</div>
+  <h1>길드의 충격 · 3대 이념 · 사회주의 정의 완성</h1>
+  <div class="subtitle">
+    <span>2026. 03. 16 &nbsp;|&nbsp; 3차시</span>
+    <span class="badge purple">중간고사 대비</span>
+    <span class="badge green">사회주의 정의 확정</span>
+    <span class="badge gold">보수·자유·사회주의 비교</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#review">복습·도시 충격</a>
+  <a href="#guild">길드와 산업자본주의</a>
+  <a href="#displaced">Displaced</a>
+  <a href="#three">3대 이념 등장</a>
+  <a href="#socialism">사회주의 정의</a>
+  <a href="#myths">사회주의 오해 5가지</a>
+  <a href="#tf">T/F 예상 포인트</a>
+</nav>
+
+<div class="container">
+
+  <!-- ━━━ 00 복습 ━━━ -->
+  <div class="section" id="review">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <span class="section-title">3차시 흐름 & 복습 연결</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">전체 맥락 한눈에</div>
+      <div class="flow">
+        <div class="flow-box go">산업자본주의<br>19세기 초</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box r">농촌 공동체<br>해체 (2차시)</div>
+        <div class="flow-arrow">+</div>
+        <div class="flow-box r">도시 길드<br>해체 (3차시)</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">사회 혼란<br>Displaced</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box p">지식인 3대<br>이념 등장</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box g">사회주의<br>정의 완성</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">전통 경제 소유권 관념 — 보편성 재확인</div>
+      <div class="def-box">
+        <div class="def-label">교수 강조</div>
+        <p>유라시아 대륙 전체(동쪽 끝 조선 ↔ 서쪽 끝 영국), 최소 <span class="hl-p">서기 100년 ~ 1800년</span>까지 약 <span class="hl-p">1,700년 동안</span> 공통된 관념:<br>
+        생산 수단에 대한 소유권은 <span class="hl-g">중첩적</span>으로 존재 → 직접 일하는 사람의 권리도 보장<br>
+        자본주의의 배타적 사적 소유권 = 인류 보편이 아닌 <span class="hl-r">200년도 안 된 특수한 제도</span></p>
+      </div>
+      <div class="caution">
+        <strong>시험 포인트:</strong> "물욕 자체는 있었으나 물욕을 무한히 확장하는 것은 낯설었다." 이 문장 그대로 기억. 공동체 바운더리를 뚫는 무한 이윤 추구 = 전통 시대엔 없던 것.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 01 길드와 산업자본주의 충돌 ━━━ -->
+  <div class="section" id="guild">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">도시 길드와 산업자본주의의 충돌</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">길드(Guild) — 도시판 촌락 공동체</div>
+      <div class="def-box">
+        <div class="def-label">정의</div>
+        <p>도시 경제 활동 종사자들의 <span class="hl-p">동종 조합</span><br>
+        구두쟁이는 구두쟁이끼리, 포목상은 포목상끼리, 바이올린 장인은 바이올린 장인끼리<br>
+        → 도시에서 농촌 촌락 공동체와 <span class="hl-g">동일한 역할</span> 수행</p>
+      </div>
+      <table>
+        <tr>
+          <th>기능</th>
+          <th>내용</th>
+        </tr>
+        <tr>
+          <td>경제 규제</td>
+          <td>생산량·유통량의 한도 설정 → 공동체 범위 내 물욕만 허용</td>
+        </tr>
+        <tr>
+          <td>내면화</td>
+          <td>규제 이전에 이미 구성원 스스로 초과 생산을 상상하지 않음</td>
+        </tr>
+        <tr>
+          <td>소속감</td>
+          <td>삶의 정체성·지위·인간관계의 중심 (현대 게임 길드와 비슷한 소속감)</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">길드 내 직업 계층 구조</div>
+      <table>
+        <tr>
+          <th>계층</th>
+          <th>역할</th>
+          <th>생산 수단 관계</th>
+        </tr>
+        <tr>
+          <td><span class="hl-p">장인 (Master)</span></td>
+          <td>작업장·생산도구 소유자, 작업 총괄</td>
+          <td>명목상 소유자 — 그러나 <strong>마음대로 처분 불가</strong></td>
+        </tr>
+        <tr>
+          <td><span class="hl-go">직인</span></td>
+          <td>장인과 거의 동급의 기술 보유, 협력자</td>
+          <td>작업장·도구에 <strong>관습적 권리</strong> 보유</td>
+        </tr>
+        <tr>
+          <td><span class="hl-b">도제</span></td>
+          <td>배우는 견습생 (시다)</td>
+          <td>같은 작업장 생계 걸림</td>
+        </tr>
+      </table>
+      <div class="def-box gold">
+        <div class="def-label">핵심</div>
+        <p>장인의 작업장·생산 도구 = 장인 + 직인 + 도제 <span class="hl-go">복수의 생계가 걸린 재산</span><br>
+        → 농촌 지주의 토지와 동일한 논리 = <span class="hl-go">소유권 중첩</span><br>
+        → 장인이 팔거나 처분하려면 얘네들과 <strong>협의 필수</strong>. 처분 시 직인이 인수하거나 직인 출신 장인에게 넘김.</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시 — 16~17세기 신실한 장인</div>
+        <p>선교를 위해 이스라엘로 떠나려는 장인 → 작업장·도구를 혼자 마음대로 팔 수 없음.<br>
+        반드시 직인·도제와 협의 후, 직인 중 한 명이 승계하거나 그들을 받아주는 다른 장인에게 거래.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">산업자본주의와 길드의 충돌 — 지오바니 스토리</div>
+      <div class="example gold">
+        <div class="example-label">교수 핵심 예시 — 밀라노 구두쟁이 지오바니</div>
+        <p><strong>상황:</strong> 잘 나가는 장인 지오바니. 매출 100 → 120 → 140 성장. 길드 안에서 착실히 운영 중.<br><br>
+
+        <strong>변화:</strong> 어느 날 산업자본주의 관념을 가진 자본가가 옆에 <strong>대형 B 구두 공장</strong> 건설.<br>
+        → 농촌에서 쫓겨 나온 노동자들을 고용 → 속성 훈련만으로 기계 조작 가능<br>
+        → 분업+기계+규모의 경제 → <strong>압도적으로 싼 가격</strong>으로 대량 생산 개시<br><br>
+
+        <strong>결과:</strong><br>
+        - 지오바니는 평범한 공산품 생산자 → 가격 경쟁에서 완패 → <strong>수 년 내 파산</strong><br>
+        - 파산 = 작업장·도구 헐값에 처분 (이미 시장 논리가 지배 → 협의 없이 처분)<br>
+        - 생산 수단에서 유리됨 → 구두 공장에 취직 시도<br><br>
+
+        <strong>취직 후:</strong><br>
+        - 평생 구두 만든 장인인데 → "가죽 붙이는 일만" 배정됨<br>
+        - 노동 과정(기획~완성) 전체 관할 → 단순 반복 작업자로 전락<br>
+        - <span class="hl-r">쉽게 대체 가능한 존재</span>가 됨</p>
+      </div>
+      <div class="key-concept purple">
+        <div class="kc-label">박탈감 포인트 — 시험 중요</div>
+        <p>농촌 출신: 경작 → 공장 노동 → <strong>일하는 방식의 변화</strong> (지위 변화 덜 느낌)<br>
+        도시 장인: 존경받는 마스터 → 대체 가능한 단순 노동자 → <span class="hl-r">급격한 지위 하락 + 박탈감</span><br>
+        → 초창기 산업자본주의에 <strong>가장 격렬하게 반대</strong>한 집단 = 수공업자·장인 출신</p>
+      </div>
+      <div class="example">
+        <div class="example-label">교수 비유 — 현대판</div>
+        <p>랩을 운영하며 제자들을 이끌던 교수가 갑자기 대체 가능한 반복 업무 담당자가 됨.<br>
+        수술실 메인 의사가 단순 보조로 전락. → 장인 계층이 느낀 충격이 이 정도.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 02 Displaced ━━━ -->
+  <div class="section" id="displaced">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Displaced — 삶의 유동성 폭발</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Displaced의 의미와 사회 현상</div>
+      <div class="def-box">
+        <div class="def-label">Displaced (학자 표현)</div>
+        <p>자기 자리에서 오랫동안 해왔던 <span class="hl-p">삶의 형태가 갑자기 날아감</span> → 굉장히 빠르고 급격하게<br>
+        → 삶의 <span class="hl-r">유동성(mobility)</span>이 폭발적으로 증가</p>
+      </div>
+      <table>
+        <tr>
+          <th>현상</th>
+          <th>내용</th>
+        </tr>
+        <tr>
+          <td>Time Discipline 충격</td>
+          <td>자연 리듬·자율적 시간 관리 → 공장의 엄격한 출퇴근 시간 규율 → 극심한 스트레스</td>
+        </tr>
+        <tr>
+          <td>소리 충격</td>
+          <td>새소리·바람소리만 듣던 농촌 출신 → 공장 기계음 적응 불가. 현대에도 시골 어르신의 대로 공포감과 동일 메커니즘</td>
+        </tr>
+        <tr>
+          <td>베가본드(Vagabond)</td>
+          <td>유랑자·떠돌이 급증. 적응 실패자들이 돌아다님</td>
+        </tr>
+        <tr>
+          <td>훌리건식 폭력</td>
+          <td>집단으로 약탈·파괴. 당시 최대 사회 문제</td>
+        </tr>
+        <tr>
+          <td>러다이트 운동</td>
+          <td>기계 파괴 운동 (Luddite). 공장 기계를 직접 파괴</td>
+        </tr>
+        <tr>
+          <td>폭음 문화</td>
+          <td>목요일~금요일 폭음 → 주말 뻗음 → 월요일 몰아서 일. 도시에서도 유사한 자율적·불규칙 리듬</td>
+        </tr>
+      </table>
+      <div class="caution">
+        <strong>핵심 요약:</strong> 1,700년 이상 이어온 경제 관념이 <strong>불과 수십 년 만에</strong> 붕괴 → 그 충격이 19세기 초 서유럽의 최대 사회 문제로 부상 → 지식인들이 대책을 논의하기 시작.
+      </div>
+      <div class="caution">
+        <strong>지역 차이:</strong> 영국이 가장 빠름. 벨기에·프랑스·이탈리아 북부가 상대적으로 빠름. 산업화가 안 된 지역은 초창기에 그대로 유지. 그러나 충격이 워낙 커서 언론을 통해 보편적 파장 발생.
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 03 3대 이념 ━━━ -->
+  <div class="section" id="three">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">3대 이념 — 보수주의 · 자유주의 · 사회주의</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">3대 이념 비교 — 산업화(I) · 자본주의(C) 에 대한 입장</div>
+      <div class="ideo-grid">
+        <div class="ideo-card cons">
+          <h4>① 보수주의<br><small style="font-size:11px;font-weight:400;">Conservatism</small></h4>
+          <ul>
+            <li><strong>I(산업화) ❌ C(자본주의) ❌</strong></li>
+            <li>둘 다 거부 → 산업자본주의 이전으로 회귀</li>
+            <li>공동체·직분 강조</li>
+            <li>가장 격렬하게 반응 (스펙트럼 한쪽 극단)</li>
+            <li>대표: 낭만주의 시인 등</li>
+          </ul>
+        </div>
+        <div class="ideo-card lib">
+          <h4>② 자유주의<br><small style="font-size:11px;font-weight:400;">Liberalism</small></h4>
+          <ul>
+            <li><strong>I(산업화) ✅ C(자본주의) ✅</strong></li>
+            <li>사회 문제 인정하지만 IC 더 발전하면 해결됨</li>
+            <li>개인의 자유 = 공동체와 무관한 개인 결정권</li>
+            <li>결국 현재 우리가 사는 세계 (21세기 승자)</li>
+            <li>스펙트럼 반대쪽 극단</li>
+          </ul>
+        </div>
+        <div class="ideo-card soc">
+          <h4>③ 사회주의<br><small style="font-size:11px;font-weight:400;">Socialism</small></h4>
+          <ul>
+            <li><strong>I(산업화) ✅ C(자본주의) ❌</strong></li>
+            <li>산업화는 긍정, 자본주의만 비판</li>
+            <li>스펙트럼 중도</li>
+            <li>자본주의 비판 = 올드한 소스(전통 경제)에서 출발</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">보수주의 — 더 깊이</div>
+      <div class="def-box gold">
+        <div class="def-label">원래 보수주의의 특징 (현재와 다름!)</div>
+        <p>보수주의는 <span class="hl-go">기득권이 바뀌면 내용도 바뀌는</span> 이념 → 가장 변화 많은 이념<br>
+        <strong>이 시기 보수주의</strong>가 지키려 한 것: 산업자본주의 이전의 공동체·직분 구조<br>
+        → 지금 우리가 보는 "자본주의 친화적 보수주의"와 정반대</p>
+      </div>
+      <div class="example gold">
+        <div class="example-label">교수 예시 — 지주(최참판)의 입장</div>
+        <p>산업자본주의 이전: 땅 소유 + 농민들 지대 + 인간적 존경 + 안정적 수입<br>
+        산업자본주의 이후: 시장 조사·경쟁·기술 개발·은행 대출·노동자 파업… 훨씬 복잡하고 존경도 없음<br>
+        → 지주는 자본가로 변신보다 <strong>과거 체제 복귀를 원함</strong> → 보수주의 지지</p>
+      </div>
+      <div class="key-concept gold">
+        <div class="kc-label">보수주의 핵심 가치</div>
+        <p><span class="hl-go">공동체</span> + <span class="hl-go">직분(役割)</span> = 누군가가 특정 직분을 맡으면 그 역할을 안정적으로 유지시켜야 함<br>
+        → 신분제 정당화 포함. 농민은 농사, 지주는 지도자 역할을 지속하는 사회.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">자유주의 — 진짜 의미 (오해 주의!)</div>
+      <div class="def-box">
+        <div class="def-label">자유주의의 '자유' = 공동체에 대한 개인의 자유</div>
+        <p>핸드폰 던지고 훌쩍 떠나는 자유 ❌<br>
+        <span class="hl-p">생산 수단을 아무와 상의 없이 처분할 자유</span><br>
+        <span class="hl-p">무한한 이윤 추구를 할 자유</span><br>
+        <span class="hl-p">생산·유통·투자를 개인이 자유롭게 결정할 자유</span> ✅</p>
+      </div>
+      <div class="caution">
+        <strong>냉전 왜곡 포인트:</strong> 냉전 시대에 자유주의 = "진정한 자유를 주는 것"으로 가르침 → 사실은 공동체 규율에서 개인(자본가)을 해방시키는 이념. "그렇게 가르치면 골치 아프니까 안 가르쳤다" (교수 직접 언급).
+      </div>
+      <div class="example">
+        <div class="example-label">교수 예시 — 자유주의의 실제 내용</div>
+        <p>최참판이 농민들과 상의 없이 땅 팔 수 있어야 함 = 자유주의<br>
+        길드 구성원과 상관없이 생산 왕창 늘릴 수 있어야 함 = 자유주의<br>
+        → 공동체의 바운더리와 무관하게 개인 결정에 <strong>법적 정당성</strong> 부여하는 이념</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의 — 자본주의 비판의 두 축</div>
+      <div class="def-box green">
+        <div class="def-label">자본주의 비판 ① 유통 형식(시장 경제) 비판</div>
+        <p>시장에 buyer(구매자)와 seller(판매자)만 두면 <span class="hl-g">불공정</span> 발생<br>
+        이유 1: 시장 참여자들의 <span class="hl-g">체급(몸집)이 다름</span> → 수요공급 메커니즘 교란 가능<br>
+        이유 2: 그 <span class="hl-g">부의 획득 과정이 정당한지 알 수 없음</span> (열심히 일한 것인지, 사기인지, 상속인지 시장은 확인 불가)<br>
+        → 대안: <span class="hl-g">제3자 개입</span>으로 시장 조절<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 극단: 제3자가 생산·유통 전체 결정 = 계획 경제<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 완화: 제3자가 개입해서 조절만 = 복지 국가형</p>
+      </div>
+      <div class="def-box green">
+        <div class="def-label">자본주의 비판 ② 생산 양식(임금 노동제) 비판</div>
+        <p>생산 수단에 대한 <span class="hl-g">배타적 사적 소유권 문제화</span><br>
+        → 생산 수단은 복수의 생계가 걸린 특별한 재산 → 개인이 독점하면 불공정<br>
+        → 대안: 생산 수단을 개인이 배타적으로 소유 못하게 개혁</p>
+      </div>
+      <div class="key-concept green">
+        <div class="kc-label">자본주의 비판의 원천 = 올드한 소스</div>
+        <p>사실 이 비판은 새로운 것이 아님.<br>
+        전통 경제에서 <span class="hl-g">제3자 = 촌락 공동체 (농촌) / 길드 (도시)</span> 가 이미 있었음.<br>
+        소유권 중첩도 이미 있었음. → 자본주의 비판은 과거 전통 경제를 레퍼런스로 삼은 것.<br>
+        (순수 논리로 자본주의를 비판한 것은 나중의 마르크스)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 04 사회주의 정의 ━━━ -->
+  <div class="section" id="socialism">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">사회주의 — 드디어 완성된 정의</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의 정의 (최종)</div>
+      <div class="def-box green">
+        <div class="def-label">✦ 사회주의 정의</div>
+        <p><span class="hl-g">19세기 초 서유럽의 사회 혼란 속에서 출현한 경제 구상</span>으로,<br>
+        <strong>산업화(I)는 긍정하되 자본주의(C)를 비판</strong>하여 보다 공정한 세상을 만들려 한 이념.<br><br>
+        구체적 비판 내용:<br>
+        ① <span class="hl-g">시장 메커니즘에 대한 제3자 개입</span> (유통 형식 비판)<br>
+        ② <span class="hl-g">생산 수단에 대한 사적 소유권 문제화</span> (생산 양식 비판)</p>
+      </div>
+      <div class="key-concept green">
+        <div class="kc-label">핵심 체크</div>
+        <p>사회주의는 역사적 개념 → <span class="hl-g">산업자본주의 없으면 사회주의 없다</span><br>
+        사회주의 ≠ 무조건 재산 분배 / 자유 억압 / 독재 / 중화학공업 / 군사 문화<br>
+        사회주의가 건드리는 것: <span class="hl-g">생산 수단</span>에 대한 소유권 (그것도 복수의 생계가 걸린 규모 이상)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━ 05 사회주의 오해 5가지 ━━━ -->
+  <div class="section" id="myths">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">사회주의에 대한 오해 5가지 — 반드시 구별</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title">냉전 시대 왜곡 vs 사회주의 원래 개념</div>
+      <div class="myth-box">
+        <div class="myth-row">
+          <div class="myth-x">✗</div>
+          <div>
+            <div class="myth-text"><strong>오해 ①</strong> 사회주의 = 모든 재산을 나눠 갖는 것 (예금·BMW·개인 재산 몰수)</div>
+            <div class="myth-answer"><strong>→ 사회주의가 문제 삼는 것은 오직 생산 수단만.</strong> 일정 규모 이상, 복수의 생계가 걸린 것만. BMW는 생산 수단 아님 → 건드리지 않음.<br>소련에서도 개인 텃밭 소유·복권 당첨금으로 휴양지 가는 것 = 가능. 단 그 돈으로 땅·공장 사는 것 = 불가.</div>
+          </div>
+        </div>
+        <div class="myth-row">
+          <div class="myth-x">✗</div>
+          <div>
+            <div class="myth-text"><strong>오해 ②</strong> 사회주의 = 모든 자유 억압</div>
+            <div class="myth-answer"><strong>→ 거부하는 자유는 딱 2가지뿐:</strong> ① 생산 수단을 개인이 배타적으로 처분하는 자유, ② 생산·유통·투자를 무한히 확장하는 자유. 다른 자유와는 관계없음.</div>
+          </div>
+        </div>
+        <div class="myth-row">
+          <div class="myth-x">✗</div>
+          <div>
+            <div class="myth-text"><strong>오해 ③</strong> 사회주의 = 독재 필수</div>
+            <div class="myth-answer"><strong>→ 사회주의 개념 자체와 독재는 무관.</strong> (마르크스의 프롤레타리아 독재는 나중 개념이며 이것과도 구분 필요.) 생산 수단 소유권 개혁 = 독재 없이도 가능.</div>
+          </div>
+        </div>
+        <div class="myth-row">
+          <div class="myth-x">✗</div>
+          <div>
+            <div class="myth-text"><strong>오해 ④</strong> 사회주의 = 중화학공업 위주 / 소비재·문화 없음</div>
+            <div class="myth-answer"><strong>→ 생산 수단 소유권 이야기와 중화학공업은 무관.</strong> 20세기 현실 사회주의 국가들에서 나타난 역사적 현상이지 사회주의 개념의 필연이 아님.</div>
+          </div>
+        </div>
+        <div class="myth-row">
+          <div class="myth-x">✗</div>
+          <div>
+            <div class="myth-text"><strong>오해 ⑤</strong> 사회주의 = 군사 문화 / 고문 / 핵</div>
+            <div class="myth-answer"><strong>→ 전혀 관련 없음.</strong> 전혀 다른 역사적 맥락에서 형성된 현상들. 사회주의 원래 개념과 무관.</div>
+          </div>
+        </div>
+      </div>
+      <div class="caution">
+        <strong>교수 강조:</strong> 이 5가지 이미지는 냉전 시대에 사회주의를 반대하는 쪽과 <em>심지어 사회주의를 지지하는 쪽 모두</em>가 잘못 유포한 것. 사회주의자라고 스스로 부르는 사람들도 재산 평등을 사회주의라고 오해하는 경우 많음.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">사회주의가 실제로 문제 삼는 것 — 단 2가지</div>
+      <div class="def-box green">
+        <div class="def-label">사회주의의 실제 비판 대상</div>
+        <p>① <span class="hl-g">생산 수단</span>에 대한 <span class="hl-g">사적·배타적 소유권</span><br>
+        &nbsp;&nbsp; (조건: 복수의 생계가 걸린 규모 이상인 것)<br><br>
+        ② <span class="hl-g">생산·분배·투자의 무한 이윤 추구</span>를 허용하는 <span class="hl-g">시장 메커니즘</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ━━━ T/F ━━━ -->
+  <div class="section" id="tf">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">T/F 예상 포인트 — 3차시 함정 정리</span>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 길드 · 도시 충돌 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">길드는 농촌 촌락 공동체와 달리 생산량을 규제하지 않았다.</div>
+          <div class="tf-reason"><strong>→ 길드도 생산·유통량을 규제했음.</strong> 공동체 범위를 초과하는 물욕을 억제 — 촌락 공동체와 동일한 역할.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">길드 장인의 작업장·생산 도구는 장인 소유이지만, 직인·도제도 그 재산에 관습적 권리를 가졌다.</div>
+          <div class="tf-reason"><strong>→ 소유권 중첩.</strong> 복수의 생계가 걸린 재산 → 장인 단독 처분 불가.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">산업자본주의에 가장 먼저, 가장 격렬하게 반대한 집단은 농촌 농민이었다.</div>
+          <div class="tf-reason"><strong>→ 도시의 수공업자(장인 출신)가 가장 격렬하게 반대.</strong> 지위 하락과 박탈감이 더 컸기 때문. 농촌은 일하는 방식의 변화 수준.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">장인이 공장 노동자가 되면서 노동 과정 전체 관할 → 단순 반복 작업으로 전락했다.</div>
+          <div class="tf-reason"><strong>→ 핵심 변화.</strong> 기획~완성까지 전 과정 관할 → 가죽만 붙이는 대체 가능한 존재.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 3대 이념 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">보수주의는 항상 자본주의와 시장 경제를 옹호한다.</div>
+          <div class="tf-reason"><strong>→ 원래 보수주의는 산업화·자본주의 둘 다 거부.</strong> 현재의 자본주의 친화적 보수주의는 보수주의가 많이 바뀐 결과. 기득권이 바뀌면 보수주의 내용도 바뀜.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자유주의의 '자유'는 인간이 어떤 구속도 없이 자유롭게 사는 것을 의미한다.</div>
+          <div class="tf-reason"><strong>→ '공동체에 대한 개인의 자유'</strong> — 생산 수단 자유 처분, 무한 이윤 추구, 생산·유통·투자의 개인 결정권. 냉전 시대에 왜곡된 이미지가 우리 통념.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">사회주의는 3대 이념 중 정치 스펙트럼 중도에 해당한다.</div>
+          <div class="tf-reason"><strong>→ 보수(I·C 모두 거부) ↔ 자유(I·C 모두 찬성) 사이에서 I만 찬성하고 C만 반대.</strong></div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">자유주의는 IC를 발전시키면 사회 문제가 저절로 해결된다고 보았으며, 사회 문제의 존재 자체를 부정했다.</div>
+          <div class="tf-reason"><strong>→ 사회 문제의 존재는 인정했음.</strong> 단 IC가 충분히 발전하면 해결된다고 봄.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">초기 사회주의의 자본주의 비판은 전통 경제(촌락 공동체·길드)의 관행을 레퍼런스로 삼은 것이다.</div>
+          <div class="tf-reason"><strong>→ "올드한 소스".</strong> 마르크스처럼 순수 논리로 비판한 것이 아니라 과거 전통 경제에서 근거를 가져옴.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tf-section">
+      <h3>📌 사회주의 정의·오해 관련</h3>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">사회주의는 모든 사유 재산을 부정한다.</div>
+          <div class="tf-reason"><strong>→ 복수의 생계가 걸린 규모 이상의 생산 수단만 문제.</strong> 개인 소비재·예금·BMW 등 생산 수단이 아닌 재산은 건드리지 않음.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">사회주의는 산업화(기계화·대량 생산)를 반대한다.</div>
+          <div class="tf-reason"><strong>→ 산업화는 긍정.</strong> 자본주의만 비판. 사회주의 = I ✅ C ❌.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">사회주의에서 시장 경제 비판의 핵심은 buyer와 seller에게만 맡기면 체급 차이와 부의 획득 과정의 불투명성 때문에 불공정하다는 것이다.</div>
+          <div class="tf-reason"><strong>→ 제3자 개입 필요성의 근거.</strong> 체급 차이 + 부의 정당성 알 수 없음.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">소련의 독재·군사 문화·중화학공업 위주는 사회주의 원래 개념에서 필연적으로 도출된 것이다.</div>
+          <div class="tf-reason"><strong>→ 사회주의 원래 개념과 무관.</strong> 전혀 다른 역사적 맥락에서 형성된 것들.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge false">F</div>
+        <div>
+          <div class="tf-text">사회주의가 거부하는 자유는 표현·사상·신체의 자유 등 인간의 모든 자유다.</div>
+          <div class="tf-reason"><strong>→ 거부하는 자유는 딱 2가지:</strong> 생산 수단 배타적 처분의 자유 + 무한 이윤 추구의 자유. 다른 자유는 무관.</div>
+        </div>
+      </div>
+      <div class="tf-item">
+        <div class="tf-badge true">T</div>
+        <div>
+          <div class="tf-text">사회주의는 19세기 초 서유럽의 사회 혼란 속에서 등장한 경제 구상이다.</div>
+          <div class="tf-reason"><strong>→ 사회주의 정의 그 자체.</strong> "경제 구상" / "19세기 초 서유럽" / "사회 혼란" 모두 포함해서 기억.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box" style="margin-top:24px;">
+      <h3>✦ 논술형 대비 핵심 논지 (3차시)</h3>
+      <ul>
+        <li>도시 길드는 어떻게 농촌 촌락 공동체와 같은 역할을 했으며, 산업자본주의와 어떻게 충돌했는가?</li>
+        <li>보수주의·자유주의·사회주의는 각각 산업화와 자본주의에 대해 어떤 입장을 취했는가? 세 이념을 비교하라.</li>
+        <li>자유주의의 '자유'가 의미하는 것은 무엇인가? 우리가 흔히 생각하는 자유와 어떻게 다른가?</li>
+        <li>사회주의 정의를 구체적으로 서술하고, 우리가 갖고 있는 오해들이 왜 사회주의 원래 개념과 무관한지 설명하라.</li>
+        <li>초기 사회주의의 자본주의 비판이 왜 '올드한 소스'에 기반했다고 할 수 있는가?</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY + 80 >= s.offsetTop) cur = s.id; });
+    navLinks.forEach(a => {
+      a.style.color = a.style.borderBottomColor = '';
+      if (a.getAttribute('href') === '#' + cur) {
+        a.style.color = 'var(--accent)';
+        a.style.borderBottomColor = 'var(--accent)';
+      }
+    });
+  });
+</script>
+</body>
+</html>
