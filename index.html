@@ -14,6 +14,7 @@
             --accent-quiz: #8b5cf6; /* Purple */
             --accent-flow: #2a9d8f; /* Teal */
             --accent-manifesto: #e63946; /* Red */
+            --accent-v2: #4f8ef7; /* Blue */
             --text: #e8eaf0;
             --text-muted: #949ba4;
         }
@@ -87,34 +88,32 @@
         }
 
         /* 특수 카드 스타일 */
-        .card.quiz-card { border-color: var(--accent-quiz); background: linear-gradient(145deg, #1a1d23, #251b35); }
-        .card.quiz-card:hover { border-color: #a78bfa; }
-        .card.quiz-card h2 { color: #a78bfa; }
-
         .card.flow-card { border-color: var(--accent-flow); background: linear-gradient(145deg, #1a1d23, #162e2b); }
-        .card.flow-card:hover { border-color: #48c9b0; }
-        .card.flow-card h2 { color: #48c9b0; }
-
         .card.manifesto-card { border-color: var(--accent-manifesto); background: linear-gradient(145deg, #1a1d23, #2e1616); }
-        .card.manifesto-card:hover { border-color: #ff4d4d; }
-        .card.manifesto-card h2 { color: #ff4d4d; }
+        .card.quiz-card { border-color: var(--accent-quiz); background: linear-gradient(145deg, #1a1d23, #251b35); }
+        .card.quiz-v2-card { border-color: var(--accent-v2); background: linear-gradient(145deg, #1a1d23, #161e2e); }
 
         .card h2 {
             font-family: 'Noto Serif KR', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 12px;
             color: var(--accent);
         }
 
+        .flow-card h2 { color: #48c9b0; }
+        .manifesto-card h2 { color: #ff4d4d; }
+        .quiz-card h2 { color: #a78bfa; }
+        .quiz-v2-card h2 { color: #7cb3ff; }
+
         .card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             margin-bottom: 20px;
         }
 
         .card .btn {
             align-self: flex-start;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -122,16 +121,17 @@
             padding-bottom: 2px;
         }
 
-        .quiz-card .btn { border-bottom-color: var(--accent-quiz); }
         .flow-card .btn { border-bottom-color: var(--accent-flow); }
         .manifesto-card .btn { border-bottom-color: var(--accent-manifesto); }
+        .quiz-card .btn { border-bottom-color: var(--accent-quiz); }
+        .quiz-v2-card .btn { border-bottom-color: var(--accent-v2); }
 
         footer {
             margin-top: auto;
             text-align: center;
             padding-top: 60px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 600px) {
@@ -144,31 +144,42 @@
 
     <header>
         <h1>사회주의의 역사</h1>
-        <p class="subtitle">시험 합격을 위한 프리미엄 학습 포털</p>
+        <p class="subtitle">모든 자료가 집약된 중간고사 대비 포털</p>
     </header>
 
-    <div class="section-title">Special Exam Prep</div>
+    <div class="section-title">Essential Resources</div>
     <main class="grid" style="margin-bottom: 40px;">
         <a href="history_flow.html" class="card flow-card">
             <div>
                 <h2>역사 흐름도 & 총정리</h2>
-                <p>전체적인 연표와 핵심 이념의 지형도를 한눈에 파악하는 시각적 가이드입니다.</p>
+                <p>전체 연표와 이념의 지형도를 한눈에 파악하는 시각적 가이드입니다.</p>
             </div>
             <div class="btn">View Flow →</div>
         </a>
         <a href="history_manifesto.html" class="card manifesto-card">
             <div>
                 <h2>공산주의 선언 완전정리</h2>
-                <p>중간고사 대비 논술형 예상문제와 핵심 키워드 모범 답안 모음입니다.</p>
+                <p>중간고사 대비 논술형 예상문제와 키워드 모범 답안입니다.</p>
             </div>
             <div class="btn">Check Manifesto →</div>
         </a>
+    </main>
+
+    <div class="section-title">Interactive Practice</div>
+    <main class="grid" style="margin-bottom: 40px;">
         <a href="history_tf.html" class="card quiz-card">
             <div>
-                <h2>T/F 특훈 100제</h2>
-                <p>실제 시험 문항과 유사한 O/X 퀴즈로 내 실력을 최종 점검하세요.</p>
+                <h2>T/F 특훈 100제 (Classic)</h2>
+                <p>전 범위 핵심 내용을 O/X 퀴즈로 빠르게 훑어보는 집중 훈련 모드입니다.</p>
             </div>
-            <div class="btn">Start Quiz →</div>
+            <div class="btn">Start Classic Quiz →</div>
+        </a>
+        <a href="history_quiz_v2.html" class="card quiz-v2-card">
+            <div>
+                <h2>T/F 퀴즈 (Mobile Ver.)</h2>
+                <p>모바일에서 풀기 편한 인터페이스로 구성된 실전 대비 퀴즈입니다.</p>
+            </div>
+            <div class="btn">Start Mobile Quiz →</div>
         </a>
     </main>
 
@@ -188,7 +199,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Socialism History Portal. Final Version.</p>
+        <p>&copy; 2024 Socialism History Portal. All-in-One Version.</p>
     </footer>
 
 </body>
