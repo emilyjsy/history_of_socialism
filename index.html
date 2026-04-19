@@ -11,6 +11,7 @@
             --surface: #1a1d23;
             --border: #2c313a;
             --accent: #c8a96e;
+            --accent-quiz: #8b5cf6;
             --text: #e8eaf0;
             --text-muted: #949ba4;
         }
@@ -45,6 +46,16 @@
             font-size: 1.1rem;
         }
 
+        .section-title {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.5rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -73,6 +84,17 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
+        /* 퀴즈 카드 전용 스타일 */
+        .card.quiz-card {
+            border: 1px solid var(--accent-quiz);
+            background: linear-gradient(145deg, #1a1d23, #251b35);
+        }
+        .card.quiz-card:hover {
+            border-color: #a78bfa;
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+        }
+        .card.quiz-card h2 { color: #a78bfa; }
+
         .card h2 {
             font-family: 'Noto Serif KR', serif;
             font-size: 1.4rem;
@@ -96,10 +118,12 @@
             padding-bottom: 2px;
         }
 
+        .quiz-card .btn { border-bottom-color: var(--accent-quiz); }
+
         footer {
             margin-top: auto;
             text-align: center;
-            padding-top: 40px;
+            padding-top: 60px;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
@@ -114,70 +138,70 @@
 
     <header>
         <h1>사회주의의 역사</h1>
-        <p class="subtitle">시험 대비 핵심 정리 포털 (1~11차시)</p>
+        <p class="subtitle">시험 합격을 위한 통합 포털</p>
     </header>
 
+    <div class="section-title">Special Training</div>
+    <main class="grid" style="margin-bottom: 40px;">
+        <a href="history_tf.html" class="card quiz-card">
+            <div>
+                <h2>T/F 특훈 100제</h2>
+                <p>전 범위 핵심 내용을 O/X 퀴즈로 빠르게 점검하고 실전 감각을 익히세요.</p>
+            </div>
+            <div class="btn">Start Quiz →</div>
+        </a>
+    </main>
+
+    <div class="section-title">Lecture Summaries</div>
     <main class="grid">
         <a href="history_01.html" class="card">
             <div><h2>01. 도입</h2><p>산업화와 자본주의의 결합, 노동과 토지의 상품화 등 등장 배경</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_02.html" class="card">
             <div><h2>02. 자본주의 형성</h2><p>도덕 경제와 시장 경제의 충돌, 임금 노동자의 탄생</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_03.html" class="card">
             <div><h2>03. 이념의 지형도</h2><p>보수, 자유, 사회주의의 비교 및 정확한 정의</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_04.html" class="card">
             <div><h2>04. 초기 사회주의 I</h2><p>생시몽의 인더스트리엘과 푸리에의 팔랑스테르 구상</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_05.html" class="card">
             <div><h2>05. 초기 사회주의 II</h2><p>로버트 오언의 실험과 공동체주의/국가주의의 분화</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_06.html" class="card">
             <div><h2>06. 공산주의 등장</h2><p>까베의 이카리아 여행기와 초기 공산주의의 기독교적 성격</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_07.html" class="card">
             <div><h2>07. 혁명과 아나키즘</h2><p>블랑키의 혁명 방법론과 프루동의 사유재산 비판</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
         <a href="history_08.html" class="card">
             <div><h2>08. 마르크스주의 I</h2><p>역사유물론, 잉여가치론 및 과학적 사회주의의 성립</p></div>
-            <div class="btn">Learn More →</div>
+            <div class="btn">Summary →</div>
         </a>
-
         <a href="history_09.html" class="card">
-            <div>
-                <h2>09. 마르크스주의 II</h2>
-                <p>마르크스 사상의 4범주: 소외된 노동, 역사관, 경제관, 위기론</p>
-            </div>
-            <div class="btn">Learn More →</div>
+            <div><h2>09. 마르크스주의 II</h2><p>마르크스 사상의 4범주: 소외, 역사관, 경제관, 위기론</p></div>
+            <div class="btn">Summary →</div>
         </a>
-
         <a href="history_10.html" class="card">
-            <div>
-                <h2>10. 마르크스주의 III</h2>
-                <p>상품의 교환가치와 노동력의 특수성, 잉여가치 창출 메커니즘</p>
-            </div>
-            <div class="btn">Learn More →</div>
+            <div><h2>10. 마르크스주의 III</h2><p>상품의 교환가치와 노동력의 특수성, 잉여가치 창출</p></div>
+            <div class="btn">Summary →</div>
         </a>
-
         <a href="history_11.html" class="card">
-            <div>
-                <h2>11. 라살과 독일 사민당</h2>
-                <p>국가 지원 조합주의, 라살의 점진주의와 개혁주의 선구자적 역할</p>
-            </div>
-            <div class="btn">Learn More →</div>
+            <div><h2>11. 라살과 독일 사민당</h2><p>국가 지원 조합주의, 점진주의와 개혁주의의 선구자</p></div>
+            <div class="btn">Summary →</div>
         </a>
     </main>
 
     <footer>
-        <p>&copy; 2026 Socialism History Portal. All rights reserved.</p>
+        <p>&copy; 2026 Socialism History Portal. Final Version.</p>
     </footer>
 
 </body>
