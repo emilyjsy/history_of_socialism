@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 9차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0c10;--surface:#121620;--surface2:#181e2a;--border:#222a38;--accent:#6a9fd4;--accent2:#90c0f0;--accent3:#e8c86a;--green:#7ec8a0;--red:#e07878;--teal:#5ec8c0;--purple:#b08de8;--text:#d8e4f0;--text-muted:#506070;--text-soft:#a0b8cc}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.8}
+  header{background:linear-gradient(135deg,#080c14,#0a1018);border-bottom:1px solid var(--border);padding:48px 40px 36px;position:relative;overflow:hidden}
+  header::before{content:'';position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(106,159,212,.07),transparent 70%)}
+  header::after{content:'';position:absolute;bottom:-60px;left:10%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(232,200,106,.05),transparent 70%)}
+  .header-label{font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+  header h1{font-family:'Noto Serif KR',serif;font-size:2rem;font-weight:900;color:var(--accent2);margin-bottom:8px;line-height:1.4}
+  header .subtitle{color:var(--text-muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+  .badge.blue{background:rgba(106,159,212,.12);border:1px solid rgba(106,159,212,.3);color:var(--accent)}
+  .badge.teal{background:rgba(94,200,192,.10);border:1px solid rgba(94,200,192,.3);color:var(--teal)}
+  .badge.gold{background:rgba(232,200,106,.10);border:1px solid rgba(232,200,106,.3);color:var(--accent3)}
+  .badge.purple{background:rgba(176,141,232,.10);border:1px solid rgba(176,141,232,.3);color:var(--purple)}
+  nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 40px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{color:var(--text-muted);text-decoration:none;font-size:13px;padding:14px 18px;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-weight:500}
+  nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .container{max-width:920px;margin:0 auto;padding:44px 32px 90px}
+  .section{margin-bottom:60px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .section-num{font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:700;white-space:nowrap}
+  .section-title{font-family:'Noto Serif KR',serif;font-size:1.35rem;font-weight:900;color:var(--accent2)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .card-title{font-weight:700;color:var(--accent2);font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .card-title::before{content:'';width:4px;height:18px;background:var(--accent);border-radius:2px;flex-shrink:0}
+  .card-title.teal::before{background:var(--teal)}
+  .card-title.gold::before{background:var(--accent3)}
+  .card-title.green::before{background:var(--green)}
+  .card-title.purple::before{background:var(--purple)}
+  .def-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:18px 22px;margin:14px 0}
+  .def-box .def-label{font-size:10px;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .def-box.gold{border-left-color:var(--accent3)}.def-box.gold .def-label{color:var(--accent3)}
+  .def-box.teal{border-left-color:var(--teal)}.def-box.teal .def-label{color:var(--teal)}
+  .def-box.red{border-left-color:var(--red)}.def-box.red .def-label{color:var(--red)}
+  .def-box.green{border-left-color:var(--green)}.def-box.green .def-label{color:var(--green)}
+  .def-box.purple{border-left-color:var(--purple)}.def-box.purple .def-label{color:var(--purple)}
+  .key-concept{border-radius:8px;padding:18px 22px;margin:14px 0}
+  .key-concept.blue{background:linear-gradient(135deg,rgba(106,159,212,.09),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22)}
+  .key-concept.blue .kc-label{color:var(--accent)}
+  .key-concept.teal{background:linear-gradient(135deg,rgba(94,200,192,.08),rgba(94,200,192,.02));border:1px solid rgba(94,200,192,.2)}
+  .key-concept.teal .kc-label{color:var(--teal)}
+  .key-concept.gold{background:linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02));border:1px solid rgba(232,200,106,.2)}
+  .key-concept.gold .kc-label{color:var(--accent3)}
+  .key-concept.green{background:linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02));border:1px solid rgba(126,200,160,.2)}
+  .key-concept.green .kc-label{color:var(--green)}
+  .key-concept.purple{background:linear-gradient(135deg,rgba(176,141,232,.08),rgba(176,141,232,.02));border:1px solid rgba(176,141,232,.2)}
+  .key-concept.purple .kc-label{color:var(--purple)}
+  .kc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .hl-b{color:var(--accent2);font-weight:700}
+  .hl-go{color:var(--accent3);font-weight:700}
+  .hl-g{color:var(--green);font-weight:700}
+  .hl-t{color:var(--teal);font-weight:700}
+  .hl-r{color:var(--red);font-weight:700}
+  .hl-p{color:var(--purple);font-weight:700}
+  .example{background:rgba(106,159,212,.05);border:1px solid rgba(106,159,212,.18);border-radius:6px;padding:15px 20px;margin:12px 0}
+  .example-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .example-label::before{content:'📌';font-size:12px}
+  .example.teal{background:rgba(94,200,192,.05);border-color:rgba(94,200,192,.18)}.example.teal .example-label{color:var(--teal)}
+  .example.gold{background:rgba(232,200,106,.05);border-color:rgba(232,200,106,.18)}.example.gold .example-label{color:var(--accent3)}
+  .example.green{background:rgba(126,200,160,.05);border-color:rgba(126,200,160,.18)}.example.green .example-label{color:var(--green)}
+  .example.purple{background:rgba(176,141,232,.05);border-color:rgba(176,141,232,.18)}.example.purple .example-label{color:var(--purple)}
+  .example p,.example li{font-size:14px;color:var(--text-soft)}
+  .example ul{padding-left:18px}.example li{margin-bottom:5px}
+  .caution{background:rgba(224,120,120,.07);border:1px solid rgba(224,120,120,.22);border-radius:6px;padding:14px 18px;margin:12px 0;font-size:13.5px;color:var(--text-soft)}
+  .caution strong{color:var(--red)}
+  .hero-box{border-radius:10px;padding:22px 26px;margin:16px 0}
+  .hero-box.teal{background:linear-gradient(135deg,rgba(94,200,192,.13),rgba(94,200,192,.04));border:2px solid rgba(94,200,192,.4)}
+  .hero-box.gold{background:linear-gradient(135deg,rgba(232,200,106,.13),rgba(232,200,106,.04));border:2px solid rgba(232,200,106,.4)}
+  .hero-box.blue{background:linear-gradient(135deg,rgba(106,159,212,.13),rgba(106,159,212,.04));border:2px solid rgba(106,159,212,.4)}
+  .hero-box .hero-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .hero-box.teal .hero-label{color:var(--teal)}
+  .hero-box.gold .hero-label{color:var(--accent3)}
+  .hero-box.blue .hero-label{color:var(--accent)}
+  .hero-box p{font-size:15px;color:var(--text);font-weight:500;line-height:1.95}
+  .flow-box{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;padding:16px 20px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)}
+  .flow-item{background:rgba(106,159,212,.1);border:1px solid rgba(106,159,212,.25);border-radius:6px;padding:6px 14px;font-size:13px;color:var(--accent2);font-weight:600}
+  .flow-arrow{color:var(--accent);font-weight:700;font-size:15px}
+  .flow-item.gold{background:rgba(232,200,106,.1);border-color:rgba(232,200,106,.25);color:var(--accent3)}
+  .flow-item.teal{background:rgba(94,200,192,.1);border-color:rgba(94,200,192,.25);color:var(--teal)}
+  .flow-item.green{background:rgba(126,200,160,.1);border-color:rgba(126,200,160,.25);color:var(--green)}
+  .tl{position:relative;padding-left:24px;margin:14px 0}
+  .tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--border)}
+  .tl-item{position:relative;margin-bottom:14px}
+  .tl-dot{position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  .tl-dot.gold{background:var(--accent3)}
+  .tl-dot.teal{background:var(--teal)}
+  .tl-dot.green{background:var(--green)}
+  .tl-year{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:3px}
+  .tl-year.gold{color:var(--accent3)}
+  .tl-text{font-size:14px;color:var(--text-soft)}
+  .tl-text strong{color:var(--text)}
+  .tf-section{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .tf-section h3{font-family:'Noto Serif KR',serif;font-size:1rem;color:var(--accent2);margin-bottom:16px;font-weight:700}
+  .tf-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+  .tf-item:last-child{border-bottom:none}
+  .tf-badge{flex-shrink:0;width:32px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px}
+  .tf-badge.true{background:rgba(126,200,160,.2);color:var(--green)}
+  .tf-badge.false{background:rgba(224,120,120,.2);color:var(--red)}
+  .tf-text{color:var(--text-soft)}
+  .tf-reason{margin-top:4px;font-size:13px;color:var(--text-muted)}
+  .tf-reason strong{color:var(--accent2)}
+  .summary-box{background:linear-gradient(135deg,rgba(106,159,212,.08),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22);border-radius:10px;padding:22px 26px;margin:18px 0}
+  .summary-box h3{color:var(--accent2);font-family:'Noto Serif KR',serif;font-size:1rem;margin-bottom:12px;font-weight:900}
+  .summary-box ul{list-style:none;padding:0}
+  .summary-box li{padding:5px 0;font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start}
+  .summary-box li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+  th{background:var(--surface2);color:var(--accent);font-weight:700;text-align:left;padding:10px 16px;border:1px solid var(--border);font-size:12px}
+  td{padding:10px 16px;border:1px solid var(--border);color:var(--text-soft);vertical-align:top}
+  tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .divider{height:1px;background:var(--border);margin:32px 0}
+  p{margin-bottom:10px}
+  ul.plain{list-style:none;padding:0}
+  ul.plain li{padding:4px 0;font-size:14px;color:var(--text-soft)}
+  ul.plain li::before{content:'·';color:var(--accent);margin-right:8px;font-weight:700}
+  @media(max-width:640px){header{padding:32px 20px 24px}header h1{font-size:1.4rem}.container{padding:24px 16px 60px}nav{padding:0 16px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 9차시 핵심 정리</div>
+  <h1>마르크스·엥겔스의 생애 완성 + 사회주의 사상 4범주</h1>
+  <div class="subtitle">
+    <span>2026. 04. 08 &nbsp;|&nbsp; 9차시</span>
+    <span class="badge blue">중간고사 대비</span>
+    <span class="badge teal">공동 작업 · 인간관 · 역사관(역사유물론)</span>
+    <span class="badge gold">⚠ 경제관·위기론은 다음 차시 이어짐</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#collab">마르크스·엥겔스 공동작업</a>
+  <a href="#london">런던 시절</a>
+  <a href="#thought">사상의 핵심 구도</a>
+  <a href="#humanism">인간관</a>
+  <a href="#history">역사관 (역사유물론)</a>
+  <a href="#tf">T/F 예상 포인트</a>
+  <a href="#essay">논술 대비</a>
+</nav>
+
+<div class="container">
+
+<!-- ====== 01 공동작업 ====== -->
+<div class="section" id="collab">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">마르크스 &amp; 엥겔스 공동 작업 전개</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">1844년 파리 재회 — 세계사가 바뀐 날</div>
+    <div class="def-box teal">
+      <div class="def-label">핵심 포인트</div>
+      <p>1844년 8월 28일, 파리 <span class="hl-b">Café de la Régence</span>에서 엥겔스가 마르크스의 천재성을 알아보고 파리 거주를 결정. 이 만남이 없었으면 마르크스주의 자체가 탄생하지 않았을 가능성이 큼.</p>
+    </div>
+    <div class="caution">
+      <strong>⚠ 시험 주의</strong> — 첫 만남(쾰른, 1842)은 엥겔스가 마르크스에게 <strong>실망</strong>한 시점. 천재성을 알아본 건 <strong>1844년 파리 재회</strong>에서임. 둘을 혼동하지 말 것.
+    </div>
+    <div class="example">
+      <div class="example-label">교수 언급</div>
+      <p>마르크스주의라는 이름이 마르크스 이름을 따서 마르크스가 혼자 다 한 것처럼 느껴지지만, 교수는 <span class="hl-b">엥겔스의 기여를 굉장히 크게 보는 입장</span>이라고 직접 밝힘.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">의인동맹 → 공산주의 연맹</div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-year">1844, 파리</div>
+          <div class="tl-text">엥겔스 파리 거주 결정 → <strong>의인동맹(League of the Just)</strong>과 첫 직접 접촉. 몰락한 수공업자 중심의 공산주의 단체로, 마르크스·엥겔스가 공산주의 사상을 처음으로 직접 접하는 계기. (바이틀링과 논쟁도 있었음)</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot gold"></div>
+        <div>
+          <div class="tl-year gold">브뤼셀 추방</div>
+          <div class="tl-text">의인동맹은 "대놓고 정부를 전복하겠다"는 모순적 행동으로 브뤼셀에서 추방 → 연루자 마르크스·엥겔스도 함께 추방. 이 시기 <strong>&lt;독일 이데올로기&gt;</strong> 집필 — 둘의 최초의 공저. 단, 당시 출판되지 않음.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot teal"></div>
+        <div>
+          <div class="tl-year teal">1847, 브뤼셀</div>
+          <div class="tl-text">바이틀링 탈퇴 이후 의인동맹이 세속화 + 급진화 → 이름을 <strong>공산주의 연맹(Kommunistenbund)</strong>으로 개칭. 강령 집필을 마르크스·엥겔스에게 청탁.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot green"></div>
+        <div>
+          <div class="tl-year" style="color:var(--green)">1848년 1월, 탈고</div>
+          <div class="tl-text"><strong>&lt;공산주의 선언&gt;</strong> 완성. 짧은 팜플렛 형식. 1848년 2월 바로 파리 혁명이 터짐. "공산당 선언"은 잘못된 번역 — 당시 공산당(party)이란 조직은 없었음. <strong>공산주의 선언</strong>이 정확한 표현.</div>
+        </div>
+      </div>
+    </div>
+    <div class="key-concept gold">
+      <div class="kc-label">📖 공산주의 선언의 위상</div>
+      <p>이후 나오는 모든 주저(자본론 등)는 이 선언에서 나온 아이디어를 <span class="hl-go">체계적으로 논증한 것</span>에 불과. 핵심 아이디어는 이미 여기에 다 있음. 겉보기엔 팜플렛이지만 문장 하나하나에 엄청난 내용이 숨어 있어 지금도 미국 명문대 텍스트로 읽힘.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">48년 혁명 — 고무 → 실패 → 영국으로</div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-year">1848, 2월</div>
+          <div class="tl-text">파리 혁명 → 전 유럽 확산 (독일 3월 혁명, 오스트리아 등). 공화주의·민족주의·사회주의가 혼재된 혁명. 마르크스·엥겔스 인생에서 가장 행복한 시기 — 마르크스는 쾰른으로 귀향, <strong>신라인신문</strong> 발간.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot gold"></div>
+        <div>
+          <div class="tl-year gold">1849, 반혁명</div>
+          <div class="tl-text">군주들 복귀, 이전 양보 전부 뒤엎음. 마르크스는 파리로, <strong>엥겔스는 독일 남부에 남아 봉기(공산주의적·음모적 봉기) 직접 참여</strong> → 실패. 둘 다 파리로 → 파리도 나폴레옹 3세 황제정 수립으로 이미 불가 → <strong>영국(런던)으로</strong>.</div>
+        </div>
+      </div>
+    </div>
+    <div class="example teal">
+      <div class="example-label">영국으로 간 이유</div>
+      <p>영국은 혁명적 혼란에서 상대적으로 멀리 있었고, 좌익 문필가들을 직접 수사·추적하지 않음. 단, 파리처럼 지식인 토론 문화가 없어 활동 공간은 제한적.</p>
+    </div>
+  </div>
+</div><!-- /collab -->
+
+<!-- ====== 02 런던 시절 ====== -->
+<div class="section" id="london">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">런던 시절 — 분업과 저술</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">엥겔스의 결단 — 완벽한 분업</div>
+    <div class="def-box teal">
+      <div class="def-label">분업 구조</div>
+      <p>엥겔스: <span class="hl-t">"나보다 니가 똑똑하다"</span> → 아버지 회사 <span class="hl-b">Ermen &amp; Engels</span>(맨체스터)로 복귀, 매니저로 일하며 마르크스에게 생활비 지원.<br>
+      마르크스: 매일 <span class="hl-b">British Museum 리딩룸</span> 같은 자리에서 연구에 집중.</p>
+    </div>
+    <div class="example">
+      <div class="example-label">마르크스의 생활 현실 (교수 직접 언급)</div>
+      <ul>
+        <li>아버지가 변호사 → <strong>전형적인 부르주아 라이프스타일</strong> 유지 (아이 많음, 하녀 고용, 당시 19세기 유럽 부르주아 문화)</li>
+        <li>엥겔스 지원금 부족 → <strong>New York Tribune(오늘날 뉴욕 타임즈) 특파원</strong> 알바로 생계 보충</li>
+        <li>부인이 불치병·간암 투병, 아끼던 딸 자살, 막내 아들 영양실조로 사망, 관 살 돈도 없을 만큼 극빈 생활 → 굉장히 비극적인 삶</li>
+      </ul>
+    </div>
+    <div class="caution">
+      <strong>⚠ 시험 포인트</strong> — 엥겔스는 <strong>끝까지 결혼하지 않음</strong>. 결혼=여성 착취로 봄(실천적 페미니스트). 런던으로 오기 직전 사귀던 여성이 사망 → 이후 런던으로 귀환하여 저술 활동 시작.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">주요 저작 정리</div>
+    <table>
+      <tr>
+        <th>연도</th>
+        <th>저작</th>
+        <th>의의</th>
+      </tr>
+      <tr>
+        <td>1844 이전</td>
+        <td>&lt;경제철학 수고&gt; (파리 수고)</td>
+        <td>인간관의 핵심. 1930년대 소련에서 출판, 1960년대 유명해짐</td>
+      </tr>
+      <tr>
+        <td>브뤼셀</td>
+        <td>&lt;독일 이데올로기&gt;</td>
+        <td>최초의 공저. 출판 안 됨 → 베른슈타인이 숨겨뒀다가 소련에 전달</td>
+      </tr>
+      <tr>
+        <td>1848.1</td>
+        <td>&lt;공산주의 선언&gt;</td>
+        <td>모든 이후 저작의 핵심 아이디어 씨앗</td>
+      </tr>
+      <tr>
+        <td>1857</td>
+        <td>&lt;Grundrisse(정치경제학 비판 요강)&gt;</td>
+        <td>마르크스의 전환점, 경제학 집중 시작. 1939년 출판</td>
+      </tr>
+      <tr>
+        <td>1859</td>
+        <td>&lt;정치경제학 비판&gt;</td>
+        <td><strong>역사유물론 개창</strong>. 마르크스 주저 중 하나. 마르크스 사후 1880년대 출판</td>
+      </tr>
+      <tr>
+        <td>1867</td>
+        <td>&lt;자본Ⅰ&gt;</td>
+        <td>경제관 완성. 마르크스 주저 중 하나</td>
+      </tr>
+      <tr>
+        <td>1878</td>
+        <td>&lt;반뒤링론&gt; (엥겔스)</td>
+        <td>위기론 포함</td>
+      </tr>
+      <tr>
+        <td>1884</td>
+        <td>&lt;가족, 사유재산, 국가의 기원&gt; (엥겔스)</td>
+        <td>문화적 해방까지 다룸. 마르크스에게 없던 시각. 페미니즘·선사시대 연구 고전</td>
+      </tr>
+      <tr>
+        <td>1883 이후</td>
+        <td>&lt;자본Ⅱ&gt;, &lt;자본Ⅲ&gt;</td>
+        <td>마르크스 사후 엥겔스가 수고 정리하여 완성, 저자명은 마르크스</td>
+      </tr>
+    </table>
+    <div class="caution">
+      <strong>⚠ 시험 포인트</strong> — <strong>마르크스의 가장 중요한 주저는 &lt;정치경제학 비판&gt;(1859)과 &lt;자본Ⅰ&gt;(1867)</strong>. Grundrisse 이후부터는 확고하게 경제학자로, 고전경제학자(스미스, 리카르도, 밀)와의 논쟁을 염두에 두고 저술.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title green">제1차 인터내셔널 (1864)</div>
+    <div class="def-box green">
+      <div class="def-label">배경</div>
+      <p>사회주의가 후퇴하는 시기 → 유럽 다양한 좌파들이 런던에 모여 연대 모색. 당시에는 그냥 "인터내셔널"이라 불림.</p>
+    </div>
+    <p style="font-size:14px;color:var(--text-soft);margin-top:8px;">참여 세력: <span class="hl-b">개혁주의(조합주의 계열)</span>, <span class="hl-go">프루동주의</span>, <span class="hl-t">바쿠닌 계열(무정부주의)</span> + 마르크스</p>
+    <div class="example gold">
+      <div class="example-label">교수 언급 — 마르크스의 역할</div>
+      <p>마르크스가 하나씩 논쟁을 붙어 날려버리는 방식으로 큰 활약. 반면 바쿠닌은 마르크스와의 논쟁에서 굉장히 실망함.</p>
+    </div>
+  </div>
+</div><!-- /london -->
+
+<!-- ====== 03 사상의 핵심 구도 ====== -->
+<div class="section" id="thought">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">마르크스주의 사상의 핵심 구도</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">마르크스·엥겔스 사상의 본질</div>
+    <div class="hero-box blue">
+      <div class="hero-label">가장 중요한 전제</div>
+      <p>이전 사회주의자들(까베 등)은 미래 청사진 중심 → 마르크스·엥겔스는 달라. <span class="hl-b">현재 자본주의를 분석하고 비판하는 것이 압도적 핵심</span>. 사회주의 이행의 '필연성' 논증이 목표.</p>
+    </div>
+
+    <div class="caution">
+      <strong>마르크스·엥겔스가 거의 다루지 않은 것</strong> — 혁명의 방법론 / 체제 전복 전술 / 혁명 이후 사회주의 체제 건설·운영 방법 / 사회주의 세계의 청사진 → <strong>거의 없거나 아예 없음</strong>
+    </div>
+
+    <div class="def-box gold">
+      <div class="def-label">4범주 (앤서니 기든스의 3범주 + 교수 추가 1)</div>
+      <p>① <span class="hl-b">인간관</span> — 인간이란 무엇인가, 노동과 자아실현<br>
+      ② <span class="hl-go">역사관</span> — 역사유물론, 생산양식의 변화<br>
+      ③ <span class="hl-t">경제관</span> — 잉여가치론, 자본주의 착취 메커니즘 (미시)<br>
+      ④ <span class="hl-g">위기론</span> — 자본주의 위기의 구조와 반복 (거시)</p>
+    </div>
+  </div>
+</div><!-- /thought -->
+
+<!-- ====== 04 인간관 ====== -->
+<div class="section" id="humanism">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">① 인간관 — 노동과 소외</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title purple">주요 텍스트 &amp; 발굴 경위</div>
+    <p style="font-size:14px;color:var(--text-soft);">주요 텍스트: <span class="hl-p">&lt;경제철학 수고&gt;</span>(파리 수고, 1844 이전)와 <span class="hl-p">&lt;독일 이데올로기&gt;</span></p>
+    <div class="example purple">
+      <div class="example-label">발굴 경위 (시험 나올 수 있음)</div>
+      <p>수고(원고)여서 출판 안 됨 → 독일 마르크스주의자 <strong>베른슈타인</strong>이 엥겔스로부터 텍스트 직접 수령, 혼자 숨겨둠 → 죽기 직전 소련에 전달 → 소련에서 <strong>1930년대 출판</strong> → 거의 알려지지 않다가 <strong>1960년대 신좌파·히피 운동</strong> 시기에 크게 유행.</p>
+    </div>
+    <div class="def-box purple">
+      <div class="def-label">왜 1960년대에 유행했나</div>
+      <p>자본주의 비판 + <span class="hl-p">소련식 현실사회주의 비판</span> 동시에 가능 → 신좌파 입맛에 딱 맞음. "소련도 관료제·법칙적 접근으로 인간의 행복·자유를 못 가져왔다"는 비판 근거가 됨. 프랑크푸르트학파(허버트 마르쿠제 &lt;1차원적 인간&gt;, 에리히 프롬)의 핵심 텍스트.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">헤겔의 구도 — 마르크스의 출발점</div>
+    <div class="def-box">
+      <div class="def-label">헤겔의 기본 구도</div>
+      <p>인간 ↔ <span class="hl-b">자연 상태 / 외적 현실</span> (= 같은 말)<br>
+      인간이 외적 현실에 에너지를 가해 변형시키고 → 그 결과물을 자기 것으로 만들면 (<span class="hl-go">자기 산물화, 실현</span>) → <span class="hl-b">개별 주체성</span> 획득 (= 사실상 "개성") → 자기 본질을 앎.</p>
+    </div>
+    <div class="def-box gold">
+      <div class="def-label">Ausbildung (도야)</div>
+      <p>번역이 잘 안 되는 독일어. "도야" 또는 "노력"에 가까운 의미. 헤겔에게 Ausbildung은 지적·정신적 활동(법률가 예시). 공동체 소속원으로서 내 산물이 남들 것과 달라야 내 본질을 앎.</p>
+    </div>
+    <div class="example gold">
+      <div class="example-label">교수 예시 — 조각가와 법률가</div>
+      <p><strong>조각가</strong>: 자연 상태인 돌을 깎아 자기만의 조각품 → 자기 산물화 → 자기 본질 앎<br>
+      <strong>법률가</strong>: 무질서한 외적 현실에 룰·규율 부과 → 자기 산물화 → 자기 본질 앎<br>
+      ※ 헤겔은 법률가 예시를 선호.</p>
+    </div>
+    <div class="key-concept blue">
+      <div class="kc-label">중세 vs 근대 (헤겔)</div>
+      <p><span class="hl-r">중세</span>: 자연 상태 = 신이 준 것 → 신성, 변형 대상이 아님. 자기 종교적 미션을 깨달아 그대로 사는 것이 행복 (카톨릭 사상).<br>
+      <span class="hl-g">근대</span>: 외적 현실을 내가 변형시키는 삶 → 개별 주체성 획득.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">마르크스의 수정 — Ausbildung의 도구는 '노동'</div>
+    <div class="def-box teal">
+      <div class="def-label">마르크스의 핵심 변경</div>
+      <p>헤겔의 Ausbildung(지적·정신적 활동) → 마르크스는 이를 <span class="hl-t">넓은 의미의 노동</span>(육체노동만이 아닌 모든 노동 포함)으로 대체.</p>
+    </div>
+    <div class="hero-box teal">
+      <div class="hero-label">마르크스의 역사 정의 (외워야 함)</div>
+      <p>"역사란 인간이 자연 상태로부터 <span class="hl-t">노동</span>을 통해 <span class="hl-b">자기 규정의 실현</span>을 하면서 발전해 온 것이다."</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title red">산업자본주의의 문제 — 노동의 소외</div>
+    <p style="font-size:14px;color:var(--text-soft);margin-bottom:12px;">인간이 노동을 통해 자기실현을 해야 행복한데, 산업자본주의 하에서는 세 가지 이유로 불가능:</p>
+
+    <div class="grid2">
+      <div class="def-box red">
+        <div class="def-label">① 노동 과정</div>
+        <p>분업화 → 자기 실현 여지 없음. 조각가처럼 처음부터 끝까지 만들지 못함.</p>
+      </div>
+      <div class="def-box red">
+        <div class="def-label">② 노동 산물</div>
+        <p>내가 만든 산물이 자기 것이 되지 못함 → 시장에서 상품화 → 내가 만든 것을 내가 사야 하는 욕구에 빠짐 → <strong>상품의 노예</strong></p>
+      </div>
+    </div>
+    <div class="def-box red">
+      <div class="def-label">③ 노동 후 상태</div>
+      <p>적절한 보상이 주어지지 않음 → <strong>절대 빈곤</strong> (초기 마르크스의 관점. 나중에 수정됨)</p>
+    </div>
+
+    <div class="hero-box gold">
+      <div class="hero-label">노동의 소외 (핵심 개념)</div>
+      <p>"프롤레타리아의 노동은 자아 실현의 수단이 되지 못하고 <span class="hl-go">外化(외화)</span>한다 — 자기에게 <span class="hl-r">적대적인 세계를 창출</span>한다."<br><br>
+      → 소외: 노동을 통해 자기 본질과 멀어지는 것<br>
+      → 결과: <span class="hl-b">노동자는 노동하지 않을 때 비로소 편안</span><br>
+      → 노동과 여가의 <span class="hl-go">대립적 이분법</span> 탄생</p>
+    </div>
+    <div class="example">
+      <div class="example-label">교수 현대적 비유</div>
+      <p>직장인들이 퇴근을 가장 큰 낙으로 여기는 것, "직장인의 뇌" 밈처럼 자아 실현이 노동 이후에나 시작되는 시스템 → 마르크스가 말한 소외의 현대적 표현.</p>
+    </div>
+  </div>
+</div><!-- /humanism -->
+
+<!-- ====== 05 역사관 ====== -->
+<div class="section" id="history">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">② 역사관 — 역사유물론 (Historical Materialism)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">역사유물론 = 마르크스주의의 핵심 정체성</div>
+    <div class="hero-box gold">
+      <div class="hero-label">핵심 명제</div>
+      <p>사회주의자 + 역사유물론을 믿으면 = <span class="hl-go">마르크스주의자</span><br>
+      사회주의자이지만 역사유물론을 안 믿으면 = <span class="hl-r">마르크스주의자 아님</span><br><br>
+      <span style="font-size:13px;color:var(--text-muted);">마르크스주의 ≠ 사회주의. 마르크스주의는 여러 사회주의 중 한 종류임 (후에 지배적 위치 차지).</span></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">'物(물)'의 정의 — 오해와 이해</div>
+    <div class="caution">
+      <strong>⚠ 흔한 오해</strong> — "유물론 = 오직 물질만이 중요 = 신이나 정신의 영역 부정 = 종교와 양립 불가"<br>
+      → <strong>전혀 관계 없음</strong>. 이것은 반공 진영의 공격에서 비롯된 오해.
+    </div>
+    <div class="def-box teal">
+      <div class="def-label">마르크스의 '물' 정의 (유일한 정의)</div>
+      <p>"사람이 태어나면 자신의 의지와는 무관하게 특정한 <span class="hl-t">물적 조건 또는 상황</span>에 놓임"</p>
+    </div>
+    <div class="grid2">
+      <div class="key-concept blue">
+        <div class="kc-label">물의 종류 ①</div>
+        <p>지리, 인구구조, 음식 문화 등 → 마르크스는 인정하지만 <strong>주목 안 함</strong> (자기 연구 영역이 아님)</p>
+      </div>
+      <div class="key-concept gold">
+        <div class="kc-label">물의 종류 ② (마르크스가 주목)</div>
+        <p>"인간 간 관계를 전제하는 경제 체제" = <span class="hl-go">생산양식(Mode of Production)</span><br>태어나보니 출근하고 임금 받는 자본주의 경제 체제에 있는 것 → 내 의지와 무관</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">토대 와 상부구조</div>
+    <div class="def-box teal">
+      <div class="def-label">토대 (Foundation)</div>
+      <p>생산양식 = 경제 체제. 해당 사회의 기반.</p>
+    </div>
+    <div class="def-box">
+      <div class="def-label">상부구조 (Superstructure)</div>
+      <p>비물적 현상들: 문화, 법률, 정치, 정신적·지적·종교적 영역 등. 경제 체제가 아닌 모든 것.</p>
+    </div>
+    <div class="hero-box blue">
+      <div class="hero-label">원문 (마르크스, 교수가 직접 제시)</div>
+      <p>"The material mode of production <span class="hl-b">conditions(bedingt)</span> the social, political, and intellectual/spiritual dimensions of life."</p>
+    </div>
+    <div class="def-box gold">
+      <div class="def-label">'conditions(조건 짓다)'의 의미</div>
+      <p>결정(determines)이 아님! → "이런 경제 조건일 때만 이런 현상이 드러난다"는 의미. 경제가 모든 것을 결정하는 게 아니라, <span class="hl-go">토대(경제)가 상부구조가 드러나는 조건</span>이 된다.</p>
+    </div>
+    <div class="example gold">
+      <div class="example-label">교수 예시 ① — 힙합 음악의 유행</div>
+      <p><strong>비마르크스주의자</strong>: "70년대 힙합 선구자들이 멋진 음악을 만들었기 때문"<br>
+      <strong>마르크스주의자</strong>: "힙합은 자본주의가 고도로 발달하고 글로벌화된 <strong>조건 속에서만</strong> 유행 가능하다"</p>
+    </div>
+    <div class="example teal">
+      <div class="example-label">교수 예시 ② — 탈진실(post-truth) 현상</div>
+      <p><strong>비마르크스주의자</strong>: "특정 정치인이 거짓말을 하기 때문"<br>
+      <strong>마르크스주의자</strong>: "글로벌 자본주의의 모순과 위기가 만든 <strong>조건 속에서 탈진실 현상이 드러난다</strong>"</p>
+    </div>
+    <div class="key-concept green">
+      <div class="kc-label">결론 — 유물론의 의미</div>
+      <p>경제가 제일 중요하고 토대를 형성하긴 하지만, <span class="hl-g">경제가 모든 것을 결정한다는 의미가 아님</span>. 세상의 어떤 문화·정치 현상을 이해하려면 항상 <strong>경제(토대)부터 먼저 봐야 한다</strong>는 것. 유물론 = 종교 부정과는 무관.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">생산양식의 역사적 진화</div>
+    <div class="flow-box">
+      <div class="flow-item">원시공산제</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item">노예제</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item">봉건제</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item gold">자본주의</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item teal">사회주의</div>
+    </div>
+    <div class="def-box">
+      <div class="def-label">왜 생산양식이 변화하는가?</div>
+      <p>생산양식 내부: <span class="hl-b">생산력</span>과 <span class="hl-go">생산관계</span>의 조합.<br>
+      생산력이 발달 → 기존 생산관계가 이 발달에 부합하지 못하고 질곡이 됨 → 유지 vs 변화의 긴장 → <span class="hl-r">계급 갈등(계급투쟁)</span> 심화 → 사회혁명 → 다음 생산양식</p>
+    </div>
+    <div class="flow-box">
+      <div class="flow-item">생산력 발달</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item">생산관계 부적합</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item" style="color:var(--red);border-color:rgba(224,120,120,.4);background:rgba(224,120,120,.08)">계급투쟁</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item gold">사회혁명</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-item teal">새 생산양식</div>
+    </div>
+    <div class="example">
+      <div class="example-label">역사 사례 (자본Ⅰ '이른바 시초축적')</div>
+      <p>생산력 발달 → 농촌공동체 분화 + 부르주아 성장 → 자본 축적 → 계급투쟁 → 프랑스혁명 → 자본-노동 관계 성립</p>
+    </div>
+    <div class="key-concept teal">
+      <div class="kc-label">마르크스·엥겔스의 특징 — 계몽주의 진보와 사회주의 결합</div>
+      <p>기존 사회주의자들도 미래를 이야기했지만 상당수는 <span class="hl-r">복고적</span>이었음. 마르크스·엥겔스는 <span class="hl-t">계몽주의의 '진보' 개념을 사회주의와 결합</span>하여 진보를 법칙화·체계화함 → "역사와 사랑에 빠짐"(교수 표현)</p>
+    </div>
+  </div>
+</div><!-- /history -->
+
+<!-- ====== 06 T/F ====== -->
+<div class="section" id="tf">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">T / F 예상 포인트</span>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 마르크스·엥겔스 생애·공동작업</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">엥겔스는 마르크스를 처음 만났을 때(1842년 쾰른) 그의 천재성을 알아봤다.</div>
+        <div class="tf-reason"><strong>→ 첫 만남에서 실망.</strong> 천재성을 알아본 것은 1844년 파리 Café de la Régence 재회에서.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">&lt;공산주의 선언&gt;은 마르크스와 엥겔스가 자발적으로 작성한 것이다.</div>
+        <div class="tf-reason"><strong>→ 공산주의 연맹(의인동맹 개칭)이 강령 작성을 청탁</strong>한 것. 자발적이 아님.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">'공산당 선언'이 '공산주의 선언'보다 정확한 번역이다.</div>
+        <div class="tf-reason"><strong>→ '공산주의 선언'이 더 정확.</strong> 당시 공산당(party)이란 조직 자체가 없었기 때문.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">&lt;독일 이데올로기&gt;는 마르크스·엥겔스의 첫 공저로, 브뤼셀 시절 당시 바로 출판되었다.</div>
+        <div class="tf-reason"><strong>→ 출판 안 됨.</strong> 베른슈타인이 엥겔스로부터 수령, 숨겨뒀다가 소련에 전달 → 1930년대 출판.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스 사후 엥겔스가 정리한 &lt;자본Ⅱ&gt;, &lt;자본Ⅲ&gt;의 저자명은 엥겔스 이름으로 출판되었다.</div>
+        <div class="tf-reason"><strong>→ 저자명은 마르크스.</strong> 엥겔스가 수고를 편집하여 출판했지만 저자는 마르크스.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">엥겔스는 맨체스터에서 사귀던 여성과 결혼하여 안정적인 가정생활을 영위했다.</div>
+        <div class="tf-reason"><strong>→ 끝까지 결혼 안 함.</strong> 결혼=여성 착취로 봄. 그 여성은 런던으로 오기 직전 사망.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스의 가장 중요한 주저 두 편은 &lt;정치경제학 비판&gt;(1859)과 &lt;자본Ⅰ&gt;(1867)이다.</div>
+        <div class="tf-reason"><strong>→ 교수 직접 언급.</strong> 이 두 권이 마르크스의 가장 주저.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 마르크스주의 사상 핵심 구도</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스·엥겔스는 혁명 이후 사회주의 체제의 청사진을 구체적으로 제시했다.</div>
+        <div class="tf-reason"><strong>→ 거의 없거나 아예 없음.</strong> 압도적 핵심은 자본주의 분석·비판이고 혁명 방법론·미래 청사진은 거의 다루지 않음.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스주의의 4범주 구분은 앤서니 기든스가 처음 제시한 것이다.</div>
+        <div class="tf-reason"><strong>→ 기든스는 3범주(인간관·역사관·경제관).</strong> 교수가 거시 경제 논의인 위기론을 추가하여 4범주로 확장.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 인간관</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스의 인간관이 담긴 &lt;경제철학 수고&gt;는 1930년대에 출판되어 즉시 큰 반향을 불러일으켰다.</div>
+        <div class="tf-reason"><strong>→ 1930년대 출판되었지만 거의 알려지지 않다가</strong> 1960년대 신좌파 운동 시기에 비로소 크게 유행.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">헤겔에서 마르크스로의 전환에서, 마르크스는 Ausbildung의 도구를 '지적·정신적 활동'에서 '육체노동'으로 한정했다.</div>
+        <div class="tf-reason"><strong>→ '육체노동'이 아니라 '넓은 의미의 노동'(지적 노동 포함 모든 노동)으로 대체.</strong></div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 "노동자는 노동하지 않을 때 비로소 편안하다"는 말은 노동의 소외의 결과다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 노동이 자아실현 수단이 되지 못하고 외화(소외)하기 때문. 노동과 여가의 대립적 이분법.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스의 초기 인간관에서 산업자본주의 하의 노동 후 상태를 '상대적 빈곤'으로 규정했다.</div>
+        <div class="tf-reason"><strong>→ '절대 빈곤'으로 규정.</strong> 이는 나중에 수정되는 초기 관점.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스 인간관에서 헤겔은 자연 상태를 변형시키는 도구(Ausbildung)의 대표 예시로 법률가를 들었다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 헤겔은 법률가를 선호. 조각가는 교수가 쉬운 설명을 위해 추가로 든 예시.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 역사관 (역사유물론)</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">역사유물론에서 '유물(唯物)'은 오직 물질만이 중요하고 정신·종교의 영역은 부정된다는 의미다.</div>
+        <div class="tf-reason"><strong>→ 완전히 잘못된 오해.</strong> 유물론 = 물질(경제·생산양식)이 사회의 토대를 형성한다는 의미. 종교 부정과 무관.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">역사유물론에서 물적 토대(경제·생산양식)는 상부구조를 결정(determines)한다.</div>
+        <div class="tf-reason"><strong>→ 원문은 'conditions(조건 짓다)'.</strong> 결정이 아니라 "이런 조건 속에서 드러난다"는 의미. 경제가 상부구조를 결정하는 게 아님.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">사회주의자이지만 역사유물론을 믿지 않으면 마르크스주의자가 아니다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 역사유물론이 마르크스주의의 핵심 정체성.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스는 지리, 인구구조, 음식 문화 같은 물적 조건을 가장 중요한 '물'로 보았다.</div>
+        <div class="tf-reason"><strong>→ 인정하지만 주목 안 함.</strong> 마르크스가 주목한 '물'은 생산양식(경제 체제).</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스·엥겔스는 계몽주의의 '진보' 개념을 사회주의와 결합하여 진보를 법칙화·체계화했다는 점에서 기존 사회주의자들과 달랐다.</div>
+        <div class="tf-reason"><strong>→ 교수 직접 언급.</strong> 기존 사회주의자들은 상당수가 복고적.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">생산양식의 변화는 생산력과 생산관계의 내부 모순에서 비롯되며, 계급투쟁을 거쳐 사회혁명으로 이어진다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 역사유물론의 역사 발전 메커니즘.</div>
+      </div>
+    </div>
+  </div>
+</div><!-- /tf -->
+
+<!-- ====== 07 논술 대비 ====== -->
+<div class="section" id="essay">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">논술형 대비 핵심 논지</span>
+  </div>
+
+  <div class="summary-box">
+    <h3>✦ 9차시 논술 예상 주제</h3>
+    <ul>
+      <li>마르크스·엥겔스가 협업하게 된 경위와 1844년 파리 재회의 의미, 두 사람이 서로에게서 무엇을 얻었는지 서술하라.</li>
+      <li>&lt;공산주의 선언&gt;의 탄생 배경(의인동맹과의 관계)을 설명하고, '공산당 선언'이 아닌 '공산주의 선언'이 맞는 이유를 논하라.</li>
+      <li>마르크스·엥겔스의 사상이 기존 사회주의자(까베 등)와 근본적으로 다른 점(미래 청사진 대신 자본주의 분석·비판)을 서술하라.</li>
+      <li>헤겔의 Ausbildung 개념과 마르크스의 노동 개념을 비교하고, 산업자본주의 하에서 노동의 소외가 발생하는 세 가지 이유를 설명하라.</li>
+      <li>역사유물론에서 '物(물)'이 무엇인지 오해와 이해를 비교하여 설명하고, 토대와 상부구조의 관계에서 'conditions'가 'determines'와 어떻게 다른지 논하라.</li>
+      <li>역사유물론의 역사 발전 메커니즘(생산력-생산관계의 모순 → 계급투쟁 → 사회혁명)을 구체적인 역사 사례(프랑스혁명 등)와 함께 서술하라.</li>
+      <li>마르크스주의자와 비마르크스주의자의 사회 현상 설명 방식(힙합 유행, 탈진실 등)을 대비하여 역사유물론의 의미를 설명하라.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="margin-top:8px;">
+    <div class="card-title gold">흐름 요약 — 이 수업의 큰 흐름</div>
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:10px;">
+      <div style="display:flex;align-items:center;gap:8px;width:100%;">
+        <div class="flow-item" style="min-width:120px;text-align:center;">1844 파리 재회</div>
+        <span class="flow-arrow">→</span>
+        <span style="font-size:13px;color:var(--text-soft);">엥겔스의 천재성 확인, 분업 결정, 의인동맹 접촉</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;width:100%;">
+        <div class="flow-item gold" style="min-width:120px;text-align:center;">공산주의 선언</div>
+        <span class="flow-arrow">→</span>
+        <span style="font-size:13px;color:var(--text-soft);">이후 모든 저작의 씨앗. 2월 혁명과 거의 동시</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;width:100%;">
+        <div class="flow-item teal" style="min-width:120px;text-align:center;">런던 분업</div>
+        <span class="flow-arrow">→</span>
+        <span style="font-size:13px;color:var(--text-soft);">엥겔스=돈 벌기, 마르크스=British Museum 연구</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;width:100%;">
+        <div class="flow-item green" style="min-width:120px;text-align:center;">4범주 사상</div>
+        <span class="flow-arrow">→</span>
+        <span style="font-size:13px;color:var(--text-soft);">인간관(소외) → 역사관(유물론) → 경제관(잉여가치) → 위기론</span>
+      </div>
+    </div>
+  </div>
+</div><!-- /essay -->
+
+</div><!-- /container -->
+
+<script>
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const h=a.getAttribute('href');
+      if(h.startsWith('#')){
+        e.preventDefault();
+        const target=document.querySelector(h);
+        if(target){
+          const top=target.getBoundingClientRect().top+window.scrollY-60;
+          window.scrollTo({top,behavior:'smooth'});
+        }
+      }
+    });
+  });
+  const secs=document.querySelectorAll('.section[id]'),links=document.querySelectorAll('nav a');
+  function updateNav(){
+    let c='';
+    secs.forEach(s=>{if(window.scrollY+80>=s.offsetTop)c=s.id});
+    links.forEach(a=>{
+      a.classList.remove('active');
+      if(a.getAttribute('href')==='#'+c)a.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll',updateNav);
+  updateNav();
+</script>
+</body>
+</html>

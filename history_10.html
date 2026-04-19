@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 10차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0c10;--surface:#121620;--surface2:#181e2a;--border:#222a38;--accent:#6a9fd4;--accent2:#90c0f0;--accent3:#e8c86a;--green:#7ec8a0;--red:#e07878;--teal:#5ec8c0;--purple:#b08de8;--text:#d8e4f0;--text-muted:#506070;--text-soft:#a0b8cc}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.8}
+  header{background:linear-gradient(135deg,#080c14,#0a1018);border-bottom:1px solid var(--border);padding:48px 40px 36px;position:relative;overflow:hidden}
+  header::before{content:'';position:absolute;top:-80px;right:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(232,200,106,.07),transparent 70%)}
+  header::after{content:'';position:absolute;bottom:-60px;left:10%;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(94,200,192,.05),transparent 70%)}
+  .header-label{font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+  header h1{font-family:'Noto Serif KR',serif;font-size:2rem;font-weight:900;color:var(--accent2);margin-bottom:8px;line-height:1.4}
+  header .subtitle{color:var(--text-muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+  .badge.blue{background:rgba(106,159,212,.12);border:1px solid rgba(106,159,212,.3);color:var(--accent)}
+  .badge.teal{background:rgba(94,200,192,.10);border:1px solid rgba(94,200,192,.3);color:var(--teal)}
+  .badge.gold{background:rgba(232,200,106,.10);border:1px solid rgba(232,200,106,.3);color:var(--accent3)}
+  .badge.purple{background:rgba(176,141,232,.10);border:1px solid rgba(176,141,232,.3);color:var(--purple)}
+  .badge.red{background:rgba(224,120,120,.10);border:1px solid rgba(224,120,120,.3);color:var(--red)}
+  nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 40px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{color:var(--text-muted);text-decoration:none;font-size:13px;padding:14px 18px;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-weight:500}
+  nav a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .container{max-width:920px;margin:0 auto;padding:44px 32px 90px}
+  .section{margin-bottom:64px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .section-num{font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:700;white-space:nowrap}
+  .section-title{font-family:'Noto Serif KR',serif;font-size:1.35rem;font-weight:900;color:var(--accent2)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .card-title{font-weight:700;color:var(--accent2);font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .card-title::before{content:'';width:4px;height:18px;background:var(--accent);border-radius:2px;flex-shrink:0}
+  .card-title.teal::before{background:var(--teal)}
+  .card-title.gold::before{background:var(--accent3)}
+  .card-title.green::before{background:var(--green)}
+  .card-title.purple::before{background:var(--purple)}
+  .card-title.red::before{background:var(--red)}
+  .def-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:18px 22px;margin:14px 0}
+  .def-box .def-label{font-size:10px;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .def-box.gold{border-left-color:var(--accent3)}.def-box.gold .def-label{color:var(--accent3)}
+  .def-box.teal{border-left-color:var(--teal)}.def-box.teal .def-label{color:var(--teal)}
+  .def-box.red{border-left-color:var(--red)}.def-box.red .def-label{color:var(--red)}
+  .def-box.green{border-left-color:var(--green)}.def-box.green .def-label{color:var(--green)}
+  .def-box.purple{border-left-color:var(--purple)}.def-box.purple .def-label{color:var(--purple)}
+  .key-concept{border-radius:8px;padding:18px 22px;margin:14px 0}
+  .key-concept.blue{background:linear-gradient(135deg,rgba(106,159,212,.09),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22)}.key-concept.blue .kc-label{color:var(--accent)}
+  .key-concept.teal{background:linear-gradient(135deg,rgba(94,200,192,.08),rgba(94,200,192,.02));border:1px solid rgba(94,200,192,.2)}.key-concept.teal .kc-label{color:var(--teal)}
+  .key-concept.gold{background:linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02));border:1px solid rgba(232,200,106,.2)}.key-concept.gold .kc-label{color:var(--accent3)}
+  .key-concept.green{background:linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02));border:1px solid rgba(126,200,160,.2)}.key-concept.green .kc-label{color:var(--green)}
+  .key-concept.purple{background:linear-gradient(135deg,rgba(176,141,232,.08),rgba(176,141,232,.02));border:1px solid rgba(176,141,232,.2)}.key-concept.purple .kc-label{color:var(--purple)}
+  .key-concept.red{background:linear-gradient(135deg,rgba(224,120,120,.08),rgba(224,120,120,.02));border:1px solid rgba(224,120,120,.2)}.key-concept.red .kc-label{color:var(--red)}
+  .kc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .hl-b{color:var(--accent2);font-weight:700}.hl-go{color:var(--accent3);font-weight:700}.hl-g{color:var(--green);font-weight:700}.hl-t{color:var(--teal);font-weight:700}.hl-r{color:var(--red);font-weight:700}.hl-p{color:var(--purple);font-weight:700}
+  .example{background:rgba(106,159,212,.05);border:1px solid rgba(106,159,212,.18);border-radius:6px;padding:15px 20px;margin:12px 0}
+  .example-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .example-label::before{content:'📌';font-size:12px}
+  .example.teal{background:rgba(94,200,192,.05);border-color:rgba(94,200,192,.18)}.example.teal .example-label{color:var(--teal)}
+  .example.gold{background:rgba(232,200,106,.05);border-color:rgba(232,200,106,.18)}.example.gold .example-label{color:var(--accent3)}
+  .example.green{background:rgba(126,200,160,.05);border-color:rgba(126,200,160,.18)}.example.green .example-label{color:var(--green)}
+  .example.purple{background:rgba(176,141,232,.05);border-color:rgba(176,141,232,.18)}.example.purple .example-label{color:var(--purple)}
+  .example.red{background:rgba(224,120,120,.05);border-color:rgba(224,120,120,.18)}.example.red .example-label{color:var(--red)}
+  .example p,.example li{font-size:14px;color:var(--text-soft)}
+  .example ul{padding-left:18px}.example li{margin-bottom:5px}
+  .caution{background:rgba(224,120,120,.07);border:1px solid rgba(224,120,120,.22);border-radius:6px;padding:14px 18px;margin:12px 0;font-size:13.5px;color:var(--text-soft)}
+  .caution strong{color:var(--red)}
+  .hero-box{border-radius:10px;padding:22px 26px;margin:16px 0}
+  .hero-box.teal{background:linear-gradient(135deg,rgba(94,200,192,.13),rgba(94,200,192,.04));border:2px solid rgba(94,200,192,.4)}
+  .hero-box.gold{background:linear-gradient(135deg,rgba(232,200,106,.13),rgba(232,200,106,.04));border:2px solid rgba(232,200,106,.4)}
+  .hero-box.blue{background:linear-gradient(135deg,rgba(106,159,212,.13),rgba(106,159,212,.04));border:2px solid rgba(106,159,212,.4)}
+  .hero-box.red{background:linear-gradient(135deg,rgba(224,120,120,.13),rgba(224,120,120,.04));border:2px solid rgba(224,120,120,.4)}
+  .hero-box .hero-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .hero-box.teal .hero-label{color:var(--teal)}.hero-box.gold .hero-label{color:var(--accent3)}.hero-box.blue .hero-label{color:var(--accent)}.hero-box.red .hero-label{color:var(--red)}
+  .hero-box p{font-size:15px;color:var(--text);font-weight:500;line-height:1.95}
+  .flow-box{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;padding:16px 20px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)}
+  .flow-item{background:rgba(106,159,212,.1);border:1px solid rgba(106,159,212,.25);border-radius:6px;padding:6px 14px;font-size:13px;color:var(--accent2);font-weight:600}
+  .flow-arrow{color:var(--accent);font-weight:700;font-size:15px}
+  .flow-item.gold{background:rgba(232,200,106,.1);border-color:rgba(232,200,106,.25);color:var(--accent3)}
+  .flow-item.teal{background:rgba(94,200,192,.1);border-color:rgba(94,200,192,.25);color:var(--teal)}
+  .flow-item.green{background:rgba(126,200,160,.1);border-color:rgba(126,200,160,.25);color:var(--green)}
+  .flow-item.red{background:rgba(224,120,120,.1);border-color:rgba(224,120,120,.25);color:var(--red)}
+  .table-wrap{overflow-x:auto;margin:14px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+  th{background:var(--surface2);color:var(--accent);font-weight:700;text-align:left;padding:10px 16px;border:1px solid var(--border);font-size:12px}
+  td{padding:10px 16px;border:1px solid var(--border);color:var(--text-soft);vertical-align:top}
+  tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .tf-section{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .tf-section h3{font-family:'Noto Serif KR',serif;font-size:1rem;color:var(--accent2);margin-bottom:16px;font-weight:700}
+  .tf-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+  .tf-item:last-child{border-bottom:none}
+  .tf-badge{flex-shrink:0;width:32px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px}
+  .tf-badge.true{background:rgba(126,200,160,.2);color:var(--green)}.tf-badge.false{background:rgba(224,120,120,.2);color:var(--red)}
+  .tf-text{color:var(--text-soft)}.tf-reason{margin-top:4px;font-size:13px;color:var(--text-muted)}.tf-reason strong{color:var(--accent2)}
+  .summary-box{background:linear-gradient(135deg,rgba(106,159,212,.08),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22);border-radius:10px;padding:22px 26px;margin:18px 0}
+  .summary-box h3{color:var(--accent2);font-family:'Noto Serif KR',serif;font-size:1rem;margin-bottom:12px;font-weight:900}
+  .summary-box ul{list-style:none;padding:0}
+  .summary-box li{padding:5px 0;font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start}
+  .summary-box li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+  .step-box{counter-reset:step}
+  .step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+  .step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#0a0c10;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+  .step-num.gold{background:var(--accent3)}.step-num.teal{background:var(--teal)}.step-num.red{background:var(--red)}
+  .step-body{flex:1}
+  .step-title{font-weight:700;color:var(--accent2);margin-bottom:4px;font-size:14px}
+  .step-desc{font-size:14px;color:var(--text-soft)}
+  p{margin-bottom:10px}
+  @media(max-width:640px){header{padding:32px 20px 24px}header h1{font-size:1.4rem}.container{padding:24px 16px 60px}nav{padding:0 16px}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 10차시 핵심 정리</div>
+  <h1>역사관 심화(생산양식 구체 분석) + 경제관(잉여가치론)</h1>
+  <div class="subtitle">
+    <span>2026. 04. 13 &nbsp;|&nbsp; 10차시</span>
+    <span class="badge blue">중간고사 대비</span>
+    <span class="badge gold">생산양식 5단계 · 시초축적 사례</span>
+    <span class="badge red">잉여가치론 완전 정복</span>
+    <span class="badge teal">⚠ T/F · 논술 예상 포함</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#review">역사관 복습</a>
+  <a href="#modes">생산양식 5단계</a>
+  <a href="#mechanism">변화 메커니즘</a>
+  <a href="#case">시초축적 사례</a>
+  <a href="#marxvsothers">마르크스 vs 기존 사회주의</a>
+  <a href="#economy">경제관 — 잉여가치론</a>
+  <a href="#tf">T/F 예상</a>
+  <a href="#essay">논술 대비</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== 01 역사관 복습 ===== -->
+<div class="section" id="review">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">역사관 — 핵심 전제 복습</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">'역사' 유물론에서 '역사'의 의미</div>
+    <div class="def-box gold">
+      <div class="def-label">핵심 정의</div>
+      <p>역사유물론에서 <span class="hl-go">'역사'</span>란, 사회의 토대인 <span class="hl-b">생산양식이 역사적으로 변화(진보)한다</span>는 의미. 단순히 시간이 흐른다는 게 아니라, 생산양식이 진보적으로 발전해 왔다는 주장.</p>
+    </div>
+    <div class="key-concept gold">
+      <div class="kc-label">진보의 방향</div>
+      <p>마르크스·엥겔스: 생산양식의 변화 방향은 <span class="hl-go">진보(발전)</span>다. 변화가 퇴조하거나 왔다 갔다 하는 게 아니라 나아지는 방향으로 간다고 봄. 그리고 이 진보는 <span class="hl-b">법칙적</span>이고 <span class="hl-b">단계적</span>으로 일어남 — 함부로 점프 불가.</p>
+    </div>
+    <div class="caution">
+      <strong>⚠ 주의</strong> — 생산양식을 5단계로 명확하게 도식화한 것은 <strong>소련 학자들</strong>이 정리한 것. 마르크스·엥겔스 본인들은 여러 문헌에 산발적으로 써놨을 뿐, 이 스키마를 그대로 쓰지는 않았음. 그러나 그 문헌들에서 충분히 추출 가능하므로 마르크스의 논의가 아니라는 주장은 <strong>틀린 것</strong>.
+    </div>
+  </div>
+</div>
+
+<!-- ===== 02 생산양식 5단계 ===== -->
+<div class="section" id="modes">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">생산양식 5단계 — 각 단계별 핵심 특징</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">생산양식 = 생산력 + 생산관계의 조합</div>
+    <div class="def-box">
+      <div class="def-label">개념 정리</div>
+      <p><span class="hl-b">생산력</span>: 단위 시간당 output. 노하우·기술이 쌓이면서 어느 생산양식에서든 시간이 지나면 일정 정도 발달함.<br>
+      <span class="hl-go">생산관계</span>: 생산수단(means of production)을 둘러싼 인간관계. 생산수단에 대한 소유·권리 구조.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">5단계 비교 표</div>
+    <div class="table-wrap">
+    <table>
+      <tr>
+        <th>생산양식</th>
+        <th>생산력</th>
+        <th>생산관계 (생산수단을 둘러싼 관계)</th>
+        <th>핵심 특징</th>
+      </tr>
+      <tr>
+        <td><span class="hl-b">원시공산제</span></td>
+        <td>매우 낮음</td>
+        <td>평등. 도끼·원시 농기구·땅 모두 공유. 내 것 네 것 구분 없음.</td>
+        <td>생산수단 접근 권리 모두 동일</td>
+      </tr>
+      <tr>
+        <td><span class="hl-go">노예제</span></td>
+        <td>원시공산제보다 높음</td>
+        <td>노예주가 생산수단 독점. 노예는 소유권 전무 — 상품으로서 언제든 대체 가능한 존재.</td>
+        <td>노예 = 인간이 아닌 상품. 관습적 권리조차 없음.</td>
+      </tr>
+      <tr>
+        <td><span class="hl-t">봉건제</span></td>
+        <td>노예제보다 올라옴</td>
+        <td>직접 생산자(농노·차지농)에게 생산수단(토지)에 대한 <strong>경작권·상속권 등 관습적 권리</strong> 있음. 지주는 소출 수취권만. 토지를 마음대로 상품처럼 사고팔 수 없음.</td>
+        <td>지주·영주 = 소출 수취권. 농민 = 경작 권리 보유.</td>
+      </tr>
+      <tr>
+        <td><span class="hl-r">자본주의</span></td>
+        <td>급증 (산업혁명)</td>
+        <td>직접 생산자(노동자)는 생산수단 소유권 없음. 노동력만 팔아 임금 수취. 자본가는 생산수단에 대한 <strong>배타적 사적 소유권</strong> 행사 — 토지·공장 자유롭게 거래 가능.</td>
+        <td>핵심 변화: 생산수단이 개인이 완전히 소유하고 사고파는 <strong>상품</strong>이 됨.</td>
+      </tr>
+      <tr>
+        <td><span class="hl-g">사회주의</span></td>
+        <td>자본주의보다 더 높음 (단, 봉건→자본 만큼의 혁명적 도약은 아님)</td>
+        <td>생산수단에 대한 배타적 사적 소유권 폐지. 국유화 또는 공유화 → 생산관계 평등화.</td>
+        <td>마르크스·엥겔스의 예측 + 소련 학자들 정리.</td>
+      </tr>
+    </table>
+    </div>
+    <div class="caution" style="margin-top:12px;">
+      <strong>⚠ 봉건제 핵심 구별</strong> — 봉건제에서 지주의 권리는 "소출을 받을 수 있는 권리"이지, 토지를 마음대로 사고파는 배타적 소유권이 <strong>아님</strong>. 농민도 경작·상속의 관습적 권리를 보유. 이 점이 자본주의와 결정적으로 다름.
+    </div>
+  </div>
+</div>
+
+<!-- ===== 03 변화 메커니즘 ===== -->
+<div class="section" id="mechanism">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">생산양식이 변화하는 메커니즘</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">생산력 발달 → 계급투쟁 → 사회혁명 (변증법적 사고)</div>
+    <div class="hero-box blue">
+      <div class="hero-label">대전제 — 왜 생산력은 반드시 발달하는가?</div>
+      <p>어떤 생산양식이든 매해 농사를 짓고 공장을 돌리다 보면 <span class="hl-b">노하우가 쌓인다</span>. 기술·지식이 세대를 거치며 축적됨. 이 부분은 마르크스주의자가 아니어도 상식적으로 받아들일 수 있음. 1학년보다 2학년 때 시험공부가 더 효율적인 것처럼.</p>
+    </div>
+
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:14px;padding:20px 24px;">
+      <div class="step step-box">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">생산력 발달</div>
+          <div class="step-desc">어느 생산양식에서든 시간이 지나면 노하우 축적으로 생산력(단위 시간당 output) 증가.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num gold">2</div>
+        <div class="step-body">
+          <div class="step-title">생산관계의 질곡(질곡 = 족쇄·방해물)</div>
+          <div class="step-desc">생산력이 계속 발달하다 보면, 어느 시점에 <span class="hl-go">기존 생산관계가 생산력 발달을 더 이상 담아내지 못한다</span>는 인식이 사회적으로 퍼짐. "다른 생산관계였으면 기술이 더 발전할 수 있겠는데" 하는 느낌.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num teal">3</div>
+        <div class="step-body">
+          <div class="step-title">유지 vs 변화 — 계급 갈등 시작</div>
+          <div class="step-desc"><span class="hl-r">기득권층(지배계급)</span>: 기존 생산관계 유지 원함. 바꾸면 자기가 다시 적응해야 하고 기득권 해체될 수 있으니.<br>
+          <span class="hl-g">신흥계급</span>: 생산력 발달에 편승해 힘이 생긴 세력. 기존 생산관계 변화 요구.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num red">4</div>
+        <div class="step-body">
+          <div class="step-title">계급투쟁 심화</div>
+          <div class="step-desc"><span class="hl-r">계급투쟁(struggle)</span> — warfare식 전쟁이 아니라 지배계급이 신흥계급을 누르려 하고, 신흥계급은 경제적 힘으로 다시 일어나는 알력. 초기엔 기득권층이 눌러도, 생산력이라는 경제적 힘이 신흥계급을 계속 밀어줌. 갈등이 점점 고조.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--green)">5</div>
+        <div class="step-body">
+          <div class="step-title">사회혁명(Social Revolution) → 다음 생산양식</div>
+          <div class="step-desc">갈등 고조 끝에 신흥계급이 승리 → 자신의 이해관계에 맞는 새 생산관계 구성 → 생산력도 더 발달 → 다음 단계 생산양식 성립.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example gold">
+      <div class="example-label">교수 언급 — 변증법적 사고</div>
+      <p>두 개의 모순(생산력 vs 생산관계)이 만나 다음 단계로 가고, 또 모순이 만나 다음으로 가는 것. 마르크스·엥겔스가 이 변증법적 논리로 생산양식의 변화를 설명함.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 04 시초축적 사례 ===== -->
+<div class="section" id="case">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">시초축적 — 봉건제 → 자본주의 역사 사례 (자본Ⅰ)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">왜 '시초축적'만 분석했나?</div>
+    <p style="font-size:14px;color:var(--text-soft);">원시공산제·노예제는 자료가 거의 없음. 마르크스가 직접 역사학적 방법론으로 분석할 수 있는 사례가 <span class="hl-go">봉건제 → 자본주의</span> 뿐이었음. 특히 영국 자료 중심 (런던에 있었으니까). 영국은 다른 나라보다 농촌 분화가 상대적으로 많이 진행된 나라여서 이를 일반화함.</p>
+    <div class="caution">
+      <strong>⚠ 주의</strong> — 마르크스가 '시초축적'에서 다룬 범위는 주로 <strong>계급투쟁의 결과(프랑스혁명)</strong>까지. 그 이후 사회주의 방향은 projection(추론).
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">봉건제 → 자본주의 전환 과정 (마르크스의 설명)</div>
+
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:14px;padding:20px 24px;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">생산력 발달 → 농촌 공동체 분화</div>
+          <div class="step-desc">봉건제 하에서 농민들이 매해 농사를 지으며 노하우 축적 → 생산력 상승. 더 열심히·더 잘 활용한 농민이 나오기 시작 → <span class="hl-b">부농·빈농으로 분화</span>.
+          <br><span style="font-size:13px;color:var(--text-muted);margin-top:4px;display:block;">※ 주의: 마르크스는 분화를 강조. 실제 역사에서는 분화 정도가 마르크스 예상보다 작았다는 게 이후 역사학자들의 발견 — 수업 초반 교수가 설명했던 농촌 평등 서사와 다름. 마르크스의 영국 모델 일반화의 한계.</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num gold">2</div>
+        <div class="step-body">
+          <div class="step-title">부농의 잉여 → 시장 출현 → 부르주아 성장</div>
+          <div class="step-desc">부농은 잉여 생산물을 창고에 쌓지 않고 <span class="hl-go">시장에 내다 팔기</span> 시작. 교환을 통해 더 많은 이익 창출. → 시장에서 이 잉여를 거래하는 도시 상인(Merchant, Trader) 성장 = <span class="hl-go">부르주아</span>의 등장. 부농 + 부르주아의 이해관계 일치.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num teal">3</div>
+        <div class="step-body">
+          <div class="step-title">자본 축적 → 기존 생산관계가 질곡으로</div>
+          <div class="step-desc">부농·부르주아가 크게 부를 축적 → <span class="hl-t">자본 축적</span> (단순 큰돈이 아니라 <strong>투자처를 찾아다니는 큰돈</strong>).
+          <br>부농 입장: 생산량·잉여 늘었는데 영주는 그 비율대로 소출을 계속 요구 → <span class="hl-r">기존 봉건적 생산관계(영주의 소출 수취)가 이제 성장을 방해하는 질곡으로 느껴짐</span>. 자기가 왠만한 영주보다 돈을 버는데도 하대받고 소출을 바쳐야 하는 상황.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num red">4</div>
+        <div class="step-body">
+          <div class="step-title">계급투쟁 → 프랑스혁명</div>
+          <div class="step-desc">지주·영주(기득권) vs 부농·부르주아(신흥계급) 간 갈등 본격화 → 부르주아가 중앙 정치권으로 진출, <span class="hl-r">프랑스혁명</span>. 왕(귀족의 대표)의 목을 자르고 신분제 폐지.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--green)">5</div>
+        <div class="step-body">
+          <div class="step-title">새 생산관계 수립 → 자본주의 성립</div>
+          <div class="step-desc">혁명 후 부르주아·부농이 원하는 대로 생산관계 재편:<br>
+          — 토지를 <span class="hl-g">배타적 사적 소유권의 대상(상품)</span>으로 전환 (프랑스 인권선언: "사유재산권은 신성하다" = 부르주아 이해관계의 반영)<br>
+          — 부농이 토지를 자유롭게 매입·확장 → <span class="hl-r">빈농은 토지에서 쫓겨남</span><br>
+          — 빈농, 도시로 이주 → 부르주아·부농이 자본 축적으로 세운 도시 공장의 <span class="hl-b">값싼 임금 노동자</span>로 흡수<br>
+          → <span class="hl-g">자본-노동 관계(자본주의) 성립</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-box gold">
+      <div class="hero-label">프랑스 인권선언의 의미 (핵심 포인트)</div>
+      <p>"사유재산권은 신성하다" — 이건 보편적 인권 선언이 아니라 <span class="hl-go">부농·부르주아의 이해관계를 반영한 것</span>. 토지를 마음대로 사고팔 수 있게 바꾸는 것이 이들에게 핵심 목표였음.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 05 마르크스 vs 기존 사회주의 ===== -->
+<div class="section" id="marxvsothers">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">마르크스의 역사관 — 기존 사회주의와의 차이</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title purple">결정적 차이 3가지</div>
+
+    <div class="key-concept purple">
+      <div class="kc-label">차이 ① — 사회주의 = 진보의 최전선 (복고가 아님)</div>
+      <p>기존 사회주의자(오언·푸리에 등): 산업화는 받아들이지만, 공동체·생산관계는 옛날 스타일로 돌아가는 <span class="hl-r">복고적</span> 이미지. 그래서 초반엔 보수주의와 구별이 잘 안 됐음.<br>
+      마르크스·엥겔스: 사회주의 = <span class="hl-p">자본주의보다 더 발전된 다음 단계</span>. 완전히 미래로 만든 첫 번째 사람들.</p>
+    </div>
+
+    <div class="key-concept gold">
+      <div class="kc-label">차이 ② — 자본주의를 반드시 거쳐야 한다</div>
+      <p>기존 사회주의자·공산주의자·무정부주의자: 지금 당장 사회주의 혁명 하고 싶음.<br>
+      마르크스·엥겔스: 법칙적·단계적으로 가야 하므로 <span class="hl-go">자본주의를 충실히 거쳐야</span> 사회주의로 갈 수 있음. 자본주의가 싫어도 중간 단계적 기능을 함 → <span class="hl-b">자본주의의 역사적 기여를 상대적으로 높게 평가</span>.</p>
+    </div>
+
+    <div class="key-concept teal">
+      <div class="kc-label">차이 ③ — "역사와 사랑에 빠짐" · 반동의 개념</div>
+      <p>진보가 법칙적으로 일어나야 하므로: 역사의 진보 방향에 <span class="hl-r">반하는 행동 = 반동(反動)</span>. 역사가 진보해야 하는데 그걸 막거나 돌려세우면 "반동", 더 심하면 "악질반동". 마르크스주의자들에게 가장 큰 욕.
+      <br><span style="font-size:13px;color:var(--text-muted);margin-top:6px;display:block;">예: "우리나라가 지금 봉건제라면, 바로 사회주의는 못 가. 자본주의를 먼저 해야 해. 그게 역사의 법칙이야."</span></p>
+    </div>
+
+    <div class="key-concept blue">
+      <div class="kc-label">지식인에게 더 어필한 이유</div>
+      <p>역사관이 추상적이라면, 뒤에 나오는 경제관은 <span class="hl-b">과학적 논증</span>에 해당. 그래서 마르크스주의가 지식인들에게 더 설득력 있게 다가감. 역으로 일반 민중에게는 접근하기 어려운 측면도 있음.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 06 경제관 ===== -->
+<div class="section" id="economy">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">경제관 — 잉여가치론 완전 정복</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title red">경제관의 핵심 전제 — 자본주의는 착취를 "은폐"한다</div>
+    <div class="grid2">
+      <div class="def-box red">
+        <div class="def-label">봉건제의 착취</div>
+        <p>눈에 보임. 100 생산했는데 30 내야 함 → 누구나 억울한 줄 앎. (다양한 이유로 저항 못했지만)</p>
+      </div>
+      <div class="def-box gold">
+        <div class="def-label">자본주의의 착취</div>
+        <p>은폐됨. 노동자는 열심히 일하고 월급 받으니 "일한 만큼 벌었네" 라고 생각. 착취당하는 줄 모름. → 마르크스가 이 구조를 분석해서 드러냄.</p>
+      </div>
+    </div>
+    <div class="hero-box red">
+      <div class="hero-label">경제관의 핵심</div>
+      <p>자본주의의 작동 메커니즘을 밝힌 이론. 핵심은 <span class="hl-r">잉여가치론</span>. &lt;자본 1권&gt;이 마르크스 최고의 학문적 저작으로 꼽히는 이유. 지식인들을 "마르크스 뽕"으로 만들었던 영역.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">STEP 1 — 자본주의 하에서 만물은 상품화됐다</div>
+    <p style="font-size:14px;color:var(--text-soft);">모든 재화가 시장에서 거래를 위해 생산됨. 토지·노동도 상품화. 이 부분은 주류 경제학자도 당연히 인정하는 사실. 특별히 마르크스의 독창적 주장이 아님.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">STEP 2 — 재화 간 거래 성립 조건: 가격 vs 가치</div>
+    <div class="grid2">
+      <div class="key-concept teal">
+        <div class="kc-label">주류 경제학</div>
+        <p>거래 이유 = <span class="hl-t">가격이 같아서</span>. 수요·공급 법칙으로 가격 결정. 더 이상 물을 필요 없음. (마르크스의 질문 자체를 어리석다고 봄)</p>
+      </div>
+      <div class="key-concept gold">
+        <div class="kc-label">마르크스</div>
+        <p>가격 말고 <span class="hl-go">가치(교환가치)</span>의 영역이 있음. 거래 성립 이유 = 두 재화의 <strong>교환가치가 같아서</strong>. 수요·공급은 최종 가격 획정(미세조정)에만 개입.</p>
+      </div>
+    </div>
+    <div class="example gold">
+      <div class="example-label">교수 예시 — 신라면 vs 산타페</div>
+      <p>신라면이 품귀로 한 봉지 = 3천만 원이 됐다. 그럼 산타페 1대와 신라면 1봉지가 교환 가능. 하지만 그렇다고 두 재화의 <strong>재화로서의 위상(가치)</strong>이 같냐? <span class="hl-r">No</span>. 가격은 수요·공급으로 급등할 수 있지만, 재화 고유의 가치는 다름. → 마르크스는 이 고유 가치를 <span class="hl-go">교환가치</span>라 부름.</p>
+    </div>
+    <div class="def-box teal">
+      <div class="def-label">사용가치 vs 교환가치</div>
+      <p><span class="hl-t">사용가치</span>: 개인적 활용성. 내 초등학교 때 인형은 나한테만 가치 있음 — 시장에서는 교환가치 없음. 마르크스는 분석 대상에서 제외.<br>
+      <span class="hl-go">교환가치</span>: 사람들 사이에서 사회적으로 평가받는 가치. 시장에 개입됐을 때의 가치. 마르크스가 분석하는 영역.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">STEP 3 — 가치는 어떻게 결정되나? 노동가치설</div>
+    <div class="def-box gold">
+      <div class="def-label">노동가치설 수용 (리카도 등 고전경제학에서 차용)</div>
+      <p>가치 = <span class="hl-go">노동 투입량</span>에 비례. 노동이 많이 투입된 재화일수록 가치가 높음. 신라면보다 산타페의 가치가 높은 이유 = 산타페에 훨씬 많은 노동이 투입됐기 때문.</p>
+    </div>
+    <div class="def-box">
+      <div class="def-label">단, 실제 투입 노동량이 아닌 — '사회적으로 필요한 노동시간'(추상 노동)</div>
+      <p>왜? 숙련공과 비숙련공, 좋은 공장과 나쁜 공장은 시간이 다름. → 이를 <span class="hl-b">사회 평균값</span>으로 계산.<br>
+      예: 한국 사회에서 산타페 1대 생산에 사회 평균 95시간 걸린다 → 산타페의 가치 = 95 단위. 울산 최신 공장에서 80시간에 만들든, 어느 공장에서 110시간 걸리든 → 전부 평균내면 95.</p>
+    </div>
+    <div class="example gold">
+      <div class="example-label">교수 예시 — 신라면 vs 산타페 가치 계산</div>
+      <p>신라면 1봉지: 사회적으로 필요한 노동시간 약 38분<br>
+      산타페 1대: 사회적으로 필요한 노동시간 약 80~95시간 (대충 예시)<br>
+      → 가치 차이 때문에 교환되지 않음. (신라면 = 산타페인 건 비정상적 가격 상황)</p>
+    </div>
+    <div class="caution">
+      <strong>⚠ 경고 (교수 직접 언급)</strong> — "여기까지 믿어졌다면 그다음부터 마르크스와 헤어지기 어렵다. 왜냐면 그다음부터는 완전히 논리구조 속으로 들어가서 쫙 설명이 되기 때문."
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">STEP 4 — 자본가(공장주)의 입장: 유통 영역의 역설</div>
+    <div class="def-box">
+      <div class="def-label">자본가의 사업 구조</div>
+      <p>① 시장에서 <span class="hl-b">설비 + 노동력</span>을 교환가치대로 구매<br>
+      ② 공장 운영<br>
+      ③ 생산된 상품을 시장에 교환가치대로 판매</p>
+    </div>
+    <div class="hero-box blue">
+      <div class="hero-label">역설 — 유통 영역에서는 가치 증식이 없다</div>
+      <p>위 논리에 따르면: 살 때도 교환가치 = 등가. 팔 때도 교환가치 = 등가.<br>
+      → 살 때 ±0, 팔 때 ±0 → <span class="hl-b">유통 영역에서는 이윤이 생길 수 없다</span>!<br>
+      마르크스 표현: "자본가는 깜짝 놀란다. 이게 어떻게 되지?"<br>
+      → 그런데 현실에서 자본가는 분명히 돈을 벌고 있음. 이윤의 원천은 어디에?</p>
+    </div>
+    <div class="key-concept gold">
+      <div class="kc-label">결론 — 가치 증식은 생산 영역에서 일어난다</div>
+      <p>유통(거래)이 아니라 <span class="hl-go">공장을 운영하는 과정(생산 영역)</span>에서 마법이 일어남. → 생산을 구성하는 두 요소 <span class="hl-b">설비 + 노동력</span> 중 어디서 일어나는가?</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title red">STEP 5 — 노동력이라는 상품의 특수성 (핵심 중 핵심)</div>
+    <p style="font-size:14px;color:var(--text-soft);margin-bottom:14px;">설비는 그냥 사서 쓰는 것. 특별한 게 없음. 그런데 노동력이라는 상품은 <span class="hl-r">3가지 면에서 다른 상품과 다르다.</span></p>
+
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:16px;padding:20px 24px;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">구입 형태가 다름 (할부 구매)</div>
+          <div class="step-desc">책상은 한 번에 돈 주고 사는데, 노동력은 한 번에 못 삼. S전자 취직하면서 "내 노동력 가치는 500억이니 미리 내놔" 못 함 → <span class="hl-b">임금 형태로 쪼개서 받음 (할부). 자본가는 노동자를 할부로 산 셈.</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num gold">2</div>
+        <div class="step-body">
+          <div class="step-title">가치 계산법이 복잡함 (= 의식주 투입량)</div>
+          <div class="step-desc">다른 상품 가치 = 만드는 데 투입된 노동량으로 계산.<br>
+          노동력이라는 상품은 직접 노동으로 만들어지는 게 아님 → 대신 <span class="hl-go">의식주 투입량으로 계산</span>. 왜? 내가 10시간 일해서 노동력을 소진하면, 다음날 다시 일하려면 먹고 자고 입어야 하기 때문.<br>
+          → <span class="hl-go">노동력의 가치 = 노동자가 노동력으로 기능하는 데 필요한 의식주의 가치</span><br>
+          → 자본가가 노동력을 살 때 지불하는 임금 = 의식주 유지 수준.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num red">3</div>
+        <div class="step-body">
+          <div class="step-title">상품화된 이후의 활용도가 다름 (가치 창출 능력) — 핵심!</div>
+          <div class="step-desc">책상은 사면 책상 기능만 함. 같이 뭔가를 만들어내지 않음.<br>
+          그런데 노동력은 <span class="hl-r">노동하는 능력</span>이잖아. 그리고 재화의 가치는 노동가치설에 따라 노동에서 나옴.<br>
+          → 노동력을 얼마나 더 일시키느냐에 따라 <span class="hl-r">노동력의 구입가치 이상의 가치를 만들어낼 수 있음</span>. → 이게 핵심 비밀!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title red">STEP 6 — 잉여가치와 착취</div>
+    <div class="hero-box red">
+      <div class="hero-label">잉여가치 메커니즘 (수치 예시)</div>
+      <p>노동자가 하루 <span class="hl-b">10시간</span> 일한다고 가정.<br>
+      → 그 중 <span class="hl-go">6시간</span> 일하면 자기 월급(노동력의 가치 = 의식주)에 해당하는 가치를 이미 만들어냄.<br>
+      → 나머지 <span class="hl-r">4시간</span>은 추가로 일하는 셈. 노동자는 이걸 모름. 왜? 출근 9시~퇴근 7시, 10시간 일하고 월급 받는 줄만 알지, "3시에 이미 내 몫 다 했어"라고 구별이 안 되니까.<br><br>
+      → <span class="hl-go">'노동의 가치'(실제 만들어낸 10)</span> vs <span class="hl-b">'노동력의 가치'(사장이 구입한 6)</span> 사이에 <span class="hl-r">모순(차이)</span> 발생<br>
+      → 그 차이 <span class="hl-r">4 = 잉여가치</span> → 자본가가 전부 가져감 → <span class="hl-r">착취</span></p>
+    </div>
+
+    <div class="key-concept red">
+      <div class="kc-label">왜 '은폐'된 착취인가</div>
+      <p>노동자 본인도 모름. "10시간 일하고 월급 받는 것" = 정당한 노동의 대가처럼 보임. 봉건제처럼 "소출 30% 내놔" 식의 눈에 보이는 착취가 아님 → <span class="hl-r">은폐된 착취</span>. 마르크스가 이 구조를 분석해서 처음으로 드러냈다고 주장.</p>
+    </div>
+
+    <div class="key-concept green">
+      <div class="kc-label">잉여가치론이 설명하는 두 가지</div>
+      <p>① <span class="hl-g">자본주의가 왜 성장하는가</span>: 잉여가치(안 보이는 플러스 알파)가 계속 자본가에게 쌓이면서 경제 팽창. 봉건제가 천 년 가는 동안 자본주의가 몇십 년 만에 급성장하는 이유.<br>
+      ② <span class="hl-b">노동자의 위치 전환</span>: 기존 사회주의자들 → 노동자 = 불쌍한 피해자. 마르크스 → 노동자 = 자본주의 성장의 원천이자 <span class="hl-b">역사 발전의 주체</span>. 다만 그 기여가 안 보여서 자본가가 착복했을 뿐.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 07 T/F ===== -->
+<div class="section" id="tf">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">T / F 예상 포인트</span>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 역사관 — 생산양식 &amp; 메커니즘</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스·엥겔스는 생산양식의 5단계를 명확하게 도식화하여 직접 저술에 제시했다.</div>
+        <div class="tf-reason"><strong>→ 도식화는 소련 학자들이 정리.</strong> 마르크스·엥겔스 본인들은 여러 문헌에 산발적으로 썼음. 단, 충분히 추출 가능하므로 마르크스의 논의가 아니라는 건 틀린 것.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">봉건제에서 지주(영주)는 토지에 대한 배타적 사적 소유권을 행사하여 마음대로 사고팔 수 있었다.</div>
+        <div class="tf-reason"><strong>→ 지주의 권리는 소출을 받을 권리.</strong> 토지를 상품처럼 자유롭게 거래하는 배타적 소유권은 자본주의에서 성립.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">봉건제에서 농노(차지농)는 생산수단(토지)에 대해 아무런 권리를 갖지 못했다.</div>
+        <div class="tf-reason"><strong>→ 경작권·상속권 등 관습적 권리 있음.</strong> 생산수단에 대한 권리가 아예 없는 건 노예제.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 생산력은 어떤 생산양식에서도 시간이 지나면 일정 정도 발달한다.</div>
+        <div class="tf-reason"><strong>→ 노하우 축적 대전제.</strong> 마르크스주의자가 아니어도 상식적으로 받아들일 수 있는 부분.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스의 '시초축적' 분석에서 봉건제 농촌 공동체는 처음부터 부농과 빈농으로 나뉘어져 있었다.</div>
+        <div class="tf-reason"><strong>→ 처음엔 비교적 평등, 생산력 발달 이후에 분화.</strong> 또한 이후 역사학자들은 분화 정도가 마르크스 예상보다 크지 않았다고 발견.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 프랑스 혁명 인권선언의 "사유재산권은 신성하다"는 선언은 부농·부르주아의 이해관계를 반영한 것이다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 토지를 배타적 사적 소유권의 대상(상품)으로 만들기 위한 부르주아적 요구의 반영.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스·엥겔스는 자본주의를 적대했으므로, 자본주의의 역사적 기여를 인정하지 않았다.</div>
+        <div class="tf-reason"><strong>→ 상대적으로 높게 평가.</strong> 사회주의로 가는 데 반드시 거쳐야 하는 단계적 기능을 한다고 봄.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스주의에서 '반동'이란 역사의 진보를 막거나 돌려세우려는 행동을 가리키는 중립적 표현이다.</div>
+        <div class="tf-reason"><strong>→ 중립이 아니라 마르크스주의자들에게 가장 큰 욕.</strong> "악질반동"처럼 쓰임.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 경제관 — 잉여가치론</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 재화 간 거래는 두 재화의 가격이 같아서 성립한다.</div>
+        <div class="tf-reason"><strong>→ 교환가치가 같아서.</strong> 가격은 수요·공급에 의한 최종 미세조정일 뿐.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스는 재화의 가치 결정에서 실제로 투입된 노동시간을 기준으로 삼는다.</div>
+        <div class="tf-reason"><strong>→ 사회적으로 필요한 노동시간(사회 평균값).</strong> 실제 투입 시간이 아님. 숙련공·비숙련공, 좋은 공장·나쁜 공장을 모두 평균한 값.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 자본가의 이윤은 유통(거래) 영역에서 발생한다.</div>
+        <div class="tf-reason"><strong>→ 생산 영역에서 발생.</strong> 유통 영역에서는 등가교환 원칙상 가치 증식이 없음.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 노동력의 가치는 노동자가 노동력으로 기능하는 데 필요한 의식주의 가치로 계산된다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 다른 상품과 달리 노동력의 가치 계산법이 독특함 — 의식주 투입량.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">잉여가치는 자본가가 시장에서 상품을 더 비싸게 팔아서 얻는 차액이다.</div>
+        <div class="tf-reason"><strong>→ 생산 과정에서 노동자가 노동력의 가치 이상으로 창출한 가치.</strong> 더 비싸게 팔아서 생기는 게 아님. 유통 영역에서는 등가교환.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스에 의하면 자본주의의 착취는 봉건제와 달리 눈에 보이지 않기 때문에 자본주의가 노동자에게 더 위험하다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 봉건제는 소출 납부가 눈에 보이므로 억울한 줄 앎. 자본주의는 착취가 은폐됨.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">마르크스의 잉여가치론은 자본주의 경제가 왜 성장하는지를 설명하는 동시에, 노동자를 역사 발전의 주체로 위치시킨다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 잉여가치 = 노동자가 만든 것. 자본주의 성장의 원천 = 노동자. 기존 사회주의자의 "불쌍한 피해자" 이미지와 다른 것.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">마르크스는 사용가치를 주된 분석 대상으로 삼는다.</div>
+        <div class="tf-reason"><strong>→ 교환가치만 분석.</strong> 사용가치는 "내 분석 영역이 아니다"라고 명시적으로 제외.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 08 논술 ===== -->
+<div class="section" id="essay">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <span class="section-title">논술형 대비 핵심 논지</span>
+  </div>
+
+  <div class="summary-box">
+    <h3>✦ 10차시 논술 예상 주제</h3>
+    <ul>
+      <li>마르크스·엥겔스의 생산양식 5단계를 생산력과 생산관계 개념을 사용하여 각 단계별로 설명하라.</li>
+      <li>마르크스의 역사유물론에서 생산양식이 변화하는 메커니즘을 (1)생산력 발달 → (2)질곡 → (3)계급투쟁 → (4)사회혁명의 순서로 설명하라.</li>
+      <li>마르크스의 '시초축적' 분석을 바탕으로 봉건제에서 자본주의로 전환되는 과정을 부농·빈농·부르주아의 역할을 중심으로 서술하라.</li>
+      <li>마르크스의 역사관이 기존 사회주의자들과 근본적으로 다른 점 3가지(사회주의=진보/자본주의 단계 필요/역사와 사랑에 빠짐)를 설명하라.</li>
+      <li>자본주의에서 착취가 '은폐'되는 이유를 봉건제의 착취 방식과 비교하여 서술하라.</li>
+      <li>마르크스의 잉여가치론을 노동력이라는 상품의 3가지 특수성을 중심으로 설명하고, 이것이 자본주의 성장과 어떻게 연결되는지 서술하라.</li>
+      <li>마르크스의 경제관이 기존 사회주의자들의 노동자상을 어떻게 전환시켰는지(피해자 → 역사 발전의 주체) 서술하라.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">10차시 핵심 흐름 요약</div>
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:10px;">
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item" style="min-width:130px;text-align:center;flex-shrink:0;">역사관 심화</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">생산양식 5단계 구체화 + 변화 메커니즘 + 봉건→자본주의 시초축적 사례</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item gold" style="min-width:130px;text-align:center;flex-shrink:0;">마르크스 특징</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">사회주의=미래(복고 아님) / 자본주의 단계 필수 / 법칙·체계적 진보</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item red" style="min-width:130px;text-align:center;flex-shrink:0;">경제관</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">만물 상품화 → 교환가치 = 사회적 필요 노동시간 → 유통 이윤 없음 → 생산영역의 노동력 특수성 → 잉여가치 = 착취 = 자본주의 성장 원천</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const h=a.getAttribute('href');
+      if(h.startsWith('#')){
+        e.preventDefault();
+        const target=document.querySelector(h);
+        if(target){
+          const top=target.getBoundingClientRect().top+window.scrollY-60;
+          window.scrollTo({top,behavior:'smooth'});
+        }
+      }
+    });
+  });
+  const secs=document.querySelectorAll('.section[id]'),links=document.querySelectorAll('nav a');
+  function updateNav(){
+    let c='';
+    secs.forEach(s=>{if(window.scrollY+80>=s.offsetTop)c=s.id});
+    links.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+c)a.classList.add('active')});
+  }
+  window.addEventListener('scroll',updateNav);
+  updateNav();
+</script>
+</body>
+</html>

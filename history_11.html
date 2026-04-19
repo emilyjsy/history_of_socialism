@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 | 11차시 핵심 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0c10;--surface:#121620;--surface2:#181e2a;--border:#222a38;--accent:#6a9fd4;--accent2:#90c0f0;--accent3:#e8c86a;--green:#7ec8a0;--red:#e07878;--teal:#5ec8c0;--purple:#b08de8;--text:#d8e4f0;--text-muted:#506070;--text-soft:#a0b8cc}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.8}
+  header{background:linear-gradient(135deg,#060a12,#0a0e18);border-bottom:1px solid var(--border);padding:48px 40px 36px;position:relative;overflow:hidden}
+  header::before{content:'';position:absolute;top:-80px;right:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,232,.07),transparent 70%)}
+  header::after{content:'';position:absolute;bottom:-60px;left:8%;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,200,106,.05),transparent 70%)}
+  .header-label{font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+  header h1{font-family:'Noto Serif KR',serif;font-size:2rem;font-weight:900;color:var(--accent2);margin-bottom:8px;line-height:1.4}
+  header .subtitle{color:var(--text-muted);font-size:13px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+  .badge.blue{background:rgba(106,159,212,.12);border:1px solid rgba(106,159,212,.3);color:var(--accent)}
+  .badge.teal{background:rgba(94,200,192,.10);border:1px solid rgba(94,200,192,.3);color:var(--teal)}
+  .badge.gold{background:rgba(232,200,106,.10);border:1px solid rgba(232,200,106,.3);color:var(--accent3)}
+  .badge.purple{background:rgba(176,141,232,.10);border:1px solid rgba(176,141,232,.3);color:var(--purple)}
+  .badge.red{background:rgba(224,120,120,.10);border:1px solid rgba(224,120,120,.3);color:var(--red)}
+  nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 40px;display:flex;overflow-x:auto;position:sticky;top:0;z-index:100;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{color:var(--text-muted);text-decoration:none;font-size:13px;padding:14px 18px;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;font-weight:500}
+  nav a:hover,nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .container{max-width:920px;margin:0 auto;padding:44px 32px 90px}
+  .section{margin-bottom:64px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .section-num{font-size:11px;color:var(--accent);letter-spacing:.18em;font-weight:700;white-space:nowrap}
+  .section-title{font-family:'Noto Serif KR',serif;font-size:1.35rem;font-weight:900;color:var(--accent2)}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .card-title{font-weight:700;color:var(--accent2);font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .card-title::before{content:'';width:4px;height:18px;background:var(--accent);border-radius:2px;flex-shrink:0}
+  .card-title.teal::before{background:var(--teal)}.card-title.gold::before{background:var(--accent3)}.card-title.green::before{background:var(--green)}.card-title.purple::before{background:var(--purple)}.card-title.red::before{background:var(--red)}
+  .def-box{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:18px 22px;margin:14px 0}
+  .def-box .def-label{font-size:10px;letter-spacing:.15em;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .def-box.gold{border-left-color:var(--accent3)}.def-box.gold .def-label{color:var(--accent3)}
+  .def-box.teal{border-left-color:var(--teal)}.def-box.teal .def-label{color:var(--teal)}
+  .def-box.red{border-left-color:var(--red)}.def-box.red .def-label{color:var(--red)}
+  .def-box.green{border-left-color:var(--green)}.def-box.green .def-label{color:var(--green)}
+  .def-box.purple{border-left-color:var(--purple)}.def-box.purple .def-label{color:var(--purple)}
+  .key-concept{border-radius:8px;padding:18px 22px;margin:14px 0}
+  .key-concept.blue{background:linear-gradient(135deg,rgba(106,159,212,.09),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22)}.key-concept.blue .kc-label{color:var(--accent)}
+  .key-concept.teal{background:linear-gradient(135deg,rgba(94,200,192,.08),rgba(94,200,192,.02));border:1px solid rgba(94,200,192,.2)}.key-concept.teal .kc-label{color:var(--teal)}
+  .key-concept.gold{background:linear-gradient(135deg,rgba(232,200,106,.08),rgba(232,200,106,.02));border:1px solid rgba(232,200,106,.2)}.key-concept.gold .kc-label{color:var(--accent3)}
+  .key-concept.green{background:linear-gradient(135deg,rgba(126,200,160,.08),rgba(126,200,160,.02));border:1px solid rgba(126,200,160,.2)}.key-concept.green .kc-label{color:var(--green)}
+  .key-concept.purple{background:linear-gradient(135deg,rgba(176,141,232,.08),rgba(176,141,232,.02));border:1px solid rgba(176,141,232,.2)}.key-concept.purple .kc-label{color:var(--purple)}
+  .key-concept.red{background:linear-gradient(135deg,rgba(224,120,120,.08),rgba(224,120,120,.02));border:1px solid rgba(224,120,120,.2)}.key-concept.red .kc-label{color:var(--red)}
+  .kc-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .hl-b{color:var(--accent2);font-weight:700}.hl-go{color:var(--accent3);font-weight:700}.hl-g{color:var(--green);font-weight:700}.hl-t{color:var(--teal);font-weight:700}.hl-r{color:var(--red);font-weight:700}.hl-p{color:var(--purple);font-weight:700}
+  .example{background:rgba(106,159,212,.05);border:1px solid rgba(106,159,212,.18);border-radius:6px;padding:15px 20px;margin:12px 0}
+  .example-label{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .example-label::before{content:'📌';font-size:12px}
+  .example.teal{background:rgba(94,200,192,.05);border-color:rgba(94,200,192,.18)}.example.teal .example-label{color:var(--teal)}
+  .example.gold{background:rgba(232,200,106,.05);border-color:rgba(232,200,106,.18)}.example.gold .example-label{color:var(--accent3)}
+  .example.green{background:rgba(126,200,160,.05);border-color:rgba(126,200,160,.18)}.example.green .example-label{color:var(--green)}
+  .example.purple{background:rgba(176,141,232,.05);border-color:rgba(176,141,232,.18)}.example.purple .example-label{color:var(--purple)}
+  .example.red{background:rgba(224,120,120,.05);border-color:rgba(224,120,120,.18)}.example.red .example-label{color:var(--red)}
+  .example p,.example li{font-size:14px;color:var(--text-soft)}
+  .example ul{padding-left:18px}.example li{margin-bottom:5px}
+  .caution{background:rgba(224,120,120,.07);border:1px solid rgba(224,120,120,.22);border-radius:6px;padding:14px 18px;margin:12px 0;font-size:13.5px;color:var(--text-soft)}
+  .caution strong{color:var(--red)}
+  .hero-box{border-radius:10px;padding:22px 26px;margin:16px 0}
+  .hero-box.teal{background:linear-gradient(135deg,rgba(94,200,192,.13),rgba(94,200,192,.04));border:2px solid rgba(94,200,192,.4)}
+  .hero-box.gold{background:linear-gradient(135deg,rgba(232,200,106,.13),rgba(232,200,106,.04));border:2px solid rgba(232,200,106,.4)}
+  .hero-box.blue{background:linear-gradient(135deg,rgba(106,159,212,.13),rgba(106,159,212,.04));border:2px solid rgba(106,159,212,.4)}
+  .hero-box.red{background:linear-gradient(135deg,rgba(224,120,120,.13),rgba(224,120,120,.04));border:2px solid rgba(224,120,120,.4)}
+  .hero-box.purple{background:linear-gradient(135deg,rgba(176,141,232,.13),rgba(176,141,232,.04));border:2px solid rgba(176,141,232,.4)}
+  .hero-box .hero-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .hero-box.teal .hero-label{color:var(--teal)}.hero-box.gold .hero-label{color:var(--accent3)}.hero-box.blue .hero-label{color:var(--accent)}.hero-box.red .hero-label{color:var(--red)}.hero-box.purple .hero-label{color:var(--purple)}
+  .hero-box p{font-size:15px;color:var(--text);font-weight:500;line-height:1.95}
+  .flow-box{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0;padding:16px 20px;background:var(--surface2);border-radius:8px;border:1px solid var(--border)}
+  .flow-item{background:rgba(106,159,212,.1);border:1px solid rgba(106,159,212,.25);border-radius:6px;padding:6px 14px;font-size:13px;color:var(--accent2);font-weight:600}
+  .flow-arrow{color:var(--accent);font-weight:700;font-size:15px}
+  .flow-item.gold{background:rgba(232,200,106,.1);border-color:rgba(232,200,106,.25);color:var(--accent3)}
+  .flow-item.teal{background:rgba(94,200,192,.1);border-color:rgba(94,200,192,.25);color:var(--teal)}
+  .flow-item.green{background:rgba(126,200,160,.1);border-color:rgba(126,200,160,.25);color:var(--green)}
+  .flow-item.red{background:rgba(224,120,120,.1);border-color:rgba(224,120,120,.25);color:var(--red)}
+  .flow-item.purple{background:rgba(176,141,232,.1);border-color:rgba(176,141,232,.25);color:var(--purple)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .tf-section{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px 28px;margin-bottom:16px}
+  .tf-section h3{font-family:'Noto Serif KR',serif;font-size:1rem;color:var(--accent2);margin-bottom:16px;font-weight:700}
+  .tf-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px}
+  .tf-item:last-child{border-bottom:none}
+  .tf-badge{flex-shrink:0;width:32px;height:22px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:1px}
+  .tf-badge.true{background:rgba(126,200,160,.2);color:var(--green)}.tf-badge.false{background:rgba(224,120,120,.2);color:var(--red)}
+  .tf-text{color:var(--text-soft)}.tf-reason{margin-top:4px;font-size:13px;color:var(--text-muted)}.tf-reason strong{color:var(--accent2)}
+  .summary-box{background:linear-gradient(135deg,rgba(106,159,212,.08),rgba(106,159,212,.02));border:1px solid rgba(106,159,212,.22);border-radius:10px;padding:22px 26px;margin:18px 0}
+  .summary-box h3{color:var(--accent2);font-family:'Noto Serif KR',serif;font-size:1rem;margin-bottom:12px;font-weight:900}
+  .summary-box ul{list-style:none;padding:0}
+  .summary-box li{padding:5px 0;font-size:14px;color:var(--text);display:flex;gap:10px;align-items:flex-start}
+  .summary-box li::before{content:'→';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .compare-card{border-radius:8px;padding:18px 20px}
+  .compare-card.left{background:rgba(94,200,192,.07);border:1px solid rgba(94,200,192,.25)}
+  .compare-card.right{background:rgba(176,141,232,.07);border:1px solid rgba(176,141,232,.25)}
+  .compare-card h4{font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:900;margin-bottom:10px}
+  .compare-card.left h4{color:var(--teal)}.compare-card.right h4{color:var(--purple)}
+  .compare-card p,.compare-card li{font-size:13.5px;color:var(--text-soft);margin-bottom:6px}
+  .compare-card ul{padding-left:16px}
+  p{margin-bottom:10px}
+  @media(max-width:640px){header{padding:32px 20px 24px}header h1{font-size:1.4rem}.container{padding:24px 16px 60px}nav{padding:0 16px}.grid2,.compare-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">사회주의의 역사 — 11차시 핵심 정리 (중간고사 범위 마지막)</div>
+  <h1>위기론 완성 + 동시대 사회주의자 — 라살</h1>
+  <div class="subtitle">
+    <span>2026. 04. 15 &nbsp;|&nbsp; 11차시</span>
+    <span class="badge blue">중간고사 대비</span>
+    <span class="badge red">수요론 · 생산론(이윤율 저하)</span>
+    <span class="badge purple">라살 — 개혁주의의 선구자</span>
+    <span class="badge gold">⚠ T/F · 논술 예상 포함</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#crisis-intro">위기론 개요</a>
+  <a href="#demand">수요론</a>
+  <a href="#production">생산론(이윤율 저하)</a>
+  <a href="#comparison">두 이론 비교</a>
+  <a href="#lassalle">라살</a>
+  <a href="#tf">T/F 예상</a>
+  <a href="#essay">논술 대비</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== 01 위기론 개요 ===== -->
+<div class="section" id="crisis-intro">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">위기론 — 배경과 핵심 구도</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title">위기론의 위상과 배경</div>
+    <div class="def-box gold">
+      <div class="def-label">핵심 텍스트</div>
+      <p><span class="hl-go">&lt;자본 2·3권&gt;</span> (마르크스 수고, 엥겔스 편집)<br>
+      <span class="hl-go">&lt;반뒤링론&gt;</span> (엥겔스, 1878) — 뒤링이라는 인물과 논쟁 형식. 쉽게 쓰인 마르크스주의 입문서. 마르크스주의를 처음 접한다면 이 책이 가장 적절.<br>
+      <span class="hl-go">&lt;유토피아와 과학&gt;</span> (엥겔스) — 위기론 핵심 다룸.</p>
+    </div>
+    <div class="key-concept blue">
+      <div class="kc-label">배경 — 1870년대 대불황</div>
+      <p>1848~70년 대호황이 끝나고 <span class="hl-b">1870년대부터 약 20년간 대불황</span> 시작. 1929년 대공황에 이름을 빼앗겨 "대불황"으로 부름. 29년처럼 급격한 crash는 아니지만 꾸준한 불황. 이 불황을 분석·예측하며 위기론이 발전.</p>
+    </div>
+    <div class="key-concept gold">
+      <div class="kc-label">교수 평가 — 위기론의 현재적 적실성</div>
+      <p>경제관·역사관보다 아직도 학문적 적실성이 더 높다는 교수 개인 평가. <span class="hl-go">자본주의 경제 위기에 대한 설명력</span>이 여전히 강력. 반면 경제관(잉여가치론)은 '가치' 개념이 추상적이어서 믿음의 영역으로 쉽게 흐를 수 있음.</p>
+    </div>
+    <div class="hero-box red">
+      <div class="hero-label">위기론의 대전제 — 두 이론 공통 출발점</div>
+      <p>자본주의는 <span class="hl-r">Socialized Production</span>과 <span class="hl-r">Private Ownership of Products</span> 사이에 근본적 모순을 가진 경제 시스템이다.<br><br>
+      <span class="hl-b">Socialized Production</span>: 함께 모여서 분업으로 일하는 것 → 생산성 향상<br>
+      <span class="hl-go">Private Ownership of Products</span>: 그 생산물을 공장 오너가 사적으로 소유 → 기여에 맞는 분배 안 됨<br><br>
+      → 오너에게 자본이 집중. 이 자본이 경쟁 때문에 <span class="hl-b">설비 투자</span>로 전이됨.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 02 수요론 ===== -->
+<div class="section" id="demand">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">위기론 ① — 수요론 (룩셈부르크가 완성)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">수요론의 핵심 논리 흐름</div>
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:12px;padding:20px 24px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item" style="min-width:28px;text-align:center;flex-shrink:0;">①</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">모인 자본 → 경쟁사 견제 위해 <span class="hl-b">설비 투자</span>로 전환. 수요 예측보다 경쟁 드라이브로 투자.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item teal" style="min-width:28px;text-align:center;flex-shrink:0;">②</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;"><span class="hl-t">설비 개량</span> → 노동력 수요 감소. 같은 일에 사람이 덜 필요해짐 (10명 → 5명).</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item gold" style="min-width:28px;text-align:center;flex-shrink:0;">③</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">개별 기업: cost 절감 성공. 그러나 사회 전체로 보면 — 해고 또는 실질임금 동결 → <span class="hl-go">소비자(= 노동자)의 구매력 하락</span>.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item red" style="min-width:28px;text-align:center;flex-shrink:0;">④</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">설비 개량으로 생산량은 오르는데 소비는 하락 → <span class="hl-r">창고에 물건 쌓임</span> → <span class="hl-r">과잉생산 + 과소소비</span>의 고전적 위기.</span>
+      </div>
+    </div>
+    <div class="hero-box teal">
+      <div class="hero-label">핵심 도식</div>
+      <p><span class="hl-b">Socialized Production</span> → <span class="hl-go">과잉생산(Over-production)</span><br>
+      <span class="hl-r">Private Ownership</span> → <span class="hl-t">과소소비(Under-consumption)</span></p>
+    </div>
+    <div class="example gold">
+      <div class="example-label">교수 예시 — 핸드폰</div>
+      <p>삼성이 설비 자동화로 인력 줄임 → 개별 기업은 cost 절감 성공. 그런데 잘린 노동자들은 작년에 산 핸드폰을 5년 10년 계속 씀 → 삼성 핸드폰이 안 팔리는 상황 → 사회 전체의 구매력 하락 = 과잉생산·과소소비 위기.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">주류경제학의 반박과 엥겔스의 재반박</div>
+    <div class="compare-grid">
+      <div class="compare-card left">
+        <h4>주류경제학 반박</h4>
+        <p>"시장 메커니즘이 개입한다. 이윤이 떨어질 것 같으면 합리적 인간은 투자를 멈춘다."</p>
+      </div>
+      <div class="compare-card right">
+        <h4>엥겔스 재반박</h4>
+        <p>"투자는 이윤 예측보다 <span class="hl-p">경쟁사의 투자를 보고 따라가는 것</span>이다. 애플이 500억 투자한다 하면 삼성은 700억 투자한다. 경쟁 드라이브가 합리적 계산보다 강하다."</p>
+      </div>
+    </div>
+    <div class="example teal">
+      <div class="example-label">교수 언급 — 현재 AI 투자</div>
+      <p>지금도 AI 투자를 두고 다들 과투자 논란에도 경쟁적으로 쏟아붓는 것이 같은 현상. "지금 우리나라 기업들이 좋은 것도 이 투자 경쟁 때문"이라고 직접 언급.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">위기가 '항구적'이 아니라 '주기적'인 이유 — 엥겔스의 설명</div>
+    <p style="font-size:14px;color:var(--text-soft);margin-bottom:12px;">수요론 논리대로라면 자본주의는 계속 위기여야 하는데, 실제로는 위기-호황 사이클을 탄다. 왜?</p>
+
+    <div class="def-box gold">
+      <div class="def-label">이유 ① — 초기 인프라 투자 시기의 호황</div>
+      <p>투자 초창기에는 투자 자체가 경기 부양 효과 → 반짝 호황. 과투자 국면으로 들어가기 전까지는 위기가 찾아오지 않음.</p>
+    </div>
+    <div class="def-box teal">
+      <div class="def-label">이유 ② — 제국주의적 팽창 (수요 위기의 일시적 해소)</div>
+      <p>자국 내 구매력이 하락하면 → <span class="hl-t">식민지(새 시장)를 개척</span>해 거기에 팔아 위기 일시 완화. 병인양요 때 프랑스가 먼저 "통상합시다"고 한 이유: 남아도는 면직물을 조선에 팔기 위해서.</p>
+    </div>
+    <div class="example teal">
+      <div class="example-label">교수 예시 — 병인양요</div>
+      <p>프랑스 함대가 조선의 문을 두드리며 제일 먼저 한 말 = "통상합시다". 조선 사람들이 다 흰 베옷만 입고 있으니 면직물 팔 시장으로 보인 것. 이것이 제국주의 팽창의 경제적 동기.</p>
+    </div>
+    <div class="def-box red">
+      <div class="def-label">한계 — 지리적 한계 → 결국 Crash</div>
+      <p>식민지도 자본주의 체제에 편입되면 아까와 똑같은 모순(Socialized Production + Private Ownership)에 걸림. 지구의 공간이 무한하지 않으므로 팽창의 한계 존재.</p>
+    </div>
+    <div class="key-concept red">
+      <div class="kc-label">레닌의 확장 (엥겔스 사후)</div>
+      <p>지구적 한계 → 식민제국끼리 재분할 경쟁(Repartition) → <span class="hl-r">제1차 세계대전</span>. 독일이 영국에게 "너네 식민지 너무 많이 먹었다, 나눠라"고 싸운 것. 엥겔스는 전쟁까지는 명시하지 않았으나 레닌이 이렇게 연결함.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 03 생산론 ===== -->
+<div class="section" id="production">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">위기론 ② — 생산론 (이윤율 저하 경향)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title purple">생산론이 등장한 배경</div>
+    <p style="font-size:14px;color:var(--text-soft);">1900년대 들어 전 세계가 거의 식민지화됐는데도 자본주의가 안 망함 → "수요론만으로는 설명이 부족하다"는 의식 → <span class="hl-p">&lt;자본 2·3권&gt;을 재검토</span>하여 다른 설명 방식 발견. 수요 부족이 아니라 <span class="hl-p">이윤율 저하</span>로 위기를 설명.</p>
+    <div class="caution">
+      <strong>⚠ 주의</strong> — 생산론도 출발점은 수요론과 <strong>동일</strong>: Socialized Production vs Private Ownership of Products의 모순 + 자본 축적 + 설비 투자까지 똑같음. 이후 전개가 달라짐.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title purple">생산론의 핵심 논리 흐름</div>
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:12px;padding:20px 24px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item purple" style="min-width:28px;text-align:center;flex-shrink:0;">①</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">자본가들 간에 <span class="hl-p">잉여가치 실현 경쟁</span> — 노동자를 더 일시켜 만든 잉여가치가 팔려야(실현되어야) 이윤이 됨. 시장에서 경쟁 시작.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item gold" style="min-width:28px;text-align:center;flex-shrink:0;">②</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">경쟁 방식 → 품질 경쟁은 수렴하므로 핵심은 <span class="hl-go">"노동집약적 기술 진보"</span> — 노동을 덜 쓰고 기술로 앞서나가 cost를 줄이려는 노력.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item teal" style="min-width:28px;text-align:center;flex-shrink:0;">③</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;"><span class="hl-t">자본의 유기적 구성 고도화</span> — 설비(불변자본)의 비중 증가, 노동력(가변자본)의 비중 감소. 5:5 → 6:4 → 7:3으로 변화.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item red" style="min-width:28px;text-align:center;flex-shrink:0;">④</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">그런데 잉여가치는 <span class="hl-r">노동력(가변자본)만 창출</span>. 설비(불변자본)는 가치를 창출하지 않음. → 가변자본 비중이 줄면 잉여가치 소스 자체가 줄어듦 → <span class="hl-r">이윤율 하락 경향</span>.</span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item" style="min-width:28px;text-align:center;flex-shrink:0;background:rgba(224,120,120,.15);border-color:rgba(224,120,120,.3);color:var(--red);">⑤</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;">이윤율 하락 → <span class="hl-r">경기 침체 → 일부 기업 파산</span></span>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <div class="flow-item green" style="min-width:28px;text-align:center;flex-shrink:0;">⑥</div>
+        <span style="font-size:14px;color:var(--text-soft);padding-top:4px;"><span class="hl-g">경제 재편</span> — 파산한 기업의 설비가 헐값에 나옴 + 실업자 증가로 노동력도 저렴해짐. 살아남은 자본가가 저렴해진 설비·노동력 구입 → 상대적 이윤율 회복 → <span class="hl-g">호황 재개</span>.</span>
+      </div>
+    </div>
+
+    <div class="def-box purple">
+      <div class="def-label">불변자본 vs 가변자본 (중요 용어)</div>
+      <p><span class="hl-p">불변자본</span>: 설비. 그 자체로 가치를 창출하지 않음. 안 변하므로 불변.<br>
+      <span class="hl-go">가변자본</span>: 노동력. 가치를 창출하기 때문에 가변. 잉여가치의 유일한 소스.<br><br>
+      <span class="hl-t">유기적 구성 고도화</span> = 불변자본(설비)의 비율이 가변자본(노동력)보다 점점 커지는 것.<br>
+      → 이윤율 저하의 구조적 원인.</p>
+    </div>
+
+    <div class="hero-box purple">
+      <div class="hero-label">결과 — 자본주의의 사이클</div>
+      <p>잉여가치 실현 경쟁 → 과열 투자 → 노동집약적 기술 진보 → 유기적 구성 고도화 → <span class="hl-r">이윤율 하락 → 공황 → 침체 → 파산</span> → <span class="hl-g">경제 재편(헐값 구입) → 이윤율 회복 → 호황 → 다시 과열</span><br><br>
+      이 사이클이 반복됨. 주류 경제학 교과서도 마르크스를 유일하게 인용하는 파트가 바로 이 위기 사이클 설명.</p>
+    </div>
+
+    <div class="key-concept blue">
+      <div class="kc-label">Division 1 (경공업) vs Division 2 (중공업)</div>
+      <p>생산론의 보완 논의. <span class="hl-b">Division 1 = 경공업</span> (소비재 생산, 소비자에게 직판).<br>
+      <span class="hl-go">Division 2 = 중공업</span> (생산재·기계 생산, Division 1에게 판매).<br><br>
+      경공업이 과투자 → 위기에 들어갈 때, 중공업은 오히려 호황(설비 수요 폭발). 중공업 호황이 실업자를 재고용 → 사회 전체 구매력 유지. 이렇게 시간차를 두고 완충 효과 발생 → 위기가 즉각 전면화되지 않는 이유.</p>
+    </div>
+
+    <div class="key-concept teal">
+      <div class="kc-label">국가의 역할 (통화·재정 정책)</div>
+      <p>내부에서 수요를 인위적으로 창출하는 방법: 불황 시 국가가 재정 지출을 늘려 수요 자극 (뉴딜의 댐 건설이 대표적 예). 금리를 낮춰 대출을 늘리면 사업 투자·고용 증가 → 소비 증가.<br>
+      <span style="font-size:13px;color:var(--text-muted);display:block;margin-top:6px;">→ 이런 내부 조정이 가능하다는 것이 수요론만으로는 자본주의 위기를 완전히 설명 못하는 지점이었고, 생산론이 보완하는 것.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 04 두 이론 비교 ===== -->
+<div class="section" id="comparison">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">수요론 vs 생산론(이윤율 저하론) 비교</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">두 이론 핵심 비교</div>
+    <div class="compare-grid">
+      <div class="compare-card left">
+        <h4>수요론</h4>
+        <ul>
+          <li>결국 소비자 구매력(사회적 구매력) 하락이 원인</li>
+          <li>과잉생산 + 과소소비</li>
+          <li>일시 완화: 제국주의 식민지 확장</li>
+          <li>한계: 지리적 한계 → 최종 Crash</li>
+          <li>룩셈부르크가 훗날 완성</li>
+        </ul>
+      </div>
+      <div class="compare-card right">
+        <h4>생산론(이윤율 저하론)</h4>
+        <ul>
+          <li>이윤율 저하 자체가 원인 (수요 아님)</li>
+          <li>유기적 구성 고도화 → 잉여가치 소스 감소</li>
+          <li>사이클: 침체 → 경제 재편 → 호황 → 과열 반복</li>
+          <li>내부적 설명: Division 1·2 완충 + 국가 정책</li>
+          <li>자본 2·3권 재독에서 발견</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-concept green">
+      <div class="kc-label">교수 결론 — 두 이론의 관계</div>
+      <p>수요론이 틀린 게 아님. 궁극적으로 사회적 구매력 하락은 내부 정책으로 완전 해결이 안 된다는 점에서 <span class="hl-g">수요론도 강고한 위치를 차지</span>. 두 이론을 믹스하는 학자도 있음. 수요론과 생산론은 상호 보완 관계.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 05 라살 ===== -->
+<div class="section" id="lassalle">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">동시대 사회주의자 — 라살 (Ferdinand Lassalle, 1825~1864)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-title purple">생애 및 이력</div>
+    <div class="def-box purple">
+      <div class="def-label">마르크스와의 유사점</div>
+      <p>독일 지역 출신, 유대계 부친, 법학·헤겔 철학 전공, 1848년 혁명 참여, 어릴 때부터 brilliant 소리 들음, 성격 좋지 않음. 마르크스보다 7살 어림. 마르크스와 교류하며 서로 잘 알았음.</p>
+    </div>
+    <div class="key-concept gold">
+      <div class="kc-label">1848년 혁명 실패의 '다른' 해석</div>
+      <p>마르크스: 혁명이 실패했지만 자본주의 위기와 역사 법칙에 따라 결국 혁명이 일어날 것.<br>
+      라살: <span class="hl-go">폭력 혁명은 불가능</span>하다는 결론 → <span class="hl-go">점진적 방법</span>으로 전환.</p>
+    </div>
+    <div class="def-box teal">
+      <div class="def-label">1863년 — 독일 노동자협회(ADAV) 창설</div>
+      <p>독일 지역 여러 노조를 엮어 만든 대형 노조 연합체. <span class="hl-t">오늘날 독일 사민당(SPD)의 기원</span>. 라살이 독일 사민당의 창립자라고 할 수 있음. 유럽 온건좌파 정당(영국 노동당, 프랑스 사회당 등)의 선구적 모델.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title teal">라살의 사회주의 사상</div>
+
+    <div class="def-box gold">
+      <div class="def-label">임금 철칙론 (맬서스 인구론 차용)</div>
+      <p>자본주의에서 임금은 결국 <span class="hl-go">최저 생계 수준으로 수렴</span>하는 경향이 있음.<br><br>
+      논리: 임금이 오르면 → 노동자가 아이를 더 많이 낳음(맬서스 인구론) → 노동 공급 과잉 → 임금 하락 → 인구 줄어듦 → 임금 회복. 이 사이클이 반복되면서 최저생계 수준에 수렴.</p>
+    </div>
+    <div class="key-concept blue">
+      <div class="kc-label">임금 철칙론 vs 마르크스 잉여가치론의 관계 (중요!)</div>
+      <p>마르크스 추종자들은 임금 철칙론을 무시하지만, 교수는 "<span class="hl-b">사실 마르크스 잉여가치론과 상통한다</span>"고 평가. 마르크스도 노동력의 가치 = 의식주 유지선(최저 수준)이라고 했으니까. 다른 논리로 설명했을 뿐 결론은 유사.</p>
+    </div>
+
+    <div class="def-box teal">
+      <div class="def-label">생산협동조합 + 국가 지원</div>
+      <p>직접 일하는 사람들(노동자·농민)이 <span class="hl-t">조합을 구성, 그 조합이 생산수단을 소유·관리</span>.<br>
+      프루동·무정부주의와 비슷해 보이지만 <span class="hl-r">결정적 차이</span>: 임금이 최저생계 수준인 노동자들에게는 조합 결성 자금이 없음 → <span class="hl-b">국가가 자금을 직접 지원하거나 신용보증</span>을 해줘야 함.</p>
+    </div>
+
+    <div class="def-box">
+      <div class="def-label">국가관 — 중립적·도덕적 실체 (vs 마르크스)</div>
+      <p>라살: 국가는 <span class="hl-b">중립적 실체</span>. 더 많은 표를 가진 쪽(노동자·농민이 다수)을 향해 움직일 수 있음 → <span class="hl-b">선거권 확대 + 의회 입법</span>으로 조합 국유화 가능.<br><br>
+      마르크스: 국가는 <span class="hl-r">지배계급의 도구</span>. 중립이 아님. 그러므로 국가가 중립적으로 뭔가 해줄 것을 기대하는 것 자체가 말이 안 됨 → 개거품을 물 수밖에 없는 지점.</p>
+    </div>
+
+    <div class="def-box green">
+      <div class="def-label">직접 네고 — 노사정위원회의 선구자</div>
+      <p>의회 입법을 기다리지 않고, 자기가 만든 대형 조직(ADAV)을 활용해 <span class="hl-g">정부·기업 대표·노조 대표가 직접 협상</span>하는 방식 제안. 현재 노사정위원회, 20세기 코포라티즘(corporatism)의 선구자. 파시즘 국가든 민주주의 국가든 20세기에 이 방식이 광범위하게 활용됨.</p>
+    </div>
+
+    <div class="example red">
+      <div class="example-label">마르크스 vs 라살 — 충돌의 정점</div>
+      <p>라살이 프로이센의 비스마르크에게 접근해 협상을 시도 → 마르크스 격노. 엥겔스에게 보낸 편지에서 라살을 인종차별적 표현으로 욕함(당시 맥락 감안 필요). 엥겔스가 수습 불가능했다고 전해짐.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title red">라살의 죽음과 역사적 평가</div>
+    <div class="def-box red">
+      <div class="def-label">캐릭터 이슈 + 죽음</div>
+      <p>ADAV 창설(1863) 이듬해인 1864년, 39세에 사망. 전국 순회 조직 활동 중 10대 소녀에게 반해 청혼 → 이미 정혼자가 있다는 사실 → 정혼자에게 <span class="hl-r">결투 신청 → 패배 사망</span>. (결투는 당시 시대상, 푸시킨도 결투로 사망)</p>
+    </div>
+    <div class="key-concept purple">
+      <div class="kc-label">역사적 위상 — 개혁주의의 선구자</div>
+      <p>라살을 싫어하는 진영(마르크스주의자들)은 "개량주의자"라 칭하며 폄하. 교수는 중립적으로 <span class="hl-p">"개혁주의자"</span>로 표현. SPD·영국 노동당·프랑스 사회당 등 유럽 온건좌파 정당들의 선구자. 20세기 사민주의 노선의 뿌리.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 06 T/F ===== -->
+<div class="section" id="tf">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">T / F 예상 포인트</span>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 위기론 — 수요론</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">위기론의 핵심 텍스트 &lt;반뒤링론&gt;과 &lt;유토피아와 과학&gt;은 마르크스의 저작이다.</div>
+        <div class="tf-reason"><strong>→ 엥겔스의 저작.</strong> 자본 2·3권은 마르크스의 수고를 엥겔스가 편집.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">수요론에서 'Socialized Production'은 생산수단의 사회화(국유화)를 의미한다.</div>
+        <div class="tf-reason"><strong>→ 단순히 "함께 모여 분업으로 일한다"는 뜻.</strong> 국유화·사회화와 무관. 철학적 개념이 아닌 일상적 의미.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">수요론에 따르면 자본가가 설비 투자를 하는 이유는 이윤이 줄 것을 예측해서다.</div>
+        <div class="tf-reason"><strong>→ 경쟁 드라이브</strong>. 이윤 예측이 아니라 경쟁사가 투자하니까 따라가는 것. 이것이 엥겔스가 주류경제학의 반박에 대한 재반박에서 한 핵심 주장.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">수요론에서 제국주의적 식민지 확장은 자본주의 위기를 일시적으로 완화해 주지만, 식민지도 자본주의 체제에 편입되면 똑같은 모순에 봉착한다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 식민지도 Socialized Production + Private Ownership 모순에 걸림 → 영원한 해결책 안 됨.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">엥겔스는 제1차 세계대전이 식민지 재분할 경쟁의 결과라고 직접 예언했다.</div>
+        <div class="tf-reason"><strong>→ 전쟁까지 명시하지는 않았음.</strong> 레닌이 나중에 지구적 한계 → 식민제국 재분할 경쟁 → 1차 세계대전으로 연결한 것.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 위기론 — 생산론(이윤율 저하론)</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">생산론은 수요론과 완전히 다른 출발점에서 시작된다.</div>
+        <div class="tf-reason"><strong>→ 출발점은 동일.</strong> Socialized Production vs Private Ownership의 모순, 자본 축적, 설비 투자까지 똑같음. 이후 전개가 달라짐.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">생산론에서 설비(불변자본)도 잉여가치를 창출한다.</div>
+        <div class="tf-reason"><strong>→ 노동력(가변자본)만 잉여가치를 창출.</strong> 설비는 가치를 창출하지 않음. 그래서 불변자본 비율이 높아지면 이윤율이 떨어지는 것.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">자본의 유기적 구성 고도화란 불변자본(설비)의 비율이 가변자본(노동력)에 비해 점점 커지는 것을 의미한다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 노동집약적 기술 진보의 결과. 이것이 이윤율 저하의 구조적 원인.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">생산론에서 경기 침체 이후 호황이 재개되는 이유는 파산한 기업의 설비와 노동력이 헐값에 나오는 '경제 재편' 때문이다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 이것이 수요론과 달리 위기 사이클을 내부적으로 설명하는 방식.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">Division 1은 중공업(생산재), Division 2는 경공업(소비재)이다.</div>
+        <div class="tf-reason"><strong>→ 반대.</strong> Division 1 = 경공업(소비재), Division 2 = 중공업(생산재·기계). 경공업이 과투자 시 중공업이 호황인 구조.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tf-section">
+    <h3>📌 라살</h3>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">라살은 1848년 혁명 실패에서 마르크스와 같은 교훈을 이끌어냈다.</div>
+        <div class="tf-reason"><strong>→ 반대.</strong> 마르크스: 혁명은 언젠가 다시 온다. 라살: 폭력 혁명은 불가능, 점진적 방법으로 전환.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">라살은 프루동·무정부주의처럼 국가의 개입 없이 아래로부터 조합이 자생적으로 생산수단을 소유해야 한다고 봤다.</div>
+        <div class="tf-reason"><strong>→ 국가 지원 필수로 봄.</strong> 임금이 최저생계 수준인 노동자들에게 자금이 없으므로 국가의 직접 지원 또는 신용보증이 필요하다고 주장. 이것이 프루동과의 핵심 차이.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">라살은 마르크스처럼 국가를 지배계급의 도구로 봤다.</div>
+        <div class="tf-reason"><strong>→ 라살은 국가를 중립적·도덕적 실체로 봄.</strong> 마르크스가 가장 열받은 지점이 바로 이 국가관의 차이.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">라살의 임금 철칙론은 맬서스 인구론을 차용하여, 임금은 자본주의 하에서 최저 생계 수준으로 수렴하는 경향이 있다고 주장한다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 마르크스 추종자들이 무시하지만, 교수는 마르크스 잉여가치론의 결론과 사실상 상통한다고 평가.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">라살이 창설한 독일 노동자협회(ADAV)는 오늘날 독일 사민당(SPD)의 기원이다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 라살이 독일 사민당의 창립자로 볼 수 있음.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge true">T</div>
+      <div>
+        <div class="tf-text">라살은 노사정 직접 협상 방식의 선구자로, 비스마르크에게 접근해 직접 협상을 시도하기도 했다.</div>
+        <div class="tf-reason"><strong>→ 정확.</strong> 이 행동이 마르크스를 격노시켰고, 20세기 코포라티즘의 선구자로 평가됨.</div>
+      </div>
+    </div>
+    <div class="tf-item">
+      <div class="tf-badge false">F</div>
+      <div>
+        <div class="tf-text">라살은 노년에 병으로 사망했다.</div>
+        <div class="tf-reason"><strong>→ 39세에 결투 패배로 사망.</strong> 10대 소녀에게 청혼하다 정혼자와 결투 → 패배 사망. 1864년.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 07 논술 ===== -->
+<div class="section" id="essay">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">논술형 대비 핵심 논지</span>
+  </div>
+
+  <div class="summary-box">
+    <h3>✦ 11차시 논술 예상 주제</h3>
+    <ul>
+      <li>마르크스·엥겔스의 위기론에서 공통 출발점인 'Socialized Production vs Private Ownership of Products'의 모순을 설명하고, 이로부터 어떻게 과잉생산·과소소비 위기가 발생하는지(수요론) 논술하라.</li>
+      <li>수요론에서 자본주의 위기가 '항구적'이지 않고 '주기적'인 이유를 (1)초기 인프라 투자, (2)제국주의 팽창, (3)식민지의 한계 순서로 설명하라.</li>
+      <li>생산론(이윤율 저하론)에서 '자본의 유기적 구성 고도화'가 이윤율 하락으로 이어지는 논리를 불변자본·가변자본 개념과 함께 설명하라.</li>
+      <li>수요론과 생산론을 비교하고, 두 이론이 자본주의 위기 사이클을 각각 어떻게 설명하는지 서술하라.</li>
+      <li>라살이 1848년 혁명 실패에서 이끌어낸 결론이 마르크스와 어떻게 다른지 설명하고, 그 결과 라살이 제시한 사회주의 실현 방법론(임금철칙론, 생산협동조합, 국가 지원, 의회 입법·직접 네고)을 서술하라.</li>
+      <li>라살의 국가관이 마르크스의 국가관과 어떻게 다른지 설명하고, 마르크스가 라살을 강하게 비판한 이유를 논하라.</li>
+      <li>라살이 개혁주의의 선구자로 평가받는 이유와 그가 20세기 유럽 사민주의 노선에 미친 영향을 서술하라.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title gold">11차시 핵심 흐름 요약</div>
+    <div class="flow-box" style="flex-direction:column;align-items:flex-start;gap:10px;">
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item red" style="min-width:110px;text-align:center;flex-shrink:0;">공통 전제</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">사회적 생산 + 사적 소유의 모순 → 자본 축적 → 설비 투자</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item teal" style="min-width:110px;text-align:center;flex-shrink:0;">수요론</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">설비 개량 → 고용 감소 → 구매력 하락 → 과잉생산·과소소비. 완화: 식민지 팽창. 한계: 지리적 한계 → Crash</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item purple" style="min-width:110px;text-align:center;flex-shrink:0;">생산론</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">노동집약적 기술진보 → 유기적 구성 고도화 → 이윤율 하락 → 공황 → 경제 재편 → 호황 반복</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="flow-item gold" style="min-width:110px;text-align:center;flex-shrink:0;">라살</div>
+        <span class="flow-arrow" style="margin-top:4px;">→</span>
+        <span style="font-size:13px;color:var(--text-soft);padding-top:4px;">폭력혁명 거부 · 점진주의 · 조합+국가지원 · 중립적 국가관 · 의회·직접 네고 → 개혁주의 선구자 (SPD 기원)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<script>
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const h=a.getAttribute('href');
+      if(h.startsWith('#')){
+        e.preventDefault();
+        const t=document.querySelector(h);
+        if(t){const top=t.getBoundingClientRect().top+window.scrollY-60;window.scrollTo({top,behavior:'smooth'})}
+      }
+    });
+  });
+  const secs=document.querySelectorAll('.section[id]'),links=document.querySelectorAll('nav a');
+  function updateNav(){
+    let c='';
+    secs.forEach(s=>{if(window.scrollY+80>=s.offsetTop)c=s.id});
+    links.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+c)a.classList.add('active')});
+  }
+  window.addEventListener('scroll',updateNav);updateNav();
+</script>
+</body>
+</html>
