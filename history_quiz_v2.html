@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>사회주의의 역사 T/F Quiz</title>
+<style>
+:root{
+  --bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3250;
+  --accent:#4f8ef7;--accent2:#7c3aed;--green:#22c55e;--red:#ef4444;
+  --yellow:#f59e0b;--text:#e8eaf0;--text2:#9ca3af;--text3:#6b7280;
+  --radius:14px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Apple SD Gothic Neo','Malgun Gothic','Segoe UI',system-ui,sans-serif;
+  min-height:100vh;padding-bottom:80px;
+}
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(15,17,23,0.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:10px 16px;
+}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.header-title{font-size:16px;font-weight:700;}
+.score-badge{display:flex;gap:6px;}
+.score-item{font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600;}
+.score-correct{background:rgba(34,197,94,.15);color:var(--green);}
+.score-wrong{background:rgba(239,68,68,.15);color:var(--red);}
+.score-total{background:rgba(79,142,247,.15);color:var(--accent);}
+.progress-wrap{display:flex;align-items:center;gap:8px;}
+.progress-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px;transition:width .3s;}
+.progress-text{font-size:11px;color:var(--text3);white-space:nowrap;min-width:44px;text-align:right;}
+
+.filters{padding:10px 16px 6px;display:flex;flex-direction:column;gap:7px;}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+.filter-label{font-size:11px;color:var(--text3);min-width:30px;}
+.chip{padding:4px 10px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;user-select:none;}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.chip.f1j.active{background:#0891b2;border-color:#0891b2;}
+.chip.f2j.active{background:#7c3aed;border-color:#7c3aed;}
+.chip.f3j.active{background:#d97706;border-color:#d97706;}
+.chip.fBR.active{background:#0e7490;border-color:#0e7490;}
+.chip.fPR.active{background:#6d28d9;border-color:#6d28d9;}
+.chip.fCO.active{background:#059669;border-color:#059669;}
+.chip.fSO.active{background:#b45309;border-color:#b45309;}
+.chip.fUT.active{background:#be185d;border-color:#be185d;}
+
+.toolbar{display:flex;gap:6px;padding:6px 16px 10px;align-items:center;flex-wrap:wrap;}
+.btn-sm{padding:5px 12px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent);}
+.btn-sm.active{border-color:var(--accent);color:var(--accent);}
+.counter-display{font-size:12px;color:var(--text3);margin-left:auto;}
+
+.quiz-area{padding:12px 16px;max-width:700px;margin:0 auto;}
+
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;transition:border-color .2s;}
+.q-card.ok{border-color:rgba(34,197,94,.5);}
+.q-card.ng{border-color:rgba(239,68,68,.5);}
+
+.q-header{display:flex;gap:6px;align-items:center;padding:10px 14px 0;flex-wrap:wrap;}
+.badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.b1{background:rgba(8,145,178,.2);color:#67e8f9;}
+.b2{background:rgba(124,58,237,.2);color:#c4b5fd;}
+.b3{background:rgba(217,119,6,.2);color:#fcd34d;}
+.bcat{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2);}
+.q-num{font-size:11px;color:var(--text3);margin-left:auto;}
+
+.q-text{padding:12px 14px 4px;font-size:15px;line-height:1.75;color:var(--text);}
+
+.q-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 14px 14px;}
+.btn-tf{padding:12px 0;border-radius:var(--radius-sm);font-size:15px;font-weight:700;border:2px solid transparent;cursor:pointer;transition:all .15s;letter-spacing:.5px;}
+.bt{background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.3);}
+.bt:hover:not(:disabled){background:rgba(34,197,94,.22);border-color:var(--green);}
+.bf{background:rgba(239,68,68,.1);color:var(--red);border-color:rgba(239,68,68,.3);}
+.bf:hover:not(:disabled){background:rgba(239,68,68,.22);border-color:var(--red);}
+.s-ok{background:rgba(34,197,94,.28);border-color:var(--green);color:#fff;}
+.s-ng{background:rgba(239,68,68,.28);border-color:var(--red);color:#fff;}
+.s-rev{background:rgba(34,197,94,.15);border-color:var(--green);color:var(--green);}
+.btn-tf:disabled{cursor:default;}
+
+.q-exp{max-height:0;overflow:hidden;transition:max-height .38s ease,opacity .3s;opacity:0;}
+.q-exp.open{max-height:800px;opacity:1;}
+.exp-inner{padding:10px 14px 16px;border-top:1px solid var(--border);}
+.exp-result{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;margin-bottom:10px;}
+.exp-result.correct{color:var(--green);}
+.exp-result.wrong{color:var(--red);}
+.exp-text{font-size:13.5px;line-height:1.78;color:var(--text2);}
+.ans-tag{font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;margin-left:4px;}
+.ans-T{background:rgba(34,197,94,.2);color:var(--green);}
+.ans-F{background:rgba(239,68,68,.2);color:var(--red);}
+
+.empty{text-align:center;padding:60px 20px;color:var(--text3);font-size:15px;}
+
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:700px;z-index:200;background:rgba(15,17,23,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:8px;}
+.nav-btn{flex:1;padding:10px 0;border-radius:var(--radius-sm);font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;transition:all .15s;}
+.nav-btn:hover{border-color:var(--accent);color:var(--accent);}
+.nav-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;flex:1.5;}
+.nav-btn.primary:hover{background:#3b7de8;}
+
+.result-screen{display:none;position:fixed;inset:0;z-index:300;background:var(--bg);overflow-y:auto;padding:24px 16px 100px;}
+.result-screen.show{display:block;}
+.result-header{text-align:center;margin-bottom:24px;}
+.result-title{font-size:26px;font-weight:800;margin-bottom:6px;}
+.result-subtitle{font-size:14px;color:var(--text3);}
+.result-circle{width:130px;height:130px;border-radius:50%;margin:0 auto 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:4px solid var(--accent);background:rgba(79,142,247,.1);}
+.result-pct{font-size:36px;font-weight:800;color:var(--accent);}
+.result-label{font-size:12px;color:var(--text3);}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:20px;}
+.result-stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center;}
+.result-stat-num{font-size:24px;font-weight:700;}
+.result-stat-label{font-size:11px;color:var(--text3);margin-top:2px;}
+.result-stat.correct .result-stat-num{color:var(--green);}
+.result-stat.wrong .result-stat-num{color:var(--red);}
+.result-stat.skipped .result-stat-num{color:var(--yellow);}
+.result-actions{display:flex;gap:8px;flex-direction:column;margin-bottom:20px;}
+.btn-lg{width:100%;padding:13px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;border:none;cursor:pointer;transition:all .15s;}
+.btn-lg.primary{background:var(--accent);color:#fff;}
+.btn-lg.primary:hover{background:#3b7de8;}
+.btn-lg.secondary{background:var(--surface);color:var(--text2);border:1px solid var(--border);}
+.btn-lg.secondary:hover{border-color:var(--accent);color:var(--accent);}
+.review-title{font-size:14px;font-weight:600;color:var(--text2);margin-bottom:10px;}
+.review-item{background:var(--surface);border:1px solid rgba(239,68,68,.3);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:8px;}
+.review-text{font-size:13px;color:var(--text);margin-bottom:4px;}
+.review-meta{font-size:11px;color:var(--text3);}
+
+.fab{position:fixed;bottom:90px;right:16px;width:42px;height:42px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;z-index:150;}
+.fab:hover{border-color:var(--accent);color:var(--accent);}
+
+@media(max-width:480px){
+  .q-text{font-size:14px;}
+  .btn-tf{font-size:14px;padding:10px 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="header-title">📖 사회주의의 역사 T/F Quiz</div>
+    <div class="score-badge">
+      <span class="score-item score-correct" id="sc-ok">✓ 0</span>
+      <span class="score-item score-wrong" id="sc-ng">✗ 0</span>
+      <span class="score-item score-total" id="sc-tot">0문</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="progress-text" id="prog-text">0 / 0</div>
+  </div>
+</div>
+
+<div class="filters">
+  <div class="filter-row">
+    <span class="filter-label">장(章)</span>
+    <span class="chip active"      data-f="ch" data-v="all" onclick="setF('ch','all')">전체</span>
+    <span class="chip f1j"         data-f="ch" data-v="1장" onclick="setF('ch','1장')">1장 — 부르주아와 프롤레타리아</span>
+    <span class="chip f2j"         data-f="ch" data-v="2장" onclick="setF('ch','2장')">2장 — 공산주의자</span>
+    <span class="chip f3j"         data-f="ch" data-v="3장" onclick="setF('ch','3장')">3장 — 사회주의 문헌</span>
+  </div>
+  <div class="filter-row">
+    <span class="filter-label">주제</span>
+    <span class="chip active"      data-f="cat" data-v="all" onclick="setF('cat','all')">전체</span>
+    <span class="chip fBR"         data-f="cat" data-v="부르주아지" onclick="setF('cat','부르주아지')">부르주아지</span>
+    <span class="chip fPR"         data-f="cat" data-v="프롤레타리아트" onclick="setF('cat','프롤레타리아트')">프롤레타리아트</span>
+    <span class="chip fCO"         data-f="cat" data-v="공산주의자" onclick="setF('cat','공산주의자')">공산주의자</span>
+    <span class="chip fSO"         data-f="cat" data-v="사회주의문헌" onclick="setF('cat','사회주의문헌')">사회주의 문헌</span>
+    <span class="chip fUT"         data-f="cat" data-v="공상적사회주의" onclick="setF('cat','공상적사회주의')">공상적 사회주의</span>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button class="btn-sm" onclick="doShuffle()">🔀 섞기</button>
+  <button class="btn-sm" onclick="doReset()">↺ 초기화</button>
+  <button class="btn-sm" id="btn-wo" onclick="doWrongOnly()">✗ 오답만</button>
+  <button class="btn-sm" onclick="doReveal()">👁 정답공개</button>
+  <span class="counter-display" id="counter-disp"></span>
+</div>
+
+<div class="quiz-area" id="quiz-area"></div>
+<div class="empty" id="empty-state" style="display:none">조건에 맞는 문제가 없어요 🔍</div>
+
+<div class="bottom-nav">
+  <button class="nav-btn" onclick="jumpTo(-1)">◀ 이전 미답</button>
+  <button class="nav-btn primary" onclick="showResult()">📊 결과 보기</button>
+  <button class="nav-btn" onclick="jumpTo(1)">다음 미답 ▶</button>
+</div>
+
+<div class="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<div class="result-screen" id="result-screen">
+  <div class="result-header">
+    <div class="result-title" id="res-title">📊 결과</div>
+    <div class="result-subtitle">사회주의의 역사 — 공산주의 선언 T/F</div>
+  </div>
+  <div class="result-circle">
+    <div class="result-pct" id="res-pct">0%</div>
+    <div class="result-label">정답률</div>
+  </div>
+  <div class="result-grid">
+    <div class="result-stat correct"><div class="result-stat-num" id="res-c">0</div><div class="result-stat-label">정답</div></div>
+    <div class="result-stat wrong"><div class="result-stat-num" id="res-w">0</div><div class="result-stat-label">오답</div></div>
+    <div class="result-stat skipped"><div class="result-stat-num" id="res-s">0</div><div class="result-stat-label">미답</div></div>
+  </div>
+  <div class="result-actions">
+    <button class="btn-lg primary" onclick="closeResult()">← 계속 풀기</button>
+    <button class="btn-lg secondary" onclick="doReset();closeResult()">↺ 처음부터</button>
+    <button class="btn-lg secondary" onclick="retryWrong()">✗ 오답만 다시 풀기</button>
+  </div>
+  <div id="review-section"></div>
+</div>
+
+<script>
+var QS = [
+  {id:"q01",ch:"1장",cat:"부르주아지",
+   text:"&lt;공산주의 선언&gt;은 지금까지의 모든 사회의 역사는 계급 투쟁의 역사라고 선언하면서, 이 투쟁은 항상 사회 전체가 혁명적으로 개조되는 것으로 귀결된다고 했다.",
+   ans:false,
+   exp:"선언은 계급 투쟁이 <b>항상 사회 전체가 혁명적으로 개조되거나, 그렇지 않으면 투쟁하는 계급들이 함께 몰락하는 것</b>으로 끝났다고 기술한다. 항상 혁명으로 끝나는 것이 아니라 공멸(共滅)로 끝나는 경우도 있다."},
+
+  {id:"q02",ch:"1장",cat:"부르주아지",
+   text:"마르크스·엥겔스에 따르면 현대 부르주아 사회는 계급 모순을 더욱 복잡하게 만들었다는 점에서 이전 시대와 구별된다.",
+   ans:false,
+   exp:"선언은 부르주아지의 시대는 계급 모순을 <b>단순화했다</b>는 점에서 특이하다고 명시한다. 사회 전체가 부르주아지와 프롤레타리아트 두 계급으로 점점 단순화되며 대립한다. 복잡해진 것이 아니다."},
+
+  {id:"q03",ch:"1장",cat:"부르주아지",
+   text:"마르크스는 부르주아지가 역사에서 아주 혁명적인 역할을 해냈다고 평가했다.",
+   ans:true,
+   exp:"선언은 부르주아지는 역사에서 아주 <b>혁명적인 역할</b>을 해냈다고 명확히 서술한다. 봉건적 속박을 파괴하고 세계 시장을 창출하는 등 전례 없는 생산력을 만들어냈다고 긍정 평가했다. 마르크스는 부르주아지를 비판하면서도 역사적 역할은 인정했다."},
+
+  {id:"q04",ch:"1장",cat:"부르주아지",
+   text:"선언에 따르면 현대의 국가 권력은 부르주아 계급 전체의 공동 업무를 관장하는 위원회에 지나지 않는다.",
+   ans:true,
+   exp:"선언의 핵심 명제다. 현대의 국가 권력은 <b>부르주아 계급 전체의 공동 업무를 관장하는 위원회</b>에 지나지 않는다. 이는 마르크스주의 국가론의 출발점으로, 국가를 지배 계급의 도구로 본다."},
+
+  {id:"q05",ch:"1장",cat:"부르주아지",
+   text:"마르크스는 부르주아지가 봉건적 착취를 종교·정치적 환상으로 가렸던 것과 달리, 부르주아지 자신은 착취를 은밀하고 간접적인 형태로 유지했다고 보았다.",
+   ans:false,
+   exp:"선언은 부르주아지가 종교·정치적 환상에 의해 가려져 있던 착취를 <b>공공연하고 파렴치하며 직접적이고도 잔인한 착취</b>로 바꾸어 놓았다고 기술한다. 착취를 은폐한 것이 아니라 오히려 노골화했다."},
+
+  {id:"q06",ch:"1장",cat:"부르주아지",
+   text:"선언에서 부르주아지가 봉건 제도를 무너뜨릴 때 사용한 무기가 이제 부르주아지 자신에게 겨누어지는데, 그 무기란 바로 프롤레타리아트다.",
+   ans:false,
+   exp:"선언은 무기와 무기를 다룰 사람을 구분한다. <b>무기는 공업·생산력</b>이고, 프롤레타리아트는 이 무기를 자신에게 겨눌 <b>사람들</b>이다. 프롤레타리아트 자체를 무기로 표현한 것이 아니다."},
+
+  {id:"q07",ch:"1장",cat:"부르주아지",
+   text:"마르크스는 부르주아지가 자신의 생산물 판로를 넓히기 위해 전 세계를 누비며 모든 나라를 부르주아적 생산 양식으로 강제 편입시킨다고 주장했다.",
+   ans:true,
+   exp:"선언은 부르주아지가 모든 민족에게 망하고 싶지 않거든 부르주아적 생산 양식을 채용하라고 강요하며 자신들의 모습대로 세계를 창조한다고 기술한다. 오늘날 세계화 논의의 원형으로 평가된다."},
+
+  {id:"q08",ch:"1장",cat:"부르주아지",
+   text:"선언은 부르주아 사회의 상업 공황이 생활 수단의 절대적 부족에서 발생한다고 분석했다.",
+   ans:false,
+   exp:"선언은 공황의 원인을 생활 수단의 부족이 아니라 <b>과잉 생산</b>이라고 분석한다. 사회가 너무나 큰 문명을 가지고 있고 생활 수단이 너무나 많기 때문이라고 역설적으로 표현한다."},
+
+  {id:"q09",ch:"1장",cat:"부르주아지",
+   text:"마르크스는 부르주아지가 100년도 채 못 되는 계급 지배 동안 과거 모든 세대가 만들어 낸 생산력을 합친 것보다 더 많은 생산력을 만들어냈다고 평가했다.",
+   ans:true,
+   exp:"선언의 직접 문장이다. 마르크스는 부르주아지의 역사적 성취를 인정하면서도, 이 생산력이 부르주아 소유 관계와 충돌하여 공황과 혁명의 씨앗이 된다고 보았다."},
+
+  {id:"q10",ch:"1장",cat:"부르주아지",
+   text:"선언에 따르면 부르주아지가 공황을 극복하기 위해 생산력을 파괴하거나 시장을 새로 넓히는 방식을 택하면 그로써 공황이 영구히 해결된다.",
+   ans:false,
+   exp:"선언은 이 방식이 결국 더욱더 광범위하고 더욱 파괴적인 공황을 <b>준비</b>할 뿐이며 공황을 예방할 수단도 줄어들게 된다고 분석한다. 임시방편일 뿐 영구 해결책이 아니다."},
+
+  {id:"q11",ch:"1장",cat:"프롤레타리아트",
+   text:"선언에 따르면 프롤레타리아트와 부르주아지의 투쟁은 내용상으로는 국제적이지만, 형식상으로는 우선 일국적이다.",
+   ans:true,
+   exp:"선언의 정확한 표현이다. 부르주아지에 대한 프롤레타리아트의 투쟁은 내용상으로는 그렇지 않으나 <b>형식상으로는 우선 일국적</b>이다. 형식과 내용을 뒤바꾸면 오답이 된다."},
+
+  {id:"q12",ch:"1장",cat:"프롤레타리아트",
+   text:"선언은 프롤레타리아 운동이 소수의 이익을 위한 소수의 운동이라고 규정했다.",
+   ans:false,
+   exp:"선언은 지금까지 일어난 모든 운동은 소수의 운동이었거나 소수의 이익을 위한 운동이었다면서, <b>프롤레타리아 운동은 압도적 다수의 이익을 위한 압도적 다수의 자주적 운동</b>이라고 명확히 구분한다."},
+
+  {id:"q13",ch:"1장",cat:"프롤레타리아트",
+   text:"선언은 프롤레타리아 투쟁 초기 단계에서 노동자들이 거둔 승리가 직접적이고 영구적인 성과라고 평가했다.",
+   ans:false,
+   exp:"선언은 노동자들은 때때로 승리하지만 그 승리는 <b>일시적일 뿐</b>이라고 명시한다. 투쟁의 참된 성과는 직접적 전과가 아니라 <b>노동자들의 단결이 넓혀지는 것</b>에 있다고 본다."},
+
+  {id:"q14",ch:"1장",cat:"프롤레타리아트",
+   text:"마르크스는 소산업가·소상인·수공업자·농민 등 중간 계급이 부르주아지와 투쟁한다는 점에서 진정으로 혁명적인 계급이라고 평가했다.",
+   ans:false,
+   exp:"선언은 중간 계급이 혁명적이지 못하고 <b>보수적이며 심지어 반동적</b>이라고 규정한다. 역사의 수레바퀴를 뒤로 돌리려 하기 때문이다. 오직 프롤레타리아트만이 참으로 혁명적이다."},
+
+  {id:"q15",ch:"1장",cat:"프롤레타리아트",
+   text:"선언에 따르면 룸펜 프롤레타리아트는 프롤레타리아 혁명에 참여하는 경우가 전혀 없으며 항상 반동적 모략에 매수된다.",
+   ans:false,
+   exp:"선언은 룸펜 프롤레타리아트가 <b>경우에 따라</b> 프롤레타리아 혁명에 끌려들어오는 일도 있으나, 생활 처지 때문에 반동적 모략에 매수되는 경우가 <b>훨씬 많다</b>고 한다. 전혀 없다는 것은 과장이다."},
+
+  {id:"q16",ch:"1장",cat:"프롤레타리아트",
+   text:"마르크스에 따르면 대공업이 발전할수록 부르주아지의 일부가 프롤레타리아트로 전락하거나 생활 조건이 위협받아, 이들이 프롤레타리아트에게 계몽·진보적 요소를 제공하게 된다.",
+   ans:true,
+   exp:"선언은 공업 발전으로 지배 계급의 대부분이 프롤레타리아트로 전락하거나 최소한 생활 조건이 위협받는다고 하며, 이들 또한 프롤레타리아트에게 <b>계몽·진보적 요소를 대량으로 제공</b>하게 된다고 분석한다."},
+
+  {id:"q17",ch:"1장",cat:"프롤레타리아트",
+   text:"선언은 오직 프롤레타리아트만이 참으로 혁명적인 계급이며, 그 이유는 프롤레타리아트가 대공업 자체의 산물이기 때문이라고 설명했다.",
+   ans:true,
+   exp:"선언의 직접 주장이다. 오늘날 부르주아지와 대립하는 모든 계급 가운데 <b>오직 프롤레타리아트만이 참으로 혁명적인 계급</b>이다. 다른 계급들은 대공업 발전과 함께 몰락하지만 프롤레타리아트는 <b>대공업 자체의 산물</b>이기 때문이다."},
+
+  {id:"q18",ch:"1장",cat:"부르주아지",
+   text:"선언에 따르면 부르주아지는 농촌을 도시에, 미개국을 문명국에, 동양을 서양에 종속시켰다.",
+   ans:true,
+   exp:"선언은 부르주아지가 농촌을 도시에 종속시키고, 미개국과 반미개국을 문명국에, 농업 인민을 부르주아 인민에, <b>동양을 서양에 종속</b>시켰다고 기술한다. 제국주의 비판의 원형적 서술이다."},
+
+  {id:"q19",ch:"1장",cat:"프롤레타리아트",
+   text:"선언에서 프롤레타리아트의 생활 조건은 공업 발전과 함께 점차 개선된다고 묘사된다.",
+   ans:false,
+   exp:"선언은 현대 노동자가 공업의 발전과 함께 올라가는 것이 아니라 <b>자신의 계급적 생존 조건 이하로 더욱더 떨어지고 있다</b>고 기술한다. 부르주아지가 자신의 노예들에게 노예적 생활 수준조차 보장해 줄 능력이 없어진다는 것이 핵심 주장이다."},
+
+  {id:"q20",ch:"1장",cat:"부르주아지",
+   text:"선언은 봉건 사회의 생산 수단과 교환 수단이 발전하자 봉건적 소유 관계가 오히려 생산을 방해하는 질곡으로 변했다고 보았다.",
+   ans:true,
+   exp:"선언은 봉건 사회 내에서 생겨난 생산·교환 수단이 발전하자 봉건적 소유 관계는 발전한 생산력에 맞지 않게 되었으며, 생산을 촉진하기는커녕 <b>생산을 방해하는 질곡</b>으로 바뀌었다고 분석한다. 이 논리는 자본주의 → 사회주의 전환에도 그대로 적용된다."},
+
+  {id:"q21",ch:"2장",cat:"공산주의자",
+   text:"선언에 따르면 공산주의자들은 다른 노동자당들과 대립하는 특별한 당이며, 프롤레타리아트 전체의 이해 관계와 구별되는 고유한 이해 관계를 가진다.",
+   ans:false,
+   exp:"선언은 공산주의자들은 다른 노동자당들과 대립하는 <b>특별한 당은 아니다</b>라고 명시한다. 그들은 프롤레타리아트 전체의 이해 관계와 동떨어진 이해 관계를 갖고 있지 않다. 구별되는 점은 이론적 통찰의 깊이다."},
+
+  {id:"q22",ch:"2장",cat:"공산주의자",
+   text:"선언에서 공산주의자들이 다른 노동자당과 다른 이유 중 하나는, 어떤 특별한 원칙을 세워 프롤레타리아 운동을 그 원칙에 뜯어맞추려 하기 때문이다.",
+   ans:false,
+   exp:"선언은 공산주의자들이 어떤 특별한 원칙을 세워서 프롤레타리아 운동을 이 원칙에 뜯어맞추려고 <b>하지 않는다</b>고 명시한다. 그들이 구별되는 이유는 이론적으로 운동의 조건·과정·결과를 한 발 앞서 통찰하기 때문이다."},
+
+  {id:"q23",ch:"2장",cat:"공산주의자",
+   text:"마르크스는 공산주의의 특징을 소유 일반의 폐지가 아니라 부르주아적 소유의 폐지로 규정했다.",
+   ans:true,
+   exp:"선언의 핵심 명제다. 공산주의의 특징은 소유 일반을 폐지하는 것이 아니라 <b>부르주아적 소유를 폐지</b>하는 것이다. 자신의 노동으로 정당하게 취득한 소유까지 폐지하는 것이 아니다."},
+
+  {id:"q24",ch:"2장",cat:"공산주의자",
+   text:"선언은 공산주의자들의 이론적 명제들이 어떤 세계 개혁가가 고안하거나 발견한 사상·원칙에 바탕을 두고 있다고 밝혔다.",
+   ans:false,
+   exp:"선언은 공산주의자들의 이론적 명제들은 결코 어떤 세계 개혁가가 고안하거나 발견한 사상, 원칙에 바탕을 두고 있는 것이 <b>아니다</b>라고 명시한다. 그것은 현존하는 계급 투쟁의 현실적 관계들을 일반적으로 표현한 것일 뿐이다."},
+
+  {id:"q25",ch:"2장",cat:"공산주의자",
+   text:"마르크스는 부르주아 사회에서는 살아 있는 노동이 축적된 노동을 늘리는 수단이고, 공산주의 사회에서는 축적된 노동이 노동자의 생활을 풍요롭게 하는 수단이 된다고 대비했다.",
+   ans:true,
+   exp:"선언의 직접 대비다. 부르주아 사회에서는 살아 있는 노동이 축적된 노동을 늘리는 수단일 뿐이고, 공산주의 사회에서는 <b>축적된 노동이 노동자의 생활을 폭넓게 하고 풍요롭게 하며 장려하는 수단</b>일 뿐이다. 부르주아 사회에선 과거(자본)가 현재(노동)를 지배한다."},
+
+  {id:"q26",ch:"2장",cat:"공산주의자",
+   text:"마르크스는 사적 소유를 폐지하면 게으름이 만연할 것이라는 비판에 동의하며, 이를 극복하기 위해 노동 의무를 도입해야 한다고 주장했다.",
+   ans:false,
+   exp:"마르크스는 이 비판을 정면으로 <b>반박</b>한다. 부르주아 사회에서는 일하는 사람들이 아무것도 얻지 못하는 반면에 무언가를 얻는 자들은 일하지 않기 때문에, 오히려 부르주아 사회가 게으름 때문에 멸망했어야 한다고 역공한다."},
+
+  {id:"q27",ch:"2장",cat:"공산주의자",
+   text:"선언에서 마르크스는 부르주아적 결혼은 사실상 부인 공유제라고 주장하며, 공산주의자들이 부인 공유제를 도입하려 한다는 비판을 역으로 공격했다.",
+   ans:true,
+   exp:"선언은 공산주의자들은 부인 공유제를 실시할 필요가 없다고 하며, 부인 공유제는 거의 언제나 존재해 왔다고 한다. 그러면서 <b>부르주아적 결혼 자체가 사실상 부인 공유제</b>임을 폭로하여 역공한다."},
+
+  {id:"q28",ch:"2장",cat:"공산주의자",
+   text:"선언은 노동자들에게는 조국이 없다고 선언하면서, 프롤레타리아트가 민족을 형성할 필요가 없다고 주장했다.",
+   ans:false,
+   exp:"선언은 노동자들에게는 조국이 없다고 하면서도, 바로 이어서 프롤레타리아트는 우선 정치적 지배권을 장악하여 <b>민족적 계급으로 올라서야 하며 스스로 민족으로 형성</b>되어야 한다고 한다. 민족 형성 자체를 부정하지 않는다."},
+
+  {id:"q29",ch:"2장",cat:"공산주의자",
+   text:"마르크스는 한 사람에 의한 다른 사람의 착취가 폐지되는 만큼 한 민족에 의한 다른 민족의 착취도 폐지된다고 보았다.",
+   ans:true,
+   exp:"선언의 직접 문장이다. 한 사람에 의한 다른 사람의 착취가 폐지되는 정도에 따라, <b>한 민족에 의한 다른 민족의 착취도 폐지될 것이다.</b> 계급 착취의 폐지와 민족 착취의 폐지는 연동된 과정으로 본다."},
+
+  {id:"q30",ch:"2장",cat:"공산주의자",
+   text:"선언에서 제시된 10가지 방책에는 모든 상속권의 폐지와 고율의 누진세가 포함된다.",
+   ans:true,
+   exp:"선언 2장의 10가지 방책 중 (2) <b>고율의 누진세</b>, (3) <b>모든 상속권의 폐지</b>가 명시적으로 포함된다. 다른 방책으로는 토지 소유 몰수, 국립 은행 설립, 운송 수단 국유화, 무상 교육 등이 있다."},
+
+  {id:"q31",ch:"2장",cat:"공산주의자",
+   text:"선언에 따르면 자본은 사회적 힘이므로 자본이 공동체의 소유로 전환되면 개인적 소유가 사회적 소유로 바뀌는 것이다.",
+   ans:false,
+   exp:"선언은 이 논리를 직접 반박한다. 만약 자본이 공동체의 소유로 바뀐다고 하더라도 <b>개인적 소유가 사회적 소유로 바뀌는 것은 아니다.</b> 바뀌는 것은 오직 소유의 사회적 성격뿐이며, 소유의 <b>계급성만 사라질</b> 뿐이다."},
+
+  {id:"q32",ch:"2장",cat:"공산주의자",
+   text:"선언에서 마르크스는 부르주아적 가족 관계를 유지해야 한다고 주장하며, 공산주의가 가족을 해체한다는 비판을 수용했다.",
+   ans:false,
+   exp:"마르크스는 부르주아 가족을 수호하지 않는다. 오히려 현대의 부르주아적 가족은 <b>자본, 즉 사적인 영리에 기초</b>를 두고 있다고 분석하며, 자본이 소멸하면 부르주아적 가족도 자연히 소멸할 것이라고 본다."},
+
+  {id:"q33",ch:"2장",cat:"공산주의자",
+   text:"선언은 한 시대의 지배적 사상은 항상 지배 계급의 사상이었다고 주장했다.",
+   ans:true,
+   exp:"선언의 직접 명제다. 한 시대의 지배적 사상은 <b>늘 지배 계급의 사상이었을 뿐</b>이다. 이는 마르크스주의 이데올로기론의 핵심으로, 사상·법률·도덕 등 상부구조가 경제적 토대를 반영한다는 주장이다."},
+
+  {id:"q34",ch:"2장",cat:"공산주의자",
+   text:"마르크스는 공산주의자들이 자신의 견해와 의도를 감추는 것이 전략적으로 유효하다고 보았다.",
+   ans:false,
+   exp:"선언은 정반대를 선언한다. 공산주의자들은 자신의 견해와 의도를 감추는 것을 <b>경멸받을 일로 여긴다.</b> 그들은 목적이 현존하는 모든 사회 질서를 폭력적으로 타도함으로써만 이루어질 수 있다는 것을 공공연하게 선언한다."},
+
+  {id:"q35",ch:"2장",cat:"공산주의자",
+   text:"선언에서 공산주의자들의 당면 목적은 다른 모든 프롤레타리아 당들의 당면 목적과 동일하다고 밝혔다.",
+   ans:true,
+   exp:"선언은 공산주의자들의 당면 목적은 다른 모든 프롤레타리아 당들의 당면 목적과 같다고 명시한다. 프롤레타리아트를 계급으로 형성시키고, 부르주아지 지배를 뒤엎으며, 정치 권력을 장악하는 것이다. 공산주의자들의 차별성은 목적이 아닌 이론적 통찰에 있다."},
+
+  {id:"q36",ch:"3장",cat:"사회주의문헌",
+   text:"봉건적 사회주의는 귀족들이 자신의 계급 이익을 직접 전면에 내세우면서 부르주아지를 비판한 이념이다.",
+   ans:false,
+   exp:"선언은 귀족들이 사람들의 공감을 얻으려고 오로지 <b>착취받는 노동자 계급의 이익을 위해서</b> 부르주아지를 고발하는 체할 수밖에 없었다고 분석한다. 자신의 이해 관계를 숨기고 노동자 이익을 대변하는 척했다."},
+
+  {id:"q37",ch:"3장",cat:"사회주의문헌",
+   text:"마르크스는 봉건적 사회주의가 신랄하고 기지에 찬 독설로 부르주아지의 간담을 서늘하게 한 면이 있었지만, 현대사의 진로를 이해할 능력이 전혀 없었기에 희극적인 인상만을 남겼다고 평가했다.",
+   ans:true,
+   exp:"선언은 봉건적 사회주의가 때로는 신랄하고 기지에 찬 독설적인 선고로 부르주아지의 간담을 서늘하게 한 일도 있었으나, <b>현대사의 진로를 이해할 만한 능력이 전혀 없었기 때문에 언제나 희극적인 인상을 남겼을 뿐</b>이라고 평가한다."},
+
+  {id:"q38",ch:"3장",cat:"사회주의문헌",
+   text:"선언에서 소부르주아적 사회주의의 대표자로 시스몽디가 언급되며, 이 사조는 현대적 생산 관계의 모순을 날카롭게 분석했으나 해법으로는 반동적·공상적 내용을 제시했다.",
+   ans:true,
+   exp:"선언은 소부르주아적 사회주의(시스몽디 등)가 현대적 생산 관계의 모순을 아주 날카롭게 분석해냈다고 인정하면서도, 그 적극적 내용은 낡은 소유 관계를 부흥하려 하거나 낡은 틀 속에 현대 생산 수단을 밀어 넣으려 한다는 점에서 <b>반동적이며 공상적</b>이라고 비판한다."},
+
+  {id:"q39",ch:"3장",cat:"사회주의문헌",
+   text:"독일의 참된 사회주의는 프랑스 사회주의 문헌을 도입하면서 그 계급 투쟁의 내용을 그대로 보존했다.",
+   ans:false,
+   exp:"선언은 독일 문필가들이 프랑스 원전에 자신들의 터무니없는 <b>철학적 헛소리를 써 넣었다</b>고 비판한다. 화폐 비판을 인간적 본질의 소외로, 국가 비판을 추상적 보편의 지배 폐지 등으로 바꾸는 식으로 계급 내용을 <b>철학적 보편 개념으로 대체</b>했다."},
+
+  {id:"q40",ch:"3장",cat:"사회주의문헌",
+   text:"마르크스는 독일 절대주의 정부들에게 참된 사회주의가 위협적인 부르주아지를 막는 허수아비 역할을 했다고 비판했다.",
+   ans:true,
+   exp:"선언은 독일 절대주의 정부들에게 독일 사회주의가 위협적인 세력으로 떠오르고 있는 부르주아지를 막아 줄 <b>안성맞춤의 허수아비</b>였다고 비판한다. 진보적 외양을 띠면서 실제로는 반동 정권에 봉사한 셈이다."},
+
+  {id:"q41",ch:"3장",cat:"사회주의문헌",
+   text:"선언에서 보수적(부르주아적) 사회주의의 예로 제시된 것은 생 시몽의 사상이다.",
+   ans:false,
+   exp:"선언은 보수적(부르주아적) 사회주의의 예로 <b>프루동의 빈곤의 철학</b>을 제시한다. 생 시몽은 비판·공상적 사회주의의 창시자 중 한 명으로 분류된다. 푸리에·오언과 함께 공상적 사회주의를 대표한다."},
+
+  {id:"q42",ch:"3장",cat:"사회주의문헌",
+   text:"마르크스는 보수적 사회주의자들이 프롤레타리아트가 없는 부르주아지를 원한다고 비판했다.",
+   ans:true,
+   exp:"선언의 직접 표현이다. 그들은 <b>프롤레타리아트가 없는 부르주아지를 갖고 싶은 것</b>이다. 부르주아 사회의 존립 조건은 유지하되 그 투쟁과 위험만 제거하려 한다는 것이 보수적 사회주의의 본질이다."},
+
+  {id:"q43",ch:"3장",cat:"공상적사회주의",
+   text:"선언은 생 시몽·푸리에·오언의 체계가 프롤레타리아트와 부르주아지 사이의 계급 투쟁이 충분히 발전한 시기에 태어났다고 평가한다.",
+   ans:false,
+   exp:"선언은 이 체계들이 프롤레타리아트와 부르주아지 사이의 투쟁이 <b>충분히 발전하지 못한 초기</b>에 태어났다고 명시한다. 계급 투쟁의 미성숙이 곧 공상적 성격의 원인이었다."},
+
+  {id:"q44",ch:"3장",cat:"공상적사회주의",
+   text:"선언에 따르면 공상적 사회주의자들은 프롤레타리아트에게서 역사적 독자성과 고유한 정치 운동을 발견하지 못했다.",
+   ans:true,
+   exp:"선언은 공상적 사회주의자들이 프롤레타리아트에게서는 아무런 <b>역사적 독자성</b>도, 그들 나름의 <b>고유한 정치 운동</b>도 보지 못했다고 비판한다. 그들에게 프롤레타리아트는 가장 고통받는 계급으로만 비쳤을 뿐이다."},
+
+  {id:"q45",ch:"3장",cat:"공상적사회주의",
+   text:"선언은 공상적 사회주의의 저술에 비판적 요소가 전혀 없다고 평가한다.",
+   ans:false,
+   exp:"선언은 이러한 사회적, 공산주의적 문헌에는 <b>비판적 요소도 들어 있다</b>고 인정한다. 현존 사회의 기초를 공격하여 노동자들을 계몽하는 데 값진 자료를 제공했다고 평가한다. 다만 미래 사회에 관한 적극적 명제들이 공상적이라는 것이다."},
+
+  {id:"q46",ch:"3장",cat:"공상적사회주의",
+   text:"마르크스는 공상적 사회주의의 창시자들이 많은 점에서 혁명적이었지만, 그 제자들은 반동적 종파를 형성하게 된다고 비판했다.",
+   ans:true,
+   exp:"선언은 이 체계의 창시자들은 많은 점에서 혁명적이었으나 그 <b>제자들은 늘 반동적 종파를 형성</b>하게 된다고 평가한다. 스승의 낡은 견해를 고집하며 프롤레타리아트의 정치 운동을 극력 반대한다."},
+
+  {id:"q47",ch:"3장",cat:"공상적사회주의",
+   text:"선언에 따르면 공상적 사회주의의 의의는 역사가 발전할수록 커진다.",
+   ans:false,
+   exp:"선언은 정반대로, 비판·공상적 사회주의와 공산주의의 의의는 역사가 발전하면 할수록 <b>줄어든다</b>고 평가한다. 계급 투쟁이 더욱 명확한 형태를 띨수록 계급 투쟁을 뛰어넘으려는 환상적 태도는 실천적 의의와 이론적 정당성을 잃어버린다."},
+
+  {id:"q48",ch:"3장",cat:"공상적사회주의",
+   text:"선언에 따르면 영국의 오언주의자들은 차티스트들을 지지했고, 프랑스의 푸리에주의자들은 개혁주의자들을 지지했다.",
+   ans:false,
+   exp:"선언은 영국의 오언주의자들은 차티스트들을 <b>반대</b>하고, 프랑스의 푸리에주의자들은 개혁주의자들을 <b>반대</b>한다고 기술한다. 공상적 사회주의자들의 제자들은 노동자 정치 운동을 자신들의 새 복음에 대한 맹목적 불신으로 보고 반대했다."},
+
+  {id:"q49",ch:"3장",cat:"사회주의문헌",
+   text:"선언에 따르면 기독교 사회주의는 성직자가 귀족들의 분노에 끼얹어 주는 성수(聖水)에 불과하다.",
+   ans:true,
+   exp:"선언의 직접 표현이다. 기독교적인 금욕주의에 사회주의적 색깔을 입히는 것처럼 쉬운 일은 없다며, <b>기독교 사회주의는 성직자가 귀족들의 분노에 끼얹어 주는 성수일 뿐</b>이라고 비판한다. 봉건적 사회주의의 변형으로 분류된다."},
+
+  {id:"q50",ch:"3장",cat:"공상적사회주의",
+   text:"선언에서 공상적 사회주의자들은 모든 혁명 활동을 배격하고 팔랑스테르·국내 이민지·이카리아 같은 소규모 실험 공동체를 건설하여 새로운 사회를 실현하려 했다.",
+   ans:true,
+   exp:"선언은 공상적 사회주의자들이 모든 정치 활동, 특히 모든 혁명 활동을 배격하고 평화적인 방법으로 목적을 이루려 했으며, 개별적인 <b>팔랑스테르를 세우고 국내 이민지를 창설하며 소(小)이카리아를 건설</b>할 것을 꿈꾼다고 기술한다. 푸리에(팔랑스테르)·카베(이카리아) 등의 실험 공동체를 가리킨다."}
+];
+
+var state = {
+  filters: {ch:"all", cat:"all"},
+  answers: {},
+  order: QS.map(function(q){return q.id;}),
+  wrongOnly: false
+};
+
+var filteredIds = [];
+
+function getFiltered(){
+  var qs = state.order.map(function(id){ return QS.find(function(q){return q.id===id;}); });
+  if(state.filters.ch  !== "all") qs = qs.filter(function(q){return q.ch  === state.filters.ch;});
+  if(state.filters.cat !== "all") qs = qs.filter(function(q){return q.cat === state.filters.cat;});
+  if(state.wrongOnly){
+    qs = qs.filter(function(q){
+      var a = state.answers[q.id];
+      return !a || (a !== "REVEAL" && (a==="T") !== q.ans);
+    });
+  }
+  filteredIds = qs.map(function(q){return q.id;});
+  return qs;
+}
+
+function setF(type, val){
+  state.filters[type] = val;
+  document.querySelectorAll("[data-f='" + type + "']").forEach(function(el){
+    el.classList.toggle("active", el.dataset.v === val);
+  });
+  renderAll();
+}
+
+function doShuffle(){
+  var o = state.order;
+  for(var i=o.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var t=o[i]; o[i]=o[j]; o[j]=t;
+  }
+  renderAll();
+}
+
+function doReset(){
+  state.answers={};
+  state.wrongOnly=false;
+  state.order=QS.map(function(q){return q.id;});
+  document.getElementById("btn-wo").classList.remove("active");
+  renderAll();
+}
+
+function doWrongOnly(){
+  state.wrongOnly = !state.wrongOnly;
+  document.getElementById("btn-wo").classList.toggle("active", state.wrongOnly);
+  renderAll();
+}
+
+function doReveal(){
+  getFiltered().forEach(function(q){
+    if(!state.answers[q.id]) state.answers[q.id]="REVEAL";
+  });
+  renderAll();
+}
+
+function badgeCh(ch){
+  return ch==="1장"?"b1":ch==="2장"?"b2":"b3";
+}
+
+function renderCard(q, num){
+  var ua = state.answers[q.id];
+  var isReveal = ua==="REVEAL";
+  var cardCls="", expOpen="", resCls="", resLabel="", ansTag="";
+  var btnT="btn-tf bt", btnF="btn-tf bf";
+
+  if(ua && !isReveal){
+    var ok = (ua==="T") === q.ans;
+    cardCls = ok?"ok":"ng";
+    expOpen = "open";
+    resCls  = ok?"correct":"wrong";
+    resLabel= ok?"✓ 정답!":"✗ 오답";
+    ansTag  = "<span class='ans-tag ans-"+(q.ans?"T":"F")+"'>"+(q.ans?"TRUE":"FALSE")+"</span>";
+    if(ua==="T") btnT+=" "+(ok?"s-ok":"s-ng"); else btnF+=" "+(ok?"s-ok":"s-ng");
+    if(q.ans===true  && ua!=="T") btnT+=" s-rev";
+    if(q.ans===false && ua!=="F") btnF+=" s-rev";
+  } else if(isReveal){
+    expOpen="open"; resCls="wrong"; resLabel="👁 정답 공개";
+    ansTag="<span class='ans-tag ans-"+(q.ans?"T":"F")+"'>"+(q.ans?"TRUE":"FALSE")+"</span>";
+    if(q.ans===true)  btnT+=" s-rev"; else btnF+=" s-rev";
+  }
+
+  var dis = ua?"disabled":"";
+  var onT = ua?"":("onclick=\"doAnswer('"+q.id+"','T')\"");
+  var onF = ua?"":("onclick=\"doAnswer('"+q.id+"','F')\"");
+
+  return "<div class='q-card "+cardCls+"' id='card-"+q.id+"'>"
+    +"<div class='q-header'>"
+    +"<span class='badge "+badgeCh(q.ch)+"'>"+q.ch+"</span>"
+    +"<span class='badge bcat'>"+q.cat+"</span>"
+    +"<span class='q-num'>#"+num+"</span>"
+    +"</div>"
+    +"<div class='q-text'>"+q.text+"</div>"
+    +"<div class='q-btns'>"
+    +"<button class='"+btnT+"' "+dis+" "+onT+">TRUE</button>"
+    +"<button class='"+btnF+"' "+dis+" "+onF+">FALSE</button>"
+    +"</div>"
+    +"<div class='q-exp"+(expOpen?" open":"")+"'>"
+    +"<div class='exp-inner'>"
+    +"<div class='exp-result "+resCls+"'>"+resLabel+(ua?" "+ansTag:"")+"</div>"
+    +"<div class='exp-text'>"+q.exp+"</div>"
+    +"</div></div>"
+    +"</div>";
+}
+
+function renderAll(){
+  var qs = getFiltered();
+  var area  = document.getElementById("quiz-area");
+  var empty = document.getElementById("empty-state");
+  if(qs.length===0){area.innerHTML="";empty.style.display="";updateScore();return;}
+  empty.style.display="none";
+  area.innerHTML = qs.map(function(q,i){return renderCard(q,i+1);}).join("");
+  updateScore();
+}
+
+function doAnswer(id, choice){
+  state.answers[id] = choice;
+  var q = QS.find(function(x){return x.id===id;});
+  var ok = (choice==="T") === q.ans;
+  var card = document.getElementById("card-"+id);
+  if(!card) return;
+  card.className = "q-card "+(ok?"ok":"ng");
+
+  var btns = card.querySelectorAll(".btn-tf");
+  var bT=btns[0], bF=btns[1];
+  bT.disabled=true; bF.disabled=true;
+  bT.removeAttribute("onclick"); bF.removeAttribute("onclick");
+  (choice==="T"?bT:bF).classList.add(ok?"s-ok":"s-ng");
+  if(q.ans===true  && choice!=="T") bT.classList.add("s-rev");
+  if(q.ans===false && choice!=="F") bF.classList.add("s-rev");
+
+  var exp = card.querySelector(".q-exp");
+  exp.classList.add("open");
+  var res = card.querySelector(".exp-result");
+  var tag = "<span class='ans-tag ans-"+(q.ans?"T":"F")+"'>"+(q.ans?"TRUE":"FALSE")+"</span>";
+  res.className = "exp-result "+(ok?"correct":"wrong");
+  res.innerHTML = (ok?"✓ 정답!":"✗ 오답")+" "+tag;
+  updateScore();
+}
+
+function updateScore(){
+  var qs = getFiltered();
+  var ok=0, ng=0, done=0;
+  qs.forEach(function(q){
+    var a=state.answers[q.id];
+    if(a && a!=="REVEAL"){done++;if((a==="T")===q.ans)ok++;else ng++;}
+  });
+  document.getElementById("sc-ok").textContent  = "✓ "+ok;
+  document.getElementById("sc-ng").textContent  = "✗ "+ng;
+  document.getElementById("sc-tot").textContent = qs.length+"문";
+  var pct = qs.length?Math.round(done/qs.length*100):0;
+  document.getElementById("prog-fill").style.width = pct+"%";
+  document.getElementById("prog-text").textContent = done+" / "+qs.length;
+  document.getElementById("counter-disp").textContent = qs.length+"문항 표시 중";
+}
+
+function jumpTo(dir){
+  var qs = getFiltered();
+  var un = qs.filter(function(q){return !state.answers[q.id];});
+  if(un.length===0){alert("모든 문제에 답했습니다!");return;}
+  var t = dir>0?un[0]:un[un.length-1];
+  var el = document.getElementById("card-"+t.id);
+  if(el) el.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function showResult(){
+  var qs=getFiltered();
+  var ok=0,ng=0,sk=0; var wl=[];
+  qs.forEach(function(q){
+    var a=state.answers[q.id];
+    if(!a||a==="REVEAL") sk++;
+    else if((a==="T")===q.ans) ok++;
+    else {ng++;wl.push(q);}
+  });
+  var pct=qs.length?Math.round(ok/qs.length*100):0;
+  document.getElementById("res-pct").textContent=pct+"%";
+  document.getElementById("res-c").textContent=ok;
+  document.getElementById("res-w").textContent=ng;
+  document.getElementById("res-s").textContent=sk;
+  var t=pct>=90?"🏆 완벽합니다!":pct>=70?"💪 잘 하고 있어요!":pct>=50?"📖 조금 더 복습이 필요해요":"🔥 다시 도전해봐요!";
+  document.getElementById("res-title").textContent=t;
+  var rev=document.getElementById("review-section");
+  if(wl.length>0){
+    rev.innerHTML="<div class='review-title'>✗ 틀린 문제 ("+wl.length+"개)</div>"
+      +wl.map(function(q){
+        var txt=q.text.length>80?q.text.slice(0,80)+"…":q.text;
+        return "<div class='review-item'><div class='review-text'>"+txt+"</div>"
+          +"<div class='review-meta'>"+q.ch+" · "+q.cat+" · 정답: <b>"+(q.ans?"TRUE":"FALSE")+"</b></div></div>";
+      }).join("");
+  } else if(sk===0){
+    rev.innerHTML="<div class='review-title' style='color:var(--green)'>🎉 전체 정답! 대단합니다!</div>";
+  } else { rev.innerHTML=""; }
+  document.getElementById("result-screen").classList.add("show");
+}
+
+function closeResult(){document.getElementById("result-screen").classList.remove("show");}
+
+function retryWrong(){
+  closeResult();
+  state.wrongOnly=true;
+  document.getElementById("btn-wo").classList.add("active");
+  var qs=getFiltered();
+  qs.forEach(function(q){
+    var a=state.answers[q.id];
+    if(a && (a==="T")!==q.ans) delete state.answers[q.id];
+  });
+  renderAll();
+}
+
+renderAll();
+</script>
+</body>
+</html>
