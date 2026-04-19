@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 — T/F 특훈 100제</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: #0e0e14;
+    --card: #16161f;
+    --card2: #1c1c28;
+    --border: #2a2a3d;
+    --accent: #c8a96e;
+    --accent2: #8b5cf6;
+    --correct: #22c55e;
+    --wrong: #ef4444;
+    --text: #e8e4da;
+    --muted: #8a8499;
+    --tag: #2d2d40;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── 헤더 ── */
+  header {
+    background: linear-gradient(135deg, #0e0e14 0%, #1a1430 50%, #0e0e14 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 24px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% -10%, rgba(139,92,246,.25), transparent);
+    pointer-events: none;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: .04em;
+    margin-bottom: 8px;
+  }
+  header p { color: var(--muted); font-size: .9rem; }
+
+  /* ── 진행 바 ── */
+  #progress-wrap {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  #progress-bar-outer {
+    flex: 1; height: 6px; border-radius: 99px;
+    background: var(--border); overflow: hidden;
+  }
+  #progress-bar-inner {
+    height: 100%; background: var(--accent);
+    border-radius: 99px;
+    transition: width .4s ease;
+    width: 0%;
+  }
+  #progress-text { font-size: .8rem; color: var(--muted); white-space: nowrap; }
+  #score-display {
+    display: flex; gap: 12px; font-size: .8rem;
+  }
+  .sc-o { color: var(--correct); font-weight: 600; }
+  .sc-x { color: var(--wrong); font-weight: 600; }
+
+  /* ── 탭 ── */
+  #tabs {
+    display: flex; border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+  .tab-btn {
+    flex: 1; padding: 12px 8px;
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: .85rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: all .2s;
+    border-bottom: 2px solid transparent;
+  }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+
+  /* ── 메인 컨텐츠 ── */
+  #main-container { max-width: 780px; margin: 0 auto; padding: 0 16px 60px; }
+
+  /* ── 문제 카드 ── */
+  .q-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-top: 20px;
+    overflow: hidden;
+    transition: border-color .3s;
+  }
+  .q-card.answered-correct { border-color: rgba(34,197,94,.4); }
+  .q-card.answered-wrong   { border-color: rgba(239,68,68,.4); }
+
+  .q-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 18px 0;
+  }
+  .q-num {
+    background: var(--tag); border-radius: 99px;
+    padding: 3px 10px; font-size: .75rem;
+    color: var(--muted); font-weight: 600; letter-spacing: .05em;
+    white-space: nowrap;
+  }
+  .q-tag {
+    background: rgba(139,92,246,.15);
+    border: 1px solid rgba(139,92,246,.3);
+    border-radius: 99px;
+    padding: 3px 9px; font-size: .72rem;
+    color: #a78bfa;
+  }
+  .q-diff {
+    margin-left: auto; font-size: .72rem;
+  }
+  .diff-easy   { color: #4ade80; }
+  .diff-hard   { color: #f87171; }
+
+  .q-body { padding: 14px 18px 0; }
+  .q-sentence {
+    font-size: 1rem; line-height: 1.75;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 400;
+    color: var(--text);
+  }
+  .q-sentence em {
+    font-style: normal;
+    color: var(--accent);
+    border-bottom: 1px dashed rgba(200,169,110,.4);
+  }
+
+  /* ── 버튼 ── */
+  .q-actions {
+    display: flex; gap: 10px;
+    padding: 14px 18px;
+  }
+  .btn-tf {
+    flex: 1; padding: 11px;
+    border-radius: 8px; border: none; cursor: pointer;
+    font-size: .95rem; font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: all .2s;
+    letter-spacing: .02em;
+  }
+  .btn-t {
+    background: rgba(34,197,94,.12);
+    border: 1px solid rgba(34,197,94,.35);
+    color: #4ade80;
+  }
+  .btn-t:hover:not(:disabled) {
+    background: rgba(34,197,94,.25);
+    transform: translateY(-1px);
+  }
+  .btn-f {
+    background: rgba(239,68,68,.12);
+    border: 1px solid rgba(239,68,68,.35);
+    color: #f87171;
+  }
+  .btn-f:hover:not(:disabled) {
+    background: rgba(239,68,68,.25);
+    transform: translateY(-1px);
+  }
+  .btn-tf:disabled { opacity: .5; cursor: default; }
+  .btn-tf.selected-correct { background: rgba(34,197,94,.35) !important; border-color: #22c55e !important; }
+  .btn-tf.selected-wrong   { background: rgba(239,68,68,.35) !important; border-color: #ef4444 !important; }
+  .btn-tf.reveal-answer    { background: rgba(250,204,21,.25) !important; border-color: #facc15 !important; color: #facc15 !important; }
+
+  /* ── 해설 ── */
+  .q-explanation {
+    display: none;
+    padding: 0 18px 18px;
+  }
+  .q-explanation.visible { display: block; }
+  .exp-box {
+    background: var(--card2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--accent);
+  }
+  .exp-result {
+    font-size: .88rem; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .exp-result.correct { color: var(--correct); }
+  .exp-result.wrong   { color: var(--wrong); }
+  .exp-answer { font-size: .82rem; color: #a78bfa; margin-bottom: 8px; }
+  .exp-text   { font-size: .88rem; line-height: 1.7; color: #ccc5bb; }
+  .exp-meta {
+    margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .exp-concept {
+    background: rgba(200,169,110,.1);
+    border: 1px solid rgba(200,169,110,.25);
+    border-radius: 6px; padding: 3px 8px;
+    font-size: .75rem; color: var(--accent);
+  }
+  .exp-source {
+    background: rgba(139,92,246,.1);
+    border: 1px solid rgba(139,92,246,.25);
+    border-radius: 6px; padding: 3px 8px;
+    font-size: .75rem; color: #a78bfa;
+  }
+
+  /* ── 틀린 문제 탭 ── */
+  #wrong-tab-content { padding-top: 12px; }
+  .wrong-empty {
+    text-align: center; padding: 60px 20px;
+    color: var(--muted); font-size: .95rem;
+  }
+  .wrong-empty span { font-size: 2.5rem; display: block; margin-bottom: 12px; }
+
+  /* ── 통계 탭 ── */
+  #stats-tab-content { padding: 24px 0; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px; text-align: center;
+  }
+  .stat-card .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat-card .label { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+  .section-bar-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+  .section-bar-wrap h3 { font-size: .9rem; margin-bottom: 14px; color: var(--muted); }
+  .section-row { margin-bottom: 10px; }
+  .section-label { font-size: .8rem; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .sbar-outer { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+  .sbar-inner  { height: 100%; background: var(--accent); border-radius: 99px; transition: width .6s ease; }
+  #restart-btn {
+    display: block; margin: 24px auto 0;
+    padding: 12px 36px; border-radius: 8px;
+    background: var(--accent); color: #111;
+    border: none; cursor: pointer;
+    font-size: .95rem; font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: opacity .2s;
+  }
+  #restart-btn:hover { opacity: .85; }
+
+  /* ── 반응형 ── */
+  @media (max-width: 480px) {
+    .q-sentence { font-size: .92rem; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>사회주의의 역사 — T/F 특훈 100제</h1>
+  <p>수업 강의록 기반 · 개념 미묘한 차이 · 함정 설계 · 공산당 선언 포함</p>
+</header>
+
+<div id="progress-wrap">
+  <div id="progress-bar-outer"><div id="progress-bar-inner"></div></div>
+  <div id="progress-text">0 / 100</div>
+  <div id="score-display">
+    <span class="sc-o">✓ <span id="sc-o">0</span></span>
+    <span class="sc-x">✗ <span id="sc-x">0</span></span>
+  </div>
+</div>
+
+<div id="tabs">
+  <button class="tab-btn active" onclick="switchTab('quiz')">📝 문제풀기</button>
+  <button class="tab-btn" onclick="switchTab('wrong')">❌ 틀린 문제</button>
+  <button class="tab-btn" onclick="switchTab('stats')">📊 통계</button>
+</div>
+
+<div id="main-container">
+  <div id="quiz-tab-content"></div>
+
+  <div id="wrong-tab-content" style="display:none">
+    <div class="wrong-empty" id="wrong-empty">
+      <span>🎉</span>아직 틀린 문제가 없어요!
+    </div>
+    <div id="wrong-list"></div>
+  </div>
+
+  <div id="stats-tab-content" style="display:none">
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num" id="st-answered">0</div><div class="label">풀이 완료</div></div>
+      <div class="stat-card"><div class="num" id="st-correct">0</div><div class="label">정답</div></div>
+      <div class="stat-card"><div class="num" id="st-acc">—</div><div class="label">정확도</div></div>
+      <div class="stat-card"><div class="num" id="st-wrong">0</div><div class="label">오답</div></div>
+    </div>
+    <div class="section-bar-wrap">
+      <h3>📚 단원별 정답률</h3>
+      <div id="section-bars"></div>
+    </div>
+    <button id="restart-btn" onclick="restartQuiz()">🔄 처음부터 다시</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+//  문제 데이터 (100제)
+// ══════════════════════════════════════════
+const questions = [
+  // ─── 섹션1: 사회주의 정의 & 자본주의 (쉬운 문제 10개) ───
+  {
+    id:1, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"사회주의는 산업화를 <em>긍정</em>하면서 자본주의를 비판하는 이념이다.",
+    answer:true,
+    explanation:"사회주의는 산업화(기계·공장제)는 받아들이되, 자본주의(시장 경제·생산수단 사적 소유)를 거부하는 이념으로 정의된다. 3개의 이데올로기 중 '중도'에 해당한다.",
+    concepts:["사회주의 정의","세 이데올로기 스펙트럼"],
+    source:"3/11·3/16 강의 — 사회주의 정의 파트"
+  },
+  {
+    id:2, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"자본주의(유통 형식)는 <em>주요 경제 활동</em>이 시장 메커니즘을 통해 이루어지며, 이윤 추구가 <em>무한히</em> 허용된 경제 시스템이다.",
+    answer:true,
+    explanation:"자본주의는 생산·거래·투자 등 주요 경제 활동이 시장 메커니즘을 통해 이루어지고, 이윤 동기가 무한하다고 인정받는 시스템이다. '도덕 경제'와의 핵심 차이다.",
+    concepts:["자본주의 유통 형식 정의","이윤 추구 무한화"],
+    source:"3/11 강의 — 자본주의 정의"
+  },
+  {
+    id:3, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"사회주의가 문제 삼는 것은 <em>소비재</em>의 사적 소유이며, 생산 수단의 소유권은 원칙적으로 건드리지 않는다.",
+    answer:false,
+    explanation:"사회주의가 문제 삼는 것은 '생산 수단'(토지·공장·임야·광산)의 배타적 사적 소유이다. 소비재 소유권은 사회주의도 건드리지 않는다. 반대로 서술한 함정 문제.",
+    concepts:["사회주의 정의","생산 수단 vs 소비재"],
+    source:"3/25 강의 — 사회주의 최종 정의"
+  },
+  {
+    id:4, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"생산양식으로서의 자본주의는 생산 수단에 대한 배타적 사적 소유권이 <em>자본가</em>에게 귀속되고, 직접 생산자는 <em>임금</em>으로 먹고 사는 임금 노동 체제다.",
+    answer:true,
+    explanation:"생산양식으로서의 자본주의 = 임금 노동제. 생산수단에 대한 배타적 사적 소유권은 자본가에게 올인되고, 노동자는 노동력을 팔아 임금을 받아 생존한다.",
+    concepts:["자본주의 생산 양식","임금 노동제"],
+    source:"3/11 강의 — 자본주의 생산 양식 정의"
+  },
+  {
+    id:5, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"'도덕 경제' 또는 전통 경제에서 인간의 이윤 추구는 <em>완전히</em> 부재했다.",
+    answer:false,
+    explanation:"도덕 경제에서도 어느 정도의 이윤 추구는 있었다. 핵심 차이는 '무한한' 이윤 추구가 허용되지 않았다는 것이다. '밀라노 구두쟁이'처럼 100→150컬레까지는 허용해도 1,000컬레는 공동체가 규제했다.",
+    concepts:["도덕 경제","이윤 추구 무한화와의 차이"],
+    source:"3/11 강의 — 도덕 경제 설명"
+  },
+  {
+    id:6, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"보수주의는 산업화와 자본주의를 <em>모두</em> 거부하며, 자유주의는 둘 다 긍정하고, 사회주의는 산업화를 긍정하되 자본주의를 거부한다.",
+    answer:true,
+    explanation:"세 이데올로기의 정확한 구분이다. 보수주의(IC 모두 거부)·자유주의(IC 모두 긍정)·사회주의(I 긍정, C 거부). 단, 보수주의는 19세기 초 원래 형태 기준이며, 이후 보수주의는 변신한다.",
+    concepts:["세 이데올로기 스펙트럼","보수주의·자유주의·사회주의"],
+    source:"3/16 강의 — 세 이데올로기 등장"
+  },
+  {
+    id:7, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"'사회주의자(socialist)'라는 용어는 오언의 제자들이 만들어낸 잡지에서 오늘날과 유사한 의미로 처음 사용되었다.",
+    answer:true,
+    explanation:"오언주의자들이 발간한 잡지에서 '생산수단의 사적 소유와 그로 인한 불공정을 거부하며, 생산수단의 사회적 운영과 소유를 지향하는 사람들'을 사회주의자라 칭한 것이 오늘날 용어의 기원이다.",
+    concepts:["사회주의 용어 기원","오언주의"],
+    source:"3/25 강의 — 사회주의 용어 확정"
+  },
+  {
+    id:8, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"자본주의 이전 전통 경제에서도 생산 수단에 대한 소유권은 항상 소유자 한 명에게만 <em>완전히</em> 귀속됐다.",
+    answer:false,
+    explanation:"전통 경제에서 생산 수단 소유권은 '중첩'되어 있었다. 지주(최참판)가 소유하더라도 경작 농민도 관습적 권리를 가졌고, 길드 장인도 직인·도제와 공유했다. 배타적 사적 소유권은 자본주의의 특이점이다.",
+    concepts:["생산 수단 중첩 소유권","전통 경제"],
+    source:"3/11·3/16 강의 — 전통 경제 소유권"
+  },
+  {
+    id:9, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"역사학(학문으로서의 역사)은 특정 과거에 대한 여러 설명 중 '하나의 합리적이고 맥락 중심적인 이야기'이다.",
+    answer:true,
+    explanation:"강의에서 역사는 'a rational, contextual account of the past'로 정의되었다. 단 하나의 확정된 진실이 아니라 여러 관점 중 하나이며, 법칙 추출보다 맥락을 중시한다.",
+    concepts:["역사학의 정의","맥락(context)"],
+    source:"3/9 강의 — 역사 정의"
+  },
+  {
+    id:10, section:"사회주의 정의·자본주의",
+    difficulty:"쉬움",
+    tag:"기본 개념",
+    sentence:"산업화는 생산의 동력이 <em>생체 근력(인간·동물)</em>에서 증기 기관 등 다른 에너지원으로 전환된 현상을 말한다.",
+    answer:true,
+    explanation:"강의에서 산업화는 '생산 동력이 생체 근력에서 기타 에너지원(초창기 증기기관, 이후 전력·석유·원자력 등)으로 전환된 것'으로 정의되었다.",
+    concepts:["산업화 정의","생체 근력 → 기계 동력"],
+    source:"3/9 강의 — 산업화 정의"
+  },
+
+  // ─── 섹션2: 초기 사회주의자 (생시몽·푸리에·오언) ───
+  {
+    id:11, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"생시몽",
+    sentence:"생시몽은 '인더스트리엘' 계층에 <em>왕·귀족·기사</em>를 포함시켰으며, 그들이 경제를 계획·조율해야 한다고 주장했다.",
+    answer:false,
+    explanation:"생시몽이 인더스트리엘에서 제외한 것이 바로 왕·귀족·기사 계층이다. 생산 활동에 종사하지 않는 이 계층은 인더스트리엘의 반대편이다. 인더스트리엘은 산업가·과학자·엔지니어·농민·수공업자·노동자를 포함한다.",
+    concepts:["생시몽 인더스트리엘","계층 구성"],
+    source:"3/23 강의 — 생시몽 사상"
+  },
+  {
+    id:12, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"생시몽",
+    sentence:"생시몽은 초기에는 분배 원칙으로 <em>과학</em>을 강조했지만, 후기로 갈수록 <em>기독교적 양심</em>을 더 강조했다.",
+    answer:true,
+    explanation:"생시몽은 초기에 '과학적 분배'를 주장했으나, 생애 후반부로 갈수록 종교적·신비주의적 방향으로 전환하며 '신기독교'라는 저작에서 기독교적 양심을 분배 원칙으로 삼았다.",
+    concepts:["생시몽 사상의 변화","신기독교"],
+    source:"3/23 강의 — 생시몽 후기 사상"
+  },
+  {
+    id:13, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"생시몽",
+    sentence:"생시몽은 생산 수단에 대한 사적 소유권 자체를 <em>전면 철폐</em>해야 한다고 주장했으며, 이 점에서 완전한 사회주의자로 분류된다.",
+    answer:false,
+    explanation:"생시몽은 생산 수단 소유권을 직접 문제 삼지 않았다. 그가 주장한 것은 '상속 금지'뿐이었다. 능력 있는 자가 소유권을 넘겨받아야 한다는 입장으로, 소유권 자체의 철폐가 아니다. 따라서 일부 학자는 생시몽을 사회주의자로 분류하지 않는다.",
+    concepts:["생시몽 소유권 관점","사회주의 경계선"],
+    source:"3/23 강의 — 생시몽 한계"
+  },
+  {
+    id:14, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"푸리에",
+    sentence:"푸리에가 설계한 팔랑스테르는 <em>1,620명</em>이 거주하며, 심리적 유형이 <em>810가지</em>인 사람들이 쌍을 이루는 생산·분배·거주 공동체이다.",
+    answer:true,
+    explanation:"푸리에는 팔랑스테르에 1,620명, 810개의 사이콜로지컬 타입이 쌍으로 거주한다고 설계했다. 5감각·4소울(우정·사랑·야망·자식 사랑)·3정념(변덕·밀모·복합)의 조합으로 810개 타입이 나온다.",
+    concepts:["팔랑스테르 구성","810개 타입"],
+    source:"3/23 강의 — 푸리에 팔랑스테르"
+  },
+  {
+    id:15, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"푸리에",
+    sentence:"푸리에는 노동을 <em>고통이자 수양</em>으로 보는 기독교 전통적 관점을 계승했으며, 이것이 그 사상의 핵심이다.",
+    answer:false,
+    explanation:"푸리에는 정반대다. 그는 '노동이 즐거워야 한다'고 주장하며, 서양의 전통적 '노동의 신성화'·고통으로서의 노동 관념을 총체적으로 혁파하려 했다. 이것이 푸리에 사상의 가장 파격적인 부분이다.",
+    concepts:["푸리에 노동 철학","기독교 전통과의 단절"],
+    source:"3/23 강의 — 푸리에 노동 개념"
+  },
+  {
+    id:16, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"푸리에",
+    sentence:"도스토옙스키는 한때 푸리에주의 서클을 쫓아다니다 체포되어 사형 선고를 받았고, 집행 이틀~3일 전에 사면되었다.",
+    answer:true,
+    explanation:"도스토옙스키는 푸리에주의 서클 활동으로 잡혀 사형 선고를 받고, 극적으로 사면되었다. 이 경험이 이후 완전한 보수주의자로의 전향에 결정적 계기가 됐다.",
+    concepts:["도스토옙스키와 푸리에주의","biography"],
+    source:"3/23 강의 — 푸리에주의자 사례"
+  },
+  {
+    id:17, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"오언",
+    sentence:"오언의 '빌리지 오브 코퍼레이션'이 미국에서 실패한 핵심 원인은 오언 개인의 재정 파산이었다.",
+    answer:false,
+    explanation:"오언의 공동체(뉴 하모니 등)는 주로 ①충분한 투자자(자본가) 미확보, ②공동체 구성원의 내부 불균질성(통제 곤란), ③단계적 네트워크 확장 실패로 2~3년 내 망했다. 오언 개인의 파산이 아니라 시스템 구조적 한계다.",
+    concepts:["오언 공동체 실패 원인","빌리지 오브 코퍼레이션"],
+    source:"3/25 강의 — 오언 미국 실험"
+  },
+  {
+    id:18, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"오언",
+    sentence:"로치데일 조합은 생산 수단의 조합적 소유를 핵심 목표로 삼았으며, 이 점에서 오언 스타일의 조합과 같은 성격을 갖는다.",
+    answer:false,
+    explanation:"로치데일 조합은 현대적 노동조합의 시초로, 생산 수단 소유권 문제를 '건드리지 않는다'. 임금·노동조건 협상 또는 공동구매가 핵심이다. 오언의 GNUP(생산적 유용한 계층의 도덕 조합)은 조합적 생산 수단 소유를 지향했다는 점에서 다르다.",
+    concepts:["로치데일 조합","오언 GNUP과의 차이"],
+    source:"3/30 강의 — 조합주의 분화"
+  },
+  {
+    id:19, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"오언",
+    sentence:"오언이 뉴 라나크 공장에서 노동 시간을 16시간에서 10시간으로 줄이고 온정주의 정책을 시행한 결과, 수익성이 <em>오히려 더 높아졌다</em>.",
+    answer:true,
+    explanation:"실제로 수년 후 통계를 내보니 오언의 공장이 다른 면공업 공장보다 생산성·수익성이 높았다. 이것이 오언을 '개혁의 아이콘'으로 만들었고, 유럽 지식인들의 견학 장소가 됐다.",
+    concepts:["오언 온정주의 정책","뉴 라나크 결과"],
+    source:"3/25 강의 — 오언 뉴 라나크"
+  },
+  {
+    id:20, section:"초기 사회주의자",
+    difficulty:"어려움",
+    tag:"오언",
+    sentence:"오언이 도입한 '노동 수표(Labor Note)' 시스템에서 재화의 가치는 <em>노동 가치설</em>에 입각해 투입된 노동 시간으로 계산되었다.",
+    answer:true,
+    explanation:"오언의 노동 수표는 리카도의 노동 가치설을 활용하여 상품 가치를 투입 노동 시간으로 측정했다. 그러나 숙련도·환경 차이로 인한 계산 문제와 재고 누적(구형 상품 반입) 문제로 실패했다.",
+    concepts:["오언 Labor Note","노동 가치설 적용"],
+    source:"3/25 강의 — 노동 수표 시스템"
+  },
+
+  // ─── 섹션3: 1830-1848 공산주의자들 ───
+  {
+    id:21, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"카베",
+    sentence:"카베의 이카리아는 출판의 자유를 보장하여 다양한 의견이 공존하는 사회를 지향했다.",
+    answer:false,
+    explanation:"이카리아는 출판사가 하나(국가 승인), 신문도 하나다. 카베는 '이카리아에서 이론(異論)이 없을 수 있는 이유'가 계급·소유권 문제가 제거되었기 때문이라고 설명했다. 개인의 미적 취향 차이는 인정하나 구조적 이견은 없다고 봤다.",
+    concepts:["이카리아 언론 자유","카베 공산주의"],
+    source:"3/30 강의 — 이카리아 문화 영역"
+  },
+  {
+    id:22, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"카베",
+    sentence:"이카리아에서 경제 운영은 '국가산업위원회'의 중앙 계획으로 이루어지며, 화폐는 외국과의 거래에서만 사용된다.",
+    answer:true,
+    explanation:"이카리아는 국가산업위원회가 생산량을 계획·배분하며, 내부 유통에 화폐가 없다. 화폐는 대외 무역에서만 사용한다. 이는 완전한 계획 경제이자 화폐 소멸 체제다.",
+    concepts:["이카리아 경제 구조","중앙 계획 경제"],
+    source:"3/30 강의 — 이카리아 경제"
+  },
+  {
+    id:23, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"블랑키",
+    sentence:"블랑키는 1832년 '15인 재판'에서 직업을 묻는 재판장에게 '제 직업은 프롤레타리아입니다'라고 답하며 이 용어를 대중화했다.",
+    answer:true,
+    explanation:"블랑키가 '프롤레타리아'란 일을 해서 먹고 살지만 정치적(생산 수단) 권리를 빼앗긴 사람들이라 정의하며 이 용어를 유행시켰다. 이 답변이 이후 노동자와 프롤레타리아를 교차 사용하는 계기가 됐다.",
+    concepts:["프롤레타리아 용어 기원","블랑키 15인 재판"],
+    source:"4/1 강의 — 블랑키 biography"
+  },
+  {
+    id:24, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"블랑키",
+    sentence:"블랑키의 사회주의 사상에서 경제 개혁은 국가 권력 탈취 이후 <em>신속하고 급진적으로</em> 추진되어야 한다고 주장했다.",
+    answer:false,
+    explanation:"블랑키는 봉기와 국가 권력 탈취는 급진적으로, 그러나 경제 개혁 파트는 '유연하고 점진적'이어야 한다고 주장했다. 소생산자의 재산까지 일방적으로 빠르게 철폐하는 것을 경계했다. 이 점은 카베보다 오히려 온건하다.",
+    concepts:["블랑키 경제 개혁 방법론","점진적 개혁"],
+    source:"4/1 강의 — 블랑키 사상"
+  },
+  {
+    id:25, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"블랑키",
+    sentence:"블랑키는 공화주의자 출신으로, <em>7월 혁명</em>의 성과에 만족하지 못하고 사회주의자로 전향했다.",
+    answer:true,
+    explanation:"블랑키는 카르보나리 가입(공화주의)에서 시작, 7월 혁명이 왕 교체에 그치고 경제 시스템은 변하지 않는 데 실망하여 사회주의자로 전향했다.",
+    concepts:["블랑키 사상 전향","7월 혁명"],
+    source:"3/30·4/1 강의 — 블랑키 biography"
+  },
+  {
+    id:26, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"바이틀링",
+    sentence:"바이틀링은 실제 공장 노동자 경험을 바탕으로 사회주의 사상을 전개했으며, 독일 지역의 대표적인 노동계급 출신 사상가로 평가받는다.",
+    answer:false,
+    explanation:"강의에서 바이틀링의 공장 노동자 경험에 대해 의문부호(?)가 붙어 있다. 그는 재봉사 출신 '유랑 직인'으로 수공업자 계층에 가깝다. 공장 노동자와는 다르다. 또한 공장 노동자 경험보다는 수공업 직인 경험이 사상의 기반이다.",
+    concepts:["바이틀링 출신 배경","노동자 vs 수공업자"],
+    source:"4/1 강의 — 바이틀링 biography"
+  },
+  {
+    id:27, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"바이틀링",
+    sentence:"바이틀링이 강조한 '능력자'의 중앙 관리는 지식인 엘리트가 아닌 <em>직접 일하는 사람들</em> 중에서 성장한 능력자를 의미한다.",
+    answer:true,
+    explanation:"바이틀링의 '능력자'는 카베처럼 지식인 엘리트가 관리하는 게 아니라, 아래로부터 일하는 사람들 사이에서 성장한 능력자가 중앙위원회에서 관리해야 한다는 점에서 차별화된다.",
+    concepts:["바이틀링 능력자 개념","엘리트 통치와의 차이"],
+    source:"4/1 강의 — 바이틀링 사상"
+  },
+  {
+    id:28, section:"공산주의자들 (1830-48)",
+    difficulty:"어려움",
+    tag:"블랑",
+    sentence:"루이 블랑은 사회작업장 건설을 위해 국가의 자금 지원이 필요하다고 주장했으며, 국가를 <em>중립적인 도덕적 실체</em>로 규정했다.",
+    answer:true,
+    explanation:"루이 블랑은 노동자 협동조합(사회작업장)을 만들려면 돈이 없으니 국가가 자금을 대거나 신용 보증해야 한다고 봤다. 또한 국가를 계급적 도구가 아닌 중립적 실체로 봐, 의회 입법을 통한 개혁이 가능하다고 주장했다(마르크스가 가장 반대한 부분).",
+    concepts:["루이 블랑 국가관","사회작업장","마르크스와의 차이"],
+    source:"4/1 강의 — 블랑 사상"
+  },
+
+  // ─── 섹션4: 프루동 & 무정부주의 ───
+  {
+    id:29, section:"프루동·무정부주의",
+    difficulty:"어려움",
+    tag:"프루동",
+    sentence:"프루동의 '부조주의(Mutualism)'에서 소규모 자영농·수공업자에게는 생산 수단의 <em>소유권</em>이 인정된다.",
+    answer:false,
+    explanation:"프루동은 소규모 생산자에게도 소유권이 아닌 '용익권(점유권)'만 인정한다. 살아있는 동안 활용하는 권리. 이는 공화주의(소규모 소유권 인정)와 구별되는 핵심이다. 대규모 생산 수단은 조합이 소유.",
+    concepts:["프루동 용익권 vs 소유권","공화주의와의 차이"],
+    source:"4/1·4/6 강의 — 프루동 부조주의"
+  },
+  {
+    id:30, section:"프루동·무정부주의",
+    difficulty:"어려움",
+    tag:"프루동",
+    sentence:"프루동은 생산 수단의 국가 소유를 지지하며, 국가가 경제를 관리해야 한다고 주장했다.",
+    answer:false,
+    explanation:"프루동은 국가와 중앙 관료제를 '노예제'라 비판한 무정부주의의 시초다. 생산 수단은 아래로부터의 조합이 소유해야 한다. 국유화는 블랑·카베 등 국가주의자들의 주장이다. 프루동과 가장 대립되는 개념.",
+    concepts:["프루동 무정부주의","국가주의와 대립"],
+    source:"4/1·4/6 강의 — 프루동 부조주의"
+  },
+  {
+    id:31, section:"프루동·무정부주의",
+    difficulty:"어려움",
+    tag:"프루동",
+    sentence:"프루동은 사적 소유권을 정당화하는 심리적 근거(보편적 동의)가 논리적으로 모순이라고 비판했다. 출발점은 '평등'인데 결론은 '불평등을 정당화'하기 때문이다.",
+    answer:true,
+    explanation:"프루동은 로크의 논리를 비판한다. 사적 소유 정당화는 평등한 계약자들의 보편적 동의에서 출발하지만, 막상 사유재산이 공격받을 때는 '능력 있는 자가 더 많이 가져야 한다'는 불평등 논리로 방어한다는 모순을 지적했다.",
+    concepts:["프루동 심리적 근거 논박","로크 비판"],
+    source:"4/6 강의 — 프루동 소유권 논박"
+  },
+  {
+    id:32, section:"프루동·무정부주의",
+    difficulty:"어려움",
+    tag:"프루동",
+    sentence:"프루동은 소유를 정당화하는 경제적 근거(내가 일했으니 내 것)에 대해 두 가지 이유로 반박했다. 첫 번째는 노동의 '사회적' 성격, 두 번째는 자연을 '새로 창출'한 것이 아니라 '변형'한 것에 불과하다는 점이다.",
+    answer:true,
+    explanation:"프루동의 경제적 근거 논박: ①내가 일했어도 그 도구·지식은 사회에서 온 것(사회적 근거). ②내가 개간해도 새로운 물질을 창출한 게 아니라 기존 자연을 변형한 것(물적 근거). 이 논박이 당시 가장 큰 반향을 일으켰다.",
+    concepts:["프루동 경제적 근거 논박","사회적·물적 근거"],
+    source:"4/6 강의 — 프루동 소유권 논박"
+  },
+
+  // ─── 섹션5: 마르크스와 엥겔스 ───
+  {
+    id:33, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"biography",
+    sentence:"마르크스는 박사 학위를 예나 대학에서 받았으며, 박사 논문 주제는 고대 <em>쾌락주의</em>와 관련된 철학적 연구였다.",
+    answer:true,
+    explanation:"마르크스는 예나 대학에서 박사학위를 받았다. 예나 대학은 헤겔이 있었던 철학 명문이다. 논문은 데모크리토스와 에피쿠로스의 자연철학 차이에 관한 것으로, 쾌락주의(에피쿠로스)가 포함된다.",
+    concepts:["마르크스 biography","예나 대학"],
+    source:"4/6 강의 — 마르크스 biography"
+  },
+  {
+    id:34, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"biography",
+    sentence:"엥겔스는 아버지의 기대대로 맨체스터 공장 관리 일을 하며 부자 관계가 크게 회복되었고, 덕분에 마르크스 지원을 아버지로부터 받을 수 있었다.",
+    answer:false,
+    explanation:"엥겔스는 맨체스터에서 산업자본주의의 폐해를 직접 목격하고 '사회주의자가 되겠다'고 결심했다. 아버지의 기대와 정반대 방향으로 갔다. 재정 지원은 아버지 회사(Ermen & Engels)에서 매니저로 일하며 자신이 벌어 마르크스에게 보낸 것이다.",
+    concepts:["엥겔스 biography","Ermen & Engels"],
+    source:"4/6·4/8 강의 — 엥겔스 biography"
+  },
+  {
+    id:35, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》은 마르크스와 엥겔스가 의인동맹(→공산주의 연맹)의 강령 작성 요청을 받아 쓴 것으로, 1848년 2월 혁명 <em>직전</em>에 탈고되었다.",
+    answer:true,
+    explanation:"《공산주의 선언》은 의인동맹이 공산주의 연맹으로 개칭하면서 강령 작성을 마르크스·엥겔스에게 의뢰한 결과물이다. 1848년 1월 탈고, 그 직후 2월 혁명이 발발했다.",
+    concepts:["공산주의 선언 배경","의인동맹→공산주의 연맹"],
+    source:"4/8 강의 — 공산주의 선언 작성"
+  },
+  {
+    id:36, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》에서 마르크스와 엥겔스는 사회주의 세계의 구체적인 청사진을 상세히 제시하며, 혁명 이후 체제 운영 방법을 체계적으로 설명한다.",
+    answer:false,
+    explanation:"마르크스·엥겔스 사상의 핵심은 '현재 자본주의 분석·비판'이다. 혁명 방법론, 이후 체제 운영, 사회주의 청사진은 거의 없다. 다른 사회주의자들과의 가장 큰 차이점이 바로 이것이다. 미래상보다 자본주의의 필연적 붕괴 논증에 집중한다.",
+    concepts:["마르크스주의 특징","청사진 부재"],
+    source:"4/8 강의 — 마르크스 엥겔스 사상 개요"
+  },
+  {
+    id:37, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》 2장의 핵심 논제 중 하나는 공산주의자가 프롤레타리아와 <em>어떻게 다른지</em>, 즉 공산주의자의 구별되는 특성이다.",
+    answer:true,
+    explanation:"기출 문제에서 '공산주의 선언 2장 「프롤레타리아와 공산주의자」에서 현대의 방법론 서술' 등이 출제된다. 2장의 핵심은 공산주의자와 프롤레타리아의 관계, 부르주아지 소유권 비판, 혁명의 목표를 다룬다.",
+    concepts:["공산주의 선언 2장","프롤레타리아와 공산주의자"],
+    source:"이미지 기출·4/8 강의"
+  },
+  {
+    id:38, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"인간관",
+    sentence:"마르크스의 인간관에서 인간은 <em>노동</em>을 통해 외적 현실을 자기 산물화함으로써 개별 주체성을 획득하며, 이것이 헤겔의 Ausbildung 개념을 마르크스가 재해석한 것이다.",
+    answer:true,
+    explanation:"헤겔의 Ausbildung(도야)을 마르크스는 '노동'으로 재정의했다. 인간이 노동을 통해 외적 현실을 변형·자기 산물화하면서 개별 주체성(자아 인식)을 획득한다. 이 논리가 '노동의 소외' 비판의 토대가 된다.",
+    concepts:["마르크스 인간관","헤겔 Ausbildung 재해석","노동"],
+    source:"4/8·4/13 강의 — 마르크스 인간관"
+  },
+  {
+    id:39, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"인간관",
+    sentence:"마르크스의 인간관에 따르면, 자본주의 하에서 프롤레타리아는 노동을 통해 자아를 실현하지만 그 과정에서 '소외'라는 부작용이 발생한다.",
+    answer:false,
+    explanation:"마르크스에 따르면 자본주의 하에서 프롤레타리아의 노동은 '자아 실현'이 되지 못하고, 처음부터 외화(소외)된다. 노동은 자신에게 '적대적인 세계를 창출'하는 행위가 되며, 노동하지 않을 때 편안하다는 역설이 생긴다.",
+    concepts:["노동 소외","자아 실현 불가"],
+    source:"4/8 강의 — 마르크스 인간관 소외"
+  },
+  {
+    id:40, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"역사관",
+    sentence:"역사 유물론에서 '물(物)'은 '오직 물질만이 중요하다'는 뜻으로, 정신·문화·법률 등 비물질적 영역의 독자성을 전면 부정한다.",
+    answer:false,
+    explanation:"오해다. 역사 유물론에서 '물'은 '생산 양식이 해당 사회의 토대(Foundation)를 이루고, 상부 구조를 조건 짓는다(conditions)'는 의미다. 결정(determine)이 아니라 조건 짓는(condition) 것이며, 상부 구조(문화·법률·정치)의 독자성을 부정하지 않는다.",
+    concepts:["역사 유물론 오해 교정","condition vs determine"],
+    source:"4/13 강의 — 역사 유물론"
+  },
+  {
+    id:41, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"역사관",
+    sentence:"마르크스·엥겔스의 역사관에서 생산 양식의 변화 순서는 '원시공산제→노예제→봉건제→자본주의→사회주의'이며, 이 단계를 건너뛸 수 없다.",
+    answer:true,
+    explanation:"역사 유물론의 5단계 생산양식론이다. 마르크스는 자본주의를 거쳐야 사회주의로 갈 수 있다고 봤다(법칙적 진보관). 단계 점프를 부정하는 것이 블랑키 등 공산주의자들과의 가장 큰 차이다.",
+    concepts:["5단계 생산양식","법칙적 진보관","단계 점프 불가"],
+    source:"4/13 강의 — 역사관 5단계"
+  },
+  {
+    id:42, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"역사관",
+    sentence:"마르크스·엥겔스의 역사 유물론에서 봉건제→자본주의 이행의 핵심 주체는 '부농과 부르주아'이며, 이들이 '영주·지주' 계층과 계급 투쟁을 벌여 사회혁명에 성공한 것이 프랑스 혁명이다.",
+    answer:true,
+    explanation:"《자본 1권》 '시초 축적' 장에서 마르크스는 생산력 발달→농촌 분화(부농↔빈농)→부농·부르주아 자본 축적→기존 영주·지주와의 계급 투쟁→프랑스 혁명→자본-노동 관계 성립의 과정을 설명한다.",
+    concepts:["봉건제→자본주의 이행","시초 축적","프랑스 혁명"],
+    source:"4/13 강의 — 역사관 사례"
+  },
+  {
+    id:43, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"경제관",
+    sentence:"마르크스의 잉여가치론에서 자본가는 노동력을 '의식주 유지 수준'에 해당하는 가치로 구입하고, 노동자를 그 이상 일하게 해 차이(잉여가치)를 취한다.",
+    answer:true,
+    explanation:"핵심이다. '노동력의 가치'(의식주 재생산에 필요한 가치)와 '노동의 가치'(실제 노동이 창출하는 가치) 사이의 모순. 자본가는 전자를 지불하고 후자를 착복하는 것이 잉여가치다. 이것이 착취의 은폐 메커니즘.",
+    concepts:["잉여가치론","노동력의 가치 vs 노동의 가치"],
+    source:"4/13 강의 — 경제관 잉여가치"
+  },
+  {
+    id:44, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"경제관",
+    sentence:"마르크스의 노동 가치설에서 재화의 가치는 <em>실제 투입된</em> 노동 시간이 아니라 '사회적으로 필요한 노동 시간(추상 노동)'으로 결정된다.",
+    answer:true,
+    explanation:"숙련도·환경에 따라 같은 제품이라도 실제 투입 시간이 다를 수 있다. 마르크스는 사회 평균값인 '사회적으로 필요한 노동 시간'을 가치 결정 기준으로 삼아 이 문제를 해결했다.",
+    concepts:["사회적 필요 노동 시간","추상 노동"],
+    source:"4/13 강의 — 노동 가치설"
+  },
+  {
+    id:45, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"경제관",
+    sentence:"마르크스의 경제관에서 유통 영역(시장 거래)에서는 가치 증식이 발생하며, 이것이 자본가 이윤의 원천이다.",
+    answer:false,
+    explanation:"마르크스 논리에서 등가교환이 이루어지는 유통 영역에서는 가치 증식이 없다. 가치 증식은 '생산 영역'에서, 노동력이라는 특수한 상품이 지불한 가치 이상으로 일하는 메커니즘을 통해 발생한다. 자본가의 이윤 원천 = 잉여가치 = 생산 영역의 신비.",
+    concepts:["유통 영역 vs 생산 영역","가치 증식 위치"],
+    source:"4/13 강의 — 경제관 유통·생산"
+  },
+  {
+    id:46, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"위기론",
+    sentence:"마르크스·엥겔스의 '수요론' 위기론에 따르면, 자본주의 위기의 근본 원인은 '사회화된 생산'과 '생산물의 사적 소유' 사이의 모순에서 비롯된다.",
+    answer:true,
+    explanation:"Socialized Production(분업·공장 생산으로 높은 생산성) + Private Ownership of Products(생산물이 자본가에게 귀속) 사이의 모순이 과잉생산·과소소비 위기를 초래한다는 것이 수요론의 핵심이다.",
+    concepts:["수요론 위기론","사회화된 생산·사적 소유 모순"],
+    source:"4/15 강의 — 위기론 수요론"
+  },
+  {
+    id:47, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"위기론",
+    sentence:"마르크스·엥겔스에 따르면, 제국주의적 식민지 팽창은 자본주의 위기를 <em>영구적으로</em> 해결하는 수단이다.",
+    answer:false,
+    explanation:"식민지 팽창은 위기를 '일시적으로' 완화하는 수단이다. 식민지가 자본주의 체제에 편입되면 동일한 모순(사회화된 생산·사적 소유 모순)에 또 걸린다. 지구적 한계에 도달하면 결국 Crash가 온다는 것이 엥겔스의 결론이다.",
+    concepts:["제국주의와 위기론","일시적 완화","지구적 한계"],
+    source:"4/15 강의 — 위기론 제국주의"
+  },
+  {
+    id:48, section:"마르크스·엥겔스",
+    difficulty:"어려움",
+    tag:"위기론",
+    sentence:"'이윤율 저하론'에서는 잉여가치 실현 경쟁(노동 집약적 기술 진보)이 '자본의 유기적 구성 고도화'를 초래하여 이윤율이 떨어진다고 본다. 이때 불변자본(설비)의 비중이 가변자본(노동력) 대비 높아진다.",
+    answer:true,
+    explanation:"이윤율 저하론의 핵심 논리다. 경쟁으로 노동집약적 기술 진보 → 설비(불변자본) 비중 증가, 노동력(가변자본) 비중 감소 → 잉여가치 원천(노동력) 감소 → 이윤율 하락. 이것이 사이클 속 공황을 설명하는 생산론적 접근이다.",
+    concepts:["이윤율 저하론","유기적 구성 고도화","불변·가변 자본"],
+    source:"4/15 강의 — 위기론 이윤율 저하"
+  },
+
+  // ─── 섹션6: 마르크스 동시대 사회주의자들 ───
+  {
+    id:49, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"라살",
+    sentence:"라살의 '임금 철칙론'에 따르면, 자본주의 하에서 임금은 맬서스의 인구론의 영향을 받아 항상 <em>최저 생계 수준</em>으로 수렴하는 경향이 있다.",
+    answer:true,
+    explanation:"라살의 임금 철칙론: 임금 상승 → 인구 증가 → 노동 공급 증가 → 임금 하락 사이클로, 임금은 결국 최저 생계 수준에 수렴한다. 마르크스의 잉여가치론과 결론은 유사하나 논리가 다르다.",
+    concepts:["라살 임금 철칙론","맬서스 인구론 영향"],
+    source:"4/15 강의 — 라살 사상"
+  },
+  {
+    id:50, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"라살",
+    sentence:"라살은 마르크스와 달리 국가를 '중립적 실체'로 보고, 의회 입법과 선거권 확대를 통한 점진적 사회주의 실현을 주장했다.",
+    answer:true,
+    explanation:"라살의 개혁주의 핵심이다. 마르크스는 국가를 '계급 산물'로 봐 타도 대상이라 했지만, 라살은 국가를 중립적·도덕적 실체로 보고 선거권 확대→의회 입법→생산 협동조합 국가 지원으로 사회주의 실현 가능하다 봤다. 이것이 이후 SPD(독일 사민당)의 뿌리다.",
+    concepts:["라살 개혁주의","국가 중립론","SPD 기원"],
+    source:"4/15 강의 — 라살 개혁주의"
+  },
+  {
+    id:51, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"라살",
+    sentence:"라살은 48년 혁명 이후 폭력 혁명이 가능하다는 결론을 내리고, 이를 위한 비밀 결사를 조직했다.",
+    answer:false,
+    explanation:"라살은 48년 혁명의 실패에서 '폭력 혁명 불가능'이라는 반대 교훈을 끌어냈다. 점진주의와 의회 정치로 전환했으며, 1863년 독일노동자협회(ADAV)를 합법적으로 창설했다. 비밀 결사 조직은 블랑키의 방식이다.",
+    concepts:["라살 48년 혁명 교훈","점진주의 전환"],
+    source:"4/15 강의 — 라살 biography"
+  },
+  {
+    id:52, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"밀",
+    sentence:"J.S. 밀은 '불로소득(지대) 환수'와 '높은 상속세'를 주장했으며, 이는 그를 자유주의자에서 시장 사회주의자로 분류할 수 있게 해준다.",
+    answer:true,
+    explanation:"밀은 자유주의 전통을 유지하면서도 불로소득(지대 100% 환수)·높은 상속세·토지 공유제·노동자 협동조합의 생산 수단 소유·운영을 주장하며 '시장 사회주의'의 원조로 평가받는다.",
+    concepts:["밀 시장 사회주의","지대 환수론","노동자 협동조합"],
+    source:"4/15 강의 — 밀 사상 (특강03)"
+  },
+  {
+    id:53, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"바쿠닌",
+    sentence:"바쿠닌은 '혁명 방법론'에서 공산주의자들과 유사하게 소수 봉기를 지지했으나, 봉기 이후 국가 권력을 <em>장악하고 활용</em>하는 것을 지지했다.",
+    answer:false,
+    explanation:"바쿠닌은 소수 봉기라는 방법론은 공산주의자들과 유사하나, 봉기 이후 국가 권력을 '철저히 파괴'해야 한다고 주장했다. 국가·관료제·중앙 엘리트('붉은 관료')를 반대하는 무정부주의자다.",
+    concepts:["바쿠닌 무정부주의","국가 권력 파괴"],
+    source:"특강03 — 바쿠닌 사상"
+  },
+  {
+    id:54, section:"마르크스 동시대",
+    difficulty:"어려움",
+    tag:"게르첸",
+    sentence:"게르첸은 초창기 서구주의자였으나, 1848년 혁명의 실패를 목도한 후 러시아 농촌 공동체 '미르'에 주목하며 사회주의를 향한 직행 가능성을 주장했다.",
+    answer:true,
+    explanation:"게르첸의 전환점이다. 1848년 혁명 실패 후 서구 자본주의 경로에 실망, 러시아 농촌 공동체 미르(자율·평등 지향적 공동체)가 자본주의를 거치지 않고 사회주의로 직행할 수 있는 '사회주의 본능'을 갖고 있다고 봤다. 이것이 마르크스 역사 유물론(단계 불가 건너뛰기)과의 대립점이다.",
+    concepts:["게르첸 미르 공동체론","사회주의 직행 가능성","마르크스와의 대립"],
+    source:"특강03 — 게르첸 사상"
+  },
+
+  // ─── 섹션7: 공산주의 선언 심화 ───
+  {
+    id:55, section:"공산주의 선언",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》에서 마르크스·엥겔스는 부르주아지에게 <em>완전히</em> 부정적이며, 어떤 역사적 역할도 인정하지 않는다.",
+    answer:false,
+    explanation:"마르크스·엥겔스는 부르주아지의 역사적 혁명성을 인정했다. 역사 유물론에서 부르주아지는 봉건제를 타파하고 자본주의를 건설한 혁명적 계급이다. 다만 이제는 생산력 발달에 '질곡'이 되는 계급이 되었다는 것이 핵심이다.",
+    concepts:["부르주아지 역사적 역할","공산주의 선언 부르주아 평가"],
+    source:"기출 이미지·공산주의 선언 1장"
+  },
+  {
+    id:56, section:"공산주의 선언",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》에서 '독일 사회주의' 또는 '진정한 사회주의'는 독일 소부르주아의 이익을 대변하는 반동적 사상으로 비판된다.",
+    answer:true,
+    explanation:"기출 문제에 반복 등장하는 내용이다. 《공산주의 선언》 3장에서 마르크스·엥겔스는 독일 사회주의(진정한 사회주의)를 봉건적·소부르주아 관계를 미화하며 프롤레타리아 계급 투쟁을 방해하는 '복고적' 사상으로 비판한다.",
+    concepts:["독일 사회주의 비판","진정한 사회주의","공산주의 선언 3장"],
+    source:"기출 이미지·4/15 강의"
+  },
+  {
+    id:57, section:"공산주의 선언",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"오언·푸리에 등 초기 사회주의자들을 《공산주의 선언》에서는 '유토피아 사회주의자'로 분류하며, 이들이 계급 투쟁보다 도덕적 개조를 통한 사회 변혁을 추구한다는 점을 비판한다.",
+    answer:true,
+    explanation:"《공산주의 선언》 3장에서 마르크스·엥겔스는 생시몽·푸리에·오언 등을 '비판적-유토피아 사회주의자'로 분류, 계급 투쟁 대신 도덕적 호소와 공동체 실험에 의존한다는 점, 현실 계급 갈등을 초월할 수 있다고 본다는 점을 비판한다.",
+    concepts:["유토피아 사회주의 비판","공산주의 선언 3장"],
+    source:"기출 이미지·공산주의 선언 3장"
+  },
+  {
+    id:58, section:"공산주의 선언",
+    difficulty:"어려움",
+    tag:"공산주의 선언",
+    sentence:"《공산주의 선언》 2장에서 공산주의자가 다른 노동자 정당과 구별되는 특성 중 하나는 '민족을 초월한 프롤레타리아트 전체의 이익을 대변'한다는 점이다.",
+    answer:true,
+    explanation:"마르크스·엥겔스는 공산주의자가 특정 국가나 민족의 프롤레타리아트 이익이 아닌 프롤레타리아트 전체의 공통 이익을 대변한다고 밝혔다. '만국의 노동자여 단결하라!'가 이 정신의 표현이다.",
+    concepts:["공산주의자의 특성","국제주의","공산주의 선언 2장"],
+    source:"공산주의 선언 2장"
+  },
+
+  // ─── 섹션8: 함정 & 복합 개념 ───
+  {
+    id:59, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"블랑키와 마르크스·엥겔스의 가장 핵심적인 차이는 블랑키가 사회주의를 지향하지 않았다는 점이다.",
+    answer:false,
+    explanation:"블랑키도 사회주의자다. 핵심 차이는 '혁명 방법론'과 '에이전시(agency)' 강조다. 마르크스는 역사적 조건의 성숙을 기다리는 법칙론적 입장이고, 블랑키는 소수 엘리트의 의지와 시점 선택으로 혁명이 가능하다는 주의주의(voluntarism)다.",
+    concepts:["블랑키 vs 마르크스","주의주의 vs 결정론"],
+    source:"4/1·4/8 강의 비교"
+  },
+  {
+    id:60, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"오언의 GNUP(전국 도덕 생산적 유용한 계층 조합)은 오늘날 현대적 의미의 노동조합과 본질적으로 같은 조직이다.",
+    answer:false,
+    explanation:"GNUP은 조합 구성원의 돈을 모아 생산 수단을 '조합이 소유'하는 것을 지향했다. 오늘날 노동조합은 임금 노동제를 인정하면서 임금·노동 조건 협상에 집중한다. 전자는 생산 수단 소유권 변혁 지향, 후자는 임금 노동 체제 내 개선 지향이라는 본질적 차이가 있다.",
+    concepts:["GNUP vs 현대 노동조합","생산 수단 소유권"],
+    source:"3/25·3/30 강의"
+  },
+  {
+    id:61, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"생시몽·푸리에·오언 중 생산 수단에 대한 소유권 문제를 가장 직접적으로 다룬 사람은 오언이다.",
+    answer:true,
+    explanation:"오언주의자들이 '사회주의'라는 용어를 만들며 '생산 수단의 사적 소유와 그로 인한 불공정을 거부한다'고 선언했다. 생시몽은 소유권을 건드리지 않고 상속만 반대했으며, 푸리에도 소유권 문제를 특별히 건드리지 않았다. 오언의 운동에서 사회주의 정의가 확립됐다.",
+    concepts:["사회주의 용어 확립","오언 vs 생시몽·푸리에"],
+    source:"3/25 강의 비교"
+  },
+  {
+    id:62, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"카베의 이카리아에서 '각자에게는 그 필요에 따라, 각자로부터는 그 능력에 따라'라는 원칙은 카베가 독창적으로 만든 것이다.",
+    answer:false,
+    explanation:"이 표현은 카베가 이카리아에서 사용해 유행시켰으나, 마르크스도 훗날 《고타 강령 비판》에서 같은 문구를 사용했다. 또한 이 원칙 자체는 공동체주의적 사고의 공통된 표현이다. 카베가 창시했다고 단정하기 어렵다.",
+    concepts:["이카리아 원칙","각자 능력·필요에 따라"],
+    source:"3/30 강의 — 이카리아 일상"
+  },
+  {
+    id:63, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"프루동의 무정부주의는 초창기 '목가적·평화적' 성격이었으나, 이후 3~40년 사이에 '테러 지향적' 성격으로 변모했다.",
+    answer:true,
+    explanation:"강의에서 명시된 내용이다. 프루동의 원래 무정부주의는 풀뿌리 공동체 기반의 평화적 사상이었으나, 이후 무정부주의는 테러(도시락 폭탄)와 결부되는 방향으로 변했다. 1960년대 히피들이 다시 원래 평화적 성격을 계승했다.",
+    concepts:["무정부주의 변모","테러주의로의 전환"],
+    source:"4/6 강의 — 무정부주의 변모"
+  },
+  {
+    id:64, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"마르크스의 《경제 철학 수고》(파리 수고)는 1848년에 즉시 출판되어 당시 사회주의 운동에 직접적 영향을 미쳤다.",
+    answer:false,
+    explanation:"파리 수고는 출판되지 않았다. 엥겔스가 받아 보관하다가 베른슈타인에게 넘겼고, 소련에서 1930년대에야 발굴·출판됐다. 1960년대 신좌파 운동 때 비로소 큰 영향을 미쳤다.",
+    concepts:["파리 수고 출판 연대","1930년대 발굴"],
+    source:"4/8 강의 — 마르크스 파리 수고"
+  },
+  {
+    id:65, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"19세기 보수주의는 초창기에 산업화와 자본주의를 <em>모두</em> 반대하는 이념이었으나, 1850년대 대호황 이후 자본주의에 친화적으로 변모했다.",
+    answer:true,
+    explanation:"강의에서 명시된 내용이다. 원래 보수주의는 공동체·직분 강조로 IC 모두 반대, 사회주의와 자본주의 비판에서 유사한 면이 있었다. 1850년대 대호황과 철도 붐으로 자본주의의 물적 이익을 경험한 보수주의자들이 자본주의 지지로 전환했다.",
+    concepts:["보수주의 변신","1850년대 대호황"],
+    source:"4/6 강의 — 자본의 시대 개관"
+  },
+  {
+    id:66, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"1848년 혁명에서 파리의 보통선거 결과 급진파(사회주의·공화주의 세력)가 대거 당선되며 혁명의 성과를 이어갔다.",
+    answer:false,
+    explanation:"1848년 2월 혁명 직후 총선에서 보수파가 압도적으로 승리했다. 특히 농촌 표가 결정적이었는데, 농촌은 아직 산업화 영향이 적어 보수적 성향이 강했다. 결국 나폴레옹 3세가 대통령에 당선됐다.",
+    concepts:["1848년 혁명 결과","농촌 표·보수파 승리"],
+    source:"4/6·4/8 강의 — 1848혁명"
+  },
+  {
+    id:67, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"마르크스가 경제학 연구에 집중하게 된 것은 런던 망명 시기 이후이며, 이전까지는 주로 철학자·계몽 사상가적 면모가 강했다.",
+    answer:true,
+    explanation:"강의에서 명시된 내용이다. 브뤼셀·파리 시기까지는 철학적 접근이 중심이었으나, 런던 망명 이후 British Museum에서 경제학 연구에 집중하며 《정치경제학 비판》(1859)·《자본 1권》(1867)을 완성했다.",
+    concepts:["마르크스 런던 시기","철학→경제학 전환"],
+    source:"4/8 강의"
+  },
+  {
+    id:68, section:"함정·복합 개념",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"엥겔스는 《가족, 사유 재산, 국가의 기원》을 통해 마르크스주의를 가족 제도와 젠더 문제에까지 확장했으며, 이 책은 페미니즘 계열에서도 중요한 텍스트로 평가받는다.",
+    answer:true,
+    explanation:"엥겔스가 마르크스 사후 1884년 출판한 《가족, 사유 재산, 국가의 기원》은 여성 억압의 기원을 사유 재산 제도와 연결 짓는 분석으로, 사회주의 페미니즘 계열의 고전이다.",
+    concepts:["엥겔스 가족·사유재산·국가","사회주의 페미니즘"],
+    source:"4/8 강의 — 엥겔스 저작"
+  },
+
+  // ─── 섹션9: 세부 개념 & biography 심화 ───
+  {
+    id:69, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"라살이 비스마르크와 대화를 시도한 것은 생산 협동조합 지원을 위해 국가(정부)와의 직접 협상을 추진하려는 목적에서였다.",
+    answer:true,
+    explanation:"라살은 노동자 조합이 정치 세력화해 의회 입법 또는 정부와 직접 네고하는 방식을 구상했다. 당시 프로이센 실력자 비스마르크에게 접근한 것이 이 맥락이다. 마르크스는 이를 계급 배신으로 극렬 비판했다.",
+    concepts:["라살 비스마르크 접촉","노사정 네고 원형"],
+    source:"4/15 강의 — 라살 전략"
+  },
+  {
+    id:70, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"마르크스는 엥겔스에게 보낸 편지에서 라살을 인종적으로 비하하는 표현을 사용했으며, 이는 마르크스의 인성 문제를 드러내는 사례로 언급된다.",
+    answer:true,
+    explanation:"강의에서 마르크스가 라살을 비하하는 인종차별적 표현을 사용했다는 것이 명시적으로 언급된다. 이는 마르크스의 괴팍한 성격과 인성 문제를 보여주는 사례로 제시된다.",
+    concepts:["마르크스 인성 문제","라살과의 갈등"],
+    source:"4/15 강의 — 마르크스·라살 갈등"
+  },
+  {
+    id:71, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"1840년 제1회 공산주의 연회는 블랑키파(데자미·필로)가 주도했으며, 카베는 자진하여 참여를 거부했다.",
+    answer:true,
+    explanation:"1840년 공산주의 연회는 블랑키파가 주도했고, 카베는 그들의 방식이 '너무 폭력적이고 국가 주도적'이라며 자진 참여를 거부했다. 이로써 공산주의의 의미가 '블랑키식 방법론'으로 확정되는 계기가 됐다.",
+    concepts:["1840 공산주의 연회","카베 배제"],
+    source:"4/1 강의 — 공산주의 의미 확정"
+  },
+  {
+    id:72, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"마르크스의 부인 제니 폰 베스트팔렌은 마르크스보다 나이가 많았으며, 대귀족 집안 출신이었다.",
+    answer:true,
+    explanation:"강의에서 명시: 제니는 마르크스보다 4살 연상이었고, 이름 뒤의 '폰 베스트팔렌'에서 알 수 있듯 대귀족 집안 출신이다. 당시로선 파격적 결혼이었다.",
+    concepts:["마르크스 biography","제니 폰 베스트팔렌"],
+    source:"4/6 강의 — 마르크스 biography"
+  },
+  {
+    id:73, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"블랑키가 평생 감옥에서 보낸 기간은 약 33년이며, 이로 인해 그의 별명이 '갇힌 자(l'Enfermé)'이다.",
+    answer:true,
+    explanation:"강의에서 명시된 내용. 블랑키는 수차례 봉기 시도와 실패로 33년을 감옥에서 보냈으며, '갇힌 자'라는 별명을 얻었다.",
+    concepts:["블랑키 biography","갇힌 자"],
+    source:"4/1 강의 — 블랑키 biography"
+  },
+  {
+    id:74, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"오언이 제안한 '협동기업(Cooperative Enterprise)'은 '빌리지 오브 코퍼레이션'보다 규모가 크고 초기 투자 비용이 더 필요했다.",
+    answer:false,
+    explanation:"협동기업은 빌리지 오브 코퍼레이션의 '현실판'으로 훨씬 규모가 작다. 빌리지는 농업·공업·주거가 통합된 공동체 전체인 반면, 협동기업은 기업 단위만 만드는 것이다. 종잣돈도 덜 든다는 것이 장점이었다.",
+    concepts:["오언 협동기업 vs 빌리지","규모 차이"],
+    source:"3/25 강의 — 오언 협동기업"
+  },
+  {
+    id:75, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"푸리에가 제시한 인류 문명의 4단계는 '야만→가부장제→야만적 문명→문명'이며, 이후 이상적 단계인 '조화'로 나아간다.",
+    answer:true,
+    explanation:"강의에서 명시된 내용. 푸리에의 4(+1)단계론: 야만→가부장제→야만적 문명→문명(현재)→조화(미래). 특히 가부장제를 두 번째 단계로 설정한 것이 독창적이다. '조화' 단계에서는 바다가 에메랄드빛으로 변한다고 했다.",
+    concepts:["푸리에 문명 단계론","조화 단계"],
+    source:"3/23 강의 — 푸리에 단계론"
+  },
+  {
+    id:76, section:"세부 개념·biography",
+    difficulty:"어려움",
+    tag:"세부",
+    sentence:"엥겔스의 저서 《영국 노동계급의 상태》는 맨체스터에서의 직접 경험을 바탕으로 쓰인 실증적 보고서 성격의 저작이다.",
+    answer:true,
+    explanation:"엥겔스는 아버지에 의해 맨체스터로 보내진 후 산업자본주의의 폐해를 직접 목격하고 《영국 노동계급의 상태》를 집필했다. 이후 사회주의자가 되기로 결심하는 계기가 됐다.",
+    concepts:["엥겔스 영국 노동계급의 상태","맨체스터 경험"],
+    source:"4/6 강의 — 엥겔스 biography"
+  },
+
+  // ─── 섹션10: 고난도 함정 & 종합 ───
+  {
+    id:77, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스·엥겔스의 역사 유물론은 경제 결정론으로, '경제 구조가 항상 정치·문화·법률을 직접 결정한다'고 주장한다.",
+    answer:false,
+    explanation:"'결정'이 아닌 '조건 짓는다(conditions)'가 핵심이다. 상부구조(정치·문화·법률)의 상대적 자율성을 부정하지 않는다. '경제 결정론'은 냉전기 반공 측의 왜곡된 해석이다. 원문: 'The material mode of production conditions(bedingt) the social, political, and intellectual dimensions of life.'",
+    concepts:["역사 유물론 왜곡 교정","condition vs determine"],
+    source:"4/13 강의 — 역사 유물론 원문"
+  },
+  {
+    id:78, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"자유주의는 공동체 대비 개인의 자유를 강조하는 이념으로, 여기서 '자유'는 진리를 추구하거나 구속에서 벗어나는 인간 실존적 자유를 의미한다.",
+    answer:false,
+    explanation:"강의에서 명시적으로 교정되는 핵심 오해다. 자유주의의 '자유'는 '최참판이 땅을 팔 때 경작 농민에게 묻지 않아도 되는 자유', '무한한 이윤 추구가 가능한 자유', 즉 생산 수단 소유자가 다른 이해 관계자의 간섭 없이 배타적으로 처분·경영할 수 있는 자유다.",
+    concepts:["자유주의의 '자유' 개념 교정","소유권 자유"],
+    source:"3/16 강의 — 자유주의 정의"
+  },
+  {
+    id:79, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"소련식 현실사회주의는 소비재(개인 재산)의 소유도 모두 국가 소유로 귀속했으므로, 이 점에서 사회주의의 원래 정의에 충실했다.",
+    answer:false,
+    explanation:"강의에서 명시: 소련에서도 개인 텃밭(경우에 따라 대형)은 개인 소유였고, 복권 당첨금으로 흑해 휴양도 가능했다. 사회주의가 금지하는 것은 생산 수단(광산·대공장·대농지 등)의 사적 소유이지 소비재나 소규모 재산이 아니다. 소련이 소비재까지 국유화했다는 것은 오해다.",
+    concepts:["사회주의 소비재 소유권","소련 오해 교정"],
+    source:"3/16 강의 — 사회주의 오해 교정"
+  },
+  {
+    id:80, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"역사학의 핵심 효용은 '역사에서 법칙을 추출하여 현재에 적용함으로써 미래를 예측'하는 데 있다.",
+    answer:false,
+    explanation:"강의에서 명시적으로 부정하는 관점이다. 역사학의 효용은 법칙 추출이 아니라 '맥락을 중시하는 탐구'를 통해 '현재의 제도가 주어진 것·당연한 것이 아니라 특정 맥락에서 형성된 것임을 낯설게 인식'하게 하는 것이다. 즉 현재 제도의 정당성에 도전하는 사유의 훈련이다.",
+    concepts:["역사학 효용","맥락 중시","현재 제도 낯설게 보기"],
+    source:"3/9 강의 — 역사학 효용"
+  },
+  {
+    id:81, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"오언이 도입한 '신도덕(New Moral)'은 개인 수양을 강조하는 기존 도덕주의와 달리, <em>물리적 환경</em>을 개선함으로써 도덕 수준이 향상된다고 보았다.",
+    answer:true,
+    explanation:"오언의 신도덕(New Moral): 개인에게 수양을 요구하는 기존 도덕주의와 달리, 공동 식당·공론장 등 물리적 환경을 바꾸면 자연히 도덕적 사유가 가능해진다는 입장이다. 도덕을 물질적 조건과 연결시킨 점에서 독창적이다.",
+    concepts:["오언 신도덕(New Moral)","물적 환경과 도덕"],
+    source:"3/25 강의 — 오언 신도덕"
+  },
+  {
+    id:82, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스·엥겔스의 자본주의 이행 분석에 따르면, 봉건 영주는 자본주의로의 이행을 주도한 신흥 계급에 해당한다.",
+    answer:false,
+    explanation:"봉건 영주(지주)는 기존 지배 계급으로 기존 생산 관계를 유지하려는 측이다. 신흥 계급은 부농과 부르주아다. 부농·부르주아가 자본 축적→시장 확대→영주와 계급 투쟁→프랑스 혁명으로 자본주의로의 이행을 주도했다.",
+    concepts:["봉건제→자본주의 이행","신흥계급 vs 지배계급"],
+    source:"4/13 강의 — 역사관 사례"
+  },
+  {
+    id:83, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스 이전 사회주의자들(생시몽·푸리에·오언)도 자본주의를 역사 발전의 필연적 단계로 긍정했으며, 따라서 마르크스·엥겔스의 역사관과 본질적으로 같다.",
+    answer:false,
+    explanation:"초기 사회주의자들은 산업화는 긍정했지만, 자본주의가 역사 발전의 '필연적이고 필수적인 단계'라는 법칙론적 관점은 없었다. 또한 많은 초기 사회주의자들은 '복고적' 공동체를 지향했다. 마르크스·엥겔스만이 자본주의의 역사적 기여를 인정하며 사회주의를 '더 발전된 미래'로 위치 지었다.",
+    concepts:["마르크스 vs 초기 사회주의자","자본주의 역사적 기여"],
+    source:"4/13 강의 — 마르크스 역사관 비교"
+  },
+  {
+    id:84, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"19세기 초 서유럽의 사회 혼란 속에서 가장 격렬하게 산업자본주의에 반대한 집단은 공장 노동자였다.",
+    answer:false,
+    explanation:"초기에 가장 격렬하게 반대한 집단은 '몰락 중인 수공업자'(장인·직인)였다. 이들은 생산 과정 전체를 관할하던 지위에서 단순 반복 노동자로 격하되는 '지위 박탈감'을 경험했다. 공장 노동자는 오히려 농촌 출신이거나 이미 생산 수단을 잃은 사람들이다.",
+    concepts:["산업자본주의 반대 주체","몰락 수공업자"],
+    source:"3/16·3/23 강의"
+  },
+  {
+    id:85, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스·엥겔스에 따르면, 자본주의 위기는 항구적(permanent)이어야 하지만 실제로는 주기적(cyclical)이다. '수요론'에서는 이 주기성을 제국주의적 팽창으로 설명한다.",
+    answer:true,
+    explanation:"수요론에서 자본주의 모순(사회화된 생산+사적 소유)은 항구적 위기를 초래해야 하지만, 제국주의 팽창이 새로운 판로를 열어 위기를 주기적으로 완화한다. 단 지구적 한계에 도달하면 최종 Crash가 온다는 것이 엥겔스의 주장이다.",
+    concepts:["위기의 항구성 vs 주기성","제국주의 완화 기능"],
+    source:"4/15 강의 — 위기론 주기성"
+  },
+  {
+    id:86, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"사용 가치와 교환 가치를 구분한 마르크스는 자본주의 분석에서 <em>사용 가치</em>를 핵심 분석 대상으로 삼았다.",
+    answer:false,
+    explanation:"마르크스는 사용 가치와 교환 가치를 구분했으나, 분석 대상은 '교환 가치'다. 시장에서 거래·평가되는 가치를 분석해야 자본주의 메커니즘이 드러난다. 사용 가치는 '자기 영역이 아니다'라고 명시적으로 배제했다.",
+    concepts:["사용 가치 vs 교환 가치","분석 대상"],
+    source:"4/13 강의 — 경제관 가치론"
+  },
+  {
+    id:87, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"카베의 이카리아에서 사법 기능은 전문 법관이 담당하는 근대적 사법 절차로 운영된다.",
+    answer:false,
+    explanation:"카베의 이카리아에서 사법은 '인민재판'으로 이루어진다. 법률 엘리트가 아닌 인민(이카리아 구성원)이 모여 결정하는 방식으로, 민주성 강화를 목적으로 한다. 배심원제를 확대한 형태다.",
+    concepts:["이카리아 사법","인민재판"],
+    source:"3/30 강의 — 이카리아 정치"
+  },
+  {
+    id:88, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스·엥겔스는 공산주의자들의 목표가 <em>항상</em> 프롤레타리아트 독재 체제를 수립하는 것이라고 명시했으며, 이것이 《공산주의 선언》의 핵심 주장이다.",
+    answer:false,
+    explanation:"마르크스·엥겔스 텍스트에서 '프롤레타리아 독재'는 블랑키에서 유래한 개념이며, 이를 즉시적·항구적 목표로 삼지 않는다. 《공산주의 선언》의 핵심은 역사 법칙적 자본주의 붕괴→프롤레타리아 혁명→계급 폐지→공산주의로의 논증이다. '독재' 표현은 이행 과정의 임시적 상태를 가리키며, 항상·본질적 목표라는 표현은 과장이다.",
+    concepts:["프롤레타리아 독재 개념","공산주의 선언 핵심"],
+    source:"4/1 강의 — 블랑키 독재 개념·공산주의 선언"
+  },
+  {
+    id:89, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"마르크스·엥겔스의 경제관에서 자본주의 경제의 성장(새로운 가치 창출)은 <em>설비(불변자본)</em>가 가치를 창출하기 때문이다.",
+    answer:false,
+    explanation:"마르크스에 따르면 가치를 창출하는 것은 '노동력(가변자본)'뿐이다. 설비(불변자본)는 자체적으로 새로운 가치를 창출하지 않고 기존 가치를 이전한다. 잉여가치가 노동력에서만 나온다는 것이 마르크스 경제관의 핵심이며, 이로 인해 이윤율 저하론도 논리적으로 전개된다.",
+    concepts:["불변 vs 가변 자본","가치 창출 주체"],
+    source:"4/13·4/15 강의"
+  },
+  {
+    id:90, section:"고난도·종합",
+    difficulty:"어려움",
+    tag:"함정",
+    sentence:"생시몽의 '인더스트리엘' 개념은 20세기의 '테크노크라시(기술 관료제)' 논의의 선구적 아이디어로 평가받는다.",
+    answer:true,
+    explanation:"강의에서 명시: 생시몽의 인더스트리엘(산업가·과학자·엔지니어 등 생산성 관련 전문가 집단)이 사회를 주도해야 한다는 주장이 20세기 테크노크라시, 현대의 'rules of expert' 논의의 원조라고 설명된다.",
+    concepts:["생시몽 인더스트리엘","테크노크라시 원형"],
+    source:"3/23 강의 — 생시몽 현대적 의의"
+  },
+
+  // ─── 섹션11: 추가 심화 10제 ───
+  {
+    id:91, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"오언·카베·블랑키는 모두 생산 수단의 사적 소유권 철폐를 주장한다는 점에서 공통적으로 사회주의자로 분류된다.",
+    answer:true,
+    explanation:"세 사람 모두 생산 수단의 배타적 사적 소유를 거부한다는 점에서 사회주의자다. 다만 방법론이 다르다: 오언(공동체 실험), 카베(국가 주도 계획 + 기독교적 공동체), 블랑키(소수 엘리트 봉기 + 혁명적 독재).",
+    concepts:["사회주의자 공통 기준","방법론 차이"],
+    source:"4/1 강의 — 비교"
+  },
+  {
+    id:92, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"마르크스·엥겔스가 '반혁명 물결' 속에서 영국으로 이주한 것은 영국이 당시 유럽에서 좌파 지식인들이 가장 활발하게 활동할 수 있는 환경을 제공했기 때문이다.",
+    answer:false,
+    explanation:"영국 이주의 이유는 정반대다. 영국은 좌익 지식인들을 수사하거나 추방하지 않았지만, 파리처럼 카페 토론 문화나 좌익 출판 활동이 활발한 환경도 아니었다. 단지 '가장 덜 위험한' 곳이었다.",
+    concepts:["마르크스 런던 망명 이유","영국 정치 환경"],
+    source:"4/8 강의 — 런던 망명"
+  },
+  {
+    id:93, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"《공산주의 선언》에서 마르크스·엥겔스는 부르주아지에게서 찾은 긍정적 요소로 생산력의 급격한 발전과 세계 시장 형성을 언급한다.",
+    answer:true,
+    explanation:"기출에서 반복 등장: '마르크스와 엥겔스가 부르주아지에서 찾은 긍정적 요소를 서술하시오'. 《공산주의 선언》에서 부르주아지의 역사적 혁명성(봉건적 관계 파괴, 생산력 발전, 세계 시장 창출)을 상세히 인정한다.",
+    concepts:["부르주아지 긍정적 역할","공산주의 선언 1장"],
+    source:"기출 이미지·공산주의 선언 1장"
+  },
+  {
+    id:94, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"푸리에의 3가지 '정념(distribute)' 중 '밀모 정념'은 비밀리에 팀을 이루어 경쟁하는 것을 즐기는 성향을 의미한다.",
+    answer:true,
+    explanation:"강의에서 설명된 내용: 밀모 정념(la cabalistique)은 은밀한 팀 작전·경쟁을 즐기는 성향이다. 나머지 두 정념은 변덕 정념(la papillonne, 지루함 싫어하는 성향)과 복합 정념(la composite, 성적 유희 성향)이다.",
+    concepts:["푸리에 3정념","밀모 정념"],
+    source:"3/23 강의 — 푸리에 심리 유형론"
+  },
+  {
+    id:95, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"바이틀링과 마르크스의 1846년 논쟁에서 마르크스는 바이틀링의 낭만적·기독교적 접근을 비판했고, 바이틀링은 마르크스를 '먹물'이라 공격했다.",
+    answer:true,
+    explanation:"강의에서 명시: 1846년 의인동맹 내 논쟁에서 바이틀링은 마르크스를 '직접 일하는 사람이 아닌 책이나 읽는 먹물'이라 공격했고, 마르크스는 바이틀링의 낭만적·종교적 접근을 비판했다.",
+    concepts:["바이틀링 vs 마르크스 논쟁","먹물 비판"],
+    source:"4/1 강의 — 바이틀링 사상"
+  },
+  {
+    id:96, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"프루동의 '인민 은행(People's Bank)'과 '노동수표(Labor Notes)' 아이디어는 오언의 협동기업 실험과 유사한 맥락을 공유한다.",
+    answer:true,
+    explanation:"강의에서 오언과 프루동은 같은 '조합주의' 계통으로 분류된다. 노동수표(노동 교환 기반 화폐)와 인민 은행(아래로부터의 자금 결집)은 오언의 Labor Note·Labor Exchange와 동일한 아이디어 계열이다. 프루동이 더 자유롭고 탈중앙화된 방향으로 발전시켰다.",
+    concepts:["프루동 vs 오언 유사성","노동수표·인민은행"],
+    source:"4/6 강의 — 프루동 부조주의 비교"
+  },
+  {
+    id:97, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"마르크스·엥겔스는 블랑키를 포함한 기존 공산주의자들의 '혁명 주체의 의지' 강조를 지지하며, 이것이 올바른 혁명 방법론이라고 보았다.",
+    answer:false,
+    explanation:"마르크스·엥겔스의 핵심 차이가 바로 이것이다. 마르크스는 역사 법칙에 따라 자본주의가 충분히 발전해야 사회주의로 넘어갈 수 있다는 '법칙론적' 입장이다. 소수 엘리트의 의지로 시점을 선택하는 블랑키의 주의주의(voluntarism)를 마르크스는 비과학적·비역사적이라고 비판했다.",
+    concepts:["마르크스 vs 블랑키 방법론","주의주의 비판"],
+    source:"4/8 강의"
+  },
+  {
+    id:98, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"《공산주의 선언》 2장에서 '공산주의자와 프롤레타리아의 관계'를 다루면서, 공산주의자들이 프롤레타리아트 전체의 '즉각적 이익'과 '장기적 이익'을 모두 대변한다고 설명한다.",
+    answer:true,
+    explanation:"기출 출제 영역: 공산주의자는 다른 노동자 정당과 달리 프롤레타리아트의 즉각적 이익(임금·노동 조건)과 장기적 이익(계급 폐지·공산주의 실현) 모두를 대변하며, 항상 운동 전체의 관점을 유지한다.",
+    concepts:["공산주의자의 역할","즉각적·장기적 이익","공산주의 선언 2장"],
+    source:"기출 이미지·공산주의 선언 2장"
+  },
+  {
+    id:99, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"복합",
+    sentence:"마르크스·엥겔스의 '위기론'에서 Division I(중공업)과 Division II(경공업)의 상호 관계는 자본주의 위기의 주기성을 설명하는 데 활용된다.",
+    answer:true,
+    explanation:"이윤율 저하론의 맥락: 경공업(Division II)이 과투자 → 중공업(Division I) 대호황 → 중공업이 실업자 재고용 → 사회 전체 구매력 유지. 이 시간차가 자본주의 위기를 주기적으로 만든다. 둘이 동시에 과투자로 가면 공황이 더 깊어진다.",
+    concepts:["Division I·II","자본주의 위기 주기성"],
+    source:"4/15 강의 — 위기론 생산론"
+  },
+  {
+    id:100, section:"심화·종합",
+    difficulty:"어려움",
+    tag:"종합",
+    sentence:"오언·카베·블랑키·루이 블랑·프루동 중에서, 생산 수단 소유권에 대한 '조합 소유'를 가장 강조한 인물은 프루동이다.",
+    answer:true,
+    explanation:"프루동의 부조주의에서 대규모 생산 수단(광산·철도·대공장)은 '조합이 소유'해야 한다. 카베·블랑키는 국가(또는 혁명 주체) 주도, 루이 블랑은 사회작업장(국유화), 오언은 투자자·조합 혼합이다. 프루동이 탈국가적 '조합 소유'를 가장 명확히 주장한다.",
+    concepts:["생산 수단 조합 소유","프루동 vs 국가주의자"],
+    source:"4/1·4/6 강의 — 프루동 부조주의"
+  }
+];
+
+// ══════════════════════════════════════════
+//  전역 상태
+// ══════════════════════════════════════════
+let answered = new Array(101).fill(false); // 1-indexed
+let results  = new Array(101).fill(null);  // true=정답, false=오답
+
+function getStats(){
+  let total=0,correct=0,wrong=0;
+  for(let i=1;i<=100;i++){
+    if(answered[i]){total++;if(results[i])correct++;else wrong++;}
+  }
+  return{total,correct,wrong,acc:total?Math.round(correct/total*100)+'%':'—'};
+}
+
+// ══════════════════════════════════════════
+//  탭 전환
+// ══════════════════════════════════════════
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{
+    b.classList.toggle('active',['quiz','wrong','stats'][i]===tab);
+  });
+  document.getElementById('quiz-tab-content').style.display = tab==='quiz'?'block':'none';
+  document.getElementById('wrong-tab-content').style.display= tab==='wrong'?'block':'none';
+  document.getElementById('stats-tab-content').style.display= tab==='stats'?'block':'none';
+  if(tab==='wrong') renderWrongTab();
+  if(tab==='stats') renderStatsTab();
+}
+
+// ══════════════════════════════════════════
+//  카드 렌더링
+// ══════════════════════════════════════════
+function renderCard(q, container){
+  const div = document.createElement('div');
+  div.className='q-card';
+  div.id=`card-${q.id}`;
+
+  div.innerHTML=`
+    <div class="q-header">
+      <span class="q-num">Q${q.id}</span>
+      <span class="q-tag">${q.tag}</span>
+      <span class="q-diff diff-${q.difficulty==='쉬움'?'easy':'hard'}">${q.difficulty==='쉬움'?'★':'★★★'}</span>
+    </div>
+    <div class="q-body">
+      <p class="q-sentence">${q.sentence}</p>
+    </div>
+    <div class="q-actions">
+      <button class="btn-tf btn-t" onclick="answer(${q.id},true)">T (참)</button>
+      <button class="btn-tf btn-f" onclick="answer(${q.id},false)">F (거짓)</button>
+    </div>
+    <div class="q-explanation" id="exp-${q.id}">
+      <div class="exp-box">
+        <div class="exp-result" id="exp-result-${q.id}"></div>
+        <div class="exp-answer">정답: ${q.answer?'T (참)':'F (거짓)'}</div>
+        <div class="exp-text">${q.explanation}</div>
+        <div class="exp-meta">
+          ${q.concepts.map(c=>`<span class="exp-concept">💡 ${c}</span>`).join('')}
+          <span class="exp-source">📖 ${q.source}</span>
+        </div>
+      </div>
+    </div>`;
+  container.appendChild(div);
+}
+
+// ══════════════════════════════════════════
+//  답변 처리
+// ══════════════════════════════════════════
+function answer(id, userAnswer){
+  if(answered[id]) return;
+  answered[id]=true;
+  const q = questions.find(x=>x.id===id);
+  const isCorrect = userAnswer===q.answer;
+  results[id]=isCorrect;
+
+  // 카드 스타일
+  const card=document.getElementById(`card-${id}`);
+  card.classList.add(isCorrect?'answered-correct':'answered-wrong');
+
+  // 버튼 스타일
+  const btns=card.querySelectorAll('.btn-tf');
+  btns.forEach(b=>b.disabled=true);
+  const clickedBtn = card.querySelector(userAnswer?'.btn-t':'.btn-f');
+  clickedBtn.classList.add(isCorrect?'selected-correct':'selected-wrong');
+  if(!isCorrect){
+    const correctBtn=card.querySelector(q.answer?'.btn-t':'.btn-f');
+    correctBtn.classList.add('reveal-answer');
+  }
+
+  // 해설
+  const exp=document.getElementById(`exp-${id}`);
+  exp.classList.add('visible');
+  const expResult=document.getElementById(`exp-result-${id}`);
+  expResult.textContent=isCorrect?'✅ 정답입니다!':'❌ 오답입니다.';
+  expResult.className=`exp-result ${isCorrect?'correct':'wrong'}`;
+
+  updateProgress();
+}
+
+// ══════════════════════════════════════════
+//  진행 바 업데이트
+// ══════════════════════════════════════════
+function updateProgress(){
+  const {total,correct,wrong}=getStats();
+  const pct=total/100*100;
+  document.getElementById('progress-bar-inner').style.width=pct+'%';
+  document.getElementById('progress-text').textContent=`${total} / 100`;
+  document.getElementById('sc-o').textContent=correct;
+  document.getElementById('sc-x').textContent=wrong;
+}
+
+// ══════════════════════════════════════════
+//  틀린 문제 탭
+// ══════════════════════════════════════════
+function renderWrongTab(){
+  const wrongIds=questions.filter(q=>answered[q.id]&&!results[q.id]).map(q=>q.id);
+  const empty=document.getElementById('wrong-empty');
+  const list=document.getElementById('wrong-list');
+  list.innerHTML='';
+  if(wrongIds.length===0){
+    empty.style.display='block';
+    return;
+  }
+  empty.style.display='none';
+  wrongIds.forEach(id=>{
+    const q=questions.find(x=>x.id===id);
+    const div=document.createElement('div');
+    div.className='q-card answered-wrong';
+    div.innerHTML=`
+      <div class="q-header">
+        <span class="q-num">Q${q.id}</span>
+        <span class="q-tag">${q.tag}</span>
+      </div>
+      <div class="q-body"><p class="q-sentence">${q.sentence}</p></div>
+      <div class="q-explanation visible">
+        <div class="exp-box">
+          <div class="exp-result wrong">❌ 오답</div>
+          <div class="exp-answer">정답: ${q.answer?'T (참)':'F (거짓)'}</div>
+          <div class="exp-text">${q.explanation}</div>
+          <div class="exp-meta">
+            ${q.concepts.map(c=>`<span class="exp-concept">💡 ${c}</span>`).join('')}
+            <span class="exp-source">📖 ${q.source}</span>
+          </div>
+        </div>
+      </div>`;
+    list.appendChild(div);
+  });
+}
+
+// ══════════════════════════════════════════
+//  통계 탭
+// ══════════════════════════════════════════
+function renderStatsTab(){
+  const {total,correct,wrong,acc}=getStats();
+  document.getElementById('st-answered').textContent=total;
+  document.getElementById('st-correct').textContent=correct;
+  document.getElementById('st-acc').textContent=acc;
+  document.getElementById('st-wrong').textContent=wrong;
+
+  // 단원별 정답률
+  const sections=[...new Set(questions.map(q=>q.section))];
+  const bars=document.getElementById('section-bars');
+  bars.innerHTML='';
+  sections.forEach(sec=>{
+    const qs=questions.filter(q=>q.section===sec);
+    const ans=qs.filter(q=>answered[q.id]);
+    const cor=ans.filter(q=>results[q.id]);
+    const pct=ans.length?Math.round(cor.length/ans.length*100):0;
+    bars.innerHTML+=`
+      <div class="section-row">
+        <div class="section-label"><span>${sec}</span><span>${cor.length}/${ans.length} (${pct}%)</span></div>
+        <div class="sbar-outer"><div class="sbar-inner" style="width:${pct}%"></div></div>
+      </div>`;
+  });
+}
+
+// ══════════════════════════════════════════
+//  다시 시작
+// ══════════════════════════════════════════
+function restartQuiz(){
+  answered=new Array(101).fill(false);
+  results=new Array(101).fill(null);
+  updateProgress();
+  const container=document.getElementById('quiz-tab-content');
+  container.innerHTML='';
+  questions.forEach(q=>renderCard(q,container));
+  switchTab('quiz');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ══════════════════════════════════════════
+//  초기화
+// ══════════════════════════════════════════
+(function init(){
+  const container=document.getElementById('quiz-tab-content');
+  questions.forEach(q=>renderCard(q,container));
+})();
+</script>
+</body>
+</html>
