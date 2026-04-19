@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 — 흐름도 & 완전 정리</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d14;
+    --surface: #13131f;
+    --card: #1a1a2e;
+    --card2: #16213e;
+    --accent1: #e63946;
+    --accent2: #f4a261;
+    --accent3: #2a9d8f;
+    --accent4: #457b9d;
+    --accent5: #8338ec;
+    --text: #eaeaef;
+    --text-dim: #9090aa;
+    --border: rgba(255,255,255,0.07);
+    --gold: #f4c430;
+    --red-soft: rgba(230,57,70,0.15);
+    --teal-soft: rgba(42,157,143,0.15);
+    --blue-soft: rgba(69,123,157,0.15);
+    --orange-soft: rgba(244,162,97,0.15);
+    --purple-soft: rgba(131,56,236,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    background: linear-gradient(135deg, #0d0d14 0%, #16213e 50%, #0f3460 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -10%;
+    width: 120%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 40%, rgba(230,57,70,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  header h1 span { color: var(--accent1); }
+  header p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ===== NAV TABS ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,13,20,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 4px;
+    padding: 10px 24px;
+    overflow-x: auto;
+  }
+  nav a {
+    flex-shrink: 0;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  nav a:hover { color: var(--text); background: var(--border); }
+  nav a.active { color: var(--accent1); border-color: var(--accent1); }
+
+  /* ===== MAIN ===== */
+  main { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title .emoji { font-size: 1.3rem; }
+
+  section { margin-bottom: 72px; }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent1), var(--accent4), var(--accent3));
+  }
+  .tl-item { position: relative; margin-bottom: 32px; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 18px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent1);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 8px var(--accent1);
+  }
+  .tl-item.phase2::before { background: var(--accent4); box-shadow: 0 0 8px var(--accent4); }
+  .tl-item.phase3::before { background: var(--accent3); box-shadow: 0 0 8px var(--accent3); }
+  .tl-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: border-color 0.2s;
+  }
+  .tl-card:hover { border-color: rgba(230,57,70,0.35); }
+  .tl-card .year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 4px;
+  }
+  .tl-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+  .tl-card p { color: var(--text-dim); font-size: 0.87rem; }
+
+  /* ===== FLOW DIAGRAM ===== */
+  .flow-container { overflow-x: auto; padding-bottom: 12px; }
+  .flow {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    min-width: 900px;
+  }
+  .flow-node {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-node h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 6px; }
+  .flow-node p { font-size: 0.78rem; color: var(--text-dim); }
+  .flow-node.red { border-color: rgba(230,57,70,0.4); background: var(--red-soft); }
+  .flow-node.blue { border-color: rgba(69,123,157,0.4); background: var(--blue-soft); }
+  .flow-node.teal { border-color: rgba(42,157,143,0.4); background: var(--teal-soft); }
+  .flow-node.orange { border-color: rgba(244,162,97,0.4); background: var(--orange-soft); }
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--text-dim);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 30px;
+  }
+
+  /* ===== PHILOSOPHER CARDS ===== */
+  .phil-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  .phil-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .phil-card:hover { transform: translateY(-2px); }
+  .phil-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .phil-card.color1::before { background: var(--accent1); }
+  .phil-card.color2::before { background: var(--accent2); }
+  .phil-card.color3::before { background: var(--accent3); }
+  .phil-card.color4::before { background: var(--accent4); }
+  .phil-card.color5::before { background: var(--accent5); }
+  .phil-card.color6::before { background: var(--gold); }
+  .phil-card.color7::before { background: #e9c46a; }
+  .phil-card.color8::before { background: #264653; }
+  .phil-card:hover.color1 { border-color: rgba(230,57,70,0.35); }
+  .phil-card:hover.color2 { border-color: rgba(244,162,97,0.35); }
+  .phil-card:hover.color3 { border-color: rgba(42,157,143,0.35); }
+  .phil-card:hover.color4 { border-color: rgba(69,123,157,0.35); }
+  .phil-card:hover.color5 { border-color: rgba(131,56,236,0.35); }
+  .phil-card:hover.color6 { border-color: rgba(244,196,48,0.35); }
+
+  .phil-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .phil-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .color1 .phil-num { background: rgba(230,57,70,0.2); color: var(--accent1); }
+  .color2 .phil-num { background: rgba(244,162,97,0.2); color: var(--accent2); }
+  .color3 .phil-num { background: rgba(42,157,143,0.2); color: var(--accent3); }
+  .color4 .phil-num { background: rgba(69,123,157,0.2); color: var(--accent4); }
+  .color5 .phil-num { background: rgba(131,56,236,0.2); color: var(--accent5); }
+  .color6 .phil-num { background: rgba(244,196,48,0.2); color: var(--gold); }
+  .color7 .phil-num { background: rgba(233,196,106,0.2); color: #e9c46a; }
+  .color8 .phil-num { background: rgba(38,70,83,0.4); color: #8ecae6; }
+
+  .phil-meta { flex: 1; }
+  .phil-meta h3 { font-size: 1.05rem; font-weight: 700; color: #fff; }
+  .phil-meta .years { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+  .phil-meta .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .color1 .tag { background: rgba(230,57,70,0.2); color: var(--accent1); }
+  .color2 .tag { background: rgba(244,162,97,0.2); color: var(--accent2); }
+  .color3 .tag { background: rgba(42,157,143,0.2); color: var(--accent3); }
+  .color4 .tag { background: rgba(69,123,157,0.2); color: var(--accent4); }
+  .color5 .tag { background: rgba(131,56,236,0.2); color: var(--accent5); }
+  .color6 .tag { background: rgba(244,196,48,0.2); color: var(--gold); }
+  .color7 .tag { background: rgba(233,196,106,0.2); color: #e9c46a; }
+  .color8 .tag { background: rgba(38,70,83,0.5); color: #8ecae6; }
+
+  .phil-body { font-size: 0.83rem; color: var(--text-dim); }
+  .phil-body strong { color: var(--text); font-weight: 600; }
+  .phil-body ul { list-style: none; margin-top: 10px; }
+  .phil-body ul li { margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .phil-body ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent1); font-weight: 700; }
+  .color2 .phil-body ul li::before { color: var(--accent2); }
+  .color3 .phil-body ul li::before { color: var(--accent3); }
+  .color4 .phil-body ul li::before { color: var(--accent4); }
+  .color5 .phil-body ul li::before { color: var(--accent5); }
+  .color6 .phil-body ul li::before { color: var(--gold); }
+  .color7 .phil-body ul li::before { color: #e9c46a; }
+  .color8 .phil-body ul li::before { color: #8ecae6; }
+
+  .divider {
+    border: none;
+    border-top: 1px dashed var(--border);
+    margin: 12px 0;
+  }
+  .highlight-box {
+    background: rgba(230,57,70,0.08);
+    border: 1px solid rgba(230,57,70,0.2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+  .highlight-box strong { color: var(--accent1); }
+
+  /* ===== COMPARISON TABLE ===== */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 900px;
+  }
+  thead th {
+    background: var(--card2);
+    padding: 12px 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+    border-bottom: 2px solid var(--accent1);
+    white-space: nowrap;
+  }
+  thead th:first-child { border-radius: 10px 0 0 0; }
+  thead th:last-child { border-radius: 0 10px 0 0; }
+  tbody tr { transition: background 0.15s; }
+  tbody tr:hover { background: rgba(255,255,255,0.03); }
+  tbody td {
+    padding: 11px 16px;
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-dim);
+  }
+  tbody td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .dot-r { width: 8px; height: 8px; border-radius: 50%; background: var(--accent1); display: inline-block; margin-right: 6px; vertical-align: middle; }
+  .dot-b { background: var(--accent4); }
+  .dot-g { background: var(--accent3); }
+  .dot-o { background: var(--accent2); }
+  .dot-p { background: var(--accent5); }
+  .dot-y { background: var(--gold); }
+  .dot-c { background: #e9c46a; }
+  .dot-d { background: #8ecae6; }
+
+  /* ===== RELATIONSHIP MAP ===== */
+  .rel-container { position: relative; }
+  .rel-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+  .rel-group { display: flex; flex-direction: column; gap: 10px; }
+  .rel-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 4px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--border);
+    text-align: center;
+  }
+  .rel-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+  .rel-card strong { display: block; color: var(--text); margin-bottom: 3px; font-size: 0.87rem; }
+  .rel-card span { color: var(--text-dim); }
+  .rel-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 32px;
+  }
+  .rel-connector .arrow-v {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--accent1), transparent);
+    min-height: 30px;
+  }
+  .rel-connector .label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 3px 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ===== INFLUENCE ARROWS ===== */
+  .influence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .inf-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 0.83rem;
+  }
+  .inf-card h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .inf-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 7px;
+    color: var(--text-dim);
+  }
+  .inf-from, .inf-to {
+    background: var(--card2);
+    border-radius: 6px;
+    padding: 3px 9px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .inf-arrow { color: var(--accent1); flex-shrink: 0; }
+  .inf-content { color: var(--text-dim); font-size: 0.78rem; }
+
+  /* ===== CRITIQUE TABLE ===== */
+  .critique-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .crit-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .crit-vs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .crit-name { padding: 3px 10px; border-radius: 6px; font-size: 0.8rem; }
+  .crit-vs-symbol { color: var(--text-dim); font-size: 0.8rem; }
+  .crit-item {
+    background: var(--card2);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+  }
+  .crit-item .from { font-weight: 700; font-size: 0.75rem; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .crit-item p { color: var(--text-dim); }
+  .crit-item p strong { color: var(--text); }
+
+  /* ===== PILL BADGE ===== */
+  .pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .pill-r { background: rgba(230,57,70,0.2); color: var(--accent1); }
+  .pill-g { background: rgba(42,157,143,0.2); color: var(--accent3); }
+  .pill-b { background: rgba(69,123,157,0.2); color: var(--accent4); }
+  .pill-o { background: rgba(244,162,97,0.2); color: var(--accent2); }
+  .pill-p { background: rgba(131,56,236,0.2); color: var(--accent5); }
+  .pill-y { background: rgba(244,196,48,0.2); color: var(--gold); }
+
+  /* ===== KEY CONCEPTS ===== */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .concept-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .concept-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .concept-card p { font-size: 0.82rem; color: var(--text-dim); }
+  .concept-card p strong { color: var(--text); }
+
+  /* ===== MEMO BOXES ===== */
+  .memo {
+    background: linear-gradient(135deg, rgba(230,57,70,0.08), rgba(244,162,97,0.05));
+    border: 1px solid rgba(230,57,70,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+  .memo strong { color: var(--accent1); }
+  .memo.blue {
+    background: linear-gradient(135deg, rgba(69,123,157,0.08), rgba(42,157,143,0.05));
+    border-color: rgba(69,123,157,0.2);
+  }
+  .memo.blue strong { color: var(--accent4); }
+  .memo.green {
+    background: linear-gradient(135deg, rgba(42,157,143,0.08), rgba(42,157,143,0.03));
+    border-color: rgba(42,157,143,0.2);
+  }
+  .memo.green strong { color: var(--accent3); }
+
+  /* ===== DEFINITION BOX ===== */
+  .def-box {
+    background: var(--card2);
+    border-left: 3px solid var(--accent1);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+  .def-box strong { color: var(--accent1); }
+
+  /* ===== SCROLL TOP ===== */
+  #scroll-top {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 40px; height: 40px;
+    background: var(--accent1);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(230,57,70,0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 999;
+    border: none;
+    color: #fff;
+  }
+  #scroll-top.visible { opacity: 1; }
+
+  /* ==== SUMMARY BOXES ==== */
+  .summary-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .summary-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .summary-box h4 { font-size: 0.87rem; font-weight: 700; margin-bottom: 10px; }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 1.6rem; }
+    .phil-grid { grid-template-columns: 1fr; }
+    .critique-grid { grid-template-columns: 1fr; }
+    .influence-grid { grid-template-columns: 1fr; }
+    .summary-2col { grid-template-columns: 1fr; }
+    main { padding: 24px 14px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>사회주의의 역사 <span>완전 정리</span></h1>
+  <p>중간고사 대비 · 2026 | 노경덕 교수 강의 기반</p>
+</header>
+
+<nav id="nav">
+  <a href="#s0" class="active">🗺 전체 흐름</a>
+  <a href="#s1">⚙️ 사회주의란?</a>
+  <a href="#s2">🏛 초기 (1800-1830)</a>
+  <a href="#s3">⚡ 국가주의 (1830-1848)</a>
+  <a href="#s4">🍃 무정부주의</a>
+  <a href="#s5">📘 마르크스·엥겔스</a>
+  <a href="#s6">⚖️ 동시대 사상가</a>
+  <a href="#s7">🔗 영향 관계</a>
+  <a href="#s8">🗡 상호 비판</a>
+  <a href="#s9">📊 비교 테이블</a>
+</nav>
+
+<main>
+
+<!-- ===== S0 전체 흐름 ===== -->
+<section id="s0">
+  <h2 class="section-title"><span class="emoji">🗺</span>전체 역사 흐름</h2>
+
+  <div class="memo">
+    <strong>핵심 전제:</strong> 사회주의는 <strong>산업자본주의</strong>(산업화 + 자본주의)가 성립한 이후에만 등장 가능한 이념. 19세기 초 서유럽, 전통 경제의 해체와 몰락 수공업자의 고통 속에서 탄생.
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-card">
+        <div class="year">19세기 초 (1800-1830) — 제1기: 초기 유토피아 사회주의</div>
+        <h3>생시몽 · 푸리에 · 오언</h3>
+        <p>산업화의 폐해를 목격한 지식인 프로젝트. <strong>사회주의라는 용어 최초 등장</strong>(오언 추종자들). 공동체·협동 강조, 아직 국가·폭력혁명 거부. 생산수단 소유권 문제를 직접 건드리지는 않음(오언은 나중에 건드림).</p>
+      </div>
+    </div>
+    <div class="tl-item phase2">
+      <div class="tl-card">
+        <div class="year">1830-1848 — 제2기: 분화 (공산주의 vs 무정부주의)</div>
+        <h3>카베 · 블랑키 · 바이틀링 · 블랑 / 프루동</h3>
+        <p><strong>공산주의</strong>(중앙국가, 소수엘리트 봉기) vs <strong>무정부주의·조합주의</strong>(아래로부터 공동체) 분화. 1840년 제1회 공산주의 연회로 공산주의 의미 확정. 프루동이 <em>소유란 도둑질</em>이라는 체계적 비판 제시.</p>
+      </div>
+    </div>
+    <div class="tl-item phase2">
+      <div class="tl-card">
+        <div class="year">1848 2월 혁명 — 결정적 분기점</div>
+        <h3>혁명 실패와 반혁명의 물결</h3>
+        <p>몰락 수공업자·노동자 주도. 총선 패배, 나폴레옹 3세 당선 → 전 유럽 반혁명. <strong>실패 교훈으로 각 노선이 재정비됨.</strong> 자본가들은 온정주의적 노동 개선 필요성 인식.</p>
+      </div>
+    </div>
+    <div class="tl-item phase3">
+      <div class="tl-card">
+        <div class="year">1848-1870 — 제3기: 자본의 시대</div>
+        <h3>마르크스·엥겔스 + 동시대 사상가들</h3>
+        <p>철도 건설 붐으로 대호황. 사회주의 인기 하락. 이 시기에 마르크스가 <em>자본론</em> 집필. 라살(개혁주의), 밀(시장사회주의), 바쿠닌(무정부주의 발전), 게르첸(나로드니키). <strong>제1차 인터내셔널(1864)</strong>로 다양한 노선 충돌.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px;">
+    <h3 style="font-size:1rem; font-weight:700; color:var(--text); margin-bottom:16px;">두 갈래 분화 흐름도</h3>
+    <div class="flow-container">
+      <div class="flow">
+        <div class="flow-node red">
+          <h4>산업자본주의 등장</h4>
+          <p>전통 경제 해체<br>몰락 수공업자 대량 발생</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node orange">
+          <h4>초기 사회주의<br>(1800-1830)</h4>
+          <p>생시몽·푸리에·오언<br>공동체 실험 중심</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node red" style="border-color:rgba(230,57,70,0.4)">
+          <h4>🏛 국가주의<br>(공산주의)</h4>
+          <p>카베·블랑키·블랑<br>소수엘리트 봉기<br>국가기구 활용</p>
+        </div>
+        <div class="flow-arrow" style="display:flex;flex-direction:column;gap:20px;padding-top:0;">⤴<br>⤵</div>
+        <div class="flow-node teal">
+          <h4>🍃 조합주의·<br>무정부주의</h4>
+          <p>오언·프루동·바쿠닌<br>아래로부터 공동체<br>국가기구 반대</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node blue">
+          <h4>📘 마르크스주의</h4>
+          <p>역사유물론<br>자본주의 과학적 분석<br>필연적 이행</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S1 사회주의 정의 ===== -->
+<section id="s1">
+  <h2 class="section-title"><span class="emoji">⚙️</span>사회주의란 무엇인가</h2>
+
+  <div class="def-box">
+    <strong>사회주의의 정의:</strong> 19세기 초 서유럽의 사회 혼란 속에서 등장한 경제 구상.<br>
+    <strong>산업화는 긍정</strong>하되, <strong>자본주의를 비판</strong>하여 더 공정한 세상을 만들려 한 이념.<br>
+    → <strong>시장 메커니즘에 대한 제3자 개입</strong> + <strong>생산수단의 사적 소유권을 문제시</strong>
+  </div>
+
+  <div class="summary-2col">
+    <div class="summary-box">
+      <h4 style="color:var(--accent1)">❌ 사회주의가 아닌 것</h4>
+      <ul class="phil-body" style="color:var(--text-dim);list-style:none;margin:0">
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent1)">✗</span>소비재 재산 분배 (BMW 뺏는 것 아님)</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent1)">✗</span>자유 억압·독재와 동의어 아님</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent1)">✗</span>중화학공업 위주 산업 구조</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent1)">✗</span>군사 문화</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent1)">✗</span>무조건적 재산 평등주의</li>
+      </ul>
+    </div>
+    <div class="summary-box">
+      <h4 style="color:var(--accent3)">✅ 사회주의의 핵심</h4>
+      <ul class="phil-body" style="color:var(--text-dim);list-style:none;margin:0">
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent3)">✓</span><strong>생산수단</strong>(토지·공장·광산·임야)의 배타적 사적 소유권 부정</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent3)">✓</span>복수의 생계가 걸린 재산은 사회적으로 운영·소유</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent3)">✓</span>시장 메커니즘에 제3자(국가/조합) 개입</li>
+        <li style="padding-left:14px;position:relative;margin-bottom:5px"><span style="position:absolute;left:0;color:var(--accent3)">✓</span>산업화 자체는 긍정</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-card">
+      <h4>🏭 자본주의 두 가지 정의</h4>
+      <p><strong>유통 형식:</strong> 시장 경제, 만물 상품화, 무한 이윤 추구 허용<br><br>
+      <strong>생산 양식:</strong> 임금 노동제 — 생산수단은 자본가 독점 소유, 노동자는 노동력만 판매</p>
+    </div>
+    <div class="concept-card">
+      <h4>⚖️ 세 가지 이념 스펙트럼</h4>
+      <p><strong>보수주의:</strong> 산업화도 자본주의도 거부 (과거 복귀)<br><br>
+      <strong>자유주의:</strong> 둘 다 긍정, 개인 결정에 모든 권리<br><br>
+      <strong>사회주의:</strong> 산업화는 긍정, 자본주의는 비판 (중도)</p>
+    </div>
+    <div class="concept-card">
+      <h4>🔴 공산주의 vs 사회주의</h4>
+      <p><strong>사회주의:</strong> 넓은 의미, 다양한 방법론 포함<br><br>
+      <strong>공산주의:</strong> 1840년 이후 확정 의미 — 소수 엘리트 봉기로 국가권력 탈취 후 혁명적 독재로 체제 재편 (블랑키파가 확정)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S2 초기 사회주의자 ===== -->
+<section id="s2">
+  <h2 class="section-title"><span class="emoji">🏛</span>초기 사회주의자 (1800-1830)</h2>
+  <div class="memo blue">
+    <strong>시대 배경:</strong> 1800년 유럽 인구 70-90%가 농민. 전통 경제(도덕 경제)에서 산업자본주의로의 급격한 이행. 촌락 공동체와 길드 해체, 생산수단 박탈, 임금 노동자화. 지식인들의 해법 모색.
+  </div>
+  <div class="phil-grid">
+
+    <div class="phil-card color1">
+      <div class="phil-header">
+        <div class="phil-num">생</div>
+        <div class="phil-meta">
+          <h3>생시몽 (Saint-Simon)</h3>
+          <div class="years">1760–1825 · 프랑스</div>
+          <span class="tag">기술관료 사회주의</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 유명 귀족 → 고리대금업자 → 공포정치 때 단두대 직전 생존 → 사상가로 전향
+        <ul>
+          <li><strong>인더스트리엘(Industriels):</strong> 산업가·과학자·엔지니어·노동자 등 생산성 있는 집단이 사회 주도해야 함 (기사·귀족은 배제)</li>
+          <li><strong>계획적 분배:</strong> 인더스트리엘이 시장 경제를 과학적으로 계획·조율</li>
+          <li><strong>상속 반대:</strong> 능력에 따른 소유권만 정당 (대물림 불가)</li>
+          <li>생산수단 소유권 자체는 직접 건드리지 않음 → 사회주의 경계에 위치</li>
+          <li>후기로 갈수록 기독교적 도덕성 강조 (<em>신기독교</em>)</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>테크노크라시의 원조.</strong> 전문가(Expert)의 지배. 오늘날 전문관료 지배에 대한 선구적 논의.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color2">
+      <div class="phil-header">
+        <div class="phil-num">푸</div>
+        <div class="phil-meta">
+          <h3>푸리에 (Fourier)</h3>
+          <div class="years">1772–1837 · 프랑스</div>
+          <span class="tag">팔랑스테르 · 노동 즐거움</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 직물 상인 집안 → 가업 포기, 독학으로 계몽주의 수용
+        <ul>
+          <li><strong>팔랑스테르(Phalanstère):</strong> 1620명의 공동체, 810가지 심리 유형별로 짝 지어 생산·분배·거주 공동체 구성</li>
+          <li><strong>노동의 즐거움:</strong> 노동이 고역이 아닌 즐거움이 되어야 함 — 문명사적으로 파격적 주장</li>
+          <li>팔랑스테르 네트워크를 통해 자본주의 대체</li>
+          <li>소유권 직접 건드리지 않음</li>
+          <li>도스토옙스키가 푸리에주의 서클 활동 → 사형 직전 사면</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>영향:</strong> 히피 운동(1960s), 공동체 생활, 과거 문명과의 급진적 단절 추구자들에게 큰 영향.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color3">
+      <div class="phil-header">
+        <div class="phil-num">오</div>
+        <div class="phil-meta">
+          <h3>오언 (Robert Owen)</h3>
+          <div class="years">1771–1858 · 영국</div>
+          <span class="tag">협동촌락 · 사회주의 용어 탄생</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 상인·수공업자 집안 → 10대에 런던 포목점 도제 → 맨체스터 공장 지배인
+        <ul>
+          <li><strong>뉴 라나크:</strong> 온정주의 공장 경영(노동시간 16→10시간, 탁아소, 보건소) → 오히려 생산성 상승</li>
+          <li><strong>빌리지 오브 코퍼레이션(Village of Cooperation):</strong> 농업·공업·거주 통합 협동촌락 구상</li>
+          <li><strong>노동수표(Labor Note) + 노동교환소:</strong> 노동 투입량에 비례한 공정 교환</li>
+          <li>미국 인디아나(뉴하모니) 등에서 실험 → 2-3년 내 모두 실패</li>
+          <li>전국노동조합 창설 시도(GNCTU) → 정부 탄압으로 실패</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>사회주의(socialism) 용어의 탄생:</strong> 오언 추종자들이 "생산수단의 사적 소유와 그로 인한 불공정 거부, 사회적 운영·소유 지향"을 '사회주의'라 명명.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== S3 국가주의자 ===== -->
+<section id="s3">
+  <h2 class="section-title"><span class="emoji">⚡</span>1830-1848: 국가주의자들 (공산주의 계열)</h2>
+  <div class="memo">
+    <strong>시대 배경:</strong> 1830 7월 혁명(프랑스) 후 실망 → 공화주의에서 사회주의로 전향자 多. 오언 실패를 보며 국가가 직접 개입해야 한다는 국가주의 계열 등장.
+  </div>
+  <div class="phil-grid">
+
+    <div class="phil-card color1">
+      <div class="phil-header">
+        <div class="phil-num">카</div>
+        <div class="phil-meta">
+          <h3>카베 (Étienne Cabet)</h3>
+          <div class="years">1788–1856 · 프랑스</div>
+          <span class="tag">이카리아 · 공산주의 용어 유행</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 수공업자 집안 → 능력자로 변호사 성공 → 언론 운동 → 영국 망명
+        <ul>
+          <li><strong>이카리아 여행기:</strong> 이상 사회 이카리아 묘사 — 사유재산 전면 폐지, 시장 없음, 화폐 폐지(외화만 유지), 국가산업위원회의 중앙계획</li>
+          <li>의회: 2000인 인민대표회의 (입법+행정 통합)</li>
+          <li>재판: 인민재판 (절차 간소화, 배심원제 확대)</li>
+          <li>출판: 국가 허가 하나, 신문 하나 (이론 없는 사회: 계급 갈등 원인 제거)</li>
+          <li>"각자에게는 그 필요에 따라, 각자로부터는 그 능력에 따라"</li>
+          <li>르 포퓰레르 잡지 구독자 40만 → 대중 영향력 최대</li>
+          <li>미국 일리노이 이카리아 실험 → 실패</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>공산주의(Communism) 용어 유행:</strong> 카베가 유행시켰지만 의미를 블랑키파가 확정. 카베는 1840년 공산주의 연회에서 자진 배제.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color5">
+      <div class="phil-header">
+        <div class="phil-num">블</div>
+        <div class="phil-meta">
+          <h3>블랑키 (Louis-Auguste Blanqui)</h3>
+          <div class="years">1805–1881 · 프랑스</div>
+          <span class="tag">공산주의 확정 · 프롤레타리아 독재 원형</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 남프랑스 유지 가문 → 파리대 법·의학 → 카르보니리 → 7월혁명 실망 후 사회주의 전향
+        <ul>
+          <li><strong>15인 재판(1832):</strong> "제 직업은 프롤레타리아입니다" → 프롤레타리아 개념 확정·유행</li>
+          <li><strong>사계절회(Société des Saisons):</strong> 비밀결사</li>
+          <li><strong>핵심 사상:</strong> 소수 자각 엘리트의 음모적 봉기 → 국가권력 탈취 → 혁명적 독재로 체제 재편 (→ 프롤레타리아 독재 개념 원형)</li>
+          <li>경제 개혁은 유연·점진적 (소생산자 소유 인정)</li>
+          <li>혁명 주체의 의지(agency) 강조 ↔ 마르크스의 물적 토대 강조</li>
+          <li>평생 33년 투옥 → '갇힌 자'</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>1840 제1회 공산주의 연회:</strong> 블랑키파(데자미·필로) 주도, 카베 배제 → 공산주의 = 소수 엘리트 봉기+국가기구 활용으로 의미 확정.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color4">
+      <div class="phil-header">
+        <div class="phil-num">바</div>
+        <div class="phil-meta">
+          <h3>바이틀링 (Wilhelm Weitling)</h3>
+          <div class="years">1808–1871 · 독일</div>
+          <span class="tag">기독교 공산주의 · 노동계급 출신</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 독일 출신 사생아 → 재봉사(유랑 직인) → 파리 의인동맹 가담
+        <ul>
+          <li>소수 엘리트 봉기·국가기구 활용 → 블랑키와 유사</li>
+          <li><em>가난한 죄인의 복음서</em>: "예수는 최초의 공산주의자" — 기독교적 공산주의</li>
+          <li>사유재산 철폐, 공동생산 주장</li>
+          <li>중앙위원회 + 노동수첩으로 관리 → 엄격한 중앙통제</li>
+          <li>미국 아이오와에서 코무니아(Kommunia) 공동체 건설 → 실패</li>
+          <li>1846년 마르크스와 논쟁 ("당신은 먹물, 우리는 직접 일하는 사람")</li>
+          <li>나중에 재봉틀(미싱) 기술 발명가로 변신</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phil-card color2">
+      <div class="phil-header">
+        <div class="phil-num">블랑</div>
+        <div class="phil-meta">
+          <h3>루이 블랑 (Louis Blanc)</h3>
+          <div class="years">1811–1882 · 프랑스</div>
+          <span class="tag">사회작업장 · 개혁주의 선구</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 나폴레옹 시대 관료 부친 → 몰락 → 법학 대신 서기 → 언론인
+        <ul>
+          <li><em>노동의 조직(1840):</em> 생산수단 사유재산 "악의 근원"</li>
+          <li><strong>임금 균일화:</strong> 생시몽주의·프루동과 다른 독자적 주장</li>
+          <li><strong>사회작업장(Ateliers Sociaux):</strong> 국유화 공장 + 노동자 자율 운영 → 의회 입법으로 실현</li>
+          <li>국가를 도덕적 실체·중립적 중재자로 봄 (↔ 마르크스: 국가는 계급적 산물)</li>
+          <li>48혁명 후 장관 역임, 국가작업장(라이트버전) 설치 → 실패</li>
+          <li>영국 망명, 프랑스혁명사 12권 집필</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>개혁주의(사민주의)의 선구:</strong> 의회 입법으로 사회주의 실현 → 훗날 SPD(독일사민당)에 영향.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== S4 무정부주의 ===== -->
+<section id="s4">
+  <h2 class="section-title"><span class="emoji">🍃</span>무정부주의적 사회주의</h2>
+  <div class="phil-grid">
+
+    <div class="phil-card color3">
+      <div class="phil-header">
+        <div class="phil-num">프루</div>
+        <div class="phil-meta">
+          <h3>프루동 (Pierre-Joseph Proudhon)</h3>
+          <div class="years">1809–1864 · 프랑스</div>
+          <span class="tag">부조주의 · 무정부주의 시초</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>출신·배경:</strong> 브장송 농가 출신 → 10대에 인쇄노동자 → 장학생으로 파리대 입학(29세) → 자퇴 후 독학
+        <hr class="divider">
+        <strong>① 사적 소유권 체계적 비판 (<em>소유란 무엇인가</em>, 1840)</strong>
+        <ul>
+          <li>"소유란 곧 도둑질이다" — 법적·심리적·경제적 근거 논박</li>
+          <li><strong>법적(자연권):</strong> 소유권이 보편적 자연권이면 모두에게 같아야 하는데 역사상 그런 적 없음</li>
+          <li><strong>심리(보편동의):</strong> 평등을 전제로 출발해 불평등으로 결론 — 논리적 모순</li>
+          <li><strong>경제(노동투입):</strong> ① 노동엔 사회적 기여(지식·도구)가 결부됨 ② 자연 변형이지 새 창출 아님 → 소유 불가</li>
+        </ul>
+        <hr class="divider">
+        <strong>② 부조주의(Mutualism)</strong>
+        <ul>
+          <li>"중앙이 모든 걸 공동체로 귀속시키는 공산주의는 노예제!"</li>
+          <li>직접 생산자의 자유: 소규모 자영농·업자의 자유 보장</li>
+          <li>생산수단 사적 소유권 불허, 대신 <strong>용익권·점유권</strong>만 인정</li>
+          <li>대규모 생산수단(광산·철도·대공장)은 <strong>조합</strong>이 소유</li>
+          <li>노동수표(Labor Note) + 인민은행</li>
+          <li>Free Commune → 지역 Commune → Confederation (탈중앙화)</li>
+          <li>지식인 엘리트 통치·중앙 관료제 반대 → <strong>무정부주의 사회주의의 시초</strong></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== S5 마르크스·엥겔스 ===== -->
+<section id="s5">
+  <h2 class="section-title"><span class="emoji">📘</span>마르크스와 엥겔스 (1848-1870)</h2>
+  <div class="memo green">
+    <strong>마르크스주의 = 사회주의가 아님!</strong> 다양한 사회주의 중 하나. 마르크스주의자의 핵심 정체성 = <strong>역사유물론</strong>을 믿는 사회주의자.
+  </div>
+
+  <div class="phil-grid">
+    <div class="phil-card color6">
+      <div class="phil-header">
+        <div class="phil-num">🔴</div>
+        <div class="phil-meta">
+          <h3>마르크스 (Karl Marx)</h3>
+          <div class="years">1818–1883 · 서부 독일(Trier)</div>
+          <span class="tag">역사유물론 · 잉여가치론</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 유대계 변호사 부친(계몽주의) → Bonn·Berlin·Jena 대학 → 헤겔 좌파 → 박사(1842) → 라인신문 → 파리 이주(사회주의 수용) → 엥겔스와 협업 → 런던 망명(영국박물관 죽돌이)
+        <ul>
+          <li><strong>3대 원천:</strong> 독일 관념론(헤겔) + 프랑스 계몽 철학 + 영국 경제학</li>
+        </ul>
+        <hr class="divider">
+        <strong>4대 사상 범주:</strong>
+        <ul>
+          <li><strong>인간관:</strong> 노동을 통한 자기실현이 인간다움 → 산업자본주의에서 노동 소외 발생</li>
+          <li><strong>역사관:</strong> 역사유물론 — 생산양식이 토대, 상부구조 조건 지음. 원시공산제→노예제→봉건제→자본주의→사회주의 단계적 진보</li>
+          <li><strong>경제관:</strong> 잉여가치론 — 노동력이라는 특수 상품에서 잉여가치 착취 은폐됨</li>
+          <li><strong>위기론:</strong> 사회화된 생산 vs 생산물의 사적 소유 모순 → 과잉생산·과소소비 위기 / 이윤율 저하 경향</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phil-card color7">
+      <div class="phil-header">
+        <div class="phil-num">🔵</div>
+        <div class="phil-meta">
+          <h3>엥겔스 (Friedrich Engels)</h3>
+          <div class="years">1820–1895 · 서부 독일(Wuppertal)</div>
+          <span class="tag">영국 노동계급 실증 · 반뒤링론</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 사업가 부친 → 불온 독서 → 브레멘 공장 직원 → 군대·베를린 청강 → 헤겔 좌파 교류 → 맨체스터(아버지 사업) → <em>영국 노동계급의 상태</em> → 마르크스와 협업
+        <ul>
+          <li>마르크스와 1844년 파리 카페에서 역사적 첫 만남 → 30년 협업</li>
+          <li>맨체스터 공장 매니저로 일하며 마르크스의 생활비 지원</li>
+          <li>마르크스 사후 <em>자본 2권·3권</em> 완성</li>
+          <li><em>반뒤링론</em>(1878), <em>가족·사유재산·국가의 기원</em>(1884) 저술</li>
+          <li>위기론의 구체적 서술: 제국주의, 식민지의 경제위기 완화 기능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--text)">📌 마르크스주의 핵심 개념 정리</h3>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">역사유물론</h4>
+        <p><strong>물(物)</strong> = 생산양식 (사람이 태어나면 의지와 무관하게 놓이는 경제 체제)<br><br>
+        <strong>토대</strong> = 생산양식 → <strong>상부구조</strong> = 문화·법·정치·정신적 영역을 조건 짓는다(결정하는 것은 아님)<br><br>
+        생산양식 내부의 <strong>생산력 vs 생산관계 모순</strong> → 계급투쟁 → 사회혁명 → 다음 생산양식으로 진보</p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">잉여가치론 (착취 은폐 메커니즘)</h4>
+        <p><strong>노동력이라는 상품의 특수성:</strong><br>
+        구입 형태: 월급(할부) / 가치 계산: 의식주 유지선 / 활용: 투입한 것 이상의 가치 창출 가능<br><br>
+        예: 6시간 일하면 자기 몫의 가치 충족 → 나머지 4시간은 잉여가치 → 자본가가 착취<br><br>
+        봉건제는 착취가 눈에 보이는 소출 / 자본주의는 착취가 은폐됨 → 마르크스가 폭로</p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">위기론 (수요론)</h4>
+        <p><strong>사회화된 생산 vs 생산물의 사적 소유</strong> 모순:<br>
+        높아진 생산성 → 자본 축적 → 설비투자 → 노동력 수요 감소 → 소비 하락 → 과잉생산·과소소비 위기<br><br>
+        <strong>왜 주기적인가?</strong> 초기 인프라 투자 효과 / 제국주의 팽창 (식민지가 일시 완화) / 하지만 지리적 한계로 결국 Crash</p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">위기론 (생산론·이윤율 저하)</h4>
+        <p><strong>잉여가치 실현 경쟁</strong> → 노동집약적 기술 진보 → 불변자본(설비) 비중↑, 가변자본(노동력) 비중↓<br><br>
+        → 잉여가치 창출원 감소 → <strong>이윤율 하락 경향</strong><br><br>
+        → 경기침체 → 망하는 기업 발생 → 설비 헐값, 실업자 증가 → 재투자 → 호황 → 다시 반복<br><br>
+        (과열 → 공황 → 침체 → 호황의 사이클)</p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">노동 소외</h4>
+        <p>인간은 노동을 통해 자기실현을 해야 함(헤겔의 Ausbildung 계승)<br><br>
+        But 산업자본주의에서:<br>
+        ① 분업화로 노동 과정 통제 불가<br>
+        ② 산물이 상품으로 소외되어 오히려 자신을 억압<br>
+        ③ 노동 후 절대 빈곤<br><br>
+        → "노동자는 노동하지 않을 때 비로소 편안" — 노동과 여가의 이분법 탄생</p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--gold)">마르크스 vs 다른 사회주의의 차이</h4>
+        <p><strong>복고적 vs 진보적:</strong> 오언·푸리에 등은 상당 부분 복고적. 마르크스는 자본주의를 거쳐야 사회주의로 가는 단계적 진보로 봄<br><br>
+        <strong>의지 vs 법칙:</strong> 블랑키는 엘리트 의지로 혁명. 마르크스는 역사 법칙에 따른 필연적 이행<br><br>
+        <strong>미래 청사진 없음:</strong> 현재 자본주의 분석·비판에 집중, 이후 사회 설계는 거의 없음</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 동시대 사상가 ===== -->
+<section id="s6">
+  <h2 class="section-title"><span class="emoji">⚖️</span>동시대 사상가 (1848-1870)</h2>
+  <div class="phil-grid">
+
+    <div class="phil-card color1">
+      <div class="phil-header">
+        <div class="phil-num">라</div>
+        <div class="phil-meta">
+          <h3>라살 (Ferdinand Lassalle)</h3>
+          <div class="years">1825–1864 · 독일</div>
+          <span class="tag">개혁주의 · 독일 사민당의 기원</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 유대계 부친, 법학·헤겔철학 → 1848혁명 참여 → 48 실패 교훈: 폭력혁명 거부, 점진주의
+        <ul>
+          <li><strong>임금 철칙론:</strong> 자본주의에서 임금은 항상 최저생계 수준으로 수렴(맬서스 인구론 응용)</li>
+          <li><strong>생산협동조합:</strong> 조합이 생산수단 관리 → 국가 자금 지원 또는 신용 보증 필요</li>
+          <li>국가를 도덕적 실체·중립적 중재자로 봄</li>
+          <li>의회 입법 + 직접 협상(노사정 방식) 활용</li>
+          <li><strong>독일노동자협회(ADAV, 1863)</strong> 창설 → 훗날 SPD(독일 사민당)의 기원</li>
+          <li>비스마르크와 직접 협상 시도 → 마르크스와 극적 갈등</li>
+          <li>39세에 결투(10대 소녀를 위해)로 사망</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>개혁주의(개량주의) 선구:</strong> 훗날 SPD, 영국 노동당, 프랑스 사회당 등 온건 좌파 정당의 원조.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color2">
+      <div class="phil-header">
+        <div class="phil-num">밀</div>
+        <div class="phil-meta">
+          <h3>존 스튜어트 밀 (J.S. Mill)</h3>
+          <div class="years">1806–1873 · 영국</div>
+          <span class="tag">시장 사회주의의 원조</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 공리주의자 제임스 밀의 장남 → 자유주의자로 출발 → 1848혁명 목도 후 <em>정치경제학 원론</em> 수정
+        <ul>
+          <li>자유주의 전통 유지: 시장과 자유(liberty) 강조</li>
+          <li>지적·도덕적 엘리트의 meritocracy로 사회 합의</li>
+          <li><strong>불로소득 혐오:</strong> 지대환수론(100%), 높은 상속세</li>
+          <li><strong>토지 공유제:</strong> 재산은 노동의 결과여야 함, 토지는 자연이 준 것</li>
+          <li><strong>노동자 협동조합</strong>의 생산수단 소유·운영</li>
+          <li>해리엇 테일러 영향으로 페미니즘 수용 (<em>여성의 종속</em>, 1869)</li>
+          <li>1865년 영국 하원 진출</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>'시장 사회주의'의 원조:</strong> 시장 메커니즘은 유지하되, 협동조합 소유와 불로소득 환수 결합.
+        </div>
+      </div>
+    </div>
+
+    <div class="phil-card color3">
+      <div class="phil-header">
+        <div class="phil-num">바쿠</div>
+        <div class="phil-meta">
+          <h3>바쿠닌 (Mikhail Bakunin)</h3>
+          <div class="years">1814–1876 · 러시아</div>
+          <span class="tag">무정부주의 발전 · 반(反)마르크스</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 러시아 귀족(포병 장교) → 베를린 유학·헤겔 철학 → 공화주의 → 1848혁명 → 시베리아 유배 → 1860년대 무정부주의자로 본격 활동
+        <ul>
+          <li>"파괴의 열정은 곧 창조의 열정(1842)"</li>
+          <li>혁명 방법론은 공산주의자들과 유사: 소수 봉기</li>
+          <li>But 국가권력은 철저히 파괴 (↔ 블랑키: 국가기구 활용)</li>
+          <li>"붉은 관료(국가·관료제·중앙 엘리트)" 반대</li>
+          <li><strong>코뮨:</strong> 자유로운 개인들의 협동 체제 — 모든 생산수단 공동 소유</li>
+          <li>코뮨 사이의 계약: 자율적 연대(연맹)</li>
+          <li>제1차 인터내셔널에서 마르크스와 충돌</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="phil-card color4">
+      <div class="phil-header">
+        <div class="phil-num">게</div>
+        <div class="phil-meta">
+          <h3>게르첸 (Alexander Herzen)</h3>
+          <div class="years">1812–1870 · 러시아</div>
+          <span class="tag">나로드니키의 원조 · 러시아 농촌 공동체</span>
+        </div>
+      </div>
+      <div class="phil-body">
+        <strong>배경:</strong> 러시아 귀족 사생아 → 데카브리스트 반란 이후 러시아 청년 혁명운동 → 초창기 서구주의자 → 1848 혁명 목도 후 슬라브주의+사회주의로 전환 → 파리·런던 망명 → 잡지 <em>종(Kolokol)</em> 발간
+        <ul>
+          <li>러시아 농촌 공동체 <strong>미르(Mir)</strong> 에 주목</li>
+          <li>미르: 자율적·민주적 평등지향 공동체, 주기적 토지 재분배, 스호드(공동 결정)</li>
+          <li>마르크스·엥겔스의 역사유물론 대안: <strong>미르를 통한 사회주의 직행 가능</strong></li>
+          <li>역사결정론 거부, 주의주의(의지주의)</li>
+          <li>러시아 <strong>인민주의자(나로드니키)</strong>에 큰 영향</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== S7 영향 관계 ===== -->
+<section id="s7">
+  <h2 class="section-title"><span class="emoji">🔗</span>사상가들 간 영향 관계</h2>
+  <div class="influence-grid">
+    <div class="inf-card">
+      <h4>💡 직접적 영향 관계</h4>
+      <div class="inf-row">
+        <span class="inf-from">바베프</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">블랑키</span>
+        <span class="inf-content">쿠데타식 봉기 사상 전수</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">오언</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">프루동</span>
+        <span class="inf-content">노동수표, 조합 소유 아이디어</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">카베</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">블랑키파</span>
+        <span class="inf-content">공산주의 용어 유행 (의미는 블랑키파가 확정)</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">헤겔</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">마르크스</span>
+        <span class="inf-content">변증법, Ausbildung 개념 → 노동 소외로 발전</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">프루동</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">바쿠닌</span>
+        <span class="inf-content">무정부주의 사상 계승·급진화</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">블랑</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">라살</span>
+        <span class="inf-content">국가 개입 + 의회 입법 경로</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">오언</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">1차 인터내셔널 조합주의</span>
+        <span class="inf-content">협동조합 운동, 로치데일 조합</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">게르첸</span>
+        <span class="inf-arrow">→</span>
+        <span class="inf-to">나로드니키</span>
+        <span class="inf-content">미르 통한 사회주의 직행론</span>
+      </div>
+    </div>
+
+    <div class="inf-card">
+      <h4>⚡ 대립·논쟁 관계</h4>
+      <div class="inf-row">
+        <span class="inf-from">마르크스</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">바이틀링</span>
+        <span class="inf-content">1846년 논쟁: "먹물 vs 직접 노동자"</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">마르크스</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">프루동</span>
+        <span class="inf-content"><em>철학의 빈곤</em>으로 반박; 전략적 차이</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">마르크스</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">라살</span>
+        <span class="inf-content">국가 중립성 여부, 비스마르크 협상에 격분</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">마르크스</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">바쿠닌</span>
+        <span class="inf-content">1차 인터내셔널에서 충돌 (국가 인정 여부)</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">프루동</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">블랑키</span>
+        <span class="inf-content">카베·블랑키의 공산주의 = "노예제"라 비판</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">카베</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">블랑키파</span>
+        <span class="inf-content">1840 공산주의 연회에서 자진 배제</span>
+      </div>
+      <div class="inf-row">
+        <span class="inf-from">블랑</span>
+        <span class="inf-arrow" style="color:var(--accent1)">↔</span>
+        <span class="inf-to">마르크스</span>
+        <span class="inf-content">국가를 중립적 실체로 봄 ↔ 계급적 산물</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S8 상호 비판 ===== -->
+<section id="s8">
+  <h2 class="section-title"><span class="emoji">🗡</span>누가 누구를 어떻게 비판하는가</h2>
+  <div class="critique-grid">
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-r">마르크스</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-p">블랑키</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent1)">마르크스가 블랑키를 비판</div>
+        <p>물적 토대의 성숙 없이 소수 엘리트의 의지만으로 혁명 가능하다는 주관주의적 오류. 자본주의가 충분히 발전해야 사회주의로 이행 가능한 역사 법칙 무시. "조건이 안 됐어도 의지만으로" = 모험주의.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-p">블랑키</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-r">마르크스</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent5)">블랑키주의 관점</div>
+        <p>역사 법칙만 기다리다가는 아무것도 못함. 지금 당장 행동할 수 있는 의지와 조직이 있으면 혁명 가능. 마르크스는 이론만 하는 먹물 (바이틀링과 같은 비판).</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-r">마르크스</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-g">프루동</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent1)">마르크스가 프루동을 비판 (<em>철학의 빈곤</em>)</div>
+        <p>소규모 자영농·수공업자 중심의 목가적 공동체 이상은 복고적. 자본주의의 발전 법칙을 무시하고 과거로 돌아가려는 낭만주의. 노동수표 등의 교환 개혁만으로는 자본주의 구조적 문제 해결 불가.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-g">프루동</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-r">마르크스</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent3)">프루동이 마르크스를 비판</div>
+        <p>중앙국가를 활용한 사회주의는 결국 "붉은 관료주의" = 새로운 노예제. 직접 생산자의 자유를 억압. 국가 기구가 개인의 자유를 침해하는 구조는 어떤 이름이든 반자유주의.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-r">마르크스</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-b">라살</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent1)">마르크스가 라살을 강하게 비판</div>
+        <p>국가를 중립적 도덕적 실체로 보는 것은 순진한 착각. 국가는 지배계급의 계급 지배 도구. 비스마르크 같은 반동과 협상한다는 것은 배신. 선거와 의회로 자본주의 극복 불가.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-b">라살</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-r">마르크스</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent4)">라살의 관점</div>
+        <p>역사 법칙만 기다리며 혁명 준비를 하면 현실에서 아무것도 이루지 못함. 지금 당장 선거권 확대를 활용해 노동자 정당 만들고 의회 진출하는 것이 현실적. 순수 이론의 공허함을 비판.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-r">마르크스</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-g">바쿠닌</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent1)">마르크스가 바쿠닌을 비판</div>
+        <p>국가를 당장 파괴해야 한다는 것은 비현실적 이상주의. 혁명 이후 과도기적 '프롤레타리아 독재' 없이 바로 무정부 상태로 가면 반혁명에 의해 쉽게 무너짐. 러시아 농민 중심의 나로드니키 전략 비판.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-g">바쿠닌</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-r">마르크스</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent3)">바쿠닌이 마르크스를 비판</div>
+        <p>'프롤레타리아 독재'는 곧 지식인 엘리트의 독재로 변질. 어떤 형태의 국가도 자유를 억압. 마르크스주의가 실현되면 결국 관료적 권위주의 국가가 됨 (역사적으로 소련이 증명). 독일 중심주의적 사고 비판.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-g">프루동</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-p">카베·블랑키</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent3)">프루동이 공산주의 계열 전체를 비판</div>
+        <p>중앙국가가 모든 것을 귀속시키는 공산주의는 노예제다. 국가산업위원회든, 혁명적 독재든, 중앙 관료제는 결국 직접 생산자들을 복속시킴. 진정한 자유는 국가 없는 조합 연맹에서만 가능.</p>
+      </div>
+    </div>
+
+    <div class="crit-card">
+      <div class="crit-vs">
+        <span class="crit-name pill pill-o">오언</span>
+        <span class="crit-vs-symbol">→ 비판 →</span>
+        <span class="crit-name pill pill-p">카베</span>
+      </div>
+      <div class="crit-item">
+        <div class="from" style="color:var(--accent2)">오언주의 관점에서 카베 비판</div>
+        <p>이카리아 같은 완전 국유화 모델은 개인의 자발성과 자율성을 무시. 도덕 교육과 물질적 환경 개선을 통해 점진적으로 변화해야 함. 중앙계획은 관료주의적 타락을 낳음.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== S9 비교 테이블 ===== -->
+<section id="s9">
+  <h2 class="section-title"><span class="emoji">📊</span>사상가 비교 종합 테이블</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>사상가</th>
+          <th>시기</th>
+          <th>분류</th>
+          <th>생산수단 소유</th>
+          <th>혁명 방법론</th>
+          <th>국가 역할</th>
+          <th>핵심 키워드</th>
+          <th>한계·실패 원인</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="dot-r"></span>생시몽</td>
+          <td>1800-25</td>
+          <td><span class="pill pill-o">기술관료</span></td>
+          <td>사적 소유 인정(상속만 반대)</td>
+          <td>평화적 설득</td>
+          <td>인더스트리엘이 계획</td>
+          <td>테크노크라시, 과학적 분배</td>
+          <td>소유권 미건드림→사회주의 경계</td>
+        </tr>
+        <tr>
+          <td><span class="dot-o"></span>푸리에</td>
+          <td>1810-30s</td>
+          <td><span class="pill pill-o">유토피아</span></td>
+          <td>미언급</td>
+          <td>공동체 설립</td>
+          <td>거의 없음</td>
+          <td>팔랑스테르, 노동의 즐거움</td>
+          <td>초기 투자 비용, 소유권 미설계</td>
+        </tr>
+        <tr>
+          <td><span class="dot-g"></span>오언</td>
+          <td>1800-1858</td>
+          <td><span class="pill pill-g">협동주의</span></td>
+          <td>조합 소유 지향</td>
+          <td>공동체 실험</td>
+          <td>지원 요청 (거절당함)</td>
+          <td>사회주의 용어 탄생, 노동수표</td>
+          <td>자본가 프로젝트 성격, 참여 부족</td>
+        </tr>
+        <tr>
+          <td><span class="dot-r"></span>카베</td>
+          <td>1830-50s</td>
+          <td><span class="pill pill-r">국가공산</span></td>
+          <td>전면 폐지·국유화</td>
+          <td>이카리아 건설</td>
+          <td>절대적 (중앙계획)</td>
+          <td>이카리아, 인민대표회의</td>
+          <td>미국 실험 실패, 내부 갈등</td>
+        </tr>
+        <tr>
+          <td><span class="dot-p"></span>블랑키</td>
+          <td>1830-1881</td>
+          <td><span class="pill pill-r">혁명공산</span></td>
+          <td>점진적 철폐</td>
+          <td>소수 엘리트 봉기</td>
+          <td>혁명적 독재로 활용</td>
+          <td>프롤레타리아 독재, 음모적 봉기</td>
+          <td>33년 투옥, 반복 실패</td>
+        </tr>
+        <tr>
+          <td><span class="dot-b"></span>바이틀링</td>
+          <td>1830-70s</td>
+          <td><span class="pill pill-r">기독교공산</span></td>
+          <td>공동 소유</td>
+          <td>소수 엘리트 봉기</td>
+          <td>중앙위원회로 강력 관리</td>
+          <td>예수=최초 공산주의자, 노동수첩</td>
+          <td>지나친 중앙통제, 미국 실험 실패</td>
+        </tr>
+        <tr>
+          <td><span class="dot-o"></span>블랑</td>
+          <td>1830-82</td>
+          <td><span class="pill pill-b">의회개혁</span></td>
+          <td>국유화(사회작업장)</td>
+          <td>의회 입법</td>
+          <td>도덕적 중립 실체</td>
+          <td>사회작업장, 임금 균일화</td>
+          <td>48혁명 후 국가작업장 실패</td>
+        </tr>
+        <tr>
+          <td><span class="dot-g"></span>프루동</td>
+          <td>1840-64</td>
+          <td><span class="pill pill-g">무정부주의</span></td>
+          <td>용익권·점유권만 / 대규모는 조합</td>
+          <td>아래로부터 조합 건설</td>
+          <td>반대 (노예제)</td>
+          <td>소유=도둑질, 부조주의, 코뮨연맹</td>
+          <td>자금 부족, 국가 없이 조직 한계</td>
+        </tr>
+        <tr>
+          <td><span class="dot-r"></span>마르크스</td>
+          <td>1843-1883</td>
+          <td><span class="pill pill-r">과학사회주의</span></td>
+          <td>단계적 철폐 (사회주의로 이행)</td>
+          <td>역사 법칙 + 계급투쟁</td>
+          <td>프롤레타리아 독재 (과도기)</td>
+          <td>역사유물론, 잉여가치, 계급투쟁</td>
+          <td>미래 청사진 없음, 독재 변질 가능</td>
+        </tr>
+        <tr>
+          <td><span class="dot-y"></span>라살</td>
+          <td>1848-64</td>
+          <td><span class="pill pill-b">개혁주의</span></td>
+          <td>생산협동조합 소유</td>
+          <td>의회 입법·직접협상</td>
+          <td>중립적 중재자</td>
+          <td>임금철칙론, ADAV, 사민당 기원</td>
+          <td>결투로 요절, 노선 타협 비판</td>
+        </tr>
+        <tr>
+          <td><span class="dot-g"></span>밀</td>
+          <td>1848-73</td>
+          <td><span class="pill pill-g">시장사회주의</span></td>
+          <td>협동조합 소유</td>
+          <td>의회 입법·합의</td>
+          <td>중립적 조율</td>
+          <td>지대환수, 협동조합, 페미니즘</td>
+          <td>자유주의와의 경계 모호</td>
+        </tr>
+        <tr>
+          <td><span class="dot-g"></span>바쿠닌</td>
+          <td>1860-76</td>
+          <td><span class="pill pill-g">무정부주의↗</span></td>
+          <td>코뮨 공동 소유</td>
+          <td>봉기+국가 즉시 파괴</td>
+          <td>완전 파괴</td>
+          <td>코뮨 연맹, 반붉은관료제</td>
+          <td>조직력 부족, 마르크스와 충돌</td>
+        </tr>
+        <tr>
+          <td><span class="dot-b"></span>게르첸</td>
+          <td>1848-70</td>
+          <td><span class="pill pill-b">나로드니키</span></td>
+          <td>미르(공동체) 소유</td>
+          <td>농촌 공동체 활성화</td>
+          <td>거의 없음</td>
+          <td>미르, 역사결정론 거부, 주의주의</td>
+          <td>러시아 특수성 강조→보편화 한계</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:28px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;color:var(--text)">🎯 시험 핵심 포인트 — 꼭 기억할 것</h3>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <h4 style="color:var(--accent1)">용어 탄생 순서</h4>
+        <p>
+          <strong>사회주의:</strong> 오언 추종자들이 1820-30년대에 처음 사용<br>
+          <strong>공산주의:</strong> 카베가 유행시키고, 1840년 블랑키파가 의미 확정<br>
+          <strong>프롤레타리아:</strong> 블랑키가 1832년 15인 재판에서 개념 확정
+        </p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--accent2)">방법론 3분류</h4>
+        <p>
+          <span class="pill pill-g">아래로부터</span> 오언·프루동·바쿠닌·게르첸<br>
+          <span class="pill pill-r">봉기·국가</span> 블랑키·바이틀링·카베<br>
+          <span class="pill pill-b">의회·개혁</span> 블랑·라살·밀
+        </p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--accent3)">마르크스주의만의 특징</h4>
+        <p>
+          ① 자본주의를 과학적으로 분석 (잉여가치론)<br>
+          ② 역사 법칙으로서의 단계적 이행<br>
+          ③ 미래 청사진 없음, 현재 분석에 집중<br>
+          ④ 복고적이지 않음 — 자본주의 기여 인정
+        </p>
+      </div>
+      <div class="concept-card">
+        <h4 style="color:var(--accent4)">초기-중기-후기 흐름</h4>
+        <p>
+          <strong>1800-30:</strong> 유토피아적 공동체 실험 중심<br>
+          <strong>1830-48:</strong> 공산주의 vs 무정부주의 분화<br>
+          <strong>1848 혁명 실패:</strong> 결정적 전환점<br>
+          <strong>1848-70:</strong> 마르크스+개혁주의+무정부주의 각각 발전
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Scroll top button
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scroll-top');
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
