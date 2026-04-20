@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사회주의의 역사 - 초고난도 T/F 퀴즈</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+    background: #0f0f1a;
+    color: #e8e8f0;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%);
+    padding: 32px 20px;
+    text-align: center;
+    border-bottom: 1px solid #3d2d8f;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #c084fc;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+
+  .score-bar {
+    background: #1a1a2e;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    border-bottom: 1px solid #2d2d4e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .score-item {
+    text-align: center;
+  }
+
+  .score-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .score-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .score-correct { color: #22c55e; }
+  .score-wrong { color: #ef4444; }
+  .score-remaining { color: #94a3b8; }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: #7c3aed;
+    color: white;
+  }
+  .btn-primary:hover { background: #6d28d9; transform: translateY(-1px); }
+
+  .btn-secondary {
+    background: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
+  }
+  .btn-secondary:hover { background: #263344; }
+
+  .btn-danger {
+    background: #7f1d1d;
+    color: #fca5a5;
+    border: 1px solid #991b1b;
+  }
+  .btn-danger:hover { background: #991b1b; }
+
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    padding: 0 20px 16px;
+  }
+
+  .toggle-btn {
+    padding: 8px 20px;
+    border: 1px solid #334155;
+    background: transparent;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .toggle-btn:first-child { border-radius: 8px 0 0 8px; }
+  .toggle-btn:last-child { border-radius: 0 8px 8px 0; }
+
+  .toggle-btn.active {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+  }
+
+  .quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  .question-card {
+    background: #16213e;
+    border: 1px solid #1e3a5f;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+  }
+
+  .question-card.answered-correct {
+    border-color: #166534;
+    background: #052e16;
+  }
+
+  .question-card.answered-wrong {
+    border-color: #991b1b;
+    background: #2d0a0a;
+  }
+
+  .question-card.hidden {
+    display: none;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .question-number {
+    background: #1e3a5f;
+    color: #60a5fa;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .difficulty-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .difficulty-high {
+    background: #7f1d1d;
+    color: #fca5a5;
+  }
+
+  .difficulty-mid {
+    background: #78350f;
+    color: #fcd34d;
+  }
+
+  .question-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    flex: 1;
+  }
+
+  .answer-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .ans-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #334155;
+    background: #0f172a;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.2s;
+    color: #94a3b8;
+  }
+
+  .ans-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .ans-btn.true-btn:hover:not(:disabled) {
+    border-color: #22c55e;
+    background: #052e16;
+    color: #22c55e;
+  }
+
+  .ans-btn.false-btn:hover:not(:disabled) {
+    border-color: #ef4444;
+    background: #2d0a0a;
+    color: #ef4444;
+  }
+
+  .ans-btn:disabled { cursor: not-allowed; opacity: 0.7; }
+
+  .ans-btn.correct {
+    border-color: #22c55e;
+    background: #052e16;
+    color: #22c55e;
+  }
+
+  .ans-btn.wrong {
+    border-color: #ef4444;
+    background: #2d0a0a;
+    color: #ef4444;
+  }
+
+  .ans-btn.reveal-correct {
+    border-color: #22c55e;
+    background: #052e16;
+    color: #22c55e;
+    opacity: 1 !important;
+  }
+
+  .explanation {
+    margin-top: 20px;
+    padding: 16px;
+    background: #0f172a;
+    border-radius: 10px;
+    border-left: 4px solid #7c3aed;
+    display: none;
+  }
+
+  .explanation.show { display: block; }
+
+  .explanation-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .answer-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .answer-label.correct-ans { color: #22c55e; }
+  .answer-label.wrong-ans { color: #ef4444; }
+
+  .explanation-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: #94a3b8;
+  }
+
+  .explanation-breakdown {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #1e293b;
+  }
+
+  .breakdown-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  .check-icon { color: #22c55e; flex-shrink: 0; }
+  .x-icon { color: #ef4444; flex-shrink: 0; }
+
+  .result-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 12px;
+  }
+
+  .result-badge.correct-badge { background: #052e16; color: #22c55e; }
+  .result-badge.wrong-badge { background: #2d0a0a; color: #ef4444; }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #475569;
+  }
+
+  .empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.3rem; }
+    .question-text { font-size: 0.88rem; }
+    .ans-btn { padding: 10px 8px; font-size: 0.9rem; }
+    .score-bar { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📚 사회주의의 역사 — 초고난도 T/F</h1>
+  <p>총 30문제 · 대학 상위권 이상 · 직관으로 풀면 틀립니다</p>
+</div>
+
+<div class="score-bar">
+  <div class="score-item">
+    <div class="score-num score-correct" id="scoreCorrect">0</div>
+    <div class="score-label">정답</div>
+  </div>
+  <div class="score-item">
+    <div class="score-num score-wrong" id="scoreWrong">0</div>
+    <div class="score-label">오답</div>
+  </div>
+  <div class="score-item">
+    <div class="score-num score-remaining" id="scoreRemaining">30</div>
+    <div class="score-label">남은 문제</div>
+  </div>
+</div>
+
+<div class="controls">
+  <button class="btn btn-primary" onclick="resetAll()">🔄 전체 초기화</button>
+  <button class="btn btn-secondary" onclick="toggleAllExplanations()">📖 해설 전체 토글</button>
+  <button class="btn btn-danger" id="wrongOnlyBtn" onclick="showWrongOnly()">❌ 틀린 문제만 보기</button>
+</div>
+
+<div class="view-toggle">
+  <button class="toggle-btn active" id="toggleAll" onclick="switchView('all')">전체 문제</button>
+  <button class="toggle-btn" id="toggleWrong" onclick="switchView('wrong')">오답 노트</button>
+</div>
+
+<div class="quiz-container" id="quizContainer">
+  <!-- Questions generated by JS -->
+</div>
+
+<script>
+const questions = [
+  {
+    id: 1,
+    difficulty: "mid",
+    text: "마르크스가 정의한 '유통 형식으로서의 자본주의'는 노동과 토지를 포함한 생산 수단의 상품화를 핵심으로 하며, 이는 애덤 스미스를 비롯한 근대 경제학자들이 정립한 개념이기도 하고, 그 반대말은 자연 경제 또는 계획 경제로 동일하게 표현된다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "유통 형식의 자본주의가 노동·토지 등 생산수단 상품화를 핵심으로 한다는 것은 맞다." },
+      { ok: false, text: "강의에서 애덤 스미스 등이 이 시스템을 '정당화(정립)'했다고 하며, 개념 자체를 이들이 만들었다는 표현은 과장이다." },
+      { ok: false, text: "유통 형식(시장경제)의 반대는 '자연 경제', 생산 양식(계획경제)의 반대와는 구분된다. 이 둘을 동일하다고 한 것이 핵심 오류다." }
+    ],
+    explanation: "유통 형식으로서의 자본주의의 반대말은 '자연 경제(자급자족)'이며, 생산 양식으로서의 자본주의(임금 노동제)의 반대말은 '계획 경제'이다. 두 반대 개념을 혼동하면 안 된다."
+  },
+  {
+    id: 2,
+    difficulty: "high",
+    text: "강의에서 정의한 '사회주의'는 산업화와 자본주의를 모두 비판하며, 전통 경제 시대의 생산 수단 소유권 관념—즉 복수의 생계가 걸린 재산은 배타적으로 처분할 수 없다는 관념—을 복원하고자 했다는 점에서 보수주의와 경제 정책상 구별이 사실상 불가능하다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "사회주의는 산업화를 긍정하고 자본주의만 비판한다. 둘 다 비판하는 것은 보수주의다." },
+      { ok: true, text: "생산 수단 소유권의 복고적 비판이 보수주의와 유사하다는 지적은 강의에서 실제로 언급됐다." },
+      { ok: false, text: "그러나 사회주의는 산업화를 수용한다는 점에서 보수주의와 근본적으로 다르며 '구별 불가'는 오류다." }
+    ],
+    explanation: "강의에서 '자본주의 비판 내용만 따지면 보수주의와 크게 다르지 않다'고 했지만, 사회주의는 산업화를 긍정한다는 결정적 차이가 있다. 따라서 경제 정책상 '구별 불가'라는 표현은 과도하다."
+  },
+  {
+    id: 3,
+    difficulty: "high",
+    text: "오언(Owen)의 '빌리지 오브 쿠퍼레이션(Village of Cooperation)'은 미국 인디아나 주에서 처음 실험되었고, 16개 공동체를 동시에 건설했으나 2~3년 만에 실패했는데, 그 핵심 원인은 자본가적 프로젝트라는 내부 소외감이었다는 것이 강의의 결론이다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "미국 인디아나에서 16개 공동체를 동시에 건설하고 2~3년 내 실패한 것은 맞다." },
+      { ok: false, text: "강의에서 강사는 '자본가 프로젝트 비판'을 핵심 원인으로 보지 않는다고 명시했다. 진보 진영 학자들의 분석일 뿐이다." },
+      { ok: false, text: "강의가 제시한 핵심 원인은 투자자 부족으로 인한 네트워크 형성 실패와 기술 개발 시대의 비효율성이었다." }
+    ],
+    explanation: "강사는 '저 개인적으로는 이게 핵심적인 망한 포인트는 아니었다'고 명시하며, 오언 실패의 핵심 원인을 자본가 소외감이 아닌 커뮤니티 숫자 부족과 초기 투자 비용 과다로 설명했다."
+  },
+  {
+    id: 4,
+    difficulty: "mid",
+    text: "마르크스의 역사유물론에서 '사회적으로 필요한 노동시간'은 개별 공장의 실제 투입 시간이 아니라 사회 평균값을 기준으로 하므로, 자동화가 고도로 발달하여 노동 투입 시간이 극단적으로 줄어들더라도 해당 재화의 교환 가치는 하락하지 않는다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "사회적으로 필요한 노동시간이 사회 평균값 기준이라는 것은 맞다." },
+      { ok: false, text: "자동화로 사회 평균 노동시간이 줄어들면 교환 가치도 하락한다. '사회 평균'이기 때문에 한 공장만 자동화해도 사회 전체 평균에 반영된다." }
+    ],
+    explanation: "노동가치설에서 교환 가치는 '사회적 평균 필요 노동시간'에 비례한다. 따라서 기술 발전으로 사회 전체의 평균 노동시간이 단축되면 해당 재화의 교환 가치도 하락한다. 개별 기업의 변화가 아니라 사회 전체 평균이 기준이다."
+  },
+  {
+    id: 5,
+    difficulty: "high",
+    text: "블랑키(Blanqui)가 '프롤레타리아'라는 답변으로 직업을 선언한 재판은 15인 재판이었고, 이 사건이 그를 유명하게 만들었으며, 블랑키가 제시한 혁명 방법론은 대중봉기에 기반한 것이어서 마르크스의 역사유물론적 혁명론과 방법론상 동일하다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "15인 재판에서의 '프롤레타리아' 발언으로 유명해졌다는 것은 맞다." },
+      { ok: false, text: "블랑키의 방법론은 '소수 엘리트의 음모적 봉기'로, 대중봉기가 아니다." },
+      { ok: false, text: "마르크스는 물적 토대의 성숙을 전제로 하지만, 블랑키는 소수 엘리트의 의지로 시점을 정한다. 방법론이 근본적으로 다르다." }
+    ],
+    explanation: "블랑키의 방법론은 소수 의식화된 엘리트가 쿠데타식으로 국가 권력을 탈취하는 것이다. 이는 물적 토대의 성숙을 전제하고 대중의 역사적 힘에 의존하는 마르크스주의와 근본적으로 다르다."
+  },
+  {
+    id: 6,
+    difficulty: "mid",
+    text: "생시몽(Saint-Simon)은 후기로 갈수록 '과학'보다 '기독교적 양심'을 강조했고, '인더스트리엘(Industriels)'에 귀족·기사·지주는 포함시키지 않았으나 농민·수공업자·노동자는 포함시켰으며, 생산 수단의 사적 소유권 자체를 적극적으로 비판했다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "후기에 기독교적 양심 강조 및 귀족·기사 제외, 농민·수공업자·노동자 포함은 맞다." },
+      { ok: false, text: "생시몽은 생산 수단의 사적 소유권 자체를 직접 문제 삼지 않았다. '상속 금지'를 주장했을 뿐, 소유권 폐지 주장은 하지 않았다." }
+    ],
+    explanation: "강의에서 생시몽은 '생산수단에 대한 소유권 부분은 직접적으로 건드리지 않았어요'라고 명시했다. 그가 비판한 것은 상속을 통한 능력 없는 자의 소유 승계였지, 소유권 자체가 아니었다."
+  },
+  {
+    id: 7,
+    difficulty: "high",
+    text: "마르크스의 잉여가치론에 의하면 자본가의 이윤은 유통 영역이 아닌 생산 영역에서 발생하고, 이는 설비(불변자본)와 노동력(가변자본) 모두에서 가치 증식이 일어나기 때문이며, 결과적으로 자본가가 노동자에게 지불하는 임금은 노동의 가치를 온전히 반영하지 못한다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "이윤이 생산 영역에서 발생하며 유통 영역에서는 가치 증식이 없다는 것은 맞다." },
+      { ok: false, text: "설비(불변자본)는 가치를 창출하지 않는다. 오직 노동력(가변자본)만이 잉여가치를 생산한다. '둘 다에서 발생'이 오류다." },
+      { ok: true, text: "임금이 노동의 가치를 온전히 반영 못한다는 것은 잉여가치론의 핵심이다." }
+    ],
+    explanation: "마르크스 이론에서 불변자본(설비)은 자신의 가치를 이전할 뿐 새로운 가치를 창출하지 않는다. 오직 가변자본(노동력)만이 잉여가치를 생산한다. '둘 다에서 가치 증식'이라는 표현이 핵심 오류다."
+  },
+  {
+    id: 8,
+    difficulty: "mid",
+    text: "역사학이라는 학문의 핵심은 과거에 대한 합리적이고 맥락 중심적인 설명을 제공하는 것이며, 이를 통해 '그때는 그랬지'라는 결론에 이름으로써 과거에서 오늘날에 적용 가능한 보편 법칙을 추출하는 것이 역사학의 주된 효용이다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "역사가 합리적이고 맥락 중심적인 설명을 제공한다는 것은 맞다." },
+      { ok: false, text: "강의는 역사학이 '보편 법칙을 추출하는 것'이 아니라고 명시했다. 오히려 맥락 중심성은 보편 법칙 추출과 반대방향이다." },
+      { ok: false, text: "역사의 효용은 현재 제도의 권위에 도전하고 낯설게 만드는 것이지, 법칙 추출이 아니다." }
+    ],
+    explanation: "강의에서 명시적으로 '역사는 과거에서 교훈을 얻는 것이 아니라 그냥 그때는 그랬지'라고 했으며, 맥락 중심성은 과학적 법칙 추출과 상충한다고 설명했다. 역사의 효용은 현재 제도를 낯설게 만드는 것이다."
+  },
+  {
+    id: 9,
+    difficulty: "high",
+    text: "푸리에(Fourier)가 설계한 '팔랑스테르(Phalanstère)'는 1620명이 810개의 심리 유형으로 짝을 이뤄 거주하는 공동체로, 생산·분배·거주를 통합하며, 생산 수단에 대한 소유권 문제를 정면으로 다루고 그 철폐를 명시적으로 주장했다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "1620명, 810개 심리 유형, 생산·분배·거주 통합 공동체라는 것은 맞다." },
+      { ok: false, text: "강의에서 '그 부분은 특별하게 건드리지 않고'라고 명시했다. 푸리에는 소유권 문제를 직접 제기하지 않았다." }
+    ],
+    explanation: "강의에서 '그렇게 따지면 푸리에는 생시몽보다 훨씬 더 이제 황당하고 완전히 바뀐 세상을 꿈꾸긴 했는데, 역시 소유권 부분에서는 그렇게까지 민감하지 않았어요'라고 명시했다. 소유권 철폐는 푸리에의 핵심 주장이 아니었다."
+  },
+  {
+    id: 10,
+    difficulty: "mid",
+    text: "오언(Owen)이 전국노동조합(Grand National Consolidated Trades Union)을 결성한 것은 1833년이며, 이 조합은 단순한 임금 협상이 아닌 조합을 통한 생산 수단의 조합적 소유를 지향했고, 오늘날 민노총과 같은 현대적 노동조합과 성격이 동일하다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "1833년 결성, 조합적 생산수단 소유 지향은 맞다." },
+      { ok: false, text: "현대 노동조합(민노총 등)은 임금 협상을 주로 하고 생산수단 소유권은 건드리지 않는다. 오언의 조합과 성격이 다르다." }
+    ],
+    explanation: "강의에서 '오늘날 민노총은 자기네들이 돈 모아가지고 공장 짓는다 이렇게 생각은 안 하잖아요. 어디까지나 임금 노동제를 인정한 다음에 사측하고 싸우는 정도'라고 명시하여 오언의 조합과 현대 노조의 차이를 분명히 했다."
+  },
+  {
+    id: 11,
+    difficulty: "high",
+    text: "마르크스 엥겔스의 '역사유물론'에서 생산력과 생산관계의 모순이 심화될 때 발생하는 '사회혁명'은 필연적으로 폭력을 수반하는 것을 마르크스가 직접 명시했으며, 이 도식에서 원시공산제→노예제→봉건제→자본주의의 순서는 소련이 아니라 마르크스 자신이 다섯 단계로 도식화한 것이다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "마르크스는 혁명의 폭력성을 직접 명시하지 않았으며 불가피한 메커니즘만 제시했다." },
+      { ok: false, text: "다섯 단계 도식화는 소련 학자들이 정리한 것이다. 강의에서 '소련에서 이제 일종의 정리를 한 거고요'라고 명시했다." }
+    ],
+    explanation: "강의에서 '마르크스 때 그거를 엄정하게 규정하지는 않고 뒤에 마르크스 주의자라고 불리는 사람들이 이걸 법칙으로 더 받아들이게 되기는 합니다'라고 했다. 5단계 도식화는 소련의 작업이지, 마르크스 자신의 것이 아니다."
+  },
+  {
+    id: 12,
+    difficulty: "high",
+    text: "까베(Cabet)의 이카리아 공동체에서 화폐는 외국과의 거래 시에도 완전히 사용이 금지되어 있었고, 생산 목표는 국가산업위원회가 설정하되, 각 공장 단위의 회의체가 그 지시에 무조건 복종하는 구조였으며, 이를 '이론이 없는 사회'라고 표현한 이유는 사유재산이 없어서이다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "외국과의 거래 시에는 화폐(외화)를 사용했다. '외국하고 거래할 때만 화폐를 사용한다'고 명시됐다." },
+      { ok: false, text: "각 공장 회의체는 중앙 지시에 피드백을 줄 수 있는 구조였다. '무조건 복종'이 아니다." },
+      { ok: false, text: "'이론이 없다'고 한 이유는 계급 문제(생산수단 소유 갈등)가 없기 때문이지, 사유재산 부재 그 자체가 이유가 아니다." }
+    ],
+    explanation: "세 가지 요소 모두 부분적으로 또는 전부 틀렸다. 화폐는 외국 거래 시 사용, 공장 회의체는 역피드백 가능, '이론 없음'은 계급 갈등 원인 소멸 때문이다."
+  },
+  {
+    id: 13,
+    difficulty: "mid",
+    text: "마르크스의 '노동의 소외' 개념은 헤겔의 Ausbildung 개념을 계승하되, 헤겔이 법률가를 노동의 전형으로 제시한 것과 달리 마르크스는 이를 넓은 의미의 노동—육체노동을 포함한—으로 확장했으며, 산업자본주의 하의 노동자는 노동을 통해 자기에게 적대적인 세계를 창출한다고 주장했다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "헤겔의 Ausbildung을 계승하되 법률가(정신노동)에서 넓은 의미의 노동으로 확장했다는 것은 맞다." },
+      { ok: true, text: "'노동자는 노동을 해서 자기에게 적대적인 세계를 창출한다'는 표현은 강의에서 직접 인용된 마르크스의 말이다." }
+    ],
+    explanation: "이 문장의 모든 요소는 강의 내용과 일치한다. 헤겔이 법률가를 예로 들었고 마르크스가 이를 광의의 노동으로 재정의했으며, 소외론의 핵심 명제를 정확히 서술했다."
+  },
+  {
+    id: 14,
+    difficulty: "high",
+    text: "엥겔스(Engels)의 수요론적 위기론에서 자본주의 위기가 주기적 사이클을 보이는 이유는, 경공업(소비재)과 중공업(생산재)의 시간차 투자 패턴 때문이며, 과소소비 위기 시 중공업 부문의 호황이 이를 완충하기 때문이라고 강의에서 설명되었다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "경공업·중공업의 시간차 투자와 중공업 호황에 의한 완충 효과가 강의에서 명확히 설명되었다." },
+      { ok: true, text: "Division 1(경공업), Division 2(중공업)의 상호 관계로 사이클이 발생한다는 설명과 일치한다." }
+    ],
+    explanation: "강의에서 '경공업이 과투자로 들어가서 아까 위기로 들어갈 때쯤에 중공업은 호황이기 때문에 호황인 중공업이 아까 잘린 노동자들을 다시 고용한다'고 명시했다. 정확한 서술이다."
+  },
+  {
+    id: 15,
+    difficulty: "high",
+    text: "라살(Lassalle)의 '임금 철칙론'은 맬서스 인구론을 활용하여 자본주의 하에서 임금이 최저생계 수준으로 수렴하는 경향이 있다고 주장했고, 마르크스의 잉여가치론과는 논리 구조가 완전히 상이하며 서로 상통하는 바가 전혀 없다는 것이 강의의 결론이다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "맬서스 인구론 활용과 임금의 최저생계 수렴 경향 주장은 맞다." },
+      { ok: false, text: "강의에서 '사실은 상통해요. 다른 논리로 설명했을 뿐이죠'라고 명시했다. 둘이 '전혀 상통하지 않는다'는 것이 오류다." }
+    ],
+    explanation: "강의에서 '라살이 맑다는 우리나라에서 얘를 너무 싫어해요... 사실은 아주 넓게 보면 임금이 최저생계수준에 걸린다는 것은 마르크스 잉여가치론하고 상통합니다'라고 명시했다."
+  },
+  {
+    id: 16,
+    difficulty: "mid",
+    text: "사회주의가 역사적 개념인 이유는, 그것이 산업화와 자본주의라는 두 가지 발전(development)을 전제로 해야만 의미를 획득하기 때문이며, 산업화 이전에도 분배 정의를 주장하는 사상은 있었지만 그것을 사회주의라고 부를 수 없다는 것이 강의의 입장이다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "산업화+자본주의를 전제로 해야 사회주의가 의미를 획득한다는 것은 강의의 핵심 정의다." },
+      { ok: true, text: "분배 정의 주장이 이전에도 있었지만 그것을 사회주의라 할 수 없다는 것도 강의에서 명시됐다." }
+    ],
+    explanation: "강의에서 '사회주의는 산업 자본주의라는 전제 조건이 깔려야지 비로소 의미를 획득할 수 있다'고 했으며, 조선시대 균전제나 반란 등을 사회주의로 볼 수 없다고 명확히 했다."
+  },
+  {
+    id: 17,
+    difficulty: "high",
+    text: "마르크스와 엥겔스가 공산주의 선언을 집필하게 된 직접적 계기는 의인동맹이 공산주의 연맹으로 개명하면서 창립 강령을 요청했기 때문이며, 이 책은 탈고 직후 48년 2월 혁명이 발생하면서 발간이 지연되었고, 이후 마르크스는 런던에서 19년 이상 도서관 연구에 전념했다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "의인동맹→공산주의 연맹 개명 후 강령으로 요청했다는 것은 맞다." },
+      { ok: false, text: "탈고 직후 2월 혁명이 발생한 것은 맞지만, 혁명으로 인해 발간이 '지연'된 것이 아니라 거의 동시에 출판됐다." },
+      { ok: false, text: "'19년 이상 도서관 연구'라는 구체적 수치는 강의에 없다. 또 마르크스는 연구만 한 것이 아니라 1차 인터내셔널 활동도 했다." }
+    ],
+    explanation: "공산주의 선언은 1848년 1월 탈고 후 2월 혁명 발발과 거의 동시에 출간됐다. 런던 이주 후 마르크스는 도서관 연구와 함께 1차 인터내셔널 활동도 병행했으며, '19년 이상'이라는 수치도 부정확하다."
+  },
+  {
+    id: 18,
+    difficulty: "high",
+    text: "프루동(Proudhon)이 '소유는 도둑질이다'라고 주장하며 비판한 소유권의 세 가지 정당화 근거 중 '경제적 근거'에서의 핵심 반박은, 노동투입으로 만들어진 산물이라 하더라도 그 창출 과정에는 사회적 기여와 기존 자연의 변형만이 있을 뿐 완전히 새로운 창조는 없다는 것이다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "경제적 근거(노동 투입에 의한 소유)에 대한 프루동의 반박은 '사회적 기여'와 '물적(자연 변형) 기여' 두 가지였다." },
+      { ok: true, text: "'완전히 새로운 창조가 아닌 자연의 변형'이라는 반박은 강의에서 명시된 내용이다." }
+    ],
+    explanation: "강의에서 프루동의 경제적 근거 반박으로 ①개간 기술·도구 등 사회적 기여가 내포됨, ②새로운 재료 창출이 아닌 자연 변형에 불과함을 명시했다. 정확한 서술이다."
+  },
+  {
+    id: 19,
+    difficulty: "mid",
+    text: "산업자본주의 이전 봉건제 시기의 도시 길드(Guild)는 구성원들의 경제 활동에 대해 외부에서 규제를 부과했으며, 구성원들 스스로 공동체 바운더리를 넘는 생산을 상상조차 하지 않았다는 것은 강의의 과장된 해석이다. 실제로는 이윤 극대화 욕구를 억압하기 위한 강제적 규율이 반드시 필요했다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "강의는 '과장'이 아니다. 오히려 강의의 핵심 주장은 '규제하기 전에 이미 생산자들이 하지 않아요. 왜냐하면 그게 너무나도 내면화돼 있기 때문에'라는 것이다." },
+      { ok: false, text: "강의에서 외부 규제보다 내면화된 자기규제가 더 중요했다고 명시했다." }
+    ],
+    explanation: "강의의 핵심은 '얘가 규제하기 전에 이미 생산자들이 하지 않아요. 왜냐하면 그게 너무나도 내면화되어 있기 때문에 이런 규제 관념이라는 게 공동체를 넘어서 내가 욕구를 폭발시키겠다 이런 생각 자체를 이제 하지를 않죠'다. 강제 규율이 '반드시 필요'했다는 것이 오류다."
+  },
+  {
+    id: 20,
+    difficulty: "high",
+    text: "마르크스가 자본 1권에서 봉건제에서 자본주의로의 이행을 '시초축적' 장에서 분석할 때, 농촌 분화(부농과 빈농의 분리)가 결정적 출발점이었고, 이 분화의 원인은 생산력 발달에 따른 노하우 격차였으며, 부농이 형성한 자본이 도시 부르주아지와 결합해 프랑스 혁명으로 귀결된다고 마르크스는 주장했다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "농촌 분화→부농·부르주아 연합→계급 투쟁→프랑스 혁명의 도식이 강의에서 설명됐다." },
+      { ok: true, text: "생산력 발달에 따른 노하우 격차가 분화의 원인이라는 것도 강의 내용과 일치한다." }
+    ],
+    explanation: "강의에서 마르크스의 시초축적 분석을 상세히 설명했다. 생산력 발달→농촌 분화→부농 잉여 시장 거래→부르주아 성장→자본 축적→봉건 생산관계와 충돌→프랑스 혁명의 흐름을 정확히 서술했다."
+  },
+  {
+    id: 21,
+    difficulty: "mid",
+    text: "바이틀링(Weitling)과 마르크스가 의인동맹 내에서 논쟁을 벌였을 때, 바이틀링이 마르크스를 공격한 핵심은 '마르크스가 기독교적 도덕 없이 유물론적으로만 사회주의를 접근한다'는 것이었고, 바이틀링의 주요 저서 제목은 '가난한 죄인의 복음서'였다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "바이틀링이 마르크스를 공격한 핵심은 '마르크스는 그냥 먹물이다'—즉, 직접 일하는 노동자가 아닌 책만 읽는 지식인이라는 것이었다. 기독교 부재 비판이 아니었다." },
+      { ok: true, text: "'가난한 죄인의 복음서'는 바이틀링의 저서명으로 맞다." }
+    ],
+    explanation: "강의에서 '바이틀링이 마르크스를 공격한 핵심 요소는, 마르크스는 그냥 먹물이다. 이거예요'라고 명시했다. 기독교 관련 비판이 아니라 지식인 대 노동자 정체성의 충돌이었다."
+  },
+  {
+    id: 22,
+    difficulty: "high",
+    text: "오언(Owen)이 주장한 '노동수표(Labor Note)' 시스템이 실패한 핵심 이유는 숙련도별 계산의 어려움 때문이었고, 이는 당시의 기술 수준으로는 해결 불가능한 문제였으며, 노동교환소에 재고가 쌓이는 문제는 부차적인 원인에 불과했다.",
+    answer: false,
+    breakdown: [
+      { ok: false, text: "강의에서 숙련도 계산은 '해결 가능한 거였으니까. 좀 디테일하게 나누면 숙련도를 다섯 단계로 나눴다든가... 이때의 기술력으로도 가능해'라고 명시했다." },
+      { ok: false, text: "재고 폭증 문제가 핵심 실패 원인이었다. 강의에서 재고 관리를 가장 심각한 문제로 제시했다." }
+    ],
+    explanation: "강의에서 숙련도 계산은 원칙적으로 해결 가능했으며, 핵심 실패 원인은 '재고 해소용'으로 노동교환소를 남용한 결과 재고가 폭증하여 Union Shop에 물건이 없어진 것이라고 설명했다."
+  },
+  {
+    id: 23,
+    difficulty: "mid",
+    text: "강의에서 정의한 '사회주의'는 생산 수단의 사적 소유와 그로 인한 불공정을 거부하며, 시장 메커니즘에 대한 제3자 개입을 주장하는 이념이며, 이는 오언주의자들의 잡지에서 처음으로 '사회주의자'라는 표현이 사용되었다는 역사적 사실과 함께 제시되었다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "생산수단 사적 소유와 불공정 거부, 제3자 개입—이 두 요소가 사회주의 정의의 핵심이다." },
+      { ok: true, text: "오언주의자들의 잡지에서 '사회주의자'라는 표현이 처음 사용됐다는 것은 강의에서 명시됐다." }
+    ],
+    explanation: "강의에서 '오어나이트들이 만든 잡지에서 사회주의라는 말이... 처음으로 사용됩니다'라고 명시했으며, 정의도 '생산수단의 사적 소유와 그로 인해 발생하는 불공정을 거부한다. 우리가 지향하는 바는 사회적 운영과 소유다'라고 직접 인용했다."
+  },
+  {
+    id: 24,
+    difficulty: "high",
+    text: "엥겔스(Engels)의 이윤율 저하론에서 자본주의 위기의 핵심 메커니즘은, 경쟁 압력으로 인한 노동집약적 기술 진보→유기적 구성 고도화→잉여가치 원천(노동력 비중) 축소→이윤율 하락→경기 침체→설비 가격 하락과 실업자 증가→이윤율 회복의 사이클이며, 이는 수요론을 완전히 대체한다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "이윤율 저하론의 메커니즘 자체는 정확히 서술됐다." },
+      { ok: false, text: "'수요론을 완전히 대체'는 틀렸다. 강의에서 '수요론도 여전히 강고한 위치는 차지하고 있습니다. 두 개를 믹스하는 학자도 있고'라고 명시했다." }
+    ],
+    explanation: "강의에서 이윤율 저하론이 수요론을 '대체'한다고 하지 않았다. 오히려 두 이론이 공존하며, 수요론도 여전히 유효하고 두 이론을 결합하는 학자들도 있다고 설명했다."
+  },
+  {
+    id: 25,
+    difficulty: "high",
+    text: "까베(Cabet)의 '이카리아 여행기'가 당시 큰 반향을 일으킨 이유는 기존 사회주의자들(오언, 생시몽 등)의 이론적 저작과 달리 여행기 형식으로 이상향을 묘사했기 때문이며, '각자에게는 그 능력에 따라, 각자로부터는 그 필요에 따라'라는 구호를 까베가 처음 유행시켰다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "여행기 형식으로 이상향을 묘사해 대중 접근성이 높았다는 것은 맞다." },
+      { ok: false, text: "구호가 뒤바뀌었다. '각자에게는 그 필요에 따라, 각자로부터는 그 능력에 따라'가 맞다. 강의에서 '능력'과 '필요'의 위치를 명확히 했다." }
+    ],
+    explanation: "강의에서 구호는 '각자에게는 그 필요에 따라 각자로부터는 그 능력에 따라'라고 했다. 즉, '능력에 따라 받고 필요에 따라 가져가는 것'이 이카리아 원칙이다. 문제의 표현은 두 구절의 순서를 바꿨다."
+  },
+  {
+    id: 26,
+    difficulty: "mid",
+    text: "보수주의가 19세기 초 산업자본주의에 대한 '가장 극렬한 반응'을 보였다고 강의에서 말한 이유는, 보수주의자들이 산업화와 자본주의 모두를 거부하고 과거로의 회귀를 주장했기 때문이며, 당시 보수주의의 경제적 입장은 오늘날 보수 정당의 경제 정책과 동일하다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "보수주의가 I와 C 모두 거부하고 과거 회귀 주장한 것이 가장 극렬한 반응으로 평가된 것은 맞다." },
+      { ok: false, text: "오늘날 보수 정당은 자본주의를 가장 지지하는 반면, 당시 보수주의는 자본주의에 반대했다. 강의에서 '가장 변화가 많을 수 있는 이념이에요. 왜냐하면 기득권이라는 게 계속 바뀌니까'라고 설명했다." }
+    ],
+    explanation: "강의에서 보수주의는 '지켜야 될 대상이 계속 바뀌어서 내용이 계속 바뀐다'고 했다. 19세기 초 보수주의는 산업자본주의 이전의 공동체와 직분을 지키려 했고, 오늘날 보수주의는 정반대로 자본주의를 지지한다."
+  },
+  {
+    id: 27,
+    difficulty: "high",
+    text: "마르크스와 엥겔스가 제시한 자본주의 위기론의 근본 전제인 'socialized production과 private ownership of products의 모순'에서, socialized production은 철학적·추상적 의미의 사회화가 아니라 단순히 '여러 사람이 모여서 분업으로 일한다'는 물리적 의미이며, private ownership은 오너가 그 생산물에 대한 소유권을 갖는다는 뜻이다.",
+    answer: true,
+    breakdown: [
+      { ok: true, text: "강의에서 'socialized production 이거는 그냥 모여서 일한다는 뜻이에요. 소셜에 그런 뜻이 있잖아요'라고 명시했다." },
+      { ok: true, text: "private ownership이 생산물에 대한 오너의 소유권이라는 것도 강의에서 명시됐다." }
+    ],
+    explanation: "강의에서 위기론의 핵심 전제를 설명할 때 'socialized production'을 '모여서 분업으로 일한다는 단순한 의미'로 명시했다. 이는 흔히 과도하게 철학화되는 개념인데 강의에서 단순하게 정의했다."
+  },
+  {
+    id: 28,
+    difficulty: "high",
+    text: "루이 블랑(Louis Blanc)의 '사회작업장(Ateliers sociaux)' 구상은 국가가 펀드를 제공하고 노동자들이 자율적으로 운영하는 방식이었으나, 1848년 혁명 이후 실제로 구현된 '국가작업장'은 노동자 자율보다 국가 관여가 훨씬 컸으며, 이 실패의 원인은 도덕심 부재에 있었다고 블랑 자신이 평가했다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "사회작업장은 노동자 자율 운영, 국가작업장은 국가 관여가 컸다는 구분은 맞다." },
+      { ok: false, text: "블랑이 실패를 '도덕심 부재'로 평가했다는 내용은 강의에 없다. 강의는 보수파 의회 다수, 나폴레옹 3세 당선, 부랑자 등 다양한 인물의 무단 참여 문제를 설명했다." }
+    ],
+    explanation: "강의에서 국가작업장 실패 원인으로 부랑자들의 무단 유입과 규율 부재, 보수파 의회의 방해, 나폴레옹 3세의 등장을 제시했다. 블랑이 '도덕심 부재'를 핵심 원인으로 평가했다는 내용은 없다."
+  },
+  {
+    id: 29,
+    difficulty: "high",
+    text: "프루동(Proudhon)의 무정부주의적 사회주의에서 핵심 단위는 '자유 코뮌(Free Commune)'이며, 이 코뮌들이 컨페더레이션을 구성하는 구조이고, 프루동은 오언의 협동촌락과 달리 대규모 생산수단의 국유화를 통해 이 체계를 건설하려 했다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "자유 코뮌의 컨페더레이션 구조는 맞다." },
+      { ok: false, text: "프루동은 국유화에 반대했다. 국가 권력과 관료제 자체를 싫어했기 때문에 오히려 아래로부터의 조합 소유를 주장했다." }
+    ],
+    explanation: "강의에서 '국유화해버리면 마치 까베처럼 중앙의 엘리트들이 통제하는 게 되잖아요. 그거는 안 된다'고 명시했다. 프루동은 국유화가 아닌 조합적 소유를 지지했다. 프루동과 블랑(국가 작업장)을 혼동하면 안 된다."
+  },
+  {
+    id: 30,
+    difficulty: "high",
+    text: "도스토옙스키는 푸리에주의자 서클 활동으로 체포되어 사형을 선고받았다가 사면되었고, 이 경험 이후 완전한 보수주의자로 변모했다고 강의에서 설명되었으며, 이와 동일하게 라살(Lassalle)도 결투로 사망하기 전에 보수주의자로 전향한 것으로 강의에서 묘사되었다.",
+    answer: false,
+    breakdown: [
+      { ok: true, text: "도스토옙스키가 푸리에주의 서클로 체포→사형 선고→사면→보수주의자 변모는 강의에서 명시됐다." },
+      { ok: false, text: "라살은 결투로 사망했지만 보수주의자로 전향했다는 언급은 강의에 없다. 오히려 끝까지 사회주의 운동을 이어갔으며, 비스마르크에게 접근했지만 전향이 아니라 전술적 접근이었다." }
+    ],
+    explanation: "강의에서 도스토옙스키의 전향은 명시됐지만, 라살에 대해서는 독일 노동자협회 창설과 결투 사망만 설명됐다. 라살이 보수주의자로 전향했다는 내용은 강의에 없다. 두 인물의 서술이 뒤섞인 함정이다."
+  }
+];
+
+let state = {
+  answers: {},  // id -> 'correct' | 'wrong'
+  showAll: true,
+  allExplanationsOpen: false
+};
+
+function renderQuiz() {
+  const container = document.getElementById('quizContainer');
+  const filtered = state.showAll ? questions : questions.filter(q => state.answers[q.id] === 'wrong');
+
+  if (!state.showAll && filtered.length === 0) {
+    container.innerHTML = `<div class="empty-state"><div class="icon">🎉</div><p>틀린 문제가 없어요!<br>모두 맞히셨거나 아직 풀지 않은 상태입니다.</p></div>`;
+    return;
+  }
+
+  container.innerHTML = filtered.map(q => {
+    const ans = state.answers[q.id];
+    const isAnswered = ans !== undefined;
+    const cardClass = isAnswered ? (ans === 'correct' ? 'answered-correct' : 'answered-wrong') : '';
+
+    const trueBtnClass = isAnswered
+      ? (q.answer === true ? 'correct' : (ans === 'wrong' && q.answer === false ? '' : 'wrong'))
+      : 'true-btn';
+
+    const falseBtnClass = isAnswered
+      ? (q.answer === false ? 'correct' : (ans === 'wrong' && q.answer === true ? '' : 'wrong'))
+      : 'false-btn';
+
+    // For wrong answers, show which was correct
+    let trueFinal = 'true-btn', falseFinal = 'false-btn';
+    if (isAnswered) {
+      trueFinal = q.answer === true ? 'reveal-correct' : '';
+      falseFinal = q.answer === false ? 'reveal-correct' : '';
+    }
+
+    const explanationShow = state.allExplanationsOpen && isAnswered ? 'show' : '';
+    const resultEmoji = ans === 'correct' ? '✅ 정답!' : '❌ 오답';
+    const resultClass = ans === 'correct' ? 'correct-badge' : 'wrong-badge';
+
+    return `
+      <div class="question-card ${cardClass}" id="card-${q.id}">
+        <div class="question-header">
+          <span class="question-number">${q.id}번</span>
+          <span class="difficulty-badge ${q.difficulty === 'high' ? 'difficulty-high' : 'difficulty-mid'}">
+            ${q.difficulty === 'high' ? '🔴 초고난도' : '🟡 고난도'}
+          </span>
+          <span class="question-text">${q.text}</span>
+        </div>
+        <div class="answer-buttons">
+          <button class="ans-btn ${trueFinal}" onclick="checkAnswer(${q.id}, true)" ${isAnswered ? 'disabled' : ''}>
+            ✅ TRUE
+          </button>
+          <button class="ans-btn ${falseFinal}" onclick="checkAnswer(${q.id}, false)" ${isAnswered ? 'disabled' : ''}>
+            ❌ FALSE
+          </button>
+        </div>
+        ${isAnswered ? `
+          <div class="result-badge ${resultClass}">${resultEmoji}</div>
+          <div class="explanation ${explanationShow}" id="exp-${q.id}">
+            <div class="explanation-title">📋 해설</div>
+            <div class="answer-label ${ans === 'correct' ? 'correct-ans' : 'wrong-ans'}">
+              정답: ${q.answer ? 'TRUE (참)' : 'FALSE (거짓)'}
+            </div>
+            <div class="explanation-text">${q.explanation}</div>
+            <div class="explanation-breakdown">
+              ${q.breakdown.map(b => `
+                <div class="breakdown-item">
+                  <span class="${b.ok ? 'check-icon' : 'x-icon'}">${b.ok ? '✓' : '✗'}</span>
+                  <span>${b.text}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          <button class="btn btn-secondary" style="margin-top:12px;font-size:0.8rem;padding:7px 14px;" onclick="toggleExplanation(${q.id})">
+            📖 해설 열기/닫기
+          </button>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+function checkAnswer(id, userAnswer) {
+  const q = questions.find(q => q.id === id);
+  const isCorrect = userAnswer === q.answer;
+  state.answers[id] = isCorrect ? 'correct' : 'wrong';
+  updateScore();
+  renderQuiz();
+  // Auto-open explanation
+  const exp = document.getElementById(`exp-${id}`);
+  if (exp) exp.classList.add('show');
+}
+
+function updateScore() {
+  const correct = Object.values(state.answers).filter(v => v === 'correct').length;
+  const wrong = Object.values(state.answers).filter(v => v === 'wrong').length;
+  const remaining = 30 - correct - wrong;
+  document.getElementById('scoreCorrect').textContent = correct;
+  document.getElementById('scoreWrong').textContent = wrong;
+  document.getElementById('scoreRemaining').textContent = remaining;
+}
+
+function toggleExplanation(id) {
+  const exp = document.getElementById(`exp-${id}`);
+  if (exp) exp.classList.toggle('show');
+}
+
+function toggleAllExplanations() {
+  state.allExplanationsOpen = !state.allExplanationsOpen;
+  document.querySelectorAll('.explanation').forEach(el => {
+    if (state.allExplanationsOpen) el.classList.add('show');
+    else el.classList.remove('show');
+  });
+}
+
+function resetAll() {
+  if (!confirm('정말 초기화할까요? 모든 풀이 기록이 사라집니다.')) return;
+  state.answers = {};
+  state.allExplanationsOpen = false;
+  updateScore();
+  renderQuiz();
+}
+
+function switchView(view) {
+  state.showAll = view === 'all';
+  document.getElementById('toggleAll').classList.toggle('active', state.showAll);
+  document.getElementById('toggleWrong').classList.toggle('active', !state.showAll);
+  renderQuiz();
+}
+
+function showWrongOnly() {
+  switchView('wrong');
+}
+
+// Init
+renderQuiz();
+updateScore();
+</script>
+</body>
+</html>
