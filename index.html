@@ -15,6 +15,7 @@
             --accent-flow: #2a9d8f; /* Teal */
             --accent-manifesto: #e63946; /* Red */
             --accent-v2: #4f8ef7; /* Blue */
+            --accent-adv: #c084fc; /* Light Purple */
             --text: #e8eaf0;
             --text-muted: #949ba4;
         }
@@ -87,29 +88,21 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        /* 특수 카드 스타일 */
+        /* 카드별 강조 색상 */
         .card.flow-card { border-color: var(--accent-flow); background: linear-gradient(145deg, #1a1d23, #162e2b); }
         .card.manifesto-card { border-color: var(--accent-manifesto); background: linear-gradient(145deg, #1a1d23, #2e1616); }
         .card.quiz-card { border-color: var(--accent-quiz); background: linear-gradient(145deg, #1a1d23, #251b35); }
         .card.quiz-v2-card { border-color: var(--accent-v2); background: linear-gradient(145deg, #1a1d23, #161e2e); }
+        .card.adv-card { border-color: var(--accent-adv); background: linear-gradient(145deg, #1a1d23, #2a163e); }
 
-        .card h2 {
-            font-family: 'Noto Serif KR', serif;
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: var(--accent);
-        }
-
+        .card h2 { font-family: 'Noto Serif KR', serif; font-size: 1.3rem; margin-bottom: 12px; color: var(--accent); }
         .flow-card h2 { color: #48c9b0; }
         .manifesto-card h2 { color: #ff4d4d; }
         .quiz-card h2 { color: #a78bfa; }
         .quiz-v2-card h2 { color: #7cb3ff; }
+        .adv-card h2 { color: #d8b4fe; }
 
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
+        .card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
 
         .card .btn {
             align-self: flex-start;
@@ -125,81 +118,69 @@
         .manifesto-card .btn { border-bottom-color: var(--accent-manifesto); }
         .quiz-card .btn { border-bottom-color: var(--accent-quiz); }
         .quiz-v2-card .btn { border-bottom-color: var(--accent-v2); }
+        .adv-card .btn { border-bottom-color: var(--accent-adv); }
 
-        footer {
-            margin-top: auto;
-            text-align: center;
-            padding-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
+        footer { margin-top: auto; text-align: center; padding: 60px 0; color: var(--text-muted); font-size: 0.8rem; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <header>
         <h1>사회주의의 역사</h1>
-        <p class="subtitle">모든 자료가 집약된 중간고사 대비 포털</p>
+        <p class="subtitle">중간고사 A+를 위한 최종 통합 학습 포털</p>
     </header>
 
     <div class="section-title">Essential Resources</div>
     <main class="grid" style="margin-bottom: 40px;">
         <a href="history_flow.html" class="card flow-card">
-            <div>
-                <h2>역사 흐름도 & 총정리</h2>
-                <p>전체 연표와 이념의 지형도를 한눈에 파악하는 시각적 가이드입니다.</p>
-            </div>
+            <div><h2>역사 흐름도 & 총정리</h2><p>전체 연표와 이념 지형도를 한눈에 파악하는 시각적 마스터 가이드</p></div>
             <div class="btn">View Flow →</div>
         </a>
         <a href="history_manifesto.html" class="card manifesto-card">
-            <div>
-                <h2>공산주의 선언 완전정리</h2>
-                <p>중간고사 대비 논술형 예상문제와 키워드 모범 답안입니다.</p>
-            </div>
+            <div><h2>공산주의 선언 완전정리</h2><p>중간고사 논술형 예상문제와 키워드 중심의 모범 답안 모음</p></div>
             <div class="btn">Check Manifesto →</div>
         </a>
     </main>
 
-    <div class="section-title">Interactive Practice</div>
+    <div class="section-title">Advanced Training</div>
+    <main class="grid" style="margin-bottom: 40px;">
+        <a href="history_quiz_adv.html" class="card adv-card">
+            <div><h2>초고난도 T/F 퀴즈</h2><p>고득점을 위한 까다로운 개념들을 선별한 심화 테스트 모드</p></div>
+            <div class="btn">Start Hard Mode →</div>
+        </a>
+    </main>
+
+    <div class="section-title">Practice Quizzes</div>
     <main class="grid" style="margin-bottom: 40px;">
         <a href="history_tf.html" class="card quiz-card">
-            <div>
-                <h2>T/F 특훈 100제 (Classic)</h2>
-                <p>전 범위 핵심 내용을 O/X 퀴즈로 빠르게 훑어보는 집중 훈련 모드입니다.</p>
-            </div>
-            <div class="btn">Start Classic Quiz →</div>
+            <div><h2>T/F 특훈 100제 (Classic)</h2><p>방대한 범위를 빠르게 훑으며 핵심 개념을 다지는 집중 훈련</p></div>
+            <div class="btn">Start Classic →</div>
         </a>
         <a href="history_quiz_v2.html" class="card quiz-v2-card">
-            <div>
-                <h2>T/F 퀴즈 (Mobile Ver.)</h2>
-                <p>모바일에서 풀기 편한 인터페이스로 구성된 실전 대비 퀴즈입니다.</p>
-            </div>
-            <div class="btn">Start Mobile Quiz →</div>
+            <div><h2>T/F 퀴즈 (Mobile Ver.)</h2><p>이동 중에 간편하게 풀 수 있는 모바일 최적화 인터페이스</p></div>
+            <div class="btn">Start Mobile →</div>
         </a>
     </main>
 
     <div class="section-title">Lecture Notes (01-11)</div>
     <main class="grid">
-        <a href="history_01.html" class="card"><div><h2>01. 도입</h2><p>산업화와 자본주의의 결합, 등장 배경</p></div><div class="btn">Summary →</div></a>
+        <a href="history_01.html" class="card"><div><h2>01. 도입</h2><p>산업화와 자본주의의 결합</p></div><div class="btn">Summary →</div></a>
         <a href="history_02.html" class="card"><div><h2>02. 자본주의 형성</h2><p>도덕 경제와 시장 경제의 충돌</p></div><div class="btn">Summary →</div></a>
-        <a href="history_03.html" class="card"><div><h2>03. 이념의 지형도</h2><p>보수, 자유, 사회주의의 비교 정의</p></div><div class="btn">Summary →</div></a>
+        <a href="history_03.html" class="card"><div><h2>03. 이념의 지형도</h2><p>보수, 자유, 사회주의의 비교</p></div><div class="btn">Summary →</div></a>
         <a href="history_04.html" class="card"><div><h2>04. 초기 사회주의 I</h2><p>생시몽과 푸리에의 구상</p></div><div class="btn">Summary →</div></a>
-        <a href="history_05.html" class="card"><div><h2>05. 초기 사회주의 II</h2><p>로버트 오언과 공동체/국가주의 분화</p></div><div class="btn">Summary →</div></a>
-        <a href="history_06.html" class="card"><div><h2>06. 공산주의 등장</h2><p>까베와 초기 공산주의의 기독교적 성격</p></div><div class="btn">Summary →</div></a>
-        <a href="history_07.html" class="card"><div><h2>07. 혁명과 아나키즘</h2><p>블랑키의 혁명론과 프루동의 재산 비판</p></div><div class="btn">Summary →</div></a>
-        <a href="history_08.html" class="card"><div><h2>08. 마르크스주의 I</h2><p>역사유물론과 과학적 사회주의의 성립</p></div><div class="btn">Summary →</div></a>
-        <a href="history_09.html" class="card"><div><h2>09. 마르크스주의 II</h2><p>소외, 역사관, 경제관, 위기론 4범주</p></div><div class="btn">Summary →</div></a>
-        <a href="history_10.html" class="card"><div><h2>10. 마르크스주의 III</h2><p>교환가치와 잉여가치 창출 메커니즘</p></div><div class="btn">Summary →</div></a>
-        <a href="history_11.html" class="card"><div><h2>11. 라살과 독일 사민당</h2><p>국가 지원 조합주의와 개혁주의의 시초</p></div><div class="btn">Summary →</div></a>
+        <a href="history_05.html" class="card"><div><h2>05. 초기 사회주의 II</h2><p>로버트 오언과 공동체 분화</p></div><div class="btn">Summary →</div></a>
+        <a href="history_06.html" class="card"><div><h2>06. 공산주의 등장</h2><p>까베와 초기 기독교적 성격</p></div><div class="btn">Summary →</div></a>
+        <a href="history_07.html" class="card"><div><h2>07. 혁명과 아나키즘</h2><p>블랑키의 혁명론과 프루동</p></div><div class="btn">Summary →</div></a>
+        <a href="history_08.html" class="card"><div><h2>08. 마르크스주의 I</h2><p>역사유물론과 과학적 사회주의</p></div><div class="btn">Summary →</div></a>
+        <a href="history_09.html" class="card"><div><h2>09. 마르크스주의 II</h2><p>소외, 역사관, 경제관 범주</p></div><div class="btn">Summary →</div></a>
+        <a href="history_10.html" class="card"><div><h2>10. 마르크스주의 III</h2><p>교환가치와 잉여가치 메커니즘</p></div><div class="btn">Summary →</div></a>
+        <a href="history_11.html" class="card"><div><h2>11. 라살과 사민당</h2><p>국가 지원 조합주의와 개혁주의</p></div><div class="btn">Summary →</div></a>
     </main>
 
     <footer>
-        <p>&copy; 2024 Socialism History Portal. All-in-One Version.</p>
+        <p>&copy; 2024 Socialism History Portal. Final Integrated Master Version.</p>
     </footer>
 
 </body>
